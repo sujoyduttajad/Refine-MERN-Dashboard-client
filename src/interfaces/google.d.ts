@@ -1,5 +1,19 @@
+export interface CredentialResponse {
+  credential?: string;
+  select_by?:
+      | "auto"
+      | "user"
+      | "user_1tap"
+      | "user_2tap"
+      | "btn"
+      | "btn_confirm"
+      | "brn_add_session"
+      | "btn_confirm_add_session";
+  clientId?: string;
+}
+
 export interface IdConfiguration {
-  client_id: string;
+  client_id: string | undefined;
   auto_select?: boolean;
   callback: (handleCredentialResponse: CredentialResponse) => void;
   login_uri?: string;
@@ -12,20 +26,6 @@ export interface IdConfiguration {
   ux_mode?: "popup" | "redirect";
   allowed_parent_origin?: string | string[];
   intermediate_iframe_close_callback?: (...args: any[]) => void;
-}
-
-export interface CredentialResponse {
-  credential?: string;
-  select_by?:
-    | "auto"
-    | "user"
-    | "user_1tap"
-    | "user_2tap"
-    | "btn"
-    | "btn_confirm"
-    | "brn_add_session"
-    | "btn_confirm_add_session";
-  clientId?: string;
 }
 
 export interface GsiButtonConfiguration {
@@ -44,25 +44,25 @@ export interface PromptMomentNotification {
   isDisplayed: () => boolean;
   isNotDisplayed: () => boolean;
   getNotDisplayedReason: () =>
-    | "browser_not_supported"
-    | "invalid_client"
-    | "missing_client_id"
-    | "opt_out_or_no_session"
-    | "secure_http_required"
-    | "suppressed_by_user"
-    | "unregistered_origin"
-    | "unknown_reason";
+      | "browser_not_supported"
+      | "invalid_client"
+      | "missing_client_id"
+      | "opt_out_or_no_session"
+      | "secure_http_required"
+      | "suppressed_by_user"
+      | "unregistered_origin"
+      | "unknown_reason";
   isSkippedMoment: () => boolean;
   getSkippedReason: () =>
-    | "auto_cancel"
-    | "user_cancel"
-    | "tap_outside"
-    | "issuing_failed";
+      | "auto_cancel"
+      | "user_cancel"
+      | "tap_outside"
+      | "issuing_failed";
   isDismissedMoment: () => boolean;
   getDismissedReason: () =>
-    | "credential_returned"
-    | "cancel_called"
-    | "flow_restarted";
+      | "credential_returned"
+      | "cancel_called"
+      | "flow_restarted";
   getMomentType: () => "display" | "skipped" | "dismissed";
 }
 
@@ -78,30 +78,33 @@ export interface Credential {
 
 export interface Google {
   accounts: {
-    id: {
-      initialize: (input: IdConfiguration) => void;
-      prompt: (
-        momentListener?: (res: PromptMomentNotification) => void
-      ) => void;
-      renderButton: (
-        parent: HTMLElement,
-        options: GsiButtonConfiguration
-      ) => void;
-      disableAutoSelect: () => void;
-      storeCredential: (credentials: Credential, callback: () => void) => void;
-      cancel: () => void;
-      onGoogleLibraryLoad: () => void;
-      revoke: (
-        hint: string,
-        callback: (done: RevocationResponse) => void
-      ) => void;
-    };
+      id: {
+          initialize: (input: IdConfiguration) => void;
+          prompt: (
+              momentListener?: (res: PromptMomentNotification) => void,
+          ) => void;
+          renderButton: (
+              parent: HTMLElement,
+              options: GsiButtonConfiguration,
+          ) => void;
+          disableAutoSelect: () => void;
+          storeCredential: (
+              credentials: Credential,
+              callback: () => void,
+          ) => void;
+          cancel: () => void;
+          onGoogleLibraryLoad: () => void;
+          revoke: (
+              hint: string,
+              callback: (done: RevocationResponse) => void,
+          ) => void;
+      };
   };
 }
 
 declare global {
   interface Window {
-    google: Google;
+      google: Google;
   }
 }
 
