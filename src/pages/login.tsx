@@ -31,7 +31,7 @@ export const Login: React.FC = () => {
           type: "standard",
         });
       } catch (error) {
-        console.log(error);
+        console.log(error); 
       }
     }, []); // you can also add your client id as dependency here
 
