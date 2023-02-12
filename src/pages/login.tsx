@@ -4,6 +4,8 @@ import { Container, Box } from "@pankod/refine-mui";
 
 import { CredentialResponse } from "../interfaces/google";
 
+import { yariga } from "assets";
+
 export const Login: React.FC = () => {
   const { mutate: login } = useLogin<CredentialResponse>();
 
