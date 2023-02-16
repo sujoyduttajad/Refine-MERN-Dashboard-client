@@ -240,6 +240,10 @@ export const Sider: typeof DefaultSider = ({ render }) => {
               backgroundColor: "transparent",
             },
             justifyContent: "center",
+            margin: "10px auto",
+            borderRadius: "12px",
+            minHeight: '56px',
+            width: '90%'
           }}
         >
           <ListItemIcon
