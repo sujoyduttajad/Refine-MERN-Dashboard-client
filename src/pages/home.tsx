@@ -20,25 +20,25 @@ const Home = () => {
         <PieChart
           title="Properties for Sale"
           value={684}
-          colors={["#475be8", "#e4e8ef"]}
+          colors={["#475be8", "#D7DBFA"]}
           series={[75, 25]}
         />
          <PieChart
           title="Properties for Rent"
           value={550}
-          colors={["#18C784", "#e4b8ef"]}
+          colors={["#18C784", "#C9F8E6"]}
           series={[60, 40]}
         />
          <PieChart
           title="Total Customers"
           value={5684}
-          colors={["#FF7B00", "#F3EBCF"]}
+          colors={["#FF7B00", "#FFE3C8"]}
           series={[68, 32]}
         />
          <PieChart
           title="Properties for Cities"
           value={445}
-          colors={["#FF3A3A", "#E9D8E0"]}
+          colors={["#FF3A3A", "#FFD4D4"]}
           series={[88, 22]}
         />
       </Box>
