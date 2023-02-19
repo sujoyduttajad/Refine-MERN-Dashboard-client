@@ -11,7 +11,7 @@ const PieChart = ({ title, value, series, colors }: PieChartProps) => {
       id="chart"
       flex={1}
       display="flex"
-      bgcolor={"#fcfcfc"}
+      bgcolor="#FAFAFA"
       flexDirection="row"
       justifyContent={"space-between"}
       alignItems={"center"}
