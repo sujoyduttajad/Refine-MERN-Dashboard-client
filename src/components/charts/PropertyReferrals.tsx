@@ -17,6 +17,16 @@ const ProgressBar = ({ title, percentage, color }: ProgressBarProps) => (
         {percentage}%
       </Typography>
     </Stack>
+    <Box
+      mt={2}
+      position="relative"
+      width="100%"
+      height="8px"
+      borderRadius={1}
+      bgcolor="#e4e8ef"
+    >
+      <Box></Box>
+    </Box>
   </Box>
 );
 
@@ -34,7 +44,11 @@ const PropertyReferrals = () => {
       <Typography fontSize={18} fontWeight={600} color="#11142d">
         Property Referrals
       </Typography>
-      <Stack my="20px" direction="column" gap={4}></Stack>
+      <Stack my="20px" direction="column" gap={4}>
+        {propertyReferralsInfo.map((bar) => (
+          <ProgressBar key={bar.title} {...bar} />
+        ))}
+      </Stack>
     </Box>
   );
 };
