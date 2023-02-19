@@ -1,5 +1,5 @@
 import { Box, Typography, Stack } from "@pankod/refine-mui";
-import { propertyReferralsInfo } from "constants";
+import { propertyReferralsInfo } from "constants/index";
 
 interface ProgressBarProps {
   title: string;
@@ -25,7 +25,13 @@ const ProgressBar = ({ title, percentage, color }: ProgressBarProps) => (
       borderRadius={1}
       bgcolor="#e4e8ef"
     >
-      <Box></Box>
+      <Box
+        width={`${percentage}%`}
+        bgcolor={color}
+        position="absolute"
+        height="100%"
+        borderRadius={1}
+      />
     </Box>
   </Box>
 );
