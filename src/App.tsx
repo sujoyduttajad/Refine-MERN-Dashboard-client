@@ -4,10 +4,13 @@ import { Refine, AuthProvider } from "@pankod/refine-core";
 import {
   notificationProvider,
   RefineSnackbarProvider,
+  ThemeProvider,
   CssBaseline,
   GlobalStyles,
   ReadyPage,
+  createTheme,
   ErrorComponent,
+  responsiveFontSizes,
 } from "@pankod/refine-mui";
 import {
   AccountCircleOutlined,
@@ -51,6 +54,24 @@ axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
 
   return request;
 });
+
+// Custom Mui Theme
+let customTheme = createTheme({
+  typography: {
+    allVariants: {
+      fontFamily: "'Manrope', sans-serif",
+    },
+  },
+  palette: {
+    primary: {
+        main: "#333",
+    },
+    secondary: {
+        main: "#475be8",
+    },
+},
+});
+customTheme = responsiveFontSizes(customTheme);
 
 function App() {
   const authProvider: AuthProvider = {
@@ -108,50 +129,52 @@ function App() {
     <ColorModeContextProvider>
       <CssBaseline />
       <GlobalStyles styles={{ html: { WebkitFontSmoothing: "auto" } }} />
-      <RefineSnackbarProvider>
-        <Refine
-          dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
-          notificationProvider={notificationProvider}
-          ReadyPage={ReadyPage}
-          catchAll={<ErrorComponent />}
-          resources={[
-            {
-              name: "property",
-              list: MuiInferencer,
-              icon: <VillaOutlined />,
-            },
-            {
-              name: "agent",
-              list: MuiInferencer,
-              icon: <PeopleAltOutlined />,
-            },
-            {
-              name: "review",
-              list: MuiInferencer,
-              icon: <StarOutlineRounded />,
-            },
-            {
-              name: "message",
-              list: MuiInferencer,
-              icon: <ChatBubbleOutline />,
-            },
-            {
-              name: "my-profile",
-              options: { label: "My Profile" },
-              list: MuiInferencer,
-              icon: <AccountCircleOutlined />,
-            },
-          ]}
-          Title={Title}
-          Sider={Sider}
-          Layout={Layout}
-          Header={Header}
-          routerProvider={routerProvider}
-          authProvider={authProvider}
-          LoginPage={Login}
-          DashboardPage={Home}
-        />
-      </RefineSnackbarProvider>
+      <ThemeProvider theme={customTheme}>
+        <RefineSnackbarProvider>
+          <Refine
+            dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+            notificationProvider={notificationProvider}
+            ReadyPage={ReadyPage}
+            catchAll={<ErrorComponent />}
+            resources={[
+              {
+                name: "property",
+                list: MuiInferencer,
+                icon: <VillaOutlined />,
+              },
+              {
+                name: "agent",
+                list: MuiInferencer,
+                icon: <PeopleAltOutlined />,
+              },
+              {
+                name: "review",
+                list: MuiInferencer,
+                icon: <StarOutlineRounded />,
+              },
+              {
+                name: "message",
+                list: MuiInferencer,
+                icon: <ChatBubbleOutline />,
+              },
+              {
+                name: "my-profile",
+                options: { label: "My Profile" },
+                list: MuiInferencer,
+                icon: <AccountCircleOutlined />,
+              },
+            ]}
+            Title={Title}
+            Sider={Sider}
+            Layout={Layout}
+            Header={Header}
+            routerProvider={routerProvider}
+            authProvider={authProvider}
+            LoginPage={Login}
+            DashboardPage={Home}
+          />
+        </RefineSnackbarProvider>
+      </ThemeProvider>
     </ColorModeContextProvider>
   );
 }
