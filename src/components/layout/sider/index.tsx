@@ -242,8 +242,8 @@ export const Sider: typeof DefaultSider = ({ render }) => {
             justifyContent: "center",
             margin: "10px auto",
             borderRadius: "12px",
-            minHeight: '56px',
-            width: '90%'
+            minHeight: "56px",
+            width: "90%",
           }}
         >
           <ListItemIcon
@@ -251,8 +251,6 @@ export const Sider: typeof DefaultSider = ({ render }) => {
               justifyContent: "center",
               minWidth: 36,
               color: "#808191",
-              marginLeft: "6px",
-              marginRight: "14px"
             }}
           >
             <Dashboard />
@@ -284,9 +282,9 @@ export const Sider: typeof DefaultSider = ({ render }) => {
           justifyContent: "center",
           margin: "10px auto",
           borderRadius: "12px",
-          minHeight: '56px',
-          width: '90%'
-         }}
+          minHeight: "56px",
+          width: "90%",
+        }}
       >
         <ListItemIcon
           sx={{
@@ -422,9 +420,9 @@ export const Sider: typeof DefaultSider = ({ render }) => {
               textAlign: "center",
               borderRadius: 0,
               borderTop: "1px solid #ffffff1a",
-              '&:hover': {
-                background: "#1e36e8"
-              }
+              "&:hover": {
+                background: "#1e36e8",
+              },
             }}
             fullWidth
             size="large"
