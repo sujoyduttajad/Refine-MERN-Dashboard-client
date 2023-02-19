@@ -2,6 +2,9 @@ import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { PieChartProps } from "interfaces/home";
 import ReactApexChart from "react-apexcharts";
 
+// F0F0F0
+// Need to add a hover effect to each Box
+
 const PieChart = ({ title, value, series, colors }: PieChartProps) => {
   return (
     <Box
@@ -17,6 +20,7 @@ const PieChart = ({ title, value, series, colors }: PieChartProps) => {
       gap={2}
       borderRadius="15px"
       minHeight="110px"
+      maxWidth={420}
       width="fit-content"
     >
       <Stack direction={"column"}>
