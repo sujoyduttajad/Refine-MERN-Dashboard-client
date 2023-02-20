@@ -21,7 +21,7 @@ const AllProperties = () => {
           title="Add Property"
           handleClick={() => navigate('/properties/create')}
           backgroundColor="#475be8"
-          color="fcfcfc"
+          color="#fcfcfc"
           icon={<Add />}
         />
       </Stack>
