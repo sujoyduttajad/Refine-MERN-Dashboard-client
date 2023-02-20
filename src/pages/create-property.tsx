@@ -2,7 +2,7 @@ import React from 'react'
 
 const CreateProperty = () => {
   return (
-    <div>CreateProperty</div>
+    <div>Create Property</div>
   )
 }
 
