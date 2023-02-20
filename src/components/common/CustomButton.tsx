@@ -12,6 +12,7 @@ const CustomButton = ({
 }: CustomButtonProps) => {
   return (
     <Button
+      onClick={handleClick}
       sx={{
         flex: fullWidth ? 1 : 'unset',
         padding: '10px 15px',
