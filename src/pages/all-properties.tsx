@@ -9,9 +9,24 @@ const AllProperties = () => {
 
   return (
     <Box>
-      <Stack></Stack>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Typography fontSize={25} fontWeight={700} color="#11142d">
+          All Properties
+        </Typography>
+        <CustomButton 
+          title="Add Property"
+          handleClick={() => {}}
+          backgroundColor="#475be8"
+          color="fcfcfc"
+          icon={<Add />}
+        />
+      </Stack>
     </Box>
-  )
-} 
+  );
+};
 
-export default AllProperties
+export default AllProperties;
