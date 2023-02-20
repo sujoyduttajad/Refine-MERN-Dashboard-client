@@ -1,5 +1,5 @@
-import { useList } from "@pankod/refine-core/dist/hooks";
-// import { useList } from "@pankod/refine-core"
+
+import { useList } from "@pankod/refine-core"
 import {
   PieChart,
   PropertyCard,
