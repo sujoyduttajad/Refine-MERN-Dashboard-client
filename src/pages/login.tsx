@@ -4,7 +4,7 @@ import { Container, Box } from "@pankod/refine-mui";
 
 import { CredentialResponse } from "../interfaces/google";
 
-import { yariga } from "assets";
+import { evoiaLight } from "assets";
 
 export const Login: React.FC = () => {
   const { mutate: login } = useLogin<CredentialResponse>();
@@ -67,7 +67,7 @@ export const Login: React.FC = () => {
           }}
         >
           <div>
-            <img src={yariga} alt="Evoia Logo" />
+            <img src={evoiaLight} alt="Evoia Logo" />
           </div>
           <Box mt={4}>
             <GoogleButton />
