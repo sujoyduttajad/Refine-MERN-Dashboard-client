@@ -15,7 +15,22 @@ const CreateProperty = () => {
     handleSubmit,
   } = useForm();
 
-  return <div>Create Property</div>;
+  const handleImageChange = () => {}
+  const onFinishHandler = () => {}
+
+  // Rendering a reusable form
+  return (
+    <Form
+      type="create"
+      register={register}
+      onFinish={onFinish}
+      formLoading={formLoading}
+      handleSubmit={handleSubmit}
+      handleImageChange={handleImageChange}
+      onFinishHandler={onFinishHandler}
+      propertyImage={propertyImage}
+    />
+  );
 };
 
 export default CreateProperty;
