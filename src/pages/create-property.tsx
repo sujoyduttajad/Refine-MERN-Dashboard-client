@@ -21,7 +21,7 @@ const CreateProperty = () => {
   // Rendering a reusable form
   return (
     <Form
-      type="create"
+      type="Create"
       register={register}
       onFinish={onFinish}
       formLoading={formLoading}
