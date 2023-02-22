@@ -15,8 +15,15 @@ import { FormProps } from "interfaces/common";
 import CustomButton from "./CustomButton";
 
 const Form = ({
-  
-}) => {
+  type,
+  register,
+  onFinish,
+  formLoading,
+  handleSubmit,
+  handleImageChange,
+  onFinishHandler,
+  propertyImage,
+}: FormProps) => {
   return <div>Form</div>;
 };
 
