@@ -24,7 +24,13 @@ const Form = ({
   onFinishHandler,
   propertyImage,
 }: FormProps) => {
-  return <div>Form</div>;
+  return (
+    <Box>
+      <Typography fontSize={25} fontWeight={700} color="#11142d">
+        {type} a Property
+      </Typography>
+    </Box>
+  )
 };
 
 export default Form;
