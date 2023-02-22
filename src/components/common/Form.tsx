@@ -29,6 +29,9 @@ const Form = ({
       <Typography fontSize={25} fontWeight={700} color="#11142d">
         {type} a Property
       </Typography>
+      <Box mt={2.5} borderRadius="15px" padding="20px" bgcolor="#fafafa">
+
+      </Box>
     </Box>
   )
 };
