@@ -83,11 +83,26 @@ const Form = ({
                 borderColor: "rgba(0, 0, 0, 0.23)",
                 borderRadius: 6,
                 padding: 10,
-                color: '#919191'
+                color: "#919191",
               }}
               {...register("description", { required: true })}
             />
           </FormControl>
+
+          <Stack direction="row" gap={4}>
+            <FormControl sx={{ flex: 1 }}>
+              <FormHelperText
+                sx={{
+                  fontWeight: 500,
+                  margin: "10px 0",
+                  fontSize: 16,
+                  color: "#11142d",
+                }}
+              >
+                Select Property Type
+              </FormHelperText>
+            </FormControl>
+          </Stack>
         </form>
       </Box>
     </Box>
