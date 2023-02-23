@@ -41,7 +41,14 @@ const Form = ({
           onSubmit={handleSubmit(onFinishHandler)}
         >
           <FormControl>
-            <FormHelperText>
+            <FormHelperText
+              sx={{
+                fontWeight: 500,
+                margin: "10px 0",
+                fontSize: 16,
+                color: "#11142d",
+              }}
+            >
               Enter property name
             </FormHelperText>
             <TextField
@@ -50,7 +57,27 @@ const Form = ({
               id="outlined-basic"
               color="info"
               variant="outlined"
-              {...register('title', { required: true })}
+              {...register("title", { required: true })}
+            />
+          </FormControl>
+          <FormControl>
+            <FormHelperText
+              sx={{
+                fontWeight: 500,
+                margin: "10px 0",
+                fontSize: 16,
+                color: "#11142d",
+              }}
+            >
+              Enter Description
+            </FormHelperText>
+            <TextField
+              fullWidth
+              required
+              id="outlined-basic"
+              color="info"
+              variant="outlined"
+              {...register("title", { required: true })}
             />
           </FormControl>
         </form>
