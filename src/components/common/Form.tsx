@@ -39,7 +39,21 @@ const Form = ({
             gap: "20px",
           }}
           onSubmit={handleSubmit(onFinishHandler)}
-        ></form>
+        >
+          <FormControl>
+            <FormHelperText>
+              Enter property name
+            </FormHelperText>
+            <TextField
+              fullWidth
+              required
+              id="outlined-basic"
+              color="info"
+              variant="outlined"
+              {...register('title', { required: true })}
+            />
+          </FormControl>
+        </form>
       </Box>
     </Box>
   );
