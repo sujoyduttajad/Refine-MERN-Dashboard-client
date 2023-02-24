@@ -220,6 +220,13 @@ const Form = ({
               {propertyImage?.name}
             </Typography>
           </Stack>
+
+          <CustomButton 
+            type="submit"
+            title={formLoading ? 'Submitting...' : 'Submit'}
+            backgroundColor="#475be8"
+            color="#fcfcfc"
+          />
         </form>
       </Box>
     </Box>
