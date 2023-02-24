@@ -29,7 +29,7 @@ const Form = ({
       <Typography fontSize={25} fontWeight={700} color="#11142d">
         {type} a Property
       </Typography>
-      <Box mt={2.5} borderRadius="15px" padding="20px" bgcolor="#fafafa">
+      <Box mt={2.5} maxWidth="65rem" borderRadius="15px" padding="20px" bgcolor="#fafafa">
         <form
           style={{
             marginTop: "20px",
@@ -56,6 +56,9 @@ const Form = ({
               required
               id="outlined-basic"
               color="info"
+              sx={{
+                backgroundColor: "#fff",
+              }}
               variant="outlined"
               {...register("title", { required: true })}
             />
@@ -78,7 +81,7 @@ const Form = ({
               color="info"
               style={{
                 width: "100%",
-                background: "transparent",
+                backgroundColor: "#fff",
                 fontSize: "16px",
                 borderColor: "rgba(0, 0, 0, 0.23)",
                 borderRadius: 6,
@@ -106,6 +109,9 @@ const Form = ({
                 color="info"
                 displayEmpty
                 required
+                sx={{
+                  backgroundColor: "#fff",
+                }}
                 inputProps={{ 'aria-label': 'Without label'}}
                 defaultValue="apartment"
                 {...register("propertyType", { required: true })}
