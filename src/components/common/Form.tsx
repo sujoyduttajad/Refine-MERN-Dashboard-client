@@ -29,7 +29,13 @@ const Form = ({
       <Typography fontSize={25} fontWeight={700} color="#11142d">
         {type} a Property
       </Typography>
-      <Box mt={2.5} maxWidth="65rem" borderRadius="15px" padding="20px" bgcolor="#fafafa">
+      <Box
+        mt={2.5}
+        maxWidth="65rem"
+        borderRadius="15px"
+        padding="20px"
+        bgcolor="#fafafa"
+      >
         <form
           style={{
             marginTop: "20px",
@@ -112,7 +118,7 @@ const Form = ({
                 sx={{
                   backgroundColor: "#fff",
                 }}
-                inputProps={{ 'aria-label': 'Without label' }}
+                inputProps={{ "aria-label": "Without label" }}
                 defaultValue="apartment"
                 {...register("propertyType", { required: true })}
               >
@@ -174,6 +180,14 @@ const Form = ({
               {...register("location", { required: true })}
             />
           </FormControl>
+
+          <Stack direction="column" gap={1} justifyContent="center" mb={2}>
+            <Stack direction="row" gap={2}>
+              <Typography color="#11142d" fontSize={16} fontWeight={500} my="10px">
+                Property Photo
+              </Typography>
+            </Stack>
+          </Stack>
         </form>
       </Box>
     </Box>
