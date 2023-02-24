@@ -101,6 +101,17 @@ const Form = ({
               >
                 Select Property Type
               </FormHelperText>
+              <Select
+                variant="outlined"
+                color="info"
+                displayEmpty
+                required
+                inputProps={{ 'aria-label': 'Without label'}}
+                defaultValue="apartment"
+                {...register("description", { required: true })}
+              >
+
+              </Select>
             </FormControl>
           </Stack>
         </form>
