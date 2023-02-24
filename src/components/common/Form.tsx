@@ -112,7 +112,7 @@ const Form = ({
                 sx={{
                   backgroundColor: "#fff",
                 }}
-                inputProps={{ 'aria-label': 'Without label'}}
+                inputProps={{ 'aria-label': 'Without label' }}
                 defaultValue="apartment"
                 {...register("propertyType", { required: true })}
               >
@@ -125,6 +125,30 @@ const Form = ({
                 <MenuItem value="studio">Studio</MenuItem>
                 <MenuItem value="chalet">Chalet</MenuItem>
               </Select>
+            </FormControl>
+            <FormControl sx={{ width: "40%" }}>
+              <FormHelperText
+                sx={{
+                  fontWeight: 500,
+                  margin: "10px 0",
+                  fontSize: 16,
+                  color: "#11142d",
+                }}
+              >
+                Enter property price
+              </FormHelperText>
+              <TextField
+                fullWidth
+                required
+                id="outlined-basic"
+                color="info"
+                type="number"
+                sx={{
+                  backgroundColor: "#fff",
+                }}
+                variant="outlined"
+                {...register("price", { required: true })}
+              />
             </FormControl>
           </Stack>
         </form>
