@@ -75,6 +75,14 @@ function App() {
     login: ({ credential }: CredentialResponse) => {
       const profileObj = credential ? parseJwt(credential) : null;
 
+      // Save user to MongoDB
+      if(profileObj) {
+        const response = await fetch('http://localhost:8080/api/v1/users', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json' },
+        })
+      }
+
       if (profileObj) {
         localStorage.setItem(
           "user",
