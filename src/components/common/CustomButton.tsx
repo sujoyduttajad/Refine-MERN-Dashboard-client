@@ -12,6 +12,7 @@ const CustomButton = ({
 }: CustomButtonProps) => {
   return (
     <Button
+      type={type === 'submit' ? 'submit' : 'button'}
       onClick={handleClick}
       sx={{
         flex: fullWidth ? 1 : 'unset',
