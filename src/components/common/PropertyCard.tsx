@@ -51,6 +51,10 @@ const PropertyCard = ({
             <Typography>{location}</Typography>
           </Stack>
         </Stack>
+
+        <Box>
+          <Typography>${price}</Typography>
+        </Box>
       </CardContent>
     </Card>
   );
