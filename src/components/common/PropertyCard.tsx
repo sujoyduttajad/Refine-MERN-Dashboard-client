@@ -11,6 +11,7 @@ import {
 } from "@pankod/refine-mui";
 
 import { PropertyCardProps } from "interfaces/property";
+import { formatter } from "utils/functions";
 
 const PropertyCard = ({
   id,
@@ -53,7 +54,7 @@ const PropertyCard = ({
         </Stack>
 
         <Box>
-          <Typography>${price}</Typography>
+          <Typography sx={{ textDecoration: 'none' }}>${formatter.format(Number(price))}</Typography>
         </Box>
       </CardContent>
     </Card>
