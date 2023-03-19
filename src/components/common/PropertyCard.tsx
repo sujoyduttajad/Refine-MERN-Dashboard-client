@@ -50,21 +50,23 @@ const PropertyCard = ({
           flexDirection: "column",
           justifyContent: "space-between",
           gap: "10px",
-          paddingX: '5px'
+          paddingX: "5px",
         }}
       >
         <Stack direction="column" gap={1}>
-          <Typography>{title}</Typography>
+          <Typography fontSize={16} fontWeight={500} color="#11142d">
+            {title}
+          </Typography>
           <Stack direction="row" gap={0.5} alignItems="flex-start">
             <Place sx={{ fontSize: 18, color: "#11142d", marginTop: 0.5 }} />
-            <Typography>{location}</Typography>
+            <Typography fontSize={14} color="#808191">
+              {location}
+            </Typography>
           </Stack>
         </Stack>
 
         <Box>
-          <Typography sx={{ textDecoration: "none" }}>
-            ${formatter.format(Number(price))}
-          </Typography>
+          <Typography>${formatter.format(Number(price))}</Typography>
         </Box>
       </CardContent>
     </Card>
