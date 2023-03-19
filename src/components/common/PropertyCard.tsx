@@ -44,7 +44,15 @@ const PropertyCard = ({
           borderRadius: "10px",
         }}
       />
-      <CardContent>
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          gap: "10px",
+          paddingX: '5px'
+        }}
+      >
         <Stack direction="column" gap={1}>
           <Typography>{title}</Typography>
           <Stack direction="row" gap={0.5} alignItems="flex-start">
@@ -54,7 +62,9 @@ const PropertyCard = ({
         </Stack>
 
         <Box>
-          <Typography sx={{ textDecoration: 'none' }}>${formatter.format(Number(price))}</Typography>
+          <Typography sx={{ textDecoration: "none" }}>
+            ${formatter.format(Number(price))}
+          </Typography>
         </Box>
       </CardContent>
     </Card>
