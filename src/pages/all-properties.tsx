@@ -31,7 +31,21 @@ const AllProperties = () => {
         />
       </Stack>
 
-      <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}></Box>
+      <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
+        {
+          allProperties.map(property => (
+            <PropertyCard 
+              key={property._id}
+              id={property._id}
+              title={property.title}
+              price={property.price}
+              location={property.location}
+              photo={property.photo}
+              
+            />
+          ))
+        }
+      </Box>
     </Box>
   );
 };
