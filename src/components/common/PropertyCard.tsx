@@ -30,8 +30,9 @@ const PropertyCard = ({
         padding: "10px",
         cursor: "pointer",
         textDecoration: "none",
+        backgroundColor: "#FAFAFA",
         "&:hover": {
-          boxShadow: "0 22px 45px 2px rgba(176, 176, 176, 0.1)",
+          boxShadow: "0 22px 45px 2px rgba(176, 176, 176, 0.5)",
         },
       }}
     >
@@ -49,13 +50,16 @@ const PropertyCard = ({
         sx={{
           display: "flex",
           flexDirection: "column",
+          alignItems: "flex-start",
           justifyContent: "space-between",
-          gap: "10px",
+          gap: "15px",
           paddingX: "5px",
+          paddingY: 0,
+          paddingTop: "16px"
         }}
       >
         <Stack direction="column" gap={1}>
-          <Typography fontSize={16} fontWeight={500} color="#11142d">
+          <Typography fontSize={18} fontWeight={600} color="#11142d">
             {title}
           </Typography>
           <Stack direction="row" gap={0.5} alignItems="flex-start">
@@ -72,9 +76,9 @@ const PropertyCard = ({
           width="fit-content"
           borderRadius={1}
           bgcolor="#dadefa"
-          height="fit-content"
+          height="100%"
         >
-          <Typography fontSize={18} fontWeight={700} color="#475be8">
+          <Typography fontSize={16} fontWeight={700} color="#475be8">
             {formatter.format(Number(price))}
           </Typography>
         </Box>
