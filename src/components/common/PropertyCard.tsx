@@ -1,6 +1,6 @@
 import React from "react";
 import { Place } from "@mui/icons-material";
-import { Link } from "@pankod/refine-mui";
+import { Link } from "@pankod/refine-react-router-v6";
 import {
   Typography,
   Box,
@@ -43,6 +43,14 @@ const PropertyCard = ({
           borderRadius: "10px",
         }}
       />
+      <CardContent>
+        <Stack direction="column" gap={1}>
+          <Typography>{title}</Typography>
+          <Stack direction="row" gap={0.5} alignItems="flex-start">
+            <Place />
+          </Stack>
+        </Stack>
+      </CardContent>
     </Card>
   );
 };
