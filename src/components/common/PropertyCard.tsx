@@ -23,6 +23,7 @@ const PropertyCard = ({
     <Card
       component={Link}
       to={`/properties/${id}`}
+      elevation={0}
       sx={{
         maxWidth: "330px",
         padding: "10px",
