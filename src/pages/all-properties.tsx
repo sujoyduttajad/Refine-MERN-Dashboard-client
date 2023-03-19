@@ -11,6 +11,11 @@ const AllProperties = () => {
     tableQueryResult: { data, isLoading, isError },
   } = useTable();
 
+  const allProperties = data?.data ?? [];
+
+  if(isLoading) return <Typography>Loading...</Typography>;
+  if(isError) return <Typography>Error...</Typography>;
+
   return (
     <Box>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
