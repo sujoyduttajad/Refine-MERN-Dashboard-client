@@ -47,7 +47,8 @@ const PropertyCard = ({
         <Stack direction="column" gap={1}>
           <Typography>{title}</Typography>
           <Stack direction="row" gap={0.5} alignItems="flex-start">
-            <Place />
+            <Place sx={{ fontSize: 18, color: "#11142d", marginTop: 0.5 }} />
+            <Typography>{location}</Typography>
           </Stack>
         </Stack>
       </CardContent>
