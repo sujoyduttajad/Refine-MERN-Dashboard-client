@@ -1,6 +1,13 @@
 import { Add } from "@mui/icons-material";
 import { useTable } from "@pankod/refine-core";
-import { Box, Typography, Stack, TextField, Select, MenuItem } from "@pankod/refine-mui";
+import {
+  Box,
+  Typography,
+  Stack,
+  TextField,
+  Select,
+  MenuItem,
+} from "@pankod/refine-mui";
 import { useNavigate } from "@pankod/refine-react-router-v6";
 import { PropertyCard, CustomButton } from "components";
 
@@ -26,7 +33,10 @@ const AllProperties = () => {
 
   return (
     <Box>
-      <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
+      <Box
+        mt="20px"
+        sx={{ display: "flex", flexWrap: "wrap", gap: 3, width: "100%" }}
+      >
         <Stack direction="column" width="100%">
           <Typography fontSize={25} fontWeight={700} color="#11142d">
             {!allProperties.length
@@ -53,10 +63,10 @@ const AllProperties = () => {
                 backgroundColor="#475be8"
                 color="#fcfcfc"
               />
-              <TextField 
+              <TextField
                 variant="outlined"
                 color="info"
-                value=''
+                value=""
                 onChange={() => {}}
                 placeholder="Search by Title"
               />
@@ -68,9 +78,9 @@ const AllProperties = () => {
                 defaultValue=""
                 value=""
                 onChange={() => {}}
-                inputProps={{ 'aria-label': 'Without label' }}
+                inputProps={{ "aria-label": "Without label" }}
               >
-                <MenuItem value="" >All</MenuItem>
+                <MenuItem value="">All</MenuItem>
               </Select>
             </Box>
           </Box>
