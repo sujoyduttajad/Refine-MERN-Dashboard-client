@@ -1,6 +1,6 @@
 import { Add } from "@mui/icons-material";
 import { useTable } from "@pankod/refine-core";
-import { Box, Typography, Stack } from "@pankod/refine-mui";
+import { Box, Typography, Stack, TextField } from "@pankod/refine-mui";
 import { useNavigate } from "@pankod/refine-react-router-v6";
 import { PropertyCard, CustomButton } from "components";
 
@@ -52,6 +52,11 @@ const AllProperties = () => {
                 handleClick={() => {}}
                 backgroundColor="#475be8"
                 color="#fcfcfc"
+              />
+              <TextField 
+                variant="outlined"
+                color="info"
+                placeholder="Search by Title"
               />
             </Box>
           </Box>
