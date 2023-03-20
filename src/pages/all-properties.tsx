@@ -63,6 +63,7 @@ const AllProperties = () => {
                 handleClick={() => {}}
                 backgroundColor="#475be8"
                 color="#fcfcfc"
+                heightValue="40px"
                 paddingValue="1px 10px"
                 fontSizeValue="16.5px"
               />
