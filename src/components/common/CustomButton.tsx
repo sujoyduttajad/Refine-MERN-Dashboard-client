@@ -8,6 +8,9 @@ const CustomButton = ({
   color,
   fullWidth,
   icon,
+  paddingValue,
+  fontSizeValue,
+  fontWeightValue,
   handleClick,
 }: CustomButtonProps) => {
   return (
@@ -16,13 +19,13 @@ const CustomButton = ({
       onClick={handleClick}
       sx={{
         flex: fullWidth ? 1 : "unset",
-        padding: "10px 15px",
+        padding: `${paddingValue ? paddingValue : "10px 15px"}`,
         width: fullWidth ? "100%" : "fit-content",
         minWidth: 130,
         backgroundColor,
         color,
-        fontSize: 16,
-        fontWeight: 600,
+        fontSize: `${fontSizeValue ? fontSizeValue : 16}`,
+        fontWeight: `${fontWeightValue ? fontWeightValue : 600}`,
         gap: "10px",
         textTransform: "capitalize",
         "&:hover": {
