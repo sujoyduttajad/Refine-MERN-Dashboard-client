@@ -64,8 +64,7 @@ const AllProperties = () => {
                 backgroundColor="#475be8"
                 color="#fcfcfc"
                 paddingValue="1px 10px"
-                fontSizeValue="17px"
-                
+                fontSizeValue="16.5px"
               />
               <TextField
                 variant="outlined"
@@ -74,7 +73,6 @@ const AllProperties = () => {
                 onChange={() => {}}
                 placeholder="Search by Title"
                 size="small"
-                
               />
               <Select
                 variant="outlined"
