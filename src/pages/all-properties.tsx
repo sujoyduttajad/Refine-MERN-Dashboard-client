@@ -48,7 +48,8 @@ const AllProperties = () => {
             mt={3}
             display="flex"
             flexWrap="wrap"
-            width="84%"
+            width="100%"
+            height="20%"
             justifyContent="space-between"
           >
             <Box
@@ -58,10 +59,13 @@ const AllProperties = () => {
               mb={{ xs: "20", sm: 0 }}
             >
               <CustomButton
-                title={`Sort price`}
+                title="Sort price"
                 handleClick={() => {}}
                 backgroundColor="#475be8"
                 color="#fcfcfc"
+                paddingValue="1px 10px"
+                fontSizeValue="17px"
+                
               />
               <TextField
                 variant="outlined"
@@ -69,6 +73,8 @@ const AllProperties = () => {
                 value=""
                 onChange={() => {}}
                 placeholder="Search by Title"
+                size="small"
+                
               />
               <Select
                 variant="outlined"
@@ -78,23 +84,28 @@ const AllProperties = () => {
                 defaultValue=""
                 value=""
                 onChange={() => {}}
+                sx={{ height: "40px" }}
                 inputProps={{ "aria-label": "Without label" }}
               >
                 <MenuItem value="">All</MenuItem>
               </Select>
             </Box>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <CustomButton
+                title="Add Property"
+                handleClick={() => navigate("/properties/create")}
+                backgroundColor="#475be8"
+                color="#fcfcfc"
+                icon={<Add />}
+              />
+            </Stack>
           </Box>
         </Stack>
       </Box>
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <CustomButton
-          title="Add Property"
-          handleClick={() => navigate("/properties/create")}
-          backgroundColor="#475be8"
-          color="#fcfcfc"
-          icon={<Add />}
-        />
-      </Stack>
 
       <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
         {allProperties.map((property) => (
