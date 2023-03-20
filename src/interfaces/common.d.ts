@@ -6,6 +6,9 @@ export interface CustomButtonProps {
     fullWidth?: boolean;
     icon?: ReactNode;
     disabled?: boolean;
+    paddingValue?: string;
+    fontSizeValue?: string;
+    fontWeightValue?: number;
     handleClick?: () => void;
 }
 
