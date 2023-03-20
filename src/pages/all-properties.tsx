@@ -50,6 +50,7 @@ const AllProperties = () => {
             flexWrap="wrap"
             width="100%"
             height="20%"
+            alignItems="center"
             justifyContent="space-between"
           >
             <Box
@@ -118,6 +119,14 @@ const AllProperties = () => {
           />
         ))}
       </Box>
+
+      {
+        allProperties.length > 0 && (
+          <Box display="flex" gap={2} mt={3} flexWrap="wrap" >
+
+          </Box>
+        )
+      }
     </Box>
   );
 };
