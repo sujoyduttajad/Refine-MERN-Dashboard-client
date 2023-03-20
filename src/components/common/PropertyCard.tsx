@@ -54,8 +54,7 @@ const PropertyCard = ({
           justifyContent: "space-between",
           gap: "15px",
           paddingX: "5px",
-          paddingY: 0,
-          paddingTop: "16px"
+          paddingBottom: 0
         }}
       >
         <Stack direction="column" gap={1}>
