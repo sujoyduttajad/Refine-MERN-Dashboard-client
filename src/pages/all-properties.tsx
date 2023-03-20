@@ -27,12 +27,34 @@ const AllProperties = () => {
   return (
     <Box>
       <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
-        <Stack direction="column" width="100%" >
+        <Stack direction="column" width="100%">
           <Typography fontSize={25} fontWeight={700} color="#11142d">
             {!allProperties.length
               ? "There are no properties"
               : "All Properties"}
           </Typography>
+          <Box
+            mb={2}
+            mt={3}
+            display="flex"
+            flexWrap="wrap"
+            width="84%"
+            justifyContent="space-between"
+          >
+            <Box
+              display="flex"
+              gap={2}
+              flexWrap="wrap"
+              mb={{ xs: "20", sm: 0 }}
+            >
+              <CustomButton
+                title={`Sort price`}
+                handleClick={() => {}}
+                backgroundColor="#475be8"
+                color="#fcfcfc"
+              />
+            </Box>
+          </Box>
         </Stack>
       </Box>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
