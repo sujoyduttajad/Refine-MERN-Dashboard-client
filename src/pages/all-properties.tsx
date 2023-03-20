@@ -9,6 +9,14 @@ const AllProperties = () => {
 
   const {
     tableQueryResult: { data, isLoading, isError },
+    current,
+    setCurrent,
+    pageCount,
+    setPageSize,
+    sorter,
+    setSorter,
+    filters,
+    setFilters,
   } = useTable();
 
   const allProperties = data?.data ?? [];
