@@ -26,6 +26,15 @@ const AllProperties = () => {
 
   return (
     <Box>
+      <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
+        <Stack>
+          <Typography fontSize={25} fontWeight={700} color="#11142d">
+            {!allProperties.length
+              ? "There are no properties"
+              : "All Properties"}
+          </Typography>
+        </Stack>
+      </Box>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Typography fontSize={25} fontWeight={700} color="#11142d">
           All Properties
