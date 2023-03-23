@@ -121,7 +121,7 @@ const AllProperties = () => {
       </Box>
 
       {allProperties.length > 0 && (
-        <Box display="flex" gap={2} mt={3} flexWrap="wrap">
+        <Box display="flex" alignItems="center" gap={2} mt={3} flexWrap="wrap">
           <CustomButton
             title="Previous"
             handleClick={() => setCurrent((prev) => prev - 1)}
@@ -148,6 +148,23 @@ const AllProperties = () => {
             color="#fcfcfc"
             disabled={current === pageCount}
           />
+
+          <Select
+            variant="outlined"
+            color="info"
+            displayEmpty
+            required
+            defaultValue={10}
+            onChange={() => {}}
+            sx={{ height: "40px" }}
+            inputProps={{ "aria-label": "Without label" }}
+          >
+            {[10, 25, 50].map((size) => (
+              <MenuItem key={size} value={size}>
+                Show {size}
+              </MenuItem>
+            ))}
+          </Select>
         </Box>
       )}
     </Box>
