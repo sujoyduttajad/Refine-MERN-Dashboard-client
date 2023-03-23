@@ -8,6 +8,7 @@ const CustomButton = ({
   color,
   fullWidth,
   icon,
+  disabled,
   heightValue,
   paddingValue,
   fontSizeValue,
@@ -18,12 +19,14 @@ const CustomButton = ({
     <Button
       type={type === "submit" ? "submit" : "button"}
       onClick={handleClick}
+      disabled={disabled}
       sx={{
         flex: fullWidth ? 1 : "unset",
         padding: `${paddingValue ? paddingValue : "10px 15px"}`,
         width: fullWidth ? "100%" : "fit-content",
         minWidth: 130,
-        backgroundColor,
+        backgroundColor: `${disabled ? '#eee' : backgroundColor}`,
+        cursor: `${disabled ? 'not-allowed' : 'pointer'}`,
         color,
         height: `${heightValue ? heightValue : "fit-content"}`,
         fontSize: `${fontSizeValue ? fontSizeValue : 16}`,
