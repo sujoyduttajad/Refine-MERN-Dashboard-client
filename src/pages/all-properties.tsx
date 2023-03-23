@@ -57,6 +57,8 @@ const AllProperties = () => {
               display="flex"
               gap={2}
               flexWrap="wrap"
+              alignItems="center"
+              sx={{ width: "80%"}}
               mb={{ xs: "20", sm: 0 }}
             >
               <CustomButton
@@ -75,6 +77,7 @@ const AllProperties = () => {
                 onChange={() => {}}
                 placeholder="Search by Title"
                 size="small"
+                sx={{ width: "50%"}}
               />
               <Select
                 variant="outlined"
@@ -121,7 +124,7 @@ const AllProperties = () => {
       </Box>
 
       {allProperties.length > 0 && (
-        <Box display="flex" alignItems="center" gap={2} mt={3} flexWrap="wrap">
+        <Box display="flex" alignItems="center" gap={3} mt={8} flexWrap="wrap">
           <CustomButton
             title="Previous"
             handleClick={() => setCurrent((prev) => prev - 1)}
