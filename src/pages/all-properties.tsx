@@ -129,6 +129,7 @@ const AllProperties = () => {
             color="#fcfcfc"
             disabled={!(current > 1)}
           />
+
           <Box
             display={{ xs: "hidden", sm: "flex" }}
             alignItems="center"
@@ -139,6 +140,14 @@ const AllProperties = () => {
               {current} of {pageCount}
             </strong>
           </Box>
+
+          <CustomButton
+            title="Next"
+            handleClick={() => setCurrent((prev) => prev + 1)}
+            backgroundColor="#475be8"
+            color="#fcfcfc"
+            disabled={current === pageCount}
+          />
         </Box>
       )}
     </Box>
