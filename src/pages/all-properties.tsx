@@ -129,6 +129,13 @@ const AllProperties = () => {
             color="#fcfcfc"
             disabled={!(current > 1)}
           />
+          <Box
+            display={{ xs: "hidden", sm: "flex" }}
+            alignItems="center"
+            gap="5px"
+          >
+            Page {  }
+          </Box>
         </Box>
       )}
     </Box>
