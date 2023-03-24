@@ -1,17 +1,10 @@
 import React, { useContext } from "react";
 import { useGetIdentity } from "@pankod/refine-core";
-import {
-  AppBar,
-  Stack,
-  Toolbar,
-  Typography,
-  Avatar,
-} from "@pankod/refine-mui";
+import { AppBar, Stack, Toolbar, Typography, Avatar } from "@pankod/refine-mui";
 
 import { ColorModeContext } from "contexts";
 
 export const Header: React.FC = () => {
-
   const { data: user } = useGetIdentity();
   const shouldRenderHeader = true; // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
 
@@ -36,7 +29,12 @@ export const Header: React.FC = () => {
             justifyContent="center"
           >
             {user?.name ? (
-              <Typography variant="subtitle2">{user?.name}</Typography>
+              <Typography
+                sx={{ textTransform: "capitalize" }}
+                variant="subtitle2"
+              >
+                {user?.name}
+              </Typography>
             ) : null}
             {user?.avatar ? (
               <Avatar src={user?.avatar} alt={user?.name} />
