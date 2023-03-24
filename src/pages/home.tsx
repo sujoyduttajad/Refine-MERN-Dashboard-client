@@ -1,5 +1,4 @@
-
-import { useList } from "@pankod/refine-core"
+import { useList } from "@pankod/refine-core";
 import {
   PieChart,
   PropertyCard,
@@ -15,6 +14,10 @@ const Home = () => {
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142D">
         Dashboard
+        <Typography variant="subtitle2" gutterBottom sx={{ color: "#9F9F9F"}}>
+          (All the data are dummy at first but as soon as you start
+          uploading Properties the data changes dynamically)
+        </Typography>
       </Typography>
       <Box mt="20px" display="flex" flexWrap="wrap" gap={4}>
         <PieChart
@@ -43,9 +46,9 @@ const Home = () => {
         />
       </Box>
 
-      <Stack 
-        mt="25px" 
-        width={"100%"} 
+      <Stack
+        mt="25px"
+        width={"100%"}
         direction={{ xs: "column", lg: "row" }}
         gap={4}
       >
