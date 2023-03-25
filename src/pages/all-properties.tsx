@@ -28,6 +28,12 @@ const AllProperties = () => {
 
   const allProperties = data?.data ?? [];
 
+  const currentPrice = sorter.find((item) => item.field === "price")?.order;
+
+  const toggleSort = (field: string) => {
+    setSorter([{ field, order: currentPrice === "asc" ? "desc" : "asc" }])
+  }
+
   if (isLoading) return <Typography>Loading...</Typography>;
   if (isError) return <Typography>Error...</Typography>;
 
@@ -58,11 +64,11 @@ const AllProperties = () => {
               gap={2}
               flexWrap="wrap"
               alignItems="center"
-              sx={{ width: "80%"}}
+              sx={{ width: "80%" }}
               mb={{ xs: "20", sm: 0 }}
             >
               <CustomButton
-                title="Sort price"
+                title={`Sort price ${currentPrice === 'asc' ? '↑' : '↓' }`}
                 handleClick={() => {}}
                 backgroundColor="#475be8"
                 color="#fcfcfc"
@@ -77,7 +83,7 @@ const AllProperties = () => {
                 onChange={() => {}}
                 placeholder="Search by Title"
                 size="small"
-                sx={{ width: "50%"}}
+                sx={{ width: "50%" }}
               />
               <Select
                 variant="outlined"
