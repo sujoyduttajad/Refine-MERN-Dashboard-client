@@ -69,7 +69,7 @@ const AllProperties = () => {
             >
               <CustomButton
                 title={`Sort price ${currentPrice === 'asc' ? '↑' : '↓' }`}
-                handleClick={() => {}}
+                handleClick={() => toggleSort('price')}
                 backgroundColor="#475be8"
                 color="#fcfcfc"
                 heightValue="40px"
