@@ -34,7 +34,6 @@ const AllProperties = () => {
     setSorter([{ field, order: currentPrice === "asc" ? "desc" : "asc" }]);
   };
 
-
   if (isLoading) return <Typography>Loading...</Typography>;
   if (isError) return <Typography>Error...</Typography>;
 
@@ -119,11 +118,13 @@ const AllProperties = () => {
       {currentPrice ? (
         currentPrice === "asc" ? (
           <Typography variant="body2">
-            Properties listed from cheapest to most expensive
+            Properties listed from <strong>cheapest</strong> to{" "}
+            <strong>most expensive</strong>
           </Typography>
         ) : (
           <Typography variant="body2">
-            Properties listed from most expensive to cheapest
+            Properties listed from <strong>most expensive</strong> to{" "}
+            <strong>cheapest</strong>
           </Typography>
         )
       ) : (
