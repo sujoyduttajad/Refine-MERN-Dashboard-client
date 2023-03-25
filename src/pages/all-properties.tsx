@@ -31,15 +31,21 @@ const AllProperties = () => {
 
   const currentPrice = sorter.find((item) => item.field === "price")?.order;
 
+  // Sort price filter
   const toggleSort = (field: string) => {
     setSorter([{ field, order: currentPrice === "asc" ? "desc" : "asc" }]);
   };
 
+  // Search filter
   const currentFilterValues = useMemo(() => {
-    const logicalFilters = filters.flatMap((item) => (
-      'field' in item ? item : []
-    ))
-  }, [filters])
+    const logicalFilters = filters.flatMap((item) =>
+      "field" in item ? item : []
+    );
+
+    return {
+      title: logicalFilters.find((item) => item.field === "title")?.value || "",
+    };
+  }, [filters]);
 
   if (isLoading) return <Typography>Loading...</Typography>;
   if (isError) return <Typography>Error...</Typography>;
