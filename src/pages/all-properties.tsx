@@ -10,6 +10,7 @@ import {
 } from "@pankod/refine-mui";
 import { useNavigate } from "@pankod/refine-react-router-v6";
 import { PropertyCard, CustomButton } from "components";
+import { useMemo } from "react";
 
 const AllProperties = () => {
   const navigate = useNavigate();
@@ -33,6 +34,12 @@ const AllProperties = () => {
   const toggleSort = (field: string) => {
     setSorter([{ field, order: currentPrice === "asc" ? "desc" : "asc" }]);
   };
+
+  const currentFilterValues = useMemo(() => {
+    const logicalFilters = filters.flatMap((item) => (
+      'field' in item ? item : []
+    ))
+  }, [filters])
 
   if (isLoading) return <Typography>Loading...</Typography>;
   if (isError) return <Typography>Error...</Typography>;
