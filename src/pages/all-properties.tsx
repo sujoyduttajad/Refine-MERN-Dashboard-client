@@ -92,8 +92,16 @@ const AllProperties = () => {
               <TextField
                 variant="outlined"
                 color="info"
-                value=""
-                onChange={() => {}}
+                value={currentFilterValues.title}
+                onChange={(e) => {
+                  setFilters([
+                    {
+                      field: 'title',
+                      operator: 'contains',
+                      value: e.currentTarget.value ? e.currentTarget.value : undefined
+                    }
+                  ])
+                }}
                 placeholder="Search by Title"
                 size="small"
                 sx={{ width: "50%" }}
