@@ -20,6 +20,7 @@ const PropertyCard = ({
   location,
   photo,
 }: PropertyCardProps) => {
+  console.log(price)
   return (
     <Card
       component={Link}
