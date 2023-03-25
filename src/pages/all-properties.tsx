@@ -34,6 +34,7 @@ const AllProperties = () => {
     setSorter([{ field, order: currentPrice === "asc" ? "desc" : "asc" }]);
   };
 
+
   if (isLoading) return <Typography>Loading...</Typography>;
   if (isError) return <Typography>Error...</Typography>;
 
@@ -115,6 +116,19 @@ const AllProperties = () => {
           </Box>
         </Stack>
       </Box>
+      {currentPrice ? (
+        currentPrice === "asc" ? (
+          <Typography variant="body2">
+            Properties listed from cheapest to most expensive
+          </Typography>
+        ) : (
+          <Typography variant="body2">
+            Properties listed from most expensive to cheapest
+          </Typography>
+        )
+      ) : (
+        ""
+      )}
 
       <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
         {allProperties.map((property) => (
