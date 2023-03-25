@@ -47,8 +47,36 @@ const AllProperties = () => {
     };
   }, [filters]);
 
-  if (isLoading) return <Typography>Loading...</Typography>;
-  if (isError) return <Typography>Error...</Typography>;
+  if (isLoading)
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: 3,
+          width: "100%",
+        }}
+      >
+        <Typography variant="h3">Loading...</Typography>
+      </Box>
+    );
+  if (isError)
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: 3,
+          width: "100%",
+        }}
+      >
+        <Typography variant="h3">Error...</Typography>
+      </Box>
+    );
 
   return (
     <Box>
@@ -96,11 +124,13 @@ const AllProperties = () => {
                 onChange={(e) => {
                   setFilters([
                     {
-                      field: 'title',
-                      operator: 'contains',
-                      value: e.currentTarget.value ? e.currentTarget.value : undefined
-                    }
-                  ])
+                      field: "title",
+                      operator: "contains",
+                      value: e.currentTarget.value
+                        ? e.currentTarget.value
+                        : undefined,
+                    },
+                  ]);
                 }}
                 placeholder="Search by Title"
                 size="small"
