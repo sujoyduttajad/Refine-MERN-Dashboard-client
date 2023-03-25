@@ -124,6 +124,7 @@ const Form = ({
               >
                 <MenuItem value="apartment">Apartment</MenuItem>
                 <MenuItem value="villa">Villa</MenuItem>
+                <MenuItem value="house">House</MenuItem>
                 <MenuItem value="farmhouse">Farmhouse</MenuItem>
                 <MenuItem value="condos">Condos</MenuItem>
                 <MenuItem value="townhouse">Townhouse</MenuItem>
