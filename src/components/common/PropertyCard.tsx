@@ -20,7 +20,7 @@ const PropertyCard = ({
   location,
   photo,
 }: PropertyCardProps) => {
-  console.log(price)
+  console.log(typeof price)
   return (
     <Card
       component={Link}
@@ -79,7 +79,7 @@ const PropertyCard = ({
           height="100%"
         >
           <Typography fontSize={16} fontWeight={700} color="#475be8">
-            {formatter.format(Number(price))}
+            {formatter.format(price)}
           </Typography>
         </Box>
       </CardContent>
