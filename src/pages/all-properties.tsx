@@ -56,10 +56,15 @@ const AllProperties = () => {
           justifyContent: "center",
           flexWrap: "wrap",
           gap: 3,
+          padding: "3rem",
           width: "100%",
+          borderRadius: "10px",
+          backgroundColor: "#E7E9FC",
         }}
       >
-        <Typography variant="h3">Loading...</Typography>
+        <Typography variant="h3" fontSize={25} fontWeight={700} color="#11142d">
+          Loading...
+        </Typography>
       </Box>
     );
   if (isError)
@@ -71,10 +76,15 @@ const AllProperties = () => {
           justifyContent: "center",
           flexWrap: "wrap",
           gap: 3,
+          padding: "3rem",
           width: "100%",
+          borderRadius: "10px",
+          backgroundColor: "#E7E9FC",
         }}
       >
-        <Typography variant="h3">Error...</Typography>
+        <Typography variant="h3" fontSize={25} fontWeight={700} color="#E84558">
+          Oops we have an Error
+        </Typography>
       </Box>
     );
 
