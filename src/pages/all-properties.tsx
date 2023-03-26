@@ -12,6 +12,18 @@ import { useNavigate } from "@pankod/refine-react-router-v6";
 import { PropertyCard, CustomButton } from "components";
 import { useMemo } from "react";
 
+const propertyTypeList = [
+  "Apartment",
+  "Villa",
+  "House",
+  "Farmhouse",
+  "Condos",
+  "Townhouse",
+  "Duplex",
+  "Studio",
+  "Chalet",
+];
+
 const AllProperties = () => {
   const navigate = useNavigate();
 
@@ -155,12 +167,24 @@ const AllProperties = () => {
                 displayEmpty
                 required
                 defaultValue=""
-                value=""
-                onChange={() => {}}
+                value={currentFilterValues.propertyType}
+                onChange={(e) => {
+                  setFilters(
+                    [
+                      {
+                        field: "propertyType",
+                        operator: "eq",
+                        value: e.target.value,
+                      },
+                    ],
+                    "replace"
+                  );
+                }}
                 sx={{ height: "40px" }}
                 inputProps={{ "aria-label": "Without label" }}
               >
                 <MenuItem value="">All</MenuItem>
+                
               </Select>
             </Box>
             <Stack
