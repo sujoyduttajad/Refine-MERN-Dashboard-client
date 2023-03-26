@@ -184,7 +184,11 @@ const AllProperties = () => {
                 inputProps={{ "aria-label": "Without label" }}
               >
                 <MenuItem value="">All</MenuItem>
-                
+                {propertyTypeList.map((type) => (
+                  <MenuItem key={type} value={type.toLowerCase()}>
+                    {type}
+                  </MenuItem>
+                ))}
               </Select>
             </Box>
             <Stack
@@ -267,7 +271,9 @@ const AllProperties = () => {
             displayEmpty
             required
             defaultValue={10}
-            onChange={() => {}}
+            onChange={(e) =>
+              setPageSize(e.target.value ? Number(e.target.value) : 10)
+            }
             sx={{ height: "40px" }}
             inputProps={{ "aria-label": "Without label" }}
           >
