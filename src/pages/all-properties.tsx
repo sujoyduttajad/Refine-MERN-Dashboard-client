@@ -49,7 +49,7 @@ const AllProperties = () => {
     setSorter([{ field, order: currentPrice === "asc" ? "desc" : "asc" }]);
   };
 
-  // Search filter
+  // Search filter and Dropdown
   const currentFilterValues = useMemo(() => {
     const logicalFilters = filters.flatMap((item) =>
       "field" in item ? item : []
