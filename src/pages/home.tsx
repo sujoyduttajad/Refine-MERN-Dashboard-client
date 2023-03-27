@@ -1,4 +1,4 @@
-import { useList } from "@pankod/refine-core";
+import { useTable } from "@pankod/refine-core";
 import {
   PieChart,
   PropertyCard,
@@ -10,6 +10,12 @@ import { Typography, Box, Stack } from "@pankod/refine-mui";
 
 // Dashboard page
 const Home = () => {
+  const {
+    tableQueryResult: { data, isLoading, isError },
+  } = useTable();
+
+  const allProperties = data?.data ?? [];
+  console.log(allProperties)
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142D">
