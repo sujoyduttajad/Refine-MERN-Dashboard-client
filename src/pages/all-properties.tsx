@@ -10,7 +10,7 @@ import {
 } from "@pankod/refine-mui";
 import { useNavigate } from "@pankod/refine-react-router-v6";
 import { PropertyCard, CustomButton } from "components";
-import { Loading } from "components/common/Loading&Error";
+import { Error, Loading } from "components/common/Loading&Error";
 import { useMemo } from "react";
 
 const propertyTypeList = [
@@ -63,30 +63,8 @@ const AllProperties = () => {
     };
   }, [filters]);
 
-  if (isLoading)
-    return (
-      <Loading />
-    );
-  if (isError)
-    return (
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexWrap: "wrap",
-          gap: 3,
-          padding: "3rem",
-          width: "100%",
-          borderRadius: "10px",
-          backgroundColor: "#E7E9FC",
-        }}
-      >
-        <Typography variant="h3" fontSize={25} fontWeight={700} color="#E84558">
-          Oops we have an Error
-        </Typography>
-      </Box>
-    );
+  if (isLoading) return <Loading />;
+  if (isError) return <Error />;
 
   return (
     <Box>
