@@ -15,7 +15,8 @@ const Home = () => {
   } = useTable();
 
   const allProperties = data?.data ?? [];
-  console.log(allProperties)
+  console.log(allProperties);
+  
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142D">
