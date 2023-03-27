@@ -10,22 +10,22 @@ import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const baseURL = "http://localhost:8080/api/v1/users";
+const baseURL = "http://localhost:8080/api/v1/properties";
 
 // Dashboard page
 const Home = () => {
-  const [post, setPost] = useState(null);
+  const [propertyData, setPropertyData] = useState(null);
 
   // Not working
   useEffect(() => {
     axios.get(baseURL).then((response) => {
-      setPost(response.data);
+      setPropertyData(response.data);
     });
   }, []);
 
-  console.log(post)
+  console.log(propertyData)
 
-  // if (!post) return null;
+  if (!propertyData) return null;
 
   return (
     <Box>
