@@ -35,7 +35,7 @@ export function Error() {
         padding: "3rem",
         width: "100%",
         borderRadius: "10px",
-        backgroundColor: "#E7E9FC",
+        backgroundColor: "#FCE4E7",
       }}
     >
       <Typography variant="h3" fontSize={25} fontWeight={700} color="#E84558">
