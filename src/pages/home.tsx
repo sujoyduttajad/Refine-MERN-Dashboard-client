@@ -7,19 +7,25 @@ import {
   TopAgent,
 } from "components";
 import { Typography, Box, Stack } from "@pankod/refine-mui";
-import { Error, Loading } from "components/common/Loading&Error";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+const baseURL = "http://localhost:8080/api/v1/users";
 
 // Dashboard page
 const Home = () => {
-  const {
-    tableQueryResult: { data, isLoading, isError },
-  } = useTable();
+  const [post, setPost] = useState(null);
 
-  const allProperties = data?.data ?? [];
-  console.log(allProperties);
+  // Not working
+  useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
 
-  if (isLoading) return <Loading />;
-  if (isError) return <Error />;
+  console.log(post)
+
+  // if (!post) return null;
 
   return (
     <Box>
