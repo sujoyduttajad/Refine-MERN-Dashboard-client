@@ -7,6 +7,7 @@ import {
   TopAgent,
 } from "components";
 import { Typography, Box, Stack } from "@pankod/refine-mui";
+import { Error, Loading } from "components/common/Loading&Error";
 
 // Dashboard page
 const Home = () => {
@@ -16,7 +17,10 @@ const Home = () => {
 
   const allProperties = data?.data ?? [];
   console.log(allProperties);
-  
+
+  if (isLoading) return <Loading />;
+  if (isError) return <Error />;
+
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142D">
