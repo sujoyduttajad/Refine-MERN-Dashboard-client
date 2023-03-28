@@ -5,8 +5,12 @@ import { TotalRevenueOptions, TotalRevenueSeries } from "./chart.config";
 import { arrowUp } from "assets";
 import { PropertyListValues } from "interfaces/property";
 
+interface TotalPrice {
+  totalPrice: number
+}
 
-const TotalRevenue = ({ id, creator, price } : PropertyListValues) => {
+const TotalRevenue = ({ totalPrice }: TotalPrice) => {
+  console.log(totalPrice);
   return (
     <Box
       p={4}
@@ -22,10 +26,7 @@ const TotalRevenue = ({ id, creator, price } : PropertyListValues) => {
       </Typography>
       <Stack my="20px" direction="row" gap={4} flexWrap="wrap">
         <Typography fontSize={28} fontWeight={700} color="#11142d">
-          {
-            
-          }
-          $236,535
+          {totalPrice ? totalPrice : "$236,535"}
         </Typography>
         <Stack direction="row" alignItems="center" gap={1}>
           {/* <ArrowCircleUpRounded sx={{ fontSize: 25, color: "#475be8" }} /> */}
@@ -43,7 +44,7 @@ const TotalRevenue = ({ id, creator, price } : PropertyListValues) => {
         </Stack>
       </Stack>
 
-      <ReactApexChart 
+      <ReactApexChart
         series={TotalRevenueSeries}
         type="bar"
         height={310}
