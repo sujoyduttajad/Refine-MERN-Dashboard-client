@@ -69,7 +69,7 @@ const Home = () => {
         direction={{ xs: "column", lg: "row" }}
         gap={4}
       >
-        <TotalRevenue />
+        <TotalRevenue propertyData={propertyData} />
         <PropertyReferrals />
       </Stack>
     </Box>
