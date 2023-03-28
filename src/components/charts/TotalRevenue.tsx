@@ -3,9 +3,10 @@ import ReactApexChart from "react-apexcharts";
 import { ArrowCircleUpRounded } from "@mui/icons-material";
 import { TotalRevenueOptions, TotalRevenueSeries } from "./chart.config";
 import { arrowUp } from "assets";
+import { PropertyListValues } from "interfaces/property";
 
 
-const TotalRevenue = () => {
+const TotalRevenue = ({ id, creator, price } : PropertyListValues) => {
   return (
     <Box
       p={4}
