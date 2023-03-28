@@ -23,17 +23,46 @@ const Home = () => {
     });
   }, []);
 
-  console.log(propertyData)
-
   if (!propertyData) return null;
+
+
+  type PropertyInterface = {
+    _id: string
+    creator: string
+    description: string
+    location: string
+    photo: string
+    price: number
+    propertyType: string
+    title: string
+ }
+
+  const totalRevenue = (): number => {
+    return (
+      propertyData &&
+      (propertyData as PropertyInterface[])
+        .map((ele) => ele.price)
+        .reduce((a: number, b: number) => a + b)
+    );
+  };
+  
+  console.log(totalRevenue())
+
+  // const totalRevenue = () => {
+  //   return propertyData && propertyData
+  //   .map((ele) => ele.price)
+  //   .reduce((a, b) => a + b);
+  // }
+
+  console.log(propertyData);
 
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142D">
         Dashboard
-        <Typography variant="subtitle2" gutterBottom sx={{ color: "#9F9F9F"}}>
-          (All the data are dummy at first but as soon as you start
-          uploading Properties the data changes dynamically)
+        <Typography variant="subtitle2" gutterBottom sx={{ color: "#9F9F9F" }}>
+          (All the data are dummy at first but as soon as you start uploading
+          Properties the data changes dynamically)
         </Typography>
       </Typography>
       <Box mt="20px" display="flex" flexWrap="wrap" gap={4}>
@@ -69,7 +98,7 @@ const Home = () => {
         direction={{ xs: "column", lg: "row" }}
         gap={4}
       >
-        <TotalRevenue propertyData={propertyData} />
+        <TotalRevenue />
         <PropertyReferrals />
       </Stack>
     </Box>
