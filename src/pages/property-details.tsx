@@ -6,7 +6,15 @@ import { ChatBubble, Delete, Edit, Phone, Place, Star } from '@mui/icons-materia
 import { CustomButton } from 'components';
 
 const PropertyDetails = () => {
+
   const navigate = useNavigate();
+  const { data: user } = useGetIdentity();
+  // ID of the current resource we are trying to view
+  const { id } = useParams();
+  // To quickly delete a resource
+  const { mutate } = useDelete();
+  const { queryResult } = useShow();
+
   return (
     <div>PropertyDetails</div>
   )
