@@ -47,12 +47,6 @@ const Home = () => {
   
   let totalPrice: number = totalRevenue();
 
-  // const totalRevenue = () => {
-  //   return propertyData && propertyData
-  //   .map((ele) => ele.price)
-  //   .reduce((a, b) => a + b);
-  // }
-
   console.log(propertyData);
 
   return (
