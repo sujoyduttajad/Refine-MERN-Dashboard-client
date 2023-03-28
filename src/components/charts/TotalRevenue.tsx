@@ -3,7 +3,6 @@ import ReactApexChart from "react-apexcharts";
 import { ArrowCircleUpRounded } from "@mui/icons-material";
 import { TotalRevenueOptions, TotalRevenueSeries } from "./chart.config";
 import { arrowUp } from "assets";
-import { PropertyListValues } from "interfaces/property";
 import { formatter } from "utils/functions";
 
 interface TotalPrice {
