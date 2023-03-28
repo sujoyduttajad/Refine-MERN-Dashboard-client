@@ -10,7 +10,7 @@ interface TotalPrice {
 }
 
 const TotalRevenue = ({ totalPrice }: TotalPrice) => {
-  console.log(totalPrice);
+  
   return (
     <Box
       p={4}
