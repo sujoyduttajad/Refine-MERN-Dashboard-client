@@ -16,7 +16,6 @@ const baseURL = "http://localhost:8080/api/v1/properties";
 const Home = () => {
   const [propertyData, setPropertyData] = useState(null);
 
-  // Not working
   useEffect(() => {
     axios.get(baseURL).then((response) => {
       setPropertyData(response.data);
@@ -46,7 +45,7 @@ const Home = () => {
     );
   };
   
-  console.log(totalRevenue())
+  let totalPrice: number = totalRevenue();
 
   // const totalRevenue = () => {
   //   return propertyData && propertyData
@@ -98,7 +97,7 @@ const Home = () => {
         direction={{ xs: "column", lg: "row" }}
         gap={4}
       >
-        <TotalRevenue />
+        <TotalRevenue totalPrice={totalPrice} />
         <PropertyReferrals />
       </Stack>
     </Box>
