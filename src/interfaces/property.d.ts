@@ -20,3 +20,14 @@ export interface PropertyCardProps {
     price: number;
     photo: string;
 }
+
+export interface PropertyListValues {
+    id?: string;
+    creator?: string;
+    title?: string;
+    description?: string;
+    propertyType?: string;
+    location?: string;
+    photo?: string;
+    price: number | undefined;
+}
