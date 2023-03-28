@@ -24,7 +24,7 @@ const Home = () => {
 
   if (!propertyData) return null;
 
-
+  // Total Revenue Calculate
   type PropertyInterface = {
     _id: string
     creator: string
@@ -35,7 +35,6 @@ const Home = () => {
     propertyType: string
     title: string
  }
-
   const totalRevenue = (): number => {
     return (
       propertyData &&
@@ -44,8 +43,10 @@ const Home = () => {
         .reduce((a: number, b: number) => a + b)
     );
   };
-  
   let totalPrice: number = totalRevenue();
+
+  // Total Properties Calculate
+  const totalProperties: number = (propertyData as PropertyInterface[])?.length;
 
   console.log(propertyData);
 
@@ -61,7 +62,7 @@ const Home = () => {
       <Box mt="20px" display="flex" flexWrap="wrap" gap={4}>
         <PieChart
           title="Properties for Sale"
-          value={684}
+          value={totalProperties ? totalProperties : 684}
           colors={["#475be8", "#D7DBFA"]}
           series={[75, 25]}
         />
@@ -70,6 +71,7 @@ const Home = () => {
           value={550}
           colors={["#18C784", "#C9F8E6"]}
           series={[60, 40]}
+          
         />
         <PieChart
           title="Total Customers"
