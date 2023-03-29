@@ -12,7 +12,7 @@ const CreateProperty = () => {
 
   // Details type toggle button
   const [alignment, setAlignment] = useState("sale");
-  const handleDetailsChange = (event, newAlignment) => {
+  const handleDetailsChange = (newAlignment: string) => {
     setAlignment(newAlignment);
   };
 
