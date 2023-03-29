@@ -39,6 +39,8 @@ export interface FormProps {
     ) => Promise<
         void | CreateResponse<BaseRecord> | UpdateResponse<BaseRecord>
     >;
+    alignment: string;
+    handleDetailsChange: (newAlignment: string) => void;
     formLoading: boolean;
     handleSubmit: FormEventHandler<HTMLFormElement> | undefined;
     handleImageChange: (file) => void;
