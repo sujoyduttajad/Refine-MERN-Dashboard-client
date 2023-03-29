@@ -47,7 +47,7 @@ const Form = ({
           onSubmit={handleSubmit(onFinishHandler)}
         >
           <Stack direction="row" gap={4}>
-            <FormControl>
+            <FormControl sx={{ width: "60%" }}>
               <FormHelperText
                 sx={{
                   fontWeight: 500,
@@ -79,7 +79,7 @@ const Form = ({
                   color: "#11142d",
                 }}
               >
-                Enter property price
+                Detail Type
               </FormHelperText>
               <TextField
                 required
