@@ -9,6 +9,8 @@ import {
   Select,
   MenuItem,
   Button,
+  ToggleButtonGroup,
+  ToggleButton,
 } from "@pankod/refine-mui";
 
 import { FormProps } from "interfaces/common";
@@ -81,17 +83,17 @@ const Form = ({
               >
                 Detail Type
               </FormHelperText>
-              <TextField
-                required
-                id="outlined-basic"
-                color="info"
-                type="number"
-                sx={{
-                  backgroundColor: "#fff",
-                }}
-                variant="outlined"
-                {...register("price", { required: true })}
-              />
+              <ToggleButtonGroup
+               color="primary"
+               value={alignment}
+               exclusive
+               onChange={handleChange}
+               aria-label="Create-Property"
+               {...register("detailType", { required: true })}
+              >
+                <ToggleButton value="sale">Sale</ToggleButton>
+                <ToggleButton value="rent">Rent</ToggleButton>
+              </ToggleButtonGroup>
             </FormControl>
           </Stack>
           <FormControl>
