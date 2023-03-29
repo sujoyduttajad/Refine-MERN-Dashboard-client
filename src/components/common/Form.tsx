@@ -46,29 +46,54 @@ const Form = ({
           }}
           onSubmit={handleSubmit(onFinishHandler)}
         >
-          <FormControl>
-            <FormHelperText
-              sx={{
-                fontWeight: 500,
-                margin: "10px 0",
-                fontSize: 16,
-                color: "#11142d",
-              }}
-            >
-              Enter property name
-            </FormHelperText>
-            <TextField
-              fullWidth
-              required
-              id="outlined-basic"
-              color="info"
-              sx={{
-                backgroundColor: "#fff",
-              }}
-              variant="outlined"
-              {...register("title", { required: true })}
-            />
-          </FormControl>
+          <Stack direction="row" gap={4}>
+            <FormControl>
+              <FormHelperText
+                sx={{
+                  fontWeight: 500,
+                  margin: "10px 0",
+                  fontSize: 16,
+                  color: "#11142d",
+                }}
+              >
+                Enter property name
+              </FormHelperText>
+              <TextField
+                fullWidth
+                required
+                id="outlined-basic"
+                color="info"
+                sx={{
+                  backgroundColor: "#fff",
+                }}
+                variant="outlined"
+                {...register("title", { required: true })}
+              />
+            </FormControl>
+            <FormControl sx={{ width: "40%" }}>
+              <FormHelperText
+                sx={{
+                  fontWeight: 500,
+                  margin: "10px 0",
+                  fontSize: 16,
+                  color: "#11142d",
+                }}
+              >
+                Enter property price
+              </FormHelperText>
+              <TextField
+                required
+                id="outlined-basic"
+                color="info"
+                type="number"
+                sx={{
+                  backgroundColor: "#fff",
+                }}
+                variant="outlined"
+                {...register("price", { required: true })}
+              />
+            </FormControl>
+          </Stack>
           <FormControl>
             <FormHelperText
               sx={{
@@ -222,9 +247,9 @@ const Form = ({
             </Typography>
           </Stack>
 
-          <CustomButton 
+          <CustomButton
             type="submit"
-            title={formLoading ? 'Submitting...' : 'Submit'}
+            title={formLoading ? "Submitting..." : "Submit"}
             backgroundColor="#475be8"
             color="#fcfcfc"
           />
