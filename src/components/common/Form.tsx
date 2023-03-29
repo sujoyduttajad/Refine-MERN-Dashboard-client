@@ -20,6 +20,8 @@ const Form = ({
   type,
   register,
   onFinish,
+  alignment,
+  handleDetailsChange,
   formLoading,
   handleSubmit,
   handleImageChange,
@@ -84,11 +86,11 @@ const Form = ({
                 Detail Type
               </FormHelperText>
               <ToggleButtonGroup
-               color="primary"
-              //  value={alignment}
-               exclusive
-              //  onChange={handleChange}
-               {...register("detailType", { required: true })}
+                color="primary"
+                value={alignment}
+                exclusive
+                onChange={() => handleDetailsChange(alignment)}
+                {...register("detailType", { required: true })}
               >
                 <ToggleButton value="sale">Sale</ToggleButton>
                 <ToggleButton value="rent">Rent</ToggleButton>
