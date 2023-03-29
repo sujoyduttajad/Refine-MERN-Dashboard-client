@@ -85,9 +85,9 @@ const Form = ({
               </FormHelperText>
               <ToggleButtonGroup
                color="primary"
-               value={alignment}
+              //  value={alignment}
                exclusive
-               onChange={handleChange}
+              //  onChange={handleChange}
                aria-label="Create-Property"
                {...register("detailType", { required: true })}
               >
