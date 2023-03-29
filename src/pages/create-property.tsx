@@ -9,6 +9,12 @@ const CreateProperty = () => {
   const { data: user } = useGetIdentity();
 
   const [propertyImage, setPropertyImage] = useState({ name: "", url: "" });
+  const [alignment, setAlignment] = useState('web');
+
+  const handleChange = (event, newAlignment) => {
+    setAlignment(newAlignment);
+  };
+  
   const {
     refineCore: { onFinish, formLoading },
     register,
@@ -30,6 +36,8 @@ const CreateProperty = () => {
     
     await onFinish({ ...data, photo: propertyImage.url, email: user.email })
   };
+
+
 
   // Rendering a reusable form
   return (
