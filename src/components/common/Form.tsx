@@ -88,7 +88,6 @@ const Form = ({
               //  value={alignment}
                exclusive
               //  onChange={handleChange}
-               aria-label="Create-Property"
                {...register("detailType", { required: true })}
               >
                 <ToggleButton value="sale">Sale</ToggleButton>
