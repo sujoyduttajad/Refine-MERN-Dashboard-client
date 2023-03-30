@@ -21,6 +21,7 @@ import {
   ChevronRight,
   MenuRounded,
   Dashboard,
+  GridViewOutlined,
 } from "@mui/icons-material";
 import {
   CanAccess,
@@ -253,7 +254,7 @@ export const Sider: typeof DefaultSider = ({ render }) => {
               color: "#808191",
             }}
           >
-            <Dashboard />
+            <GridViewOutlined />
           </ListItemIcon>
           <ListItemText
             primary={translate("dashboard.title", "Dashboard")}
