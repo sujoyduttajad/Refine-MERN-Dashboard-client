@@ -40,7 +40,7 @@ export interface FormProps {
         void | CreateResponse<BaseRecord> | UpdateResponse<BaseRecord>
     >;
     alignment: string;
-    handleDetailsChange: (newAlignment: string) => void;
+    handleDetailsChange: MouseEvent<HTMLElement>;
     formLoading: boolean;
     handleSubmit: FormEventHandler<HTMLFormElement> | undefined;
     handleImageChange: (file) => void;
