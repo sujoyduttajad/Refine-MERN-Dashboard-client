@@ -14,7 +14,7 @@ const CreateProperty = () => {
   const [alignment, setAlignment] = useState<string>("sale");
   const handleDetailsChange = (
     event: React.MouseEvent<HTMLElement>,
-    newAlignment: string | null
+    newAlignment: string
   ) => {
     console.log(event, newAlignment);
     setAlignment(newAlignment);
