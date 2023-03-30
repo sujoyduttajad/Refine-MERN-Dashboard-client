@@ -20,7 +20,6 @@ import {
   ChevronLeft,
   ChevronRight,
   MenuRounded,
-  Dashboard,
   GridViewOutlined,
 } from "@mui/icons-material";
 import {
