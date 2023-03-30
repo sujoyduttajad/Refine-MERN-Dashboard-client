@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { useGetIdentity } from "@pankod/refine-core";
-import { AppBar, Stack, Toolbar, Typography, Avatar } from "@pankod/refine-mui";
+import { AppBar, Stack, Toolbar, Typography, Avatar, IconButton } from "@pankod/refine-mui";
 
 import { ColorModeContext } from "contexts";
+import { NotificationsOutlined } from "@mui/icons-material";
 
 export const Header: React.FC = () => {
   const { data: user } = useGetIdentity();
@@ -13,7 +14,7 @@ export const Header: React.FC = () => {
       color="default"
       position="sticky"
       elevation={0}
-      sx={{ background: "#E7E9FC" }}
+      sx={{ background: "#fafafa" }}
     >
       <Toolbar>
         <Stack
@@ -28,6 +29,9 @@ export const Header: React.FC = () => {
             alignItems="center"
             justifyContent="center"
           >
+            <IconButton aria-label="notification" sx={{ marginRight: '1.2rem'}}>
+              <NotificationsOutlined />            
+            </IconButton>
             {user?.name ? (
               <Typography
                 sx={{ textTransform: "capitalize" }}
