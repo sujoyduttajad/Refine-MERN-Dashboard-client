@@ -89,7 +89,7 @@ const Form = ({
                 color="primary"
                 value={alignment}
                 exclusive
-                onChange={() => handleDetailsChange(alignment)}
+                onChange={handleDetailsChange}
                 {...register("detailType", { required: true })}
               >
                 <ToggleButton value="sale">Sale</ToggleButton>
