@@ -48,7 +48,7 @@ const Home = () => {
   // Total Properties Calculate
   const totalProperties: number = (propertyData as PropertyInterface[])?.length;
 
-  console.log(propertyData);
+  // console.log(propertyData);
 
   return (
     <Box>
