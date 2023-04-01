@@ -77,6 +77,23 @@ const PropertyDetails = () => {
                 ))}
               </Box>
             </Stack>
+
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <Typography
+                fontSize={18}
+                fontWeight={500}
+                color="#11142d"
+                textTransform="capitalize"
+              >
+                <strong>title: </strong> {propertyDetails.title}
+              </Typography>
+              
+            </Stack>
           </Box>
         </Box>
       </Box>
