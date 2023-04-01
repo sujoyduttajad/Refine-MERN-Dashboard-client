@@ -126,7 +126,12 @@ const PropertyDetails = () => {
                 >
                   Facillity
                 </Typography>
-                <Box>
+                <Box
+                  aria-label="facility-column"
+                  display="flex"
+                  flexDirection="row"
+                  gap={10}
+                >
                   <Stack
                     direction="row"
                     mt={3}
