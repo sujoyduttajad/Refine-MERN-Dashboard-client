@@ -3,6 +3,7 @@ import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { useDelete, useGetIdentity, useShow } from "@pankod/refine-core";
 import { useParams, useNavigate } from "@pankod/refine-react-router-v6";
 import {
+  BathtubOutlined,
   ChatBubble,
   Delete,
   Edit,
@@ -151,9 +152,9 @@ const PropertyDetails = () => {
                     gap={2}
                     flexWrap="wrap"
                   >
-                    <KingBedOutlined sx={{ color: "#808191" }} />
+                    <BathtubOutlined sx={{ color: "#808191" }} />
                     <Typography fontSize={18} fontWeight={500} color="#11142d">
-                      4 Beds
+                      2 Baths
                     </Typography>
                   </Stack>
                 </Box>
