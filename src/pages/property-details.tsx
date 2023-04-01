@@ -10,6 +10,7 @@ import {
   KingBedOutlined,
   Phone,
   Place,
+  SquareFootOutlined,
   Star,
 } from "@mui/icons-material";
 import { CustomButton } from "components";
@@ -155,6 +156,54 @@ const PropertyDetails = () => {
                     <BathtubOutlined sx={{ color: "#808191" }} />
                     <Typography fontSize={18} fontWeight={500} color="#11142d">
                       2 Baths
+                    </Typography>
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    mt={3}
+                    alignItems="center"
+                    gap={2}
+                    flexWrap="wrap"
+                  >
+                    <SquareFootOutlined sx={{ color: "#808191" }} />
+                    <Typography fontSize={18} fontWeight={500} color="#11142d">
+                      28M Area
+                    </Typography>
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    mt={3}
+                    alignItems="center"
+                    gap={2}
+                    flexWrap="wrap"
+                  >
+                    <SquareFootOutlined sx={{ color: "#808191" }} />
+                    <Typography fontSize={18} fontWeight={500} color="#11142d">
+                      28M Area
+                    </Typography>
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    mt={3}
+                    alignItems="center"
+                    gap={2}
+                    flexWrap="wrap"
+                  >
+                    <SquareFootOutlined sx={{ color: "#808191" }} />
+                    <Typography fontSize={18} fontWeight={500} color="#11142d">
+                      28M Area
+                    </Typography>
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    mt={3}
+                    alignItems="center"
+                    gap={2}
+                    flexWrap="wrap"
+                  >
+                    <SquareFootOutlined sx={{ color: "#808191" }} />
+                    <Typography fontSize={18} fontWeight={500} color="#11142d">
+                      28M Area
                     </Typography>
                   </Stack>
                 </Box>
