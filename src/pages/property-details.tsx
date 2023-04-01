@@ -56,8 +56,15 @@ const PropertyDetails = () => {
           />
 
           <Box mt="15px">
-            <Stack>
-              <Typography>{propertyDetails.propertyType}</Typography>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <Typography sx={{ textTransform: "capitalize" }}>
+                <strong>Property type: </strong>{" "}{propertyDetails.propertyType}
+              </Typography>
               <Box>
                 {/* Challenge is to make Rating dynamic */}
                 {[1, 2, 3, 4, 5].map((star) => (
