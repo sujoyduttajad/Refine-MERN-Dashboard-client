@@ -20,8 +20,8 @@ const Form = ({
   type,
   register,
   onFinish,
-  alignment,
-  handleDetailsChange,
+  // alignment,
+  // handleDetailsChange,
   formLoading,
   handleSubmit,
   handleImageChange,
@@ -74,7 +74,7 @@ const Form = ({
                 {...register("title", { required: true })}
               />
             </FormControl>
-            <FormControl sx={{ width: "40%" }}>
+            {/* <FormControl sx={{ width: "40%" }}>
               <FormHelperText
                 sx={{
                   fontWeight: 500,
@@ -95,7 +95,7 @@ const Form = ({
                 <ToggleButton value="sale">Sale</ToggleButton>
                 <ToggleButton value="rent">Rent</ToggleButton>
               </ToggleButtonGroup>
-            </FormControl>
+            </FormControl> */}
           </Stack>
           <FormControl>
             <FormHelperText
