@@ -62,8 +62,13 @@ const PropertyDetails = () => {
               alignItems="center"
               flexWrap="wrap"
             >
-              <Typography sx={{ textTransform: "capitalize" }}>
-                <strong>Property type: </strong>{" "}{propertyDetails.propertyType}
+              <Typography
+                fontSize={18}
+                fontWeight={500}
+                color="#11142d"
+                textTransform="capitalize"
+              >
+                <strong>Property type: </strong> {propertyDetails.propertyType}
               </Typography>
               <Box>
                 {/* Challenge is to make Rating dynamic */}
