@@ -11,14 +11,14 @@ const CreateProperty = () => {
   const [propertyImage, setPropertyImage] = useState({ name: "", url: "" });
 
   // Details type toggle button
-  const [alignment, setAlignment] = useState<string>("sale");
-  const handleDetailsChange = (
-    event: React.MouseEvent<HTMLElement>,
-    newAlignment: string
-  ) => {
-    console.log(event, newAlignment);
-    setAlignment(newAlignment);
-  };
+      // const [alignment, setAlignment] = useState<string>("sale");
+      // const handleDetailsChange = (
+      //   event: React.MouseEvent<HTMLElement>,
+      //   newAlignment: string
+      // ) => {
+      //   console.log(event, newAlignment);
+      //   setAlignment(newAlignment);
+      // };
 
   const {
     refineCore: { onFinish, formLoading },
@@ -53,8 +53,8 @@ const CreateProperty = () => {
       type="Create"
       register={register}
       onFinish={onFinish}
-      alignment={alignment}
-      handleDetailsChange={handleDetailsChange}
+      // alignment={alignment}
+      // handleDetailsChange={handleDetailsChange}
       formLoading={formLoading}
       handleSubmit={handleSubmit}
       handleImageChange={handleImageChange}
