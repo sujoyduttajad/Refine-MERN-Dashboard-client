@@ -1,13 +1,19 @@
-import React from 'react'
-import { Typography, Box, Stack } from '@pankod/refine-mui'
-import { useDelete, useGetIdentity, useShow } from '@pankod/refine-core'
-import { useParams, useNavigate } from '@pankod/refine-react-router-v6';
-import { ChatBubble, Delete, Edit, Phone, Place, Star } from '@mui/icons-material';
-import { CustomButton } from 'components';
-import { Error, Loading } from 'components/common/Loading&Error';
+import React from "react";
+import { Typography, Box, Stack } from "@pankod/refine-mui";
+import { useDelete, useGetIdentity, useShow } from "@pankod/refine-core";
+import { useParams, useNavigate } from "@pankod/refine-react-router-v6";
+import {
+  ChatBubble,
+  Delete,
+  Edit,
+  Phone,
+  Place,
+  Star,
+} from "@mui/icons-material";
+import { CustomButton } from "components";
+import { Error, Loading } from "components/common/Loading&Error";
 
 const PropertyDetails = () => {
-
   const navigate = useNavigate();
   const { data: user } = useGetIdentity();
   // ID of the current resource we are trying to view
@@ -25,8 +31,17 @@ const PropertyDetails = () => {
   if (isError) return <Error />;
 
   return (
-    <div>PropertyDetails</div>
-  )
-}
+    <Box
+      borderRadius="15px"
+      padding="20px"
+      bgcolor="#fcfcfc"
+      width="fit-content"
+    >
+      <Typography fontSize={25} fontWeight={700} color="#11142d">
+        Details
+      </Typography>
+    </Box>
+  );
+};
 
-export default PropertyDetails
+export default PropertyDetails;
