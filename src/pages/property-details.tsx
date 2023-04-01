@@ -170,42 +170,61 @@ const PropertyDetails = () => {
                       28M Area
                     </Typography>
                   </Stack>
-                  <Stack
-                    direction="row"
-                    mt={3}
-                    alignItems="center"
-                    gap={2}
-                    flexWrap="wrap"
+                  <Box
+                    aria-label="facility-column"
+                    display="flex"
+                    flexDirection="row"
+                    gap={10}
                   >
-                    <SquareFootOutlined sx={{ color: "#808191" }} />
-                    <Typography fontSize={18} fontWeight={500} color="#11142d">
-                      28M Area
-                    </Typography>
-                  </Stack>
-                  <Stack
-                    direction="row"
-                    mt={3}
-                    alignItems="center"
-                    gap={2}
-                    flexWrap="wrap"
-                  >
-                    <SquareFootOutlined sx={{ color: "#808191" }} />
-                    <Typography fontSize={18} fontWeight={500} color="#11142d">
-                      28M Area
-                    </Typography>
-                  </Stack>
-                  <Stack
-                    direction="row"
-                    mt={3}
-                    alignItems="center"
-                    gap={2}
-                    flexWrap="wrap"
-                  >
-                    <SquareFootOutlined sx={{ color: "#808191" }} />
-                    <Typography fontSize={18} fontWeight={500} color="#11142d">
-                      28M Area
-                    </Typography>
-                  </Stack>
+                    <Stack
+                      direction="row"
+                      mt={3}
+                      alignItems="center"
+                      gap={2}
+                      flexWrap="wrap"
+                    >
+                      <SquareFootOutlined sx={{ color: "#808191" }} />
+                      <Typography
+                        fontSize={18}
+                        fontWeight={500}
+                        color="#11142d"
+                      >
+                        28M Area
+                      </Typography>
+                    </Stack>
+                    <Stack
+                      direction="row"
+                      mt={3}
+                      alignItems="center"
+                      gap={2}
+                      flexWrap="wrap"
+                    >
+                      <SquareFootOutlined sx={{ color: "#808191" }} />
+                      <Typography
+                        fontSize={18}
+                        fontWeight={500}
+                        color="#11142d"
+                      >
+                        28M Area
+                      </Typography>
+                    </Stack>
+                    <Stack
+                      direction="row"
+                      mt={3}
+                      alignItems="center"
+                      gap={2}
+                      flexWrap="wrap"
+                    >
+                      <SquareFootOutlined sx={{ color: "#808191" }} />
+                      <Typography
+                        fontSize={18}
+                        fontWeight={500}
+                        color="#11142d"
+                      >
+                        28M Area
+                      </Typography>
+                    </Stack>
+                  </Box>
                 </Box>
               </Box>
             </Stack>
