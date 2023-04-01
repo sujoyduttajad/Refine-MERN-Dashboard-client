@@ -24,6 +24,7 @@ export interface ProfileProps {
 export interface PropertyProps {
     _id: string;
     title: string;
+    // sale/rent toggle button
     description: string;
     location: string;
     price: string;
@@ -39,8 +40,8 @@ export interface FormProps {
     ) => Promise<
         void | CreateResponse<BaseRecord> | UpdateResponse<BaseRecord>
     >;
-    alignment: string;
-    handleDetailsChange: MouseEvent<HTMLElement>;
+    // alignment: string;
+    // handleDetailsChange: MouseEvent<HTMLElement>;
     formLoading: boolean;
     handleSubmit: FormEventHandler<HTMLFormElement> | undefined;
     handleImageChange: (file) => void;
