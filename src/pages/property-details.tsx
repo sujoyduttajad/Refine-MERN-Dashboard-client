@@ -15,6 +15,8 @@ const PropertyDetails = () => {
   const { mutate } = useDelete();
   const { queryResult } = useShow();
 
+  const { data, isLoading, isError } = queryResult;
+
   return (
     <div>PropertyDetails</div>
   )
