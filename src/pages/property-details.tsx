@@ -128,18 +128,21 @@ const PropertyDetails = () => {
                 >
                   Facillity
                 </Typography>
+                {/* 1st row of Facillities */}
                 <Box
                   aria-label="facility-column"
                   display="flex"
                   flexDirection="row"
-                  gap={10}
+                  justifyContent="space-between"
+                  gap={5}
+                  flexWrap="wrap"
                 >
                   <Stack
                     direction="row"
                     mt={3}
                     alignItems="center"
                     gap={2}
-                    flexWrap="wrap"
+                    flexWrap="nowrap"
                   >
                     <KingBedOutlined sx={{ color: "#808191" }} />
                     <Typography fontSize={18} fontWeight={500} color="#11142d">
@@ -151,7 +154,7 @@ const PropertyDetails = () => {
                     mt={3}
                     alignItems="center"
                     gap={2}
-                    flexWrap="wrap"
+                    flexWrap="nowrap"
                   >
                     <BathtubOutlined sx={{ color: "#808191" }} />
                     <Typography fontSize={18} fontWeight={500} color="#11142d">
@@ -163,25 +166,28 @@ const PropertyDetails = () => {
                     mt={3}
                     alignItems="center"
                     gap={2}
-                    flexWrap="wrap"
+                    flexWrap="nowrap"
                   >
                     <SquareFootOutlined sx={{ color: "#808191" }} />
                     <Typography fontSize={18} fontWeight={500} color="#11142d">
                       28M Area
                     </Typography>
                   </Stack>
+                  {/* 2nd Row of Facillities */}
                   <Box
                     aria-label="facility-column"
                     display="flex"
                     flexDirection="row"
-                    gap={10}
+                    justifyContent="space-between"
+                    gap={5}
+                    flexWrap="wrap"
                   >
                     <Stack
                       direction="row"
                       mt={3}
                       alignItems="center"
                       gap={2}
-                      flexWrap="wrap"
+                      flexWrap="nowrap"
                     >
                       <SquareFootOutlined sx={{ color: "#808191" }} />
                       <Typography
@@ -197,7 +203,7 @@ const PropertyDetails = () => {
                       mt={3}
                       alignItems="center"
                       gap={2}
-                      flexWrap="wrap"
+                      flexWrap="nowrap"
                     >
                       <SquareFootOutlined sx={{ color: "#808191" }} />
                       <Typography
@@ -213,7 +219,7 @@ const PropertyDetails = () => {
                       mt={3}
                       alignItems="center"
                       gap={2}
-                      flexWrap="wrap"
+                      flexWrap="nowrap"
                     >
                       <SquareFootOutlined sx={{ color: "#808191" }} />
                       <Typography
