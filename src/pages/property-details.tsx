@@ -85,14 +85,17 @@ const PropertyDetails = () => {
               flexWrap="wrap"
             >
               <Typography
-                fontSize={18}
-                fontWeight={500}
+                fontSize={22}
+                fontWeight={600}
                 color="#11142d"
                 textTransform="capitalize"
               >
                 <strong>title: </strong> {propertyDetails.title}
               </Typography>
-              
+              <Box display="flex" flexDirection="row">
+                <Place sx={{ color: "#808191" }} />
+                <Typography>{propertyDetails.location}</Typography>
+              </Box>
             </Stack>
           </Box>
         </Box>
