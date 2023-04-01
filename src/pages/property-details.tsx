@@ -63,6 +63,7 @@ const PropertyDetails = () => {
           />
 
           <Box mt="15px">
+            {/* Property Type and Rating */}
             <Stack
               direction="row"
               justifyContent="space-between"
@@ -84,12 +85,13 @@ const PropertyDetails = () => {
                 ))}
               </Box>
             </Stack>
-
+            {/* Title and Location */}
             <Stack
               direction="row"
               justifyContent="space-between"
               alignItems="center"
               flexWrap="wrap"
+              mt={3}
             >
               <Box>
                 <Typography
@@ -114,13 +116,13 @@ const PropertyDetails = () => {
                 </Typography>
               </Box>
             </Stack>
-
+            {/* Facillities */}
             <Stack
               direction="row"
               justifyContent="space-between"
               alignItems="center"
               flexWrap="wrap"
-              mt={3}
+              mt={5}
             >
               <Box width="100%" display="flex" flexDirection="column">
                 <Typography
@@ -218,6 +220,27 @@ const PropertyDetails = () => {
                       Wifi included
                     </Typography>
                   </Stack>
+                </Box>
+              </Box>
+              {/* Description */}
+              <Box width="100%" display="flex" flexDirection="column" mt={5}>
+                <Typography
+                  fontSize={22}
+                  fontWeight={600}
+                  color="#11142d"
+                  textTransform="capitalize"
+                >
+                  Description
+                </Typography>
+                <Box
+                  aria-label="description"
+                  display="flex"
+                  flexDirection="row"
+                  justifyContent="space-between"
+                  mt={2}
+                  flexWrap="wrap"
+                >
+                  <Typography>{propertyDetails.description}</Typography>
                 </Box>
               </Box>
             </Stack>
