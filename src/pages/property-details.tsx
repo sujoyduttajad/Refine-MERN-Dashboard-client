@@ -4,6 +4,7 @@ import { useDelete, useGetIdentity, useShow } from '@pankod/refine-core'
 import { useParams, useNavigate } from '@pankod/refine-react-router-v6';
 import { ChatBubble, Delete, Edit, Phone, Place, Star } from '@mui/icons-material';
 import { CustomButton } from 'components';
+import { Error, Loading } from 'components/common/Loading&Error';
 
 const PropertyDetails = () => {
 
@@ -20,7 +21,8 @@ const PropertyDetails = () => {
   const propertyDetails = data?.data ?? {};
   console.log(propertyDetails);
 
-  
+  if (isLoading) return <Loading />;
+  if (isError) return <Error />;
 
   return (
     <div>PropertyDetails</div>
