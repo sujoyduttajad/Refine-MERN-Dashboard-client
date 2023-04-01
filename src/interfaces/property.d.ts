@@ -7,6 +7,7 @@ export interface FormFieldProp {
 
 export interface FormValues {
     title: string;
+    // sale/rent toggle button
     description: string;
     propertyType: string;
     location: string;
