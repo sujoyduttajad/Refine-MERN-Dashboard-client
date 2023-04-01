@@ -3,15 +3,18 @@ import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { useDelete, useGetIdentity, useShow } from "@pankod/refine-core";
 import { useParams, useNavigate } from "@pankod/refine-react-router-v6";
 import {
+  BalconyOutlined,
   BathtubOutlined,
   ChatBubble,
   Delete,
   Edit,
   KingBedOutlined,
+  KitchenOutlined,
   Phone,
   Place,
   SquareFootOutlined,
   Star,
+  WifiRounded,
 } from "@mui/icons-material";
 import { CustomButton } from "components";
 import { Error, Loading } from "components/common/Loading&Error";
@@ -119,7 +122,7 @@ const PropertyDetails = () => {
               flexWrap="wrap"
               mt={3}
             >
-              <Box>
+              <Box width="100%" display="flex" flexDirection="column">
                 <Typography
                   fontSize={22}
                   fontWeight={600}
@@ -135,11 +138,11 @@ const PropertyDetails = () => {
                   flexDirection="row"
                   justifyContent="space-between"
                   gap={5}
+                  mt={3}
                   flexWrap="wrap"
                 >
                   <Stack
                     direction="row"
-                    mt={3}
                     alignItems="center"
                     gap={2}
                     flexWrap="nowrap"
@@ -151,7 +154,6 @@ const PropertyDetails = () => {
                   </Stack>
                   <Stack
                     direction="row"
-                    mt={3}
                     alignItems="center"
                     gap={2}
                     flexWrap="nowrap"
@@ -163,7 +165,6 @@ const PropertyDetails = () => {
                   </Stack>
                   <Stack
                     direction="row"
-                    mt={3}
                     alignItems="center"
                     gap={2}
                     flexWrap="nowrap"
@@ -173,64 +174,50 @@ const PropertyDetails = () => {
                       28M Area
                     </Typography>
                   </Stack>
-                  {/* 2nd Row of Facillities */}
-                  <Box
-                    aria-label="facility-column"
-                    display="flex"
-                    flexDirection="row"
-                    justifyContent="space-between"
-                    gap={5}
-                    flexWrap="wrap"
+                </Box>
+                {/* 2nd Row of Facillities */}
+                <Box
+                  aria-label="facility-column2"
+                  display="flex"
+                  flexDirection="row"
+                  justifyContent="space-between"
+                  gap={5}
+                  mt={3}
+                  flexWrap="wrap"
+                >
+                  <Stack
+                    direction="row"
+                    alignItems="center"
+                    gap={2}
+                    flexWrap="nowrap"
                   >
-                    <Stack
-                      direction="row"
-                      mt={3}
-                      alignItems="center"
-                      gap={2}
-                      flexWrap="nowrap"
-                    >
-                      <SquareFootOutlined sx={{ color: "#808191" }} />
-                      <Typography
-                        fontSize={18}
-                        fontWeight={500}
-                        color="#11142d"
-                      >
-                        28M Area
-                      </Typography>
-                    </Stack>
-                    <Stack
-                      direction="row"
-                      mt={3}
-                      alignItems="center"
-                      gap={2}
-                      flexWrap="nowrap"
-                    >
-                      <SquareFootOutlined sx={{ color: "#808191" }} />
-                      <Typography
-                        fontSize={18}
-                        fontWeight={500}
-                        color="#11142d"
-                      >
-                        28M Area
-                      </Typography>
-                    </Stack>
-                    <Stack
-                      direction="row"
-                      mt={3}
-                      alignItems="center"
-                      gap={2}
-                      flexWrap="nowrap"
-                    >
-                      <SquareFootOutlined sx={{ color: "#808191" }} />
-                      <Typography
-                        fontSize={18}
-                        fontWeight={500}
-                        color="#11142d"
-                      >
-                        28M Area
-                      </Typography>
-                    </Stack>
-                  </Box>
+                    <KitchenOutlined sx={{ color: "#808191" }} />
+                    <Typography fontSize={18} fontWeight={500} color="#11142d">
+                      1 Kitchen
+                    </Typography>
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    alignItems="center"
+                    gap={2}
+                    flexWrap="nowrap"
+                  >
+                    <BalconyOutlined sx={{ color: "#808191" }} />
+                    <Typography fontSize={18} fontWeight={500} color="#11142d">
+                      1 Balcony
+                    </Typography>
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    alignItems="center"
+                    gap={2}
+                    flexWrap="nowrap"
+                  >
+                    <WifiRounded sx={{ color: "#808191" }} />
+                    <Typography fontSize={18} fontWeight={500} color="#11142d">
+                      Wifi included
+                    </Typography>
+                  </Stack>
                 </Box>
               </Box>
             </Stack>
