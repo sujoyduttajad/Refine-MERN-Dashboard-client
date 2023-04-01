@@ -12,6 +12,7 @@ import {
 } from "@mui/icons-material";
 import { CustomButton } from "components";
 import { Error, Loading } from "components/common/Loading&Error";
+import { formatter } from "utils/functions";
 
 const PropertyDetails = () => {
   const navigate = useNavigate();
@@ -99,6 +100,12 @@ const PropertyDetails = () => {
                     {propertyDetails.location}
                   </Typography>
                 </Stack>
+              </Box>
+
+              <Box>
+                <Typography variant="h4" fontWeight={600} color="#475be8">
+                  {formatter.format(propertyDetails.price)}
+                </Typography>
               </Box>
             </Stack>
           </Box>
