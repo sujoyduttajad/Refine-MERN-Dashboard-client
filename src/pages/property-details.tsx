@@ -92,10 +92,12 @@ const PropertyDetails = () => {
               >
                 {propertyDetails.title}
               </Typography>
-              <Box display="flex" flexDirection="row">
+              <Stack direction="row" mt={0.5} alignItems="center" gap={0.5}>
                 <Place sx={{ color: "#808191" }} />
-                <Typography>{propertyDetails.location}</Typography>
-              </Box>
+                <Typography fontSize={14} color="#808191">
+                  {propertyDetails.location}
+                </Typography>
+              </Stack>
             </Stack>
           </Box>
         </Box>
