@@ -40,6 +40,22 @@ const PropertyDetails = () => {
       <Typography fontSize={25} fontWeight={700} color="#11142d">
         Details
       </Typography>
+
+      <Box
+        mt="20px"
+        display="flex"
+        flexDirection={{ xs: "column", lg: "row" }}
+        gap={4}
+      >
+        <Box flex={1} maxWidth={764}>
+          <img 
+            src={propertyDetails.photo}
+            alt={propertyDetails.title}
+            style={{ objectFit: "cover", borderRadius: '10px'}}
+            className="property_details-img"
+          />
+        </Box>
+      </Box>
     </Box>
   );
 };
