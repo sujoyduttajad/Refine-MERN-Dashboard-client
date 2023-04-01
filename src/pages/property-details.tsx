@@ -6,7 +6,6 @@ import {
   ChatBubble,
   Delete,
   Edit,
-  KingBed,
   KingBedOutlined,
   Phone,
   Place,
@@ -127,12 +126,32 @@ const PropertyDetails = () => {
                 >
                   Facillity
                 </Typography>
-                <Stack direction="row" mt={3} alignItems="center" gap={2} flexWrap="wrap">
-                  <KingBedOutlined sx={{ color: "#808191" }} />
-                  <Typography fontSize={18} fontWeight={500} color="#11142d">
-                    4 Beds
-                  </Typography>
-                </Stack>
+                <Box>
+                  <Stack
+                    direction="row"
+                    mt={3}
+                    alignItems="center"
+                    gap={2}
+                    flexWrap="wrap"
+                  >
+                    <KingBedOutlined sx={{ color: "#808191" }} />
+                    <Typography fontSize={18} fontWeight={500} color="#11142d">
+                      4 Beds
+                    </Typography>
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    mt={3}
+                    alignItems="center"
+                    gap={2}
+                    flexWrap="wrap"
+                  >
+                    <KingBedOutlined sx={{ color: "#808191" }} />
+                    <Typography fontSize={18} fontWeight={500} color="#11142d">
+                      4 Beds
+                    </Typography>
+                  </Stack>
+                </Box>
               </Box>
             </Stack>
           </Box>
