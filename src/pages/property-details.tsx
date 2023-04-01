@@ -87,10 +87,10 @@ const PropertyDetails = () => {
               <Typography
                 fontSize={22}
                 fontWeight={600}
-                color="#11142d"
+                color="#767676"
                 textTransform="capitalize"
               >
-                <strong>title: </strong> {propertyDetails.title}
+                {propertyDetails.title}
               </Typography>
               <Box display="flex" flexDirection="row">
                 <Place sx={{ color: "#808191" }} />
