@@ -7,6 +7,7 @@ export interface CustomButtonProps {
     icon?: ReactNode;
     disabled?: boolean;
     heightValue?: string;
+    widthValue?: string;
     paddingValue?: string;
     fontSizeValue?: string;
     fontWeightValue?: number;
