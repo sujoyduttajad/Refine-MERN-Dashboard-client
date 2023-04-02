@@ -19,7 +19,7 @@ const AgentCard = () => {
         padding: "1rem",
         display: "flex",
         flexDirection: "column",
-        borderRadius: "",
+        borderRadius: "10px",
       }}
     >
       <CardContent
