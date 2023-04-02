@@ -304,6 +304,7 @@ const PropertyDetails = () => {
               padding: "1rem",
               display: "flex",
               flexDirection: "column",
+              borderRadius: "",
             }}
           >
             <CardContent
@@ -359,6 +360,16 @@ const PropertyDetails = () => {
               </Stack>
             </CardContent>
           </Card>
+          <CustomButton
+            type="button"
+            title="Book Now"
+            backgroundColor="#475be8"
+            color="#fcfcfc"
+            heightValue="60px"
+            paddingValue="1px 10px"
+            fontSizeValue="16.5px"
+            // icon={<ChatOutlined />}
+          />
         </Stack>
       </Box>
     </Box>
