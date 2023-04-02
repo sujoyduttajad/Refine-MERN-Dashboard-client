@@ -61,18 +61,31 @@ const PropertyDetails = () => {
         alignItems="center"
         flexWrap="nowrap"
       >
-      <Typography fontSize={25} fontWeight={700} color="#11142d">
-        Details
-      </Typography>
-      <Stack 
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <CustomButton 
-        
-        />
-      </Stack>
+        <Typography fontSize={25} fontWeight={700} color="#11142d">
+          Details
+        </Typography>
+        <Stack direction="row" justifyContent="flex-end" alignItems="center">
+          <CustomButton
+            type="button"
+            title="Message"
+            backgroundColor="#475be8"
+            color="#fcfcfc"
+            heightValue="40px"
+            paddingValue="1px 10px"
+            fontSizeValue="16.5px"
+            icon={<ChatOutlined />}
+          />
+          <CustomButton
+            type="button"
+            title="Message"
+            backgroundColor="#475be8"
+            color="#fcfcfc"
+            heightValue="40px"
+            paddingValue="1px 10px"
+            fontSizeValue="16.5px"
+            icon={<ChatOutlined />}
+          />
+        </Stack>
       </Stack>
       <Box
         aria-label="details-agent-wrapper"
