@@ -322,7 +322,7 @@ const PropertyDetails = () => {
               <Typography mt={2} fontSize={16} fontWeight={600}>
                 Cassandra Wilson
               </Typography>
-              <Typography mt={1} fontSize={16} fontWeight={400} color="">
+              <Typography fontSize={14} fontWeight={400} color="#808191">
                 Agent
               </Typography>
               <Stack direction="row" mt={0.5} alignItems="center" gap={0.5}>
@@ -335,7 +335,7 @@ const PropertyDetails = () => {
                 10 Properties
               </Typography>
 
-              <Stack direction="row" mt={0.5} alignItems="center" gap={0.5}>
+              <Stack direction="row" mt={3} alignItems="center" gap={2}>
                 <CustomButton
                   type="button"
                   title="Message"
