@@ -1,23 +1,14 @@
 import React from "react";
-import {
-  Typography,
-  Box,
-  Stack,
-  Card,
-  CardContent,
-  CardMedia,
-} from "@pankod/refine-mui";
+import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { useDelete, useGetIdentity, useShow } from "@pankod/refine-core";
 import { useParams, useNavigate } from "@pankod/refine-react-router-v6";
 import {
   BalconyOutlined,
   BathtubOutlined,
-  ChatOutlined,
   Delete,
   Edit,
   KingBedOutlined,
   KitchenOutlined,
-  Phone,
   Place,
   SquareFootOutlined,
   Star,
@@ -73,17 +64,17 @@ const PropertyDetails = () => {
             heightValue="40px"
             paddingValue="1px 10px"
             fontSizeValue="16.5px"
-            icon={<ChatOutlined />}
+            icon={<Edit />}
           />
           <CustomButton
             type="button"
             title="Message"
-            backgroundColor="#475be8"
+            backgroundColor="#EB5757"
             color="#fcfcfc"
             heightValue="40px"
             paddingValue="1px 10px"
             fontSizeValue="16.5px"
-            icon={<ChatOutlined />}
+            icon={<Delete />}
           />
         </Stack>
       </Stack>
