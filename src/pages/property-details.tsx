@@ -43,214 +43,258 @@ const PropertyDetails = () => {
       padding="20px"
       bgcolor="#fcfcfc"
       width="fit-content"
+      aria-label="main-box-wrapper"
+      display="flex"
+      flexDirection="column"
     >
       <Typography fontSize={25} fontWeight={700} color="#11142d">
         Details
       </Typography>
-
       <Box
-        mt="20px"
+        aria-label="details-agent-wrapper"
         display="flex"
         flexDirection={{ xs: "column", lg: "row" }}
-        gap={4}
       >
-        <Box flex={1} maxWidth={764}>
-          <img
-            src={propertyDetails.photo}
-            alt={propertyDetails.title}
-            style={{ objectFit: "cover", borderRadius: "10px" }}
-            className="property_details-img"
-          />
+        <Box
+          mt="20px"
+          display="flex"
+          flexDirection={{ xs: "column", lg: "row" }}
+          gap={4}
+          aria-label="property-details"
+        >
+          <Box flex={1} maxWidth={764}>
+            <img
+              src={propertyDetails.photo}
+              alt={propertyDetails.title}
+              style={{ objectFit: "cover", borderRadius: "10px" }}
+              className="property_details-img"
+            />
 
-          <Box mt="15px">
-            {/* Property Type and Rating */}
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              alignItems="center"
-              flexWrap="wrap"
-            >
-              <Typography
-                fontSize={18}
-                fontWeight={500}
-                color="#11142d"
-                textTransform="capitalize"
+            <Box mt="15px">
+              {/* Property Type and Rating */}
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                flexWrap="wrap"
               >
-                <strong>Property type: </strong> {propertyDetails.propertyType}
-              </Typography>
-              <Box>
-                {/* Challenge is to make Rating dynamic */}
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={`star-${star}`} sx={{ color: "#f2c94c" }} />
-                ))}
-              </Box>
-            </Stack>
-            {/* Title and Location */}
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              alignItems="center"
-              flexWrap="wrap"
-              mt={3}
-            >
-              <Box>
                 <Typography
-                  fontSize={22}
-                  fontWeight={600}
-                  color="#767676"
+                  fontSize={18}
+                  fontWeight={500}
+                  color="#11142d"
                   textTransform="capitalize"
                 >
-                  {propertyDetails.title}
+                  <strong>Property type: </strong>{" "}
+                  {propertyDetails.propertyType}
                 </Typography>
-                <Stack direction="row" mt={0.5} alignItems="center" gap={0.5}>
-                  <Place sx={{ color: "#808191" }} />
-                  <Typography fontSize={14} color="#808191">
-                    {propertyDetails.location}
+                <Box>
+                  {/* Challenge is to make Rating dynamic */}
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={`star-${star}`} sx={{ color: "#f2c94c" }} />
+                  ))}
+                </Box>
+              </Stack>
+              {/* Title and Location */}
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                flexWrap="wrap"
+                mt={3}
+              >
+                <Box>
+                  <Typography
+                    fontSize={22}
+                    fontWeight={600}
+                    color="#767676"
+                    textTransform="capitalize"
+                  >
+                    {propertyDetails.title}
                   </Typography>
-                </Stack>
-              </Box>
+                  <Stack direction="row" mt={0.5} alignItems="center" gap={0.5}>
+                    <Place sx={{ color: "#808191" }} />
+                    <Typography fontSize={14} color="#808191">
+                      {propertyDetails.location}
+                    </Typography>
+                  </Stack>
+                </Box>
 
-              <Box>
-                <Typography variant="h4" fontWeight={600} color="#475be8">
-                  {formatter.format(propertyDetails.price)}
-                </Typography>
-              </Box>
-            </Stack>
-            {/* Facillities */}
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              alignItems="center"
-              flexWrap="wrap"
-              mt={5}
-            >
-              <Box width="100%" display="flex" flexDirection="column">
-                <Typography
-                  fontSize={22}
-                  fontWeight={600}
-                  color="#11142d"
-                  textTransform="capitalize"
-                >
-                  Facillity
-                </Typography>
-                {/* 1st row of Facillities */}
-                <Box
-                  aria-label="facility-column"
-                  display="flex"
-                  flexDirection="row"
-                  justifyContent="space-between"
-                  gap={5}
-                  mt={3}
-                  flexWrap="wrap"
-                >
-                  <Stack
-                    direction="row"
-                    alignItems="center"
-                    gap={2}
-                    flexWrap="nowrap"
-                  >
-                    <KingBedOutlined sx={{ color: "#808191" }} />
-                    <Typography fontSize={18} fontWeight={500} color="#11142d">
-                      4 Beds
-                    </Typography>
-                  </Stack>
-                  <Stack
-                    direction="row"
-                    alignItems="center"
-                    gap={2}
-                    flexWrap="nowrap"
-                  >
-                    <BathtubOutlined sx={{ color: "#808191" }} />
-                    <Typography fontSize={18} fontWeight={500} color="#11142d">
-                      2 Baths
-                    </Typography>
-                  </Stack>
-                  <Stack
-                    direction="row"
-                    alignItems="center"
-                    gap={2}
-                    flexWrap="nowrap"
-                  >
-                    <SquareFootOutlined sx={{ color: "#808191" }} />
-                    <Typography fontSize={18} fontWeight={500} color="#11142d">
-                      28M Area
-                    </Typography>
-                  </Stack>
+                <Box>
+                  <Typography variant="h4" fontWeight={600} color="#475be8">
+                    {formatter.format(propertyDetails.price)}
+                  </Typography>
                 </Box>
-                {/* 2nd Row of Facillities */}
-                <Box
-                  aria-label="facility-column2"
-                  display="flex"
-                  flexDirection="row"
-                  justifyContent="space-between"
-                  gap={5}
-                  mt={3}
-                  flexWrap="wrap"
-                >
-                  <Stack
-                    direction="row"
-                    alignItems="center"
-                    gap={2}
-                    flexWrap="nowrap"
+              </Stack>
+              {/* Facillities */}
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                flexWrap="wrap"
+                mt={5}
+              >
+                <Box width="100%" display="flex" flexDirection="column">
+                  <Typography
+                    fontSize={22}
+                    fontWeight={600}
+                    color="#11142d"
+                    textTransform="capitalize"
                   >
-                    <KitchenOutlined sx={{ color: "#808191" }} />
-                    <Typography fontSize={18} fontWeight={500} color="#11142d">
-                      1 Kitchen
-                    </Typography>
-                  </Stack>
-                  <Stack
-                    direction="row"
-                    alignItems="center"
-                    gap={2}
-                    flexWrap="nowrap"
+                    Facillity
+                  </Typography>
+                  {/* 1st row of Facillities */}
+                  <Box
+                    aria-label="facility-column"
+                    display="flex"
+                    flexDirection="row"
+                    justifyContent="space-between"
+                    gap={5}
+                    mt={3}
+                    flexWrap="wrap"
                   >
-                    <BalconyOutlined sx={{ color: "#808191" }} />
-                    <Typography fontSize={18} fontWeight={500} color="#11142d">
-                      1 Balcony
-                    </Typography>
-                  </Stack>
-                  <Stack
-                    direction="row"
-                    alignItems="center"
-                    gap={2}
-                    flexWrap="nowrap"
+                    <Stack
+                      direction="row"
+                      alignItems="center"
+                      gap={2}
+                      flexWrap="nowrap"
+                    >
+                      <KingBedOutlined sx={{ color: "#808191" }} />
+                      <Typography
+                        fontSize={18}
+                        fontWeight={500}
+                        color="#11142d"
+                      >
+                        4 Beds
+                      </Typography>
+                    </Stack>
+                    <Stack
+                      direction="row"
+                      alignItems="center"
+                      gap={2}
+                      flexWrap="nowrap"
+                    >
+                      <BathtubOutlined sx={{ color: "#808191" }} />
+                      <Typography
+                        fontSize={18}
+                        fontWeight={500}
+                        color="#11142d"
+                      >
+                        2 Baths
+                      </Typography>
+                    </Stack>
+                    <Stack
+                      direction="row"
+                      alignItems="center"
+                      gap={2}
+                      flexWrap="nowrap"
+                    >
+                      <SquareFootOutlined sx={{ color: "#808191" }} />
+                      <Typography
+                        fontSize={18}
+                        fontWeight={500}
+                        color="#11142d"
+                      >
+                        28M Area
+                      </Typography>
+                    </Stack>
+                  </Box>
+                  {/* 2nd Row of Facillities */}
+                  <Box
+                    aria-label="facility-column2"
+                    display="flex"
+                    flexDirection="row"
+                    justifyContent="space-between"
+                    gap={5}
+                    mt={3}
+                    flexWrap="wrap"
                   >
-                    <WifiRounded sx={{ color: "#808191" }} />
-                    <Typography fontSize={18} fontWeight={500} color="#11142d">
-                      Wifi included
-                    </Typography>
-                  </Stack>
+                    <Stack
+                      direction="row"
+                      alignItems="center"
+                      gap={2}
+                      flexWrap="nowrap"
+                    >
+                      <KitchenOutlined sx={{ color: "#808191" }} />
+                      <Typography
+                        fontSize={18}
+                        fontWeight={500}
+                        color="#11142d"
+                      >
+                        1 Kitchen
+                      </Typography>
+                    </Stack>
+                    <Stack
+                      direction="row"
+                      alignItems="center"
+                      gap={2}
+                      flexWrap="nowrap"
+                    >
+                      <BalconyOutlined sx={{ color: "#808191" }} />
+                      <Typography
+                        fontSize={18}
+                        fontWeight={500}
+                        color="#11142d"
+                      >
+                        1 Balcony
+                      </Typography>
+                    </Stack>
+                    <Stack
+                      direction="row"
+                      alignItems="center"
+                      gap={2}
+                      flexWrap="nowrap"
+                    >
+                      <WifiRounded sx={{ color: "#808191" }} />
+                      <Typography
+                        fontSize={18}
+                        fontWeight={500}
+                        color="#11142d"
+                      >
+                        Wifi included
+                      </Typography>
+                    </Stack>
+                  </Box>
                 </Box>
-              </Box>
-              {/* Description */}
-              <Box width="100%" display="flex" flexDirection="column" mt={5}>
-                <Typography
-                  fontSize={22}
-                  fontWeight={600}
-                  color="#11142d"
-                  textTransform="capitalize"
-                >
-                  Description
-                </Typography>
-                <Box
-                  aria-label="description"
-                  display="flex"
-                  flexDirection="row"
-                  justifyContent="space-between"
-                  mt={2}
-                  flexWrap="wrap"
-                >
-                  <Typography>{propertyDetails.description}</Typography>
+                {/* Description */}
+                <Box width="100%" display="flex" flexDirection="column" mt={5}>
+                  <Typography
+                    fontSize={22}
+                    fontWeight={600}
+                    color="#11142d"
+                    textTransform="capitalize"
+                  >
+                    Description
+                  </Typography>
+                  <Box
+                    aria-label="description"
+                    display="flex"
+                    flexDirection="row"
+                    justifyContent="space-between"
+                    mt={2}
+                    flexWrap="wrap"
+                  >
+                    <Typography>{propertyDetails.description}</Typography>
+                  </Box>
                 </Box>
-              </Box>
-            </Stack>
+              </Stack>
+            </Box>
           </Box>
         </Box>
-      </Box>
-      <Box mt="20px" display="flex" flexDirection="column" gap={4}>
-        <Card sx={{ minWidth: 275 }}>
-          <CardContent></CardContent>
-        </Card>
+        <Box>
+          <Stack
+            mt="20px"
+            display="flex"
+            flexDirection="column"
+            gap={4}
+            aria-label="agent-details"
+          >
+            <Card sx={{ minWidth: 275 }}>
+              <CardContent>
+                <Typography>Agent Profile</Typography>
+              </CardContent>
+            </Card>
+          </Stack>
+        </Box>
       </Box>
     </Box>
   );
