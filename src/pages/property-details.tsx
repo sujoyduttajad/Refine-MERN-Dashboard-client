@@ -27,6 +27,7 @@ import { CustomButton } from "components";
 import { Error, Loading } from "components/common/Loading&Error";
 import { formatter } from "utils/functions";
 import AgentCard from "components/property/AgentCard";
+import LocationCard from "components/property/LocationCard";
 
 const PropertyDetails = () => {
   const navigate = useNavigate();
@@ -297,6 +298,7 @@ const PropertyDetails = () => {
           aria-label="agent-details"
         >
           <AgentCard />
+          <LocationCard />
           <CustomButton
             type="button"
             title="Book Now"
