@@ -39,7 +39,7 @@ const PropertyDetails = () => {
   const isCurrentUser = user.email === propertyDetails.creator.email;
 
   const handleDeleteProperty = () => {
-    const response = confirm("Are you sure you want to delete this property?");
+    const response = window.confirm("Are you sure you want to delete this property?");
     if (response) {
       mutate(
         {
@@ -89,6 +89,7 @@ const PropertyDetails = () => {
             paddingValue="1px 10px"
             fontSizeValue="16.5px"
             icon={<Edit />}
+           
           />
           <CustomButton
             type="button"
@@ -99,6 +100,7 @@ const PropertyDetails = () => {
             paddingValue="1px 10px"
             fontSizeValue="16.5px"
             icon={<Delete />}
+            handleClick={handleDeleteProperty}
           />
         </Stack>
       </Stack>
