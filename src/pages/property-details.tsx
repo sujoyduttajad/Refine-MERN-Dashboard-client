@@ -280,21 +280,21 @@ const PropertyDetails = () => {
             </Box>
           </Box>
         </Box>
-        <Box>
-          <Stack
-            mt="20px"
-            display="flex"
-            flexDirection="column"
-            gap={4}
-            aria-label="agent-details"
-          >
-            <Card sx={{ minWidth: 275 }}>
-              <CardContent>
-                <Typography>Agent Profile</Typography>
-              </CardContent>
-            </Card>
-          </Stack>
-        </Box>
+
+        <Stack
+          mt="20px"
+          display="flex"
+          flexDirection="column"
+          gap={4}
+          ml={2}
+          aria-label="agent-details"
+        >
+          <Card variant="outlined" sx={{ minWidth: 275 }}>
+            <CardContent>
+              <Typography>Agent Profile</Typography>
+            </CardContent>
+          </Card>
+        </Stack>
       </Box>
     </Box>
   );
