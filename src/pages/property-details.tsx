@@ -37,9 +37,11 @@ const PropertyDetails = () => {
   if (isError) return <Error />;
 
   const isCurrentUser = user.email === propertyDetails.creator.email;
-
+  console.log(isCurrentUser);
   const handleDeleteProperty = () => {
-    const response = window.confirm("Are you sure you want to delete this property?");
+    const response = window.confirm(
+      "Are you sure you want to delete this property?"
+    );
     if (response) {
       mutate(
         {
@@ -74,35 +76,38 @@ const PropertyDetails = () => {
         <Typography fontSize={25} fontWeight={700} color="#11142d">
           Details
         </Typography>
-        <Stack
-          direction="row"
-          justifyContent="space-evenly"
-          alignItems="center"
-          gap={2}
-        >
-          <CustomButton
-            type="button"
-            title="Edit"
-            backgroundColor="#475be8"
-            color="#fcfcfc"
-            heightValue="40px"
-            paddingValue="1px 10px"
-            fontSizeValue="16.5px"
-            icon={<Edit />}
-           
-          />
-          <CustomButton
-            type="button"
-            title="Delete"
-            backgroundColor="#EB5757"
-            color="#fcfcfc"
-            heightValue="40px"
-            paddingValue="1px 10px"
-            fontSizeValue="16.5px"
-            icon={<Delete />}
-            handleClick={handleDeleteProperty}
-          />
-        </Stack>
+        {isCurrentUser ? (
+          <Stack
+            direction="row"
+            justifyContent="space-evenly"
+            alignItems="center"
+            gap={2}
+          >
+            <CustomButton
+              type="button"
+              title="Edit"
+              backgroundColor="#475be8"
+              color="#fcfcfc"
+              heightValue="40px"
+              paddingValue="1px 10px"
+              fontSizeValue="16.5px"
+              icon={<Edit />}
+            />
+            <CustomButton
+              type="button"
+              title="Delete"
+              backgroundColor="#EB5757"
+              color="#fcfcfc"
+              heightValue="40px"
+              paddingValue="1px 10px"
+              fontSizeValue="16.5px"
+              icon={<Delete />}
+              handleClick={handleDeleteProperty}
+            />
+          </Stack>
+        ) : (
+          ""
+        )}
       </Stack>
       <Box
         aria-label="details-agent-wrapper"
