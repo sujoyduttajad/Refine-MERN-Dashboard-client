@@ -10,6 +10,7 @@ const CustomButton = ({
   icon,
   disabled,
   heightValue,
+  widthValue,
   paddingValue,
   fontSizeValue,
   fontWeightValue,
@@ -32,7 +33,7 @@ const CustomButton = ({
         backgroundColor: `${disabled ? "#eee" : backgroundColor}`,
         cursor: `${disabled ? "not-allowed" : "pointer"}`,
         padding: `${paddingValue ? paddingValue : "10px 15px"}`,
-        width: fullWidth ? "100%" : "fit-content",
+        width: widthValue ? "100%" : "fit-content",
         "&:hover": {
           opacity: 0.9,
           backgroundColor,
