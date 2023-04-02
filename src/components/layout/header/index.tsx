@@ -36,6 +36,8 @@ export const Header: React.FC = () => {
               <Typography
                 sx={{ textTransform: "capitalize" }}
                 variant="subtitle2"
+                fontSize={16}
+                fontWeight={600}
               >
                 {user?.name}
               </Typography>
