@@ -37,7 +37,7 @@ const PropertyDetails = () => {
   if (isError) return <Error />;
 
   const isCurrentUser = user.email === propertyDetails.creator.email;
-  console.log(isCurrentUser);
+
   const handleDeleteProperty = () => {
     const response = window.confirm(
       "Are you sure you want to delete this property?"
@@ -180,7 +180,7 @@ const PropertyDetails = () => {
 
                 <Box>
                   <Typography variant="h4" fontWeight={600} color="#475be8">
-                    {formatter.format(propertyDetails.price)}
+                    {formatter.format(propertyDetails.price).slice(0,-3)}
                   </Typography>
                 </Box>
               </Stack>
