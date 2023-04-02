@@ -1,10 +1,9 @@
 import {
-  Typography,
-  Box,
-  Stack,
   Card,
-  CardContent,
+  Stack,
   CardMedia,
+  CardContent,
+  Typography,
 } from "@pankod/refine-mui";
 import { ChatOutlined, Phone, Place } from "@mui/icons-material";
 import { CustomButton } from "components";
