@@ -324,10 +324,15 @@ const PropertyDetails = () => {
               <Typography mt={2} fontSize={16} fontWeight={600}>
                 Cassandra Wilson
               </Typography>
-              <Typography mt={1} fontSize={16} fontWeight={400}>
+              <Typography mt={1} fontSize={16} fontWeight={400} color="">
                 Agent
               </Typography>
-
+              <Stack direction="row" mt={0.5} alignItems="center" gap={0.5}>
+                <Place sx={{ color: "#808191" }} />
+                <Typography fontSize={14} color="#808191">
+                  New York, USA
+                </Typography>
+              </Stack>
               <Typography mt={2} fontSize={16} fontWeight={600}>
                 10 Properties
               </Typography>
