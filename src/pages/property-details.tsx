@@ -36,6 +36,25 @@ const PropertyDetails = () => {
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
+  const isCurrentUser = user.email === propertyDetails.creator.email;
+
+  const handleDeleteProperty = () => {
+    const response = confirm("Are you sure you want to delete this property?");
+    if (response) {
+      mutate(
+        {
+          resource: "properties",
+          id: id as string,
+        },
+        {
+          onSuccess: () => {
+            navigate("/properties");
+          },
+        }
+      );
+    }
+  };
+
   return (
     <Box
       borderRadius="15px"
@@ -55,7 +74,12 @@ const PropertyDetails = () => {
         <Typography fontSize={25} fontWeight={700} color="#11142d">
           Details
         </Typography>
-        <Stack direction="row" justifyContent="space-evenly" alignItems="center" gap={2}>
+        <Stack
+          direction="row"
+          justifyContent="space-evenly"
+          alignItems="center"
+          gap={2}
+        >
           <CustomButton
             type="button"
             title="Edit"
