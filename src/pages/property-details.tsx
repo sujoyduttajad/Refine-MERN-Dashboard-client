@@ -55,10 +55,10 @@ const PropertyDetails = () => {
         <Typography fontSize={25} fontWeight={700} color="#11142d">
           Details
         </Typography>
-        <Stack direction="row" justifyContent="flex-end" alignItems="center">
+        <Stack direction="row" justifyContent="space-evenly" alignItems="center" gap={2}>
           <CustomButton
             type="button"
-            title="Message"
+            title="Edit"
             backgroundColor="#475be8"
             color="#fcfcfc"
             heightValue="40px"
@@ -68,7 +68,7 @@ const PropertyDetails = () => {
           />
           <CustomButton
             type="button"
-            title="Message"
+            title="Delete"
             backgroundColor="#EB5757"
             color="#fcfcfc"
             heightValue="40px"
