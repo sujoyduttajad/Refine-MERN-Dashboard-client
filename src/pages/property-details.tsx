@@ -55,9 +55,25 @@ const PropertyDetails = () => {
       display="flex"
       flexDirection="column"
     >
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        flexWrap="nowrap"
+      >
       <Typography fontSize={25} fontWeight={700} color="#11142d">
         Details
       </Typography>
+      <Stack 
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <CustomButton 
+        
+        />
+      </Stack>
+      </Stack>
       <Box
         aria-label="details-agent-wrapper"
         display="flex"
