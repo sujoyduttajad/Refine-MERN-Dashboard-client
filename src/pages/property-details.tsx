@@ -12,7 +12,7 @@ import { useParams, useNavigate } from "@pankod/refine-react-router-v6";
 import {
   BalconyOutlined,
   BathtubOutlined,
-  ChatBubble,
+  ChatOutlined,
   Delete,
   Edit,
   KingBedOutlined,
@@ -40,7 +40,6 @@ const PropertyDetails = () => {
   const { data, isLoading, isError } = queryResult;
 
   const propertyDetails = data?.data ?? {};
-  console.log(propertyDetails);
 
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
@@ -302,7 +301,7 @@ const PropertyDetails = () => {
             sx={{
               minWidth: 275,
               width: "100%",
-              padding: "1rem 3rem",
+              padding: "1rem",
               display: "flex",
               flexDirection: "column",
             }}
@@ -320,7 +319,6 @@ const PropertyDetails = () => {
                 alt="Agent Profile picture"
                 sx={{ height: "7rem", width: "7rem", borderRadius: "50%" }}
               />
-
               <Typography mt={2} fontSize={16} fontWeight={600}>
                 Cassandra Wilson
               </Typography>
@@ -336,6 +334,29 @@ const PropertyDetails = () => {
               <Typography mt={2} fontSize={16} fontWeight={600}>
                 10 Properties
               </Typography>
+
+              <Stack direction="row" mt={0.5} alignItems="center" gap={0.5}>
+                <CustomButton
+                  type="button"
+                  title="Message"
+                  backgroundColor="#475be8"
+                  color="#fcfcfc"
+                  heightValue="40px"
+                  paddingValue="1px 10px"
+                  fontSizeValue="16.5px"
+                  icon={<ChatOutlined />}
+                />
+                <CustomButton
+                  type="button"
+                  title="Call"
+                  backgroundColor="#2ED480"
+                  color="#fcfcfc"
+                  heightValue="40px"
+                  paddingValue="1px 10px"
+                  fontSizeValue="16.5px"
+                  icon={<Phone />}
+                />
+              </Stack>
             </CardContent>
           </Card>
         </Stack>
