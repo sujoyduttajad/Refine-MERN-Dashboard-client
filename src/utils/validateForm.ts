@@ -13,7 +13,7 @@ export const validateForm = (formValues: FormValues) => {
           hasError = true;
         }
         break;
-
+// For adding Toggle buttons or any other inputs create a new case
       case 'description':
         if (!formValues.description) {
           errors.message = 'Description is required';
