@@ -365,10 +365,10 @@ const PropertyDetails = () => {
             title="Book Now"
             backgroundColor="#475be8"
             color="#fcfcfc"
-            heightValue="60px"
+            heightValue="50px"
+            widthValue="100%"
             paddingValue="1px 10px"
             fontSizeValue="16.5px"
-            // icon={<ChatOutlined />}
           />
         </Stack>
       </Box>
