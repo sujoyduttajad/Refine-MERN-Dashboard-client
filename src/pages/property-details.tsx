@@ -307,7 +307,13 @@ const PropertyDetails = () => {
               flexDirection: "column",
             }}
           >
-            <CardContent sx={{ margin: '0 auto' }}>
+            <CardContent
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
               <CardMedia
                 component="img"
                 image={sampleAgent}
@@ -315,7 +321,16 @@ const PropertyDetails = () => {
                 sx={{ height: "7rem", width: "7rem", borderRadius: "50%" }}
               />
 
-              <Typography>Agent Profile</Typography>
+              <Typography mt={2} fontSize={16} fontWeight={600}>
+                Cassandra Wilson
+              </Typography>
+              <Typography mt={1} fontSize={16} fontWeight={400}>
+                Agent
+              </Typography>
+
+              <Typography mt={2} fontSize={16} fontWeight={600}>
+                10 Properties
+              </Typography>
             </CardContent>
           </Card>
         </Stack>
