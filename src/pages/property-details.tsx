@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Box, Stack, Card, CardContent } from "@pankod/refine-mui";
+import { Typography, Box, Stack, Card, CardContent, CardMedia } from "@pankod/refine-mui";
 import { useDelete, useGetIdentity, useShow } from "@pankod/refine-core";
 import { useParams, useNavigate } from "@pankod/refine-react-router-v6";
 import {
@@ -19,6 +19,7 @@ import {
 import { CustomButton } from "components";
 import { Error, Loading } from "components/common/Loading&Error";
 import { formatter } from "utils/functions";
+import sampleAgent from '../assets/sample-agent.jpg';
 
 const PropertyDetails = () => {
   const navigate = useNavigate();
@@ -291,6 +292,11 @@ const PropertyDetails = () => {
         >
           <Card variant="outlined" sx={{ minWidth: 275 }}>
             <CardContent>
+              <CardMedia
+                component="img"
+                image={sampleAgent}
+                alt="Agent Profile picture"
+              />
               <Typography>Agent Profile</Typography>
             </CardContent>
           </Card>
