@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Box, Stack } from "@pankod/refine-mui";
+import { Typography, Box, Stack, Card, CardContent } from "@pankod/refine-mui";
 import { useDelete, useGetIdentity, useShow } from "@pankod/refine-core";
 import { useParams, useNavigate } from "@pankod/refine-react-router-v6";
 import {
@@ -246,6 +246,11 @@ const PropertyDetails = () => {
             </Stack>
           </Box>
         </Box>
+      </Box>
+      <Box mt="20px" display="flex" flexDirection="column" gap={4}>
+        <Card sx={{ minWidth: 275 }}>
+          <CardContent></CardContent>
+        </Card>
       </Box>
     </Box>
   );
