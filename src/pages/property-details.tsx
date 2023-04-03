@@ -54,6 +54,7 @@ const PropertyDetails = () => {
           },
         }
       );
+      // navigate("/properties");
     }
   };
 
@@ -180,7 +181,7 @@ const PropertyDetails = () => {
 
                 <Box>
                   <Typography variant="h4" fontWeight={600} color="#475be8">
-                    {formatter.format(propertyDetails.price).slice(0,-3)}
+                    {formatter.format(propertyDetails.price).slice(0, -3)}
                   </Typography>
                 </Box>
               </Stack>
