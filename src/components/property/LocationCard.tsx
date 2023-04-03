@@ -8,7 +8,7 @@ const LocationCard = () => {
       raised={true}
       sx={{
         minWidth: 275,
-        borderRadius: "20px",
+        borderRadius: "15px",
       }}
     >
       <CardMedia
