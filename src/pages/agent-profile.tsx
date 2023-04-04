@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import { useList } from "@pankod/refine-core";
+import { Box, Typography } from "@pankod/refine-mui";
+import AgentCard from "components/property/AgentCard";
 
 const AgentProfile = () => {
-  return (
-    <div>agent-profile</div>
-  )
-}
+  const { data, isLoading, isError } = useList({
+    resource: "users",
+  });
 
-export default AgentProfile
+  const allAgents = data?.data;
+  
+  return <div>agent-profile</div>;
+};
+
+export default AgentProfile;
