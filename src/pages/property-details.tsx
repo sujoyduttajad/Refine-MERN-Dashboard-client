@@ -60,7 +60,6 @@ const PropertyDetails = () => {
           },
         }
       );
-      // navigate("/properties");
     }
   };
 
