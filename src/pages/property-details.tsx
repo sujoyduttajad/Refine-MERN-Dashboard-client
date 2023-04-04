@@ -20,6 +20,12 @@ import { formatter } from "utils/functions";
 import AgentCard from "components/property/AgentCard";
 import LocationCard from "components/property/LocationCard";
 
+function checkImage(url: any) {
+  let img = new Image();
+  img.src = url;
+  return img.width !== 0 && img.height !== 0;
+}
+
 const PropertyDetails = () => {
   const navigate = useNavigate();
   const { data: user } = useGetIdentity();
@@ -58,6 +64,10 @@ const PropertyDetails = () => {
     }
   };
 
+  const handleEditProperty = () => {
+    isCurrentUser && navigate(`/properties/edit/${propertyDetails._id}`);
+  }
+
   return (
     <Box
       borderRadius="15px"
@@ -84,6 +94,7 @@ const PropertyDetails = () => {
             alignItems="center"
             gap={2}
           >
+            {/* Edit Property */}
             <CustomButton
               type="button"
               title="Edit"
@@ -93,7 +104,9 @@ const PropertyDetails = () => {
               paddingValue="1px 10px"
               fontSizeValue="16.5px"
               icon={<Edit />}
+              handleClick={handleEditProperty}
             />
+            {/* Delete Property */}
             <CustomButton
               type="button"
               title="Delete"
