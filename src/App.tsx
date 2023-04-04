@@ -21,6 +21,7 @@ import dataProvider from "@pankod/refine-simple-rest";
 import routerProvider from "@pankod/refine-react-router-v6";
 import axios, { AxiosRequestConfig } from "axios";
 import { ColorModeContextProvider } from "contexts";
+// If there is an issue with textfield showing then remove the above provider
 import { Title, Sider, Layout, Header } from "components/layout";
 
 import {
