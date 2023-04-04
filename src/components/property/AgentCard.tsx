@@ -12,7 +12,6 @@ const AgentCard = () => {
   return (
     <Card
       variant="outlined"
-      raised={true}
       sx={{
         minWidth: 275,
         width: "100%",
