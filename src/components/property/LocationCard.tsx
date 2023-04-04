@@ -5,7 +5,6 @@ const LocationCard = () => {
   return (
     <Card
       variant="outlined"
-      raised={true}
       sx={{
         minWidth: 275,
         borderRadius: "10px",
