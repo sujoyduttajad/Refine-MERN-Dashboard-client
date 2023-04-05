@@ -48,8 +48,17 @@ const AgentCard = ({
         gap={{ xs: 4, sm: 2 }}
       >
         <Stack direction="row" flexWrap="wrap" alignItems="center" gap={2}>
-          <Typography>{name}</Typography>
-          <Typography>Real-Estate Agent</Typography>
+          <Typography
+            fontSize={22}
+            fontWeight={600}
+            textTransform="capitalize"
+            color="#475be8"
+          >
+            {name}
+          </Typography>
+          <Typography fontSize={14} color="#808191">
+            Real-Estate Agent
+          </Typography>
         </Stack>
       </Stack>
     </Box>
