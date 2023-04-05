@@ -30,11 +30,17 @@ const AgentCard = ({
         padding: "20px",
         gap: "20px",
         "&:hover": {
-          boxShadow: "0 22px 45px 2px rgba(176, 176, 176, 0.1)",
+          boxShadow: "0 22px 45px 2px rgba(176, 176, 176, 0.5)",
         },
       }}
     >
-      AgentCard
+      <img
+        src={avatar}
+        alt={name}
+        width={90}
+        height={90}
+        style={{ borderRadius: 8, objectFit: "cover" }}
+      />
     </Box>
   );
 };
