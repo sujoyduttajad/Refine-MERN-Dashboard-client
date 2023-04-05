@@ -1,9 +1,13 @@
-import React from 'react'
+import { AgentCardProp } from "interfaces/agent";
 
-const AgentCard = () => {
-  return (
-    <div>AgentCard</div>
-  )
-}
+const AgentCard = ({
+  id,
+  name,
+  email,
+  avatar,
+  noOfProperties,
+}: AgentCardProp) => {
+  return <div>AgentCard</div>;
+};
 
-export default AgentCard
+export default AgentCard;
