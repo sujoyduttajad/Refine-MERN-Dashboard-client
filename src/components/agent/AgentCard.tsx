@@ -23,6 +23,8 @@ const AgentCard = ({
     <Box
       component={Link}
       to={generateLink()}
+      
+      maxWidth="50rem"
       width="100%"
       sx={{
         display: "flex",
