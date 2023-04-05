@@ -5,11 +5,11 @@ import AgentCard from "components/property/AgentCard";
 
 const AgentProfile = () => {
   const { data, isLoading, isError } = useList({
-    resource: "users",
+    resource: "api/v1/users",
   });
 
-  const allAgents = data?.data;
-  
+  const allAgents = data?.data ?? [];
+
   return <div>agent-profile</div>;
 };
 
