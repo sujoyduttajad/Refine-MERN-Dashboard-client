@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import { Box, Typography } from "@pankod/refine-mui";
+import AgentCard from "components/property/AgentCard";
+import { useList } from "@pankod/refine-core";
 
-const agent = () => {
-  return (
-    <div>agent</div>
-  )
-}
+const Agent = () => {
+  const { data, isLoading, isError } = useList({
+    resource: "api/v1/users",
+  });
 
-export default agent
+  const allAgents = data?.data ?? [];
+
+  console.log(allAgents[0].email);
+  return <div>agent</div>;
+};
+
+export default Agent;
