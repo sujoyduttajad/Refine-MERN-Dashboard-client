@@ -4,6 +4,7 @@ import { useGetIdentity } from "@pankod/refine-core";
 import { Box, Stack, Typography } from "@pankod/refine-mui";
 import { Link } from "@pankod/refine-react-router-v6";
 
+
 const AgentCard = ({
   id,
   name,
@@ -11,15 +12,23 @@ const AgentCard = ({
   avatar,
   noOfProperties,
 }: AgentCardProp) => {
+
   const { data: currentUser } = useGetIdentity();
 
   const generateLink = () => {
-    if (currentUser.email === email) return "/my-profile";
+    if(currentUser.email === email) return '/my-profile'
 
-    return `/agent/show/${id}`;
-  };
+    return `/agent/show/${id}`
+  }
 
-  return <div>AgentCard</div>;
+  return (
+    <Box
+      component={Link}
+      to={generateLink()}
+    >
+      AgentCard
+    </Box>
+  );
 };
 
 export default AgentCard;
