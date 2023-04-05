@@ -1,8 +1,9 @@
 import React from "react";
 import { Box, Typography } from "@pankod/refine-mui";
-import AgentCard from "components/property/AgentCard";
+
 import { useList } from "@pankod/refine-core";
 import { Error, Loading } from "components/common/Loading&Error";
+import { AgentCard } from "components";
 
 const Agent = () => {
   const { data, isLoading, isError } = useList({
@@ -29,7 +30,18 @@ const Agent = () => {
           backgroundColor: '#fcfcfc'
         }}
       >
-
+        {
+          allAgents.map((agent) => (
+            <AgentCard 
+              key={agent._id}
+              id={agent._id}
+              name={agent.name}
+              email={agent.email}
+              avatar={agent.avatar}
+              noOfProperties={agent.allProperties.length}
+            />
+          ))
+        }
       </Box>
     </Box>
   );
