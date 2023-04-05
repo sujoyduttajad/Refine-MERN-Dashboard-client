@@ -60,6 +60,13 @@ const AgentCard = ({
             Real-Estate Agent
           </Typography>
         </Stack>
+        <Stack
+          direction="row"
+          flexWrap="wrap"
+          justifyContent="space-between"
+          alignItems="center"
+          gap={2}
+        ></Stack>
       </Stack>
     </Box>
   );
