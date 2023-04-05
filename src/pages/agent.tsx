@@ -5,12 +5,12 @@ import { useList } from "@pankod/refine-core";
 
 const Agent = () => {
   const { data, isLoading, isError } = useList({
-    resource: "api/v1/users",
+    resource: "users",
   });
 
   const allAgents = data?.data ?? [];
 
-  console.log(allAgents[0].email);
+  console.log(allAgents);
   return <div>agent</div>;
 };
 
