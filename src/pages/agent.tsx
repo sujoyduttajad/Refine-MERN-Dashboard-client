@@ -14,7 +14,25 @@ const Agent = () => {
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
-  return <div>agent</div>;
+  return (
+    <Box>
+      <Typography fontSize={25} fontWeight={700} color="#11142d" >
+        Agents List
+      </Typography>
+
+      <Box
+        mt="20px"
+        sx={{ 
+          display: "flex",
+          flexWrap: 'wrap',
+          gap: '20px',
+          backgroundColor: '#fcfcfc'
+        }}
+      >
+
+      </Box>
+    </Box>
+  );
 };
 
 export default Agent;
