@@ -23,6 +23,7 @@ const Agent = () => {
 
       <Box
         mt="20px"
+        maxWidth="50rem"
         sx={{
           display: "flex",
           flexWrap: "wrap",
