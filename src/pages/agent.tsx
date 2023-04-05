@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography } from "@pankod/refine-mui";
 import AgentCard from "components/property/AgentCard";
 import { useList } from "@pankod/refine-core";
+import { Error, Loading } from "components/common/Loading&Error";
 
 const Agent = () => {
   const { data, isLoading, isError } = useList({
@@ -10,7 +11,9 @@ const Agent = () => {
 
   const allAgents = data?.data ?? [];
 
-  console.log(allAgents);
+  if (isLoading) return <Loading />;
+  if (isError) return <Error />;
+
   return <div>agent</div>;
 };
 
