@@ -17,31 +17,29 @@ const Agent = () => {
 
   return (
     <Box>
-      <Typography fontSize={25} fontWeight={700} color="#11142d" >
+      <Typography fontSize={25} fontWeight={700} color="#11142d">
         Agents List
       </Typography>
 
       <Box
         mt="20px"
-        sx={{ 
+        sx={{
           display: "flex",
-          flexWrap: 'wrap',
-          gap: '20px',
-          backgroundColor: '#fcfcfc'
+          flexWrap: "wrap",
+          gap: "20px",
+          backgroundColor: "#fcfcfc",
         }}
       >
-        {
-          allAgents.map((agent) => (
-            <AgentCard 
-              key={agent._id}
-              id={agent._id}
-              name={agent.name}
-              email={agent.email}
-              avatar={agent.avatar}
-              noOfProperties={agent.allProperties.length}
-            />
-          ))
-        }
+        {allAgents.map((agent) => (
+          <AgentCard
+            key={agent._id}
+            id={agent._id}
+            name={agent.name}
+            email={agent.email}
+            avatar={agent.avatar}
+            noOfProperties={agent.allProperties.length}
+          />
+        ))}
       </Box>
     </Box>
   );
