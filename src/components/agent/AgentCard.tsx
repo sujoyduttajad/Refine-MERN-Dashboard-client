@@ -23,8 +23,6 @@ const AgentCard = ({
     <Box
       component={Link}
       to={generateLink()}
-      
-      maxWidth="50rem"
       width="100%"
       sx={{
         display: "flex",
@@ -43,6 +41,17 @@ const AgentCard = ({
         height={90}
         style={{ borderRadius: 8, objectFit: "cover" }}
       />
+      <Stack
+        direction="column"
+        justifyContent="space-between"
+        flex={1}
+        gap={{ xs: 4, sm: 2 }}
+      >
+        <Stack direction="row" flexWrap="wrap" alignItems="center" gap={2}>
+          <Typography>{name}</Typography>
+          <Typography>Real-Estate Agent</Typography>
+        </Stack>
+      </Stack>
     </Box>
   );
 };
