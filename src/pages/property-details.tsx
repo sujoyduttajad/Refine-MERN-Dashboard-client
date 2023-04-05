@@ -17,8 +17,9 @@ import {
 import { CustomButton } from "components";
 import { Error, Loading } from "components/common/Loading&Error";
 import { formatter } from "utils/functions";
-import AgentCard from "components/property/AgentCard";
+
 import LocationCard from "components/property/LocationCard";
+import AgentInfoCard from "components/property/AgentInfoCard";
 
 function checkImage(url: any) {
   let img = new Image();
@@ -361,7 +362,7 @@ const PropertyDetails = () => {
           ml={2}
           aria-label="agent-details"
         >
-          <AgentCard />
+          <AgentInfoCard />
           <LocationCard />
           <CustomButton
             type="button"
