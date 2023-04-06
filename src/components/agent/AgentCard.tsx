@@ -38,8 +38,8 @@ const AgentCard = ({
       <img
         src={avatar}
         alt={name}
-        width={90}
-        height={90}
+        width={120}
+        // height={90}
         style={{ borderRadius: 8, objectFit: "cover" }}
       />
       <Stack
@@ -67,7 +67,6 @@ const AgentCard = ({
           justifyContent="flex-start"
           alignItems="center"
           gap={2}
-          // rowGap={5}
         >
           <InfoBar 
             icon={<EmailOutlined sx={{ color: "#808191"}} />}
