@@ -3,7 +3,7 @@ import { Box, Stack, Typography } from "@pankod/refine-mui";
 
 const InfoBar = ({ icon, content}: InfoBarProps) => {
   return (
-    <Stack direction="row" justifyContent="space-between" gap={5}>
+    <Stack direction="row" justifyContent="space-between" gap={5} mr="8%">
         <Box>{icon}</Box>
         <Typography>{content}</Typography>
     </Stack>
