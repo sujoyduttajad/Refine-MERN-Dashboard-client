@@ -3,8 +3,14 @@ import { Box, Stack, Typography } from "@pankod/refine-mui";
 
 const InfoBar = ({ icon, content }: InfoBarProps) => {
   return (
-    <Stack direction="row" justifyContent="space-between" gap={5} mr="8%">
-      <Box>{icon}</Box>
+    <Stack
+      flex={1}
+      direction="row"
+      justifyContent="flex-start"
+      minWidth={{ xs: '100%', sm: 300 }}
+      gap={3}
+    >
+      <Box>{icon}</Box> 
       <Typography fontSize={14} color="#808191">
         {content}
       </Typography>
