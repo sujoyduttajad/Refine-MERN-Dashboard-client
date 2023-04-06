@@ -79,11 +79,11 @@ const AgentCard = ({
           />
           <InfoBar 
             icon={<Phone sx={{ color: "#808191"}} />}
-            content={email}
+            content="+1 234 56 78"
           />
           <InfoBar 
             icon={<LocationCity sx={{ color: "#808191"}} />}
-            content={email}
+            content={`${noOfProperties} Properties`}
           />
         </Stack>
       </Stack>
