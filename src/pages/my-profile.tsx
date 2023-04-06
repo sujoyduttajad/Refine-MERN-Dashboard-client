@@ -1,8 +1,13 @@
-import React from 'react'
+import { useOne, useGetIdentity } from "@pankod/refine-core";
+import { Box } from "@pankod/refine-mui";
+import { Profile } from "components";
+
 
 const MyProfile = () => {
   return (
-    <div>MyProfile</div>
+    <Box>
+      <Profile />
+    </Box>
   )
 }
 
