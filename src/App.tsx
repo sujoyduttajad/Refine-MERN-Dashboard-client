@@ -38,6 +38,8 @@ import {
 
 import { CredentialResponse } from "interfaces/google";
 import { parseJwt } from "utils/parse-jwt";
+import Reviews from "pages/reviews";
+import Messages from "pages/messages";
 
 const axiosInstance = axios.create();
 axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
@@ -169,12 +171,12 @@ function App() {
               },
               {
                 name: "reviews",
-                list: Home,
+                list: Reviews,
                 icon: <StarOutlineRounded />,
               },
               {
                 name: "messages",
-                list: Home,
+                list: Messages,
                 icon: <ChatBubbleOutline />,
               },
               {
