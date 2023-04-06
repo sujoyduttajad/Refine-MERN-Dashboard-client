@@ -44,6 +44,7 @@ const PropertyDetails = () => {
   if (isError) return <Error />;
 
   const isCurrentUser = user.email === propertyDetails.creator.email;
+  console.log(user);
 
   const handleDeleteProperty = () => {
     const response = window.confirm(
@@ -66,7 +67,7 @@ const PropertyDetails = () => {
 
   const handleEditProperty = () => {
     isCurrentUser && navigate(`/properties/edit/${propertyDetails._id}`);
-  }
+  };
 
   return (
     <Box
@@ -362,7 +363,11 @@ const PropertyDetails = () => {
           ml={2}
           aria-label="agent-details"
         >
-          <AgentInfoCard image={user.avatar} />
+          <AgentInfoCard
+            image={user.avatar}
+            email={user.email}
+            name={user.name}
+          />
           <LocationCard />
           <CustomButton
             type="button"
