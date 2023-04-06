@@ -25,9 +25,11 @@ const AgentCard = ({
       component={Link}
       to={generateLink()}
       width="100%"
+      borderRadius={2}
       sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
+        alignItems: { xs: "center", sm: "flex-start" },
         padding: "20px",
         gap: "20px",
         "&:hover": {
@@ -45,10 +47,11 @@ const AgentCard = ({
       <Stack
         direction="column"
         justifyContent="flex-start"
+        sx={{ alignItems: { xs: "center", sm: "flex-start" } }}
         flex={1}
         gap={{ xs: 4, sm: 4 }}
       >
-        <Stack direction="column"  alignItems="flex-start" gap={0.5}>
+        <Stack direction="column" alignItems="flex-start" gap={0.5}>
           <Typography
             fontSize={22}
             fontWeight={700}
@@ -66,7 +69,7 @@ const AgentCard = ({
           flexWrap="wrap"
           justifyContent="flex-start"
           alignItems="center"
-          gap={2}
+          gap={1.5}
         >
           <InfoBar
             icon={<EmailOutlined sx={{ color: "#808191" }} />}
