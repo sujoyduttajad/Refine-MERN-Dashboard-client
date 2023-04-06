@@ -15,4 +15,7 @@ export interface InfoBarProps {
 
 export interface AgentInfoProps {
     image: string;
+    name: string;
+    email: string;
+    // noOfProperties: number;
 }
