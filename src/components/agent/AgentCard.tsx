@@ -70,19 +70,19 @@ const AgentCard = ({
         >
           <InfoBar 
             icon={<EmailOutlined sx={{ color: "#808191"}} />}
-            name={email}
+            content={email}
           />
           <InfoBar 
             icon={<Place sx={{ color: "#808191"}} />}
-            name="New York, USA"
+            content="New York, USA"
           />
           <InfoBar 
             icon={<Phone sx={{ color: "#808191"}} />}
-            name={email}
+            content={email}
           />
           <InfoBar 
             icon={<LocationCity sx={{ color: "#808191"}} />}
-            name={email}
+            content={email}
           />
         </Stack>
       </Stack>
