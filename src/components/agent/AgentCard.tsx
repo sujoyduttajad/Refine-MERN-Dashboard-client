@@ -64,9 +64,10 @@ const AgentCard = ({
         <Stack
           direction="row"
           flexWrap="wrap"
-          justifyContent="space-between"
+          justifyContent="flex-start"
           alignItems="center"
           gap={2}
+          // rowGap={5}
         >
           <InfoBar 
             icon={<EmailOutlined sx={{ color: "#808191"}} />}
