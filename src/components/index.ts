@@ -2,6 +2,7 @@
 import Profile from './common/Profile';
 import PropertyCard from './common/PropertyCard';
 import CustomButton from './common/CustomButton';
+import Facilities from './common/Facilities';
 
 // charts
 import PieChart from './charts/PieChart';
@@ -23,4 +24,5 @@ export {
   TotalRevenue,
   AgentCard,
   TopAgent,
+  Facilities
 };
