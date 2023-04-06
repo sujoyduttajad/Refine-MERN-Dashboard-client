@@ -362,7 +362,7 @@ const PropertyDetails = () => {
           ml={2}
           aria-label="agent-details"
         >
-          <AgentInfoCard />
+          <AgentInfoCard image={user.avatar} />
           <LocationCard />
           <CustomButton
             type="button"
