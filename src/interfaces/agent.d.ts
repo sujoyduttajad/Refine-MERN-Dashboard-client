@@ -12,3 +12,7 @@ export interface InfoBarProps {
     icon: ReactNode;
     content: string;
 }
+
+export interface AgentInfoProps {
+    image: string;
+}
