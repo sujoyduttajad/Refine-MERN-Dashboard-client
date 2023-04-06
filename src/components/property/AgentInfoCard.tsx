@@ -10,8 +10,7 @@ import { CustomButton } from "components";
 import sampleAgent from "../../assets/sample-agent.jpg";
 import { AgentInfoProps } from "interfaces/agent";
 
-
-const AgentInfoCard = ({ image }: AgentInfoProps) => {
+const AgentInfoCard = ({ image, email, name }: AgentInfoProps) => {
   return (
     <Card
       variant="outlined"
@@ -38,9 +37,14 @@ const AgentInfoCard = ({ image }: AgentInfoProps) => {
           sx={{ height: "7rem", width: "7rem", borderRadius: "50%" }}
         />
         <Typography mt={2} fontSize={16} fontWeight={600}>
-          Cassandra Wilson
+          {name}
         </Typography>
-        <Typography fontSize={14} fontWeight={400} color="#808191">
+        <Typography
+          fontSize={14}
+          fontWeight={400}
+          color="#808191"
+          textTransform="capitalize"
+        >
           Agent
         </Typography>
         <Stack direction="row" mt={0.5} alignItems="center" gap={0.5}>
@@ -50,7 +54,7 @@ const AgentInfoCard = ({ image }: AgentInfoProps) => {
           </Typography>
         </Stack>
         <Typography mt={2} fontSize={16} fontWeight={600}>
-          10 Properties
+          {email}
         </Typography>
 
         <Stack direction="row" mt={3} alignItems="center" gap={2}>
