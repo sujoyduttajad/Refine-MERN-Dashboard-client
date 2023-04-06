@@ -7,11 +7,12 @@ const InfoBar = ({ icon, content }: InfoBarProps) => {
       flex={1}
       direction="row"
       justifyContent="flex-start"
+      alignItems="flex-start"
       minWidth={{ xs: "100%", sm: 300 }}
-      gap={3}
+      gap={1.5}
     >
       <Box>{icon}</Box>
-      <Typography fontSize={14} color="#808191">
+      <Typography fontSize={15} color="#808191">
         {content}
       </Typography>
     </Stack>
