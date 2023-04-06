@@ -8,7 +8,10 @@ import {
 import { ChatOutlined, Phone, Place } from "@mui/icons-material";
 import { CustomButton } from "components";
 import sampleAgent from "../../assets/sample-agent.jpg";
-const AgentInfoCard = () => {
+import { AgentInfoProps } from "interfaces/agent";
+
+
+const AgentInfoCard = ({ image }: AgentInfoProps) => {
   return (
     <Card
       variant="outlined"
@@ -30,7 +33,7 @@ const AgentInfoCard = () => {
       >
         <CardMedia
           component="img"
-          image={sampleAgent}
+          image={image}
           alt="Agent Profile picture"
           sx={{ height: "7rem", width: "7rem", borderRadius: "50%" }}
         />
