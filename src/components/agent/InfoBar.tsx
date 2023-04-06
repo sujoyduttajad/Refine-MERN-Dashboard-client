@@ -1,9 +1,12 @@
 import { InfoBarProps } from 'interfaces/agent'
-import React from 'react'
+import { Box, Stack, Typography } from "@pankod/refine-mui";
 
 const InfoBar = ({ icon, name}: InfoBarProps) => {
   return (
-    <div>InfoBar</div>
+    <Stack>
+        {icon}
+        <Typography>{name}</Typography>
+    </Stack>
   )
 }
 
