@@ -1,11 +1,11 @@
 import { InfoBarProps } from 'interfaces/agent'
 import { Box, Stack, Typography } from "@pankod/refine-mui";
 
-const InfoBar = ({ icon, name}: InfoBarProps) => {
+const InfoBar = ({ icon, content}: InfoBarProps) => {
   return (
     <Stack direction="row" justifyContent="space-between" gap={5}>
         <Box>{icon}</Box>
-        <Typography>{name}</Typography>
+        <Typography>{content}</Typography>
     </Stack>
   )
 }
