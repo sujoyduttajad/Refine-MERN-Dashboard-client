@@ -3,6 +3,7 @@ import { EmailOutlined, LocationCity, Phone, Place } from "@mui/icons-material";
 import { useGetIdentity } from "@pankod/refine-core";
 import { Box, Stack, Typography } from "@pankod/refine-mui";
 import { Link } from "@pankod/refine-react-router-v6";
+import InfoBar from "./InfoBar";
 
 const AgentCard = ({
   id,
@@ -66,7 +67,12 @@ const AgentCard = ({
           justifyContent="space-between"
           alignItems="center"
           gap={2}
-        ></Stack>
+        >
+          <InfoBar 
+            icon={<EmailOutlined sx={{ color: "#808191"}} />}
+            name={email}
+          />
+        </Stack>
       </Stack>
     </Box>
   );
