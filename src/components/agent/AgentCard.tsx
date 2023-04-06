@@ -39,19 +39,19 @@ const AgentCard = ({
         src={avatar}
         alt={name}
         width={120}
-        // height={90}
+        height={120}
         style={{ borderRadius: 8, objectFit: "cover" }}
       />
       <Stack
         direction="column"
-        justifyContent="space-between"
+        justifyContent="flex-start"
         flex={1}
-        gap={{ xs: 4, sm: 2 }}
+        gap={{ xs: 4, sm: 4 }}
       >
-        <Stack direction="row" flexWrap="wrap" alignItems="center" gap={2}>
+        <Stack direction="column"  alignItems="flex-start" gap={0.5}>
           <Typography
             fontSize={22}
-            fontWeight={600}
+            fontWeight={700}
             textTransform="capitalize"
             color="#475be8"
           >
@@ -68,20 +68,20 @@ const AgentCard = ({
           alignItems="center"
           gap={2}
         >
-          <InfoBar 
-            icon={<EmailOutlined sx={{ color: "#808191"}} />}
+          <InfoBar
+            icon={<EmailOutlined sx={{ color: "#808191" }} />}
             content={email}
           />
-          <InfoBar 
-            icon={<Place sx={{ color: "#808191"}} />}
+          <InfoBar
+            icon={<Place sx={{ color: "#808191" }} />}
             content="New York, USA"
           />
-          <InfoBar 
-            icon={<Phone sx={{ color: "#808191"}} />}
+          <InfoBar
+            icon={<Phone sx={{ color: "#808191" }} />}
             content="+1 234 56 78"
           />
-          <InfoBar 
-            icon={<LocationCity sx={{ color: "#808191"}} />}
+          <InfoBar
+            icon={<LocationCity sx={{ color: "#808191" }} />}
             content={`${noOfProperties} Properties`}
           />
         </Stack>
