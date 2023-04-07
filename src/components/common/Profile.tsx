@@ -48,7 +48,6 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
             flex={1}
             display="flex"
             flexDirection={{ xs: "column", md: "row" }}
-            // gap="20px"
           >
             <img
               src={
@@ -69,19 +68,27 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
               justifyContent="space-between"
               gap="30px"
             >
-              <Stack direction="column">
-                <Typography
-                  textTransform="capitalize"
-                  fontSize={22}
-                  fontWeight={700}
-                  color="#475be8"
-                >
-                  {name}
-                </Typography>
-                <Typography fontSize={16} color="#808191">
-                  Real-Estate Agent
-                </Typography>
-              </Stack>
+              <Box
+                // flex={1}
+                display="flex"
+                justifyContent="space-between"
+                gap="30px"
+              >
+                <Stack direction="column">
+                  <Typography
+                    textTransform="capitalize"
+                    fontSize={22}
+                    fontWeight={700}
+                    color="#475be8"
+                  >
+                    {name}
+                  </Typography>
+                  <Typography fontSize={16} color="#808191">
+                    Real-Estate Agent
+                  </Typography>
+                </Stack>
+                <button>Edit</button>
+              </Box>
 
               <Stack direction="column" gap="30px">
                 <Stack gap="15px">
