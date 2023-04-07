@@ -16,7 +16,13 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
       {type} Profile
     </Typography>
 
-    <Box mt="20px" borderRadius="15px" padding="20px" bgcolor="#FCFCFC">
+    <Box
+      mt="20px"
+      borderRadius="15px"
+      padding="20px"
+      bgcolor="#FCFCFC"
+      maxWidth="80rem"
+    >
       <Box
         sx={{
           display: "flex",
