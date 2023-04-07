@@ -42,7 +42,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
             flex={1}
             display="flex"
             flexDirection={{ xs: "column", md: "row" }}
-            gap="20px"
+            // gap="20px"
           >
             <img
               src={
@@ -50,8 +50,8 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                   ? avatar
                   : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png"
               }
-              width={90}
-              height={90}
+              width={120}
+              height={120}
               alt="user_profile"
               className="my_profile_user-img"
             />
@@ -67,13 +67,13 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                 <Typography
                   textTransform="capitalize"
                   fontSize={22}
-                  fontWeight={600}
-                  color="#11142D"
+                  fontWeight={700}
+                  color="#475be8"
                 >
                   {name}
                 </Typography>
                 <Typography fontSize={16} color="#808191">
-                  Realestate Agent
+                  Real-Estate Agent
                 </Typography>
               </Stack>
 
