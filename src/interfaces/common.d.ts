@@ -28,7 +28,7 @@ export interface PropertyProps {
     // sale/rent toggle button
     description: string;
     location: string;
-    price: string;
+    price: number;
     photo: string;
     creator: string;
 }
