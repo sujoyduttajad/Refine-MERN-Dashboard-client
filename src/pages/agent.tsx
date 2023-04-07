@@ -21,12 +21,11 @@ const Agent = () => {
 
       <Box
         mt="20px"
-        maxWidth="50rem"
+        maxWidth="fit-content"
         sx={{
           display: "flex",
           flexWrap: "wrap",
           gap: "20px",
-          backgroundColor: "#fcfcfc",
         }}
       >
         {allAgents.map((agent) => (
