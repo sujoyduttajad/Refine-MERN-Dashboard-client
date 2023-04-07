@@ -32,10 +32,10 @@ const AgentCard = ({
         flexDirection: { xs: "column", sm: "column" },
         // alignItems: { xs: "center", sm: "flex-start" },
         alignItems: "center",
-
+        justifyContent:"center",
         padding: "1rem",
         borderRadius: "10px",
-        // gap: "20px",
+        gap: "20px",
         "&:hover": {
           boxShadow: "0 22px 45px 2px rgba(176, 176, 176, 0.5)",
         },
@@ -57,10 +57,11 @@ const AgentCard = ({
       <Stack
         direction="column"
         justifyContent="center"
-        sx={{ alignItems: { xs: "center", sm: "flex-start" } }}
+        alignItems="center"
         flex={1}
-        // gap={{ xs: 4, sm: 4 }}
+        gap={{ xs: 4, sm: 4 }}
       >
+        {/* Name and Designation */}
         <Stack direction="column" alignItems="center" gap={0.5}>
           <Typography
             fontSize={22}
@@ -74,6 +75,7 @@ const AgentCard = ({
             Real-Estate Agent
           </Typography>
         </Stack>
+        {/* Agent Information */}
         <Stack
           direction="column"
           // flexWrap="wrap"
