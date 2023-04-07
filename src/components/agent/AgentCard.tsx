@@ -1,5 +1,5 @@
 import { AgentCardProp } from "interfaces/agent";
-import { EmailOutlined, LocationCity, Phone, Place } from "@mui/icons-material";
+import { Email, LocationCity, Phone, Place } from "@mui/icons-material";
 import { useGetIdentity } from "@pankod/refine-core";
 import { Box, CardMedia, Stack, Typography } from "@pankod/refine-mui";
 import { Link } from "@pankod/refine-react-router-v6";
@@ -30,7 +30,6 @@ const AgentCard = ({
       sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "column" },
-        // alignItems: { xs: "center", sm: "flex-start" },
         alignItems: "center",
         justifyContent:"center",
         padding: "1rem",
@@ -83,7 +82,6 @@ const AgentCard = ({
           alignItems="center"
           gap={1.5}
         >
-          
           <InfoBar
             icon={<Place sx={{ color: "#808191" }} />}
             content="New York, USA"
@@ -97,7 +95,7 @@ const AgentCard = ({
             content={`${noOfProperties} Properties`}
           />
           <InfoBar
-            icon={<EmailOutlined sx={{ color: "#808191" }} />}
+            icon={<Email sx={{ color: "#808191" }} />}
             content={email}
           />
         </Stack>
