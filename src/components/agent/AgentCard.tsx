@@ -1,7 +1,7 @@
 import { AgentCardProp } from "interfaces/agent";
 import { EmailOutlined, LocationCity, Phone, Place } from "@mui/icons-material";
 import { useGetIdentity } from "@pankod/refine-core";
-import { Box, Stack, Typography } from "@pankod/refine-mui";
+import { Box, CardMedia, Stack, Typography } from "@pankod/refine-mui";
 import { Link } from "@pankod/refine-react-router-v6";
 import InfoBar from "./InfoBar";
 
@@ -24,34 +24,44 @@ const AgentCard = ({
     <Box
       component={Link}
       to={generateLink()}
+      maxWidth={275}
       width="100%"
       borderRadius={2}
       sx={{
         display: "flex",
-        flexDirection: { xs: "column", sm: "row" },
-        alignItems: { xs: "center", sm: "flex-start" },
-        padding: "20px",
-        gap: "20px",
+        flexDirection: { xs: "column", sm: "column" },
+        // alignItems: { xs: "center", sm: "flex-start" },
+        alignItems: "center",
+
+        padding: "1rem",
+        borderRadius: "10px",
+        // gap: "20px",
         "&:hover": {
           boxShadow: "0 22px 45px 2px rgba(176, 176, 176, 0.5)",
         },
       }}
     >
-      <img
-        src={avatar}
+      <CardMedia
+        component="img"
+        image={avatar}
         alt={name}
         width={120}
         height={120}
-        style={{ borderRadius: 8, objectFit: "cover" }}
+        sx={{
+          height: "7rem",
+          width: "7rem",
+          borderRadius: "50%",
+          objectFit: "cover",
+        }}
       />
       <Stack
         direction="column"
-        justifyContent="flex-start"
+        justifyContent="center"
         sx={{ alignItems: { xs: "center", sm: "flex-start" } }}
         flex={1}
-        gap={{ xs: 4, sm: 4 }}
+        // gap={{ xs: 4, sm: 4 }}
       >
-        <Stack direction="column" alignItems="flex-start" gap={0.5}>
+        <Stack direction="column" alignItems="center" gap={0.5}>
           <Typography
             fontSize={22}
             fontWeight={700}
@@ -65,9 +75,9 @@ const AgentCard = ({
           </Typography>
         </Stack>
         <Stack
-          direction="row"
-          flexWrap="wrap"
-          justifyContent="flex-start"
+          direction="column"
+          // flexWrap="wrap"
+          justifyContent="center"
           alignItems="center"
           gap={1.5}
         >
