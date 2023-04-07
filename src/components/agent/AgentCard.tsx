@@ -78,15 +78,12 @@ const AgentCard = ({
         {/* Agent Information */}
         <Stack
           direction="column"
-          // flexWrap="wrap"
+          flexWrap="wrap"
           justifyContent="center"
           alignItems="center"
           gap={1.5}
         >
-          <InfoBar
-            icon={<EmailOutlined sx={{ color: "#808191" }} />}
-            content={email}
-          />
+          
           <InfoBar
             icon={<Place sx={{ color: "#808191" }} />}
             content="New York, USA"
@@ -98,6 +95,10 @@ const AgentCard = ({
           <InfoBar
             icon={<LocationCity sx={{ color: "#808191" }} />}
             content={`${noOfProperties} Properties`}
+          />
+          <InfoBar
+            icon={<EmailOutlined sx={{ color: "#808191" }} />}
+            content={email}
           />
         </Stack>
       </Stack>
