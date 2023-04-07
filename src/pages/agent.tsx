@@ -1,6 +1,4 @@
-import React from "react";
 import { Box, Typography } from "@pankod/refine-mui";
-
 import { useList } from "@pankod/refine-core";
 import { Error, Loading } from "components/common/Loading&Error";
 import { AgentCard } from "components";
