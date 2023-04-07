@@ -88,7 +88,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                     Real-Estate Agent
                   </Typography>
                 </Stack>
-                <CustomButton
+                {/* <CustomButton
                   type="button"
                   title="Edit"
                   backgroundColor="#475be8"
@@ -98,7 +98,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                   fontSizeValue="16.5px"
                   icon={<Edit />}
                   // handleClick={handleEditProperty}
-                />
+                /> */}
               </Box>
 
               <Stack direction="column" gap="30px">
