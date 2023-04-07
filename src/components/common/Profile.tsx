@@ -1,8 +1,9 @@
 import { Email, Phone, Place } from "@mui/icons-material";
-import { Box, Stack, Typography } from "@pankod/refine-mui";
+import { Box, Edit, Stack, Typography } from "@pankod/refine-mui";
 
 import { ProfileProps, PropertyProps } from "interfaces/common";
 import PropertyCard from "./PropertyCard";
+import CustomButton from "./CustomButton";
 
 function checkImage(url: any) {
   let img = new Image();
@@ -87,7 +88,17 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                     Real-Estate Agent
                   </Typography>
                 </Stack>
-                <button>Edit</button>
+                <CustomButton
+                  type="button"
+                  title="Edit"
+                  backgroundColor="#475be8"
+                  color="#fcfcfc"
+                  heightValue="40px"
+                  paddingValue="1px 10px"
+                  fontSizeValue="16.5px"
+                  icon={<Edit />}
+                  // handleClick={handleEditProperty}
+                />
               </Box>
 
               <Stack direction="column" gap="30px">
