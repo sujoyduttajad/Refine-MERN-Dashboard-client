@@ -1,4 +1,3 @@
-
 import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { useDelete, useGetIdentity, useShow } from "@pankod/refine-core";
 import { useParams, useNavigate } from "@pankod/refine-react-router-v6";
@@ -192,7 +191,6 @@ const PropertyDetails = () => {
                     </Typography>
                   </Stack>
                 </Box>
-
                 <Box>
                   <Typography variant="h4" fontWeight={600} color="#475be8">
                     {formatter.format(propertyDetails.price).slice(0, -3)}
