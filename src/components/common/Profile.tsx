@@ -64,7 +64,12 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
               gap="30px"
             >
               <Stack direction="column">
-                <Typography textTransform="capitalize" fontSize={22} fontWeight={600} color="#11142D">
+                <Typography
+                  textTransform="capitalize"
+                  fontSize={22}
+                  fontWeight={600}
+                  color="#11142D"
+                >
                   {name}
                 </Typography>
                 <Typography fontSize={16} color="#808191">
