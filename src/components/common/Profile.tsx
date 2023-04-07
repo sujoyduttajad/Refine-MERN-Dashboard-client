@@ -1,6 +1,13 @@
+import { ProfileProps } from 'interfaces/common'
 import React from 'react'
 
-const Profile = () => {
+const Profile = ({
+  type,
+  name,
+  avatar,
+  email,
+  properties
+}: ProfileProps) => {
   return (
     <div>Profile</div>
   )
