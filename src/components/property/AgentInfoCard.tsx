@@ -7,7 +7,6 @@ import {
 } from "@pankod/refine-mui";
 import { ChatOutlined, Phone, Place } from "@mui/icons-material";
 import { CustomButton } from "components";
-import sampleAgent from "../../assets/sample-agent.jpg";
 import { AgentInfoProps } from "interfaces/agent";
 
 const AgentInfoCard = ({ image, email, name }: AgentInfoProps) => {
