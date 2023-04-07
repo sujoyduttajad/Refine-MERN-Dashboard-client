@@ -35,6 +35,7 @@ const AgentCard = ({
         padding: "1rem",
         borderRadius: "10px",
         gap: "20px",
+        border: "1px solid rgba(0, 0, 0, 0.12)",
         "&:hover": {
           boxShadow: "0 22px 45px 2px rgba(176, 176, 176, 0.5)",
         },
