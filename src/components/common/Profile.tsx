@@ -34,7 +34,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
         <Box
           flex={1}
           sx={{
-            marginTop: { md: "58px" },
+            marginTop: { md: "8px" },
             marginLeft: { xs: "20px", md: "0px" },
           }}
         >
@@ -50,8 +50,8 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                   ? avatar
                   : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png"
               }
-              width={78}
-              height={78}
+              width={90}
+              height={90}
               alt="user_profile"
               className="my_profile_user-img"
             />
@@ -64,7 +64,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
               gap="30px"
             >
               <Stack direction="column">
-                <Typography fontSize={22} fontWeight={600} color="#11142D">
+                <Typography textTransform="capitalize" fontSize={22} fontWeight={600} color="#11142D">
                   {name}
                 </Typography>
                 <Typography fontSize={16} color="#808191">
@@ -82,6 +82,8 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                     flexDirection="row"
                     alignItems="center"
                     gap="10px"
+                    padding={1.5}
+                    sx={{ border: "1px solid #E4E4E4", borderRadius: "6px" }}
                   >
                     <Place sx={{ color: "#11142D" }} />
                     <Typography fontSize={14} color="#11142D">
@@ -100,6 +102,8 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                       flexDirection="row"
                       alignItems="center"
                       gap="10px"
+                      padding={1.5}
+                      sx={{ border: "1px solid #E4E4E4", borderRadius: "6px" }}
                     >
                       <Phone sx={{ color: "#11142D" }} />
                       <Typography fontSize={14} color="#11142D" noWrap>
@@ -117,6 +121,8 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                       flexDirection="row"
                       alignItems="center"
                       gap="10px"
+                      padding={1.5}
+                      sx={{ border: "1px solid #E4E4E4", borderRadius: "6px" }}
                     >
                       <Email sx={{ color: "#11142D" }} />
                       <Typography fontSize={14} color="#11142D">
