@@ -16,6 +16,9 @@ html, body {
   .my_profile_user-img {
     border-radius: 100%;
     margin-left: -64px;
+    position: relative;
+    left: -1rem;
+    /* top: 60px; */
   }
   
   .property_details-img {
