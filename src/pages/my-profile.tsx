@@ -1,5 +1,4 @@
 import { useOne, useGetIdentity } from "@pankod/refine-core";
-import { Box } from "@pankod/refine-mui";
 import { Profile } from "components";
 import { Error, Loading } from "components/common/Loading&Error";
 
@@ -17,9 +16,15 @@ const MyProfile = () => {
   if (isError) return <Error />;
 
   return (
-    <Box>
-      <Profile />
-    </Box>
+    
+      <Profile 
+        type="My"
+        name={myProfile.name}
+        email={myProfile.email}
+        avatar={myProfile.avatar}
+        properties={myProfile.allProperties}
+      />
+    
   )
 }
 
