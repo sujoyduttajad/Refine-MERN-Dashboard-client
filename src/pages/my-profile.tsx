@@ -2,7 +2,6 @@ import { useOne, useGetIdentity } from "@pankod/refine-core";
 import { Profile } from "components";
 import { Error, Loading } from "components/common/Loading&Error";
 
-
 const MyProfile = () => {
   const { data: user } = useGetIdentity();
   const { data, isLoading, isError } = useOne({
@@ -16,16 +15,14 @@ const MyProfile = () => {
   if (isError) return <Error />;
 
   return (
-    
-      <Profile 
-        type="My"
-        name={myProfile.name}
-        email={myProfile.email}
-        avatar={myProfile.avatar}
-        properties={myProfile.allProperties}
-      />
-    
-  )
-}
+    <Profile
+      type="My"
+      name={myProfile.name}
+      email={myProfile.email}
+      avatar={myProfile.avatar}
+      properties={myProfile.allProperties}
+    />
+  );
+};
 
-export default MyProfile
+export default MyProfile;
