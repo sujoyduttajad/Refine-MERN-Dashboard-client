@@ -11,9 +11,8 @@ import {
 } from "@pankod/refine-mui";
 import { PropertyListValues } from "interfaces/property";
 import { formatter } from "utils/functions";
+import ThreeDotsMenu from "components/common/ThreeDotsMenu";
 
-const ITEM_HEIGHT = 48;
-const option = "More Detail";
 
 const SalesCard = ({
   creator,
@@ -63,37 +62,9 @@ const SalesCard = ({
           </Box>
         </Stack>
       </Stack>
-      <Stack>
-        <IconButton
-          aria-label="more"
-          id="long-button"
-          aria-controls={open ? "long-menu" : undefined}
-          aria-expanded={open ? "true" : undefined}
-          aria-haspopup="true"
-          onClick={handleClick}
-        >
-          <MoreVert />
-        </IconButton>
-        <Menu
-          id="long-menu"
-          MenuListProps={{
-            "aria-labelledby": "long-button",
-          }}
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          PaperProps={{
-            style: {
-              maxHeight: ITEM_HEIGHT * 4.5,
-              width: "20ch",
-            },
-          }}
-        >
-          <MenuItem selected={option === "More Detail"} onClick={handleClose}>
-            More Details
-          </MenuItem>
-        </Menu>
-      </Stack>
+      <ThreeDotsMenu 
+        option={"More Detail"}
+      />
     </Box>
   );
 };
