@@ -26,15 +26,15 @@ const Home = () => {
 
   // Total Revenue Calculate
   type PropertyInterface = {
-    _id: string
-    creator: string
-    description: string
-    location: string
-    photo: string
-    price: number
-    propertyType: string
-    title: string
- }
+    _id: string;
+    creator: string;
+    description: string;
+    location: string;
+    photo: string;
+    price: number;
+    propertyType: string;
+    title: string;
+  };
   const totalRevenue = (): number => {
     return (
       propertyData &&
@@ -71,7 +71,6 @@ const Home = () => {
           value={550}
           colors={["#18C784", "#C9F8E6"]}
           series={[60, 40]}
-          
         />
         <PieChart
           title="Total Customers"
@@ -96,6 +95,21 @@ const Home = () => {
         <TotalRevenue totalPrice={totalPrice} />
         <PropertyReferrals />
       </Stack>
+
+      <Box
+        flex={1}
+        borderRadius="15px"
+        padding="20px"
+        bgcolor="#FAFAFA"
+        display="flex"
+        flexDirection="column"
+        minWidth="100%"
+        mt="25px"
+      >
+        <Typography fontSize="18px" fontWeight={600} color="#11142d">
+          Latest Properties
+        </Typography>
+      </Box>
     </Box>
   );
 };
