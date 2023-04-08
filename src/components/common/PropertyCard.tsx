@@ -21,6 +21,8 @@ const PropertyCard = ({
   photo,
 }: PropertyCardProps) => {
 
+  const priceDisplay = formatter.format(price).slice(0,-3);
+
   return (
     <Card
       component={Link}
@@ -79,7 +81,7 @@ const PropertyCard = ({
           height="100%"
         >
           <Typography fontSize={16} fontWeight={700} color="#475be8">
-            {formatter.format(price).slice(0,-3)}
+            {priceDisplay}
           </Typography>
         </Box>
       </CardContent>
