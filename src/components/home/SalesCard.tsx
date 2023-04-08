@@ -9,8 +9,8 @@ const SalesCard = ({ creator, title, photo, price, location  }: PropertyListValu
         <Stack direction="row" justifyContent="flex-start">
           <CardMedia 
           component="img"
-        //   image={property.avatar}
-        //   alt={agent.name}
+          image={photo}
+          alt={title}
           sx={{
             height: "4.5rem",
             width: "4.5rem",
@@ -19,7 +19,7 @@ const SalesCard = ({ creator, title, photo, price, location  }: PropertyListValu
           }}
           />
           <Stack>
-            <Typography>Metro Jay Apartment</Typography>
+            <Typography>{title}</Typography>
             <Typography></Typography>
           </Stack>
         </Stack>
