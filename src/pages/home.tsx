@@ -183,9 +183,12 @@ const Home = () => {
         minWidth="100%"
         mt="25px"
       >
-        <Typography fontSize="18px" fontWeight={600} color="#11142d">
-          Latest Properties
-        </Typography>
+        <Stack direction="row" justifyContent="space-between">
+          <Typography fontSize="18px" fontWeight={600} color="#11142d">
+            Latest Properties
+          </Typography>
+          <ViewAll />
+        </Stack>
 
         <Stack width={"100%"} direction={{ xs: "column", lg: "row" }} gap={4}>
           <Box mt={2.5} display="flex" flexWrap="wrap" gap={4}>
