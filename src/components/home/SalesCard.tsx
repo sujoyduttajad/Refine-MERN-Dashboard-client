@@ -64,6 +64,10 @@ const SalesCard = ({
       </Stack>
       <ThreeDotsMenu 
         option={"More Detail"}
+        open={open}
+        anchorEl={anchorEl}
+        handleClick={handleClick}
+        handleClose={handleClose}
       />
     </Box>
   );
