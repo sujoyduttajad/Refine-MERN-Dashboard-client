@@ -235,9 +235,10 @@ export const Sider: typeof DefaultSider = ({ render }) => {
             py: 1,
             "&.Mui-selected": {
               "&:hover": {
-                backgroundColor: "transparent",
+                backgroundColor:
+                  selectedKey === "/" ? "#1e36e8" : "transparent",
               },
-              backgroundColor: "transparent",
+              backgroundColor: selectedKey === "/" ? "#475be8" : "transparent",
             },
             justifyContent: "center",
             margin: "10px auto",
@@ -250,7 +251,7 @@ export const Sider: typeof DefaultSider = ({ render }) => {
             sx={{
               justifyContent: "center",
               minWidth: 36,
-              color: "#808191",
+              color: selectedKey === "/" ? "#fff" : "#808191",
             }}
           >
             <GridViewOutlined />
@@ -261,6 +262,7 @@ export const Sider: typeof DefaultSider = ({ render }) => {
               noWrap: true,
               fontSize: "16px",
               fontWeight: selectedKey === "/" ? "bold" : "normal",
+              color: selectedKey === "/" ? "#fff" : "#808191",
             }}
           />
         </ListItemButton>
