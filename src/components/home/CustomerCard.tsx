@@ -3,7 +3,17 @@ import { Box, Stack, Typography } from "@pankod/refine-mui";
 const CustomerCard = () => {
   return (
     <Box>
-      <Box display="flex" justifyContent="space-evenly" gap={1}>
+      <Box
+        display="flex"
+        justifyContent="space-evenly"
+        gap={1}
+        pb={2}
+        sx={{
+          "&:first-of-type": {
+            borderBottom: "2px solid #DBDBE0",
+          },
+        }}
+      >
         <Stack direction="column" gap={2}>
           <Typography fontSize={14} color="#808191">
             Total Customers
@@ -15,14 +25,14 @@ const CustomerCard = () => {
         </Stack>
         <Stack></Stack>
       </Box>
-      <Box display="flex" justifyContent="space-evenly" gap={1}>
+      <Box display="flex" justifyContent="space-evenly" gap={1} mt={2}>
         <Stack direction="column" gap={2}>
           <Typography fontSize={14} color="#808191">
-            Total Customers
+            New Customers This Month
           </Typography>
-          <Typography variant="h4">500K</Typography>
+          <Typography variant="h4">12K</Typography>
           <Typography fontSize={12} fontWeight={700} color="#18C346">
-            21.77%
+            41.04%
           </Typography>
         </Stack>
         <Stack></Stack>
