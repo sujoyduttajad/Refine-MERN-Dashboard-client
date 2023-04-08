@@ -1,6 +1,7 @@
-import React from 'react'
+import { TopAgentProps } from 'interfaces/agent'
 
-const TopAgent = () => {
+
+const TopAgent = ({ image, name, email }: TopAgentProps) => {
   return (
     <div>TopAgent</div>
   )
