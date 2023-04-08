@@ -178,7 +178,16 @@ const Home = () => {
             </Typography>
             <ViewAll />
           </Stack>
-          <SalesCard />
+          {latestProperties.map((property) => (
+            <SalesCard
+              key={property.id}
+              creator={property.creator}
+              title={property.title}
+              photo={property.photo}
+              price={property.price}
+              location={property.location}
+            />
+          ))}
         </Stack>
       </Box>
       {/* 4th Row  */}
