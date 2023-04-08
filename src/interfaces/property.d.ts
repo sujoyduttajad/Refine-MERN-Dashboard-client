@@ -30,7 +30,7 @@ export interface PropertyListValues {
     propertyType?: string;
     location?: string;
     photo?: string;
-    price: number | undefined;
+    price: number;
 }
 
 // Total Revenue Calculate
