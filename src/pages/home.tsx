@@ -159,6 +159,9 @@ const Home = () => {
           padding={2}
           borderRadius="15px"
         >
+          <Typography fontSize={18} fontWeight={600} color="#11142d">
+            Customer
+          </Typography>
           <CustomerCard />
         </Stack>
         <Stack
@@ -169,6 +172,12 @@ const Home = () => {
           padding={2}
           borderRadius="15px"
         >
+          <Stack direction="row" justifyContent="space-between">
+            <Typography fontSize={18} fontWeight={600} color="#11142d">
+              Latest Sales
+            </Typography>
+            <ViewAll />
+          </Stack>
           <SalesCard />
         </Stack>
       </Box>
