@@ -14,6 +14,8 @@ import AgentCard from './agent/AgentCard';
 
 // home
 import TopAgent from './home/TopAgent';
+import SalesCard from './home/SalesCard';
+import CustomerCard from './home/CustomerCard';
 
 export {
   Profile,
@@ -24,5 +26,7 @@ export {
   TotalRevenue,
   AgentCard,
   TopAgent,
+  SalesCard,
+  CustomerCard,
   Facilities
 };
