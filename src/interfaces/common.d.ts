@@ -49,3 +49,12 @@ export interface FormProps {
     onFinishHandler: (data: FieldValues) => Promise<void> | void;
     propertyImage: { name: string; url: string };
 }
+
+export interface ThreeDotsProps {
+    option: string;
+    open: boolean;
+    menuId: string;
+    anchorEl?: null | HTMLElement;
+    handleClick?: React.MouseEvent<HTMLElement>;
+    handleClose?: React.MouseEvent<HTMLElement>;
+}
