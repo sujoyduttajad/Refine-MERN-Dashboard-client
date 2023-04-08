@@ -8,9 +8,24 @@ import {
 } from "components";
 import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { Error, Loading } from "components/common/Loading&Error";
-import { PropertyInterface } from "interfaces/property";
+// import { PropertyInterface } from "interfaces/property";
 
-const totalRevenue = (properties: PropertyInterface[]): number => {
+interface BaseRecord {
+  _id: string;
+  creator: string;
+  description: string;
+  location: string;
+  photo: string;
+  price: number;
+  propertyType: string;
+  title: string;
+}
+interface PropertyInterface extends BaseRecord {
+  price: number;
+  // Add other properties specific to PropertyInterface
+}
+
+const totalRevenue = (properties: BaseRecord[]): number => {
   return (
     properties &&
     (properties as PropertyInterface[])
@@ -35,12 +50,11 @@ const Home = () => {
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
-  let totalPrice: number = totalRevenue(latestProperties ?? []);
-
+  let totalPrice: number = totalRevenue(
+    latestProperties as PropertyInterface[]
+  );
   // Total Properties Calculate
   const totalProperties: number = latestProperties.length;
-
-  // console.log(propertyData);
 
   return (
     <Box>
