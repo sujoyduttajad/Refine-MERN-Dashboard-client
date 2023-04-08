@@ -8,8 +8,9 @@ import {
   CustomerCard,
   SalesCard,
 } from "components";
-import { Typography, Box, Stack } from "@pankod/refine-mui";
+import { Typography, Box, Stack, Button } from "@pankod/refine-mui";
 import { Error, Loading } from "components/common/Loading&Error";
+import ViewAll from "components/common/ViewAll";
 // import { PropertyInterface } from "interfaces/property";
 
 interface BaseRecord {
@@ -48,7 +49,7 @@ const Home = () => {
   });
   const { data: user } = useGetIdentity();
 
-  console.log(user)
+  console.log(user);
 
   const latestProperties = data?.data ?? [];
 
@@ -134,13 +135,40 @@ const Home = () => {
         mt="25px"
         gap={2}
       >
-        <Stack width={"100%"} direction="column" gap={4}>
+        <Stack
+          width={"100%"}
+          direction="column"
+          gap={4}
+          bgcolor="#fff"
+          padding={2}
+          borderRadius="15px"
+        >
+          <Stack direction="row" justifyContent="space-between">
+            <Typography fontSize={18} fontWeight={600} color="#11142d">
+              Top Agent
+            </Typography>
+            <ViewAll />
+          </Stack>
           <TopAgent />
         </Stack>
-        <Stack width={"100%"} direction="column" gap={4}>
+        <Stack
+          width={"100%"}
+          direction="column"
+          gap={4}
+          bgcolor="#fff"
+          padding={2}
+          borderRadius="15px"
+        >
           <CustomerCard />
         </Stack>
-        <Stack width={"100%"} direction="column" gap={4}>
+        <Stack
+          width={"100%"}
+          direction="column"
+          gap={4}
+          bgcolor="#fff"
+          padding={2}
+          borderRadius="15px"
+        >
           <SalesCard />
         </Stack>
       </Box>
