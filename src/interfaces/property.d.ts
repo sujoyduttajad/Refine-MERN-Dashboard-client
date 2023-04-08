@@ -32,3 +32,15 @@ export interface PropertyListValues {
     photo?: string;
     price: number | undefined;
 }
+
+// Total Revenue Calculate
+export interface PropertyInterface {
+    _id: string;
+    creator: string;
+    description: string;
+    location: string;
+    photo: string;
+    price: number;
+    propertyType: string;
+    title: string;
+};
