@@ -1,4 +1,4 @@
-import { useList } from "@pankod/refine-core";
+import { useList, useGetIdentity } from "@pankod/refine-core";
 import {
   PieChart,
   PropertyCard,
@@ -44,6 +44,9 @@ const Home = () => {
       },
     },
   });
+  const { data: user } = useGetIdentity();
+
+  console.log(user)
 
   const latestProperties = data?.data ?? [];
 
@@ -58,6 +61,23 @@ const Home = () => {
 
   return (
     <Box>
+      <Stack direction="row" mb={3} color="#475be8">
+        <Typography fontSize={42} fontWeight={700}>
+          Hi,{"  "}
+        </Typography>
+
+        <Typography
+          sx={{ textTransform: "capitalize" }}
+          variant="subtitle2"
+          fontSize={40}
+          fontWeight={700}
+          display="flex"
+        >
+          {user?.name ? user?.given_name : "Guest"}
+        </Typography>
+
+        <Typography> </Typography>
+      </Stack>
       <Typography fontSize={25} fontWeight={700} color="#11142D">
         Dashboard
         <Typography variant="subtitle2" gutterBottom sx={{ color: "#9F9F9F" }}>
@@ -70,7 +90,7 @@ const Home = () => {
         <PieChart
           title="Properties for Sale"
           value={totalProperties ? totalProperties : 684}
-          colors={["#475be8", "#D7DBFA"]}
+          colors={["#0068D0", "#D4EAFF"]}
           series={[75, 25]}
         />
         <PieChart
