@@ -1,9 +1,16 @@
-import { TopAgentProps } from 'interfaces/agent'
+import { Box, CardMedia, Stack, Typography } from '@pankod/refine-mui'
 
-
-const TopAgent = ({ image, name, email }: TopAgentProps) => {
+const TopAgent = () => {
+  
   return (
-    <div>TopAgent</div>
+    <Box>
+      <Stack>
+        <CardMedia />
+        <Stack>
+          <Typography></Typography>
+        </Stack>
+      </Stack>
+    </Box>
   )
 }
 
