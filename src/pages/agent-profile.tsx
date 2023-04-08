@@ -11,7 +11,7 @@ const AgentProfile = () => {
     id: id as string,
   });
 
-  const myProfile = data?.data ?? [];
+  const agentProfile = data?.data ?? [];
 
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
