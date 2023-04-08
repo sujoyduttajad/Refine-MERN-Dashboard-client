@@ -1,4 +1,4 @@
-import { useTable } from "@pankod/refine-core";
+import { useList, useTable } from "@pankod/refine-core";
 import {
   PieChart,
   PropertyCard,
@@ -15,6 +15,14 @@ const baseURL = "http://localhost:8080/api/v1/properties";
 // Dashboard page
 const Home = () => {
   const [propertyData, setPropertyData] = useState(null);
+  const { data, isLoading, isError } = useList({
+    resource: "properties",
+    config: {
+      pagination: {
+        pageSize: 5,
+      },
+    },
+  });
 
   useEffect(() => {
     axios.get(baseURL).then((response) => {
@@ -109,12 +117,8 @@ const Home = () => {
         <Typography fontSize="18px" fontWeight={600} color="#11142d">
           Latest Properties
         </Typography>
-        
-        <Box
-          mt={2.5} display="flex" flexWrap="wrap" gap={4}
-        >
 
-        </Box>
+        <Box mt={2.5} display="flex" flexWrap="wrap" gap={4}></Box>
       </Box>
     </Box>
   );
