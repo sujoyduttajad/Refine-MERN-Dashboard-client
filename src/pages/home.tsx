@@ -109,6 +109,12 @@ const Home = () => {
         <Typography fontSize="18px" fontWeight={600} color="#11142d">
           Latest Properties
         </Typography>
+        
+        <Box
+          mt={2.5} display="flex" flexWrap="wrap" gap={4}
+        >
+
+        </Box>
       </Box>
     </Box>
   );
