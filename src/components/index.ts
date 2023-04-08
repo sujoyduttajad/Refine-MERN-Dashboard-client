@@ -3,6 +3,7 @@ import Profile from './common/Profile';
 import PropertyCard from './common/PropertyCard';
 import CustomButton from './common/CustomButton';
 import Facilities from './common/Facilities';
+import ThreeDotsMenu from './common/ThreeDotsMenu';
 
 // charts
 import PieChart from './charts/PieChart';
@@ -28,5 +29,6 @@ export {
   TopAgent,
   SalesCard,
   CustomerCard,
-  Facilities
+  Facilities,
+  ThreeDotsMenu
 };
