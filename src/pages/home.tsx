@@ -9,6 +9,7 @@ import {
 import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Error, Loading } from "components/common/Loading&Error";
 
 const baseURL = "http://localhost:8080/api/v1/properties";
 
@@ -23,6 +24,11 @@ const Home = () => {
       },
     },
   });
+
+  const latestProperties = data?.data ?? [];
+
+  if (isLoading) return <Loading />;
+  if (isError) return <Error />;
 
   useEffect(() => {
     axios.get(baseURL).then((response) => {
@@ -118,7 +124,18 @@ const Home = () => {
           Latest Properties
         </Typography>
 
-        <Box mt={2.5} display="flex" flexWrap="wrap" gap={4}></Box>
+        <Box mt={2.5} display="flex" flexWrap="wrap" gap={4}>
+          {latestProperties.map((property) => (
+            <PropertyCard
+              key={property._id}
+              id={property._id}
+              title={property.title}
+              location={property.location}
+              price={property.price}
+              photo={property.photo}
+            />
+          ))}
+        </Box>
       </Box>
     </Box>
   );
