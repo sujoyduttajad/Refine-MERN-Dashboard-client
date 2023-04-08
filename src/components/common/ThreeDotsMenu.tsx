@@ -1,15 +1,23 @@
 import { MoreVert } from "@mui/icons-material";
 import { IconButton, Menu, MenuItem, Stack } from "@pankod/refine-mui";
+import { ThreeDotsProps } from "interfaces/common";
 
 const ITEM_HEIGHT = 48;
 
-const ThreeDotsMenu = ({ option, open, anchorEl, handleClick, handleClose}) => {
+const ThreeDotsMenu = ({
+  option,
+  open,
+  menuId,
+  anchorEl,
+  handleClick,
+  handleClose,
+}: ThreeDotsProps) => {
   return (
     <Stack>
       <IconButton
         aria-label="more"
-        id="long-button"
-        aria-controls={open ? "long-menu" : undefined}
+        id={menuId}
+        aria-controls={open ? menuId : undefined}
         aria-expanded={open ? "true" : undefined}
         aria-haspopup="true"
         onClick={handleClick}
@@ -17,9 +25,9 @@ const ThreeDotsMenu = ({ option, open, anchorEl, handleClick, handleClose}) => {
         <MoreVert />
       </IconButton>
       <Menu
-        id="long-menu"
+        id={menuId}
         MenuListProps={{
-          "aria-labelledby": "long-button",
+          "aria-labelledby": menuId,
         }}
         anchorEl={anchorEl}
         open={open}
@@ -31,7 +39,7 @@ const ThreeDotsMenu = ({ option, open, anchorEl, handleClick, handleClose}) => {
           },
         }}
       >
-        <MenuItem selected={option === "More Detail"} onClick={handleClose}>
+        <MenuItem selected={option === option} onClick={handleClose}>
           More Details
         </MenuItem>
       </Menu>
