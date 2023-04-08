@@ -5,6 +5,8 @@ import {
   PropertyReferrals,
   TotalRevenue,
   TopAgent,
+  CustomerCard,
+  SalesCard,
 } from "components";
 import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { Error, Loading } from "components/common/Loading&Error";
@@ -65,7 +67,6 @@ const Home = () => {
         <Typography fontSize={42} fontWeight={700}>
           Hi,{"  "}
         </Typography>
-
         <Typography
           sx={{ textTransform: "capitalize" }}
           variant="subtitle2"
@@ -134,13 +135,13 @@ const Home = () => {
         gap={2}
       >
         <Stack width={"100%"} direction="column" gap={4}>
-          <Typography>Agen List</Typography>
+          <TopAgent />
         </Stack>
         <Stack width={"100%"} direction="column" gap={4}>
-          <Typography>Customer performance</Typography>
+          <CustomerCard />
         </Stack>
         <Stack width={"100%"} direction="column" gap={4}>
-          <Typography>Latest Sales</Typography>
+          <SalesCard />
         </Stack>
       </Box>
       {/* 4th Row  */}
