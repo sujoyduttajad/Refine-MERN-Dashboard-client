@@ -7,27 +7,20 @@ import {
   TopAgent,
 } from "components";
 import { Typography, Box, Stack } from "@pankod/refine-mui";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { Error, Loading } from "components/common/Loading&Error";
+import { PropertyInterface } from "interfaces/property";
 
-const baseURL = "http://localhost:8080/api/v1/properties";
+const totalRevenue = (properties: PropertyInterface[]): number => {
+  return (
+    properties &&
+    (properties as PropertyInterface[])
+      .map((ele) => ele.price)
+      .reduce((a: number, b: number) => a + b, 0) // Specify initial value as 0
+  );
+};
 
-  // Total Revenue Calculate
-  type PropertyInterface = {
-    _id: string;
-    creator: string;
-    description: string;
-    location: string;
-    photo: string;
-    price: number;
-    propertyType: string;
-    title: string;
-  };
-  
 // Dashboard page
 const Home = () => {
-  const [propertyData, setPropertyData] = useState(null);
   const { data, isLoading, isError } = useList({
     resource: "properties",
     config: {
@@ -42,27 +35,10 @@ const Home = () => {
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
-  useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setPropertyData(response.data);
-    });
-  }, []);
-
-  if (!propertyData) return null;
-
-
-  const totalRevenue = (): number => {
-    return (
-      propertyData &&
-      (propertyData as PropertyInterface[])
-        .map((ele) => ele.price)
-        .reduce((a: number, b: number) => a + b)
-    );
-  };
-  let totalPrice: number = totalRevenue();
+  let totalPrice: number = totalRevenue(latestProperties ?? []);
 
   // Total Properties Calculate
-  const totalProperties: number = (propertyData as PropertyInterface[])?.length;
+  const totalProperties: number = latestProperties.length;
 
   // console.log(propertyData);
 
