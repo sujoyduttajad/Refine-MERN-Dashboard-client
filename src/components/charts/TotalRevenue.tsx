@@ -6,11 +6,11 @@ import { arrowUp } from "assets";
 import { formatter } from "utils/functions";
 
 interface TotalPrice {
-  totalPrice: number
+  totalPrice: number;
 }
 
 const TotalRevenue = ({ totalPrice }: TotalPrice) => {
-  
+  const assetsValue = formatter.format(totalPrice).slice(0, -3);
   return (
     <Box
       p={4}
@@ -26,7 +26,7 @@ const TotalRevenue = ({ totalPrice }: TotalPrice) => {
       </Typography>
       <Stack my="20px" direction="row" gap={4} flexWrap="wrap">
         <Typography fontSize={28} fontWeight={700} color="#11142d">
-          {totalPrice ? formatter.format(totalPrice).slice(0,-3) : "$236,535"}
+          {totalPrice ? assetsValue : "$236,535"}
         </Typography>
         <Stack direction="row" alignItems="center" gap={1}>
           {/* <ArrowCircleUpRounded sx={{ fontSize: 25, color: "#475be8" }} /> */}
