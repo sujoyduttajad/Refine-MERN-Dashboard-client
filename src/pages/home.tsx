@@ -13,6 +13,18 @@ import { Error, Loading } from "components/common/Loading&Error";
 
 const baseURL = "http://localhost:8080/api/v1/properties";
 
+  // Total Revenue Calculate
+  type PropertyInterface = {
+    _id: string;
+    creator: string;
+    description: string;
+    location: string;
+    photo: string;
+    price: number;
+    propertyType: string;
+    title: string;
+  };
+  
 // Dashboard page
 const Home = () => {
   const [propertyData, setPropertyData] = useState(null);
@@ -38,17 +50,7 @@ const Home = () => {
 
   if (!propertyData) return null;
 
-  // Total Revenue Calculate
-  type PropertyInterface = {
-    _id: string;
-    creator: string;
-    description: string;
-    location: string;
-    photo: string;
-    price: number;
-    propertyType: string;
-    title: string;
-  };
+
   const totalRevenue = (): number => {
     return (
       propertyData &&
