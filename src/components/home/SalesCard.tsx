@@ -65,6 +65,7 @@ const SalesCard = ({
       <ThreeDotsMenu 
         option={"More Detail"}
         open={open}
+        menuId="sale-button"
         anchorEl={anchorEl}
         handleClick={handleClick}
         handleClose={handleClose}
