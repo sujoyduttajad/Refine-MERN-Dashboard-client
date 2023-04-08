@@ -116,18 +116,24 @@ const Home = () => {
           Latest Properties
         </Typography>
 
-        <Box mt={2.5} display="flex" flexWrap="wrap" gap={4}>
-          {latestProperties.map((property) => (
-            <PropertyCard
-              key={property._id}
-              id={property._id}
-              title={property.title}
-              location={property.location}
-              price={property.price}
-              photo={property.photo}
-            />
-          ))}
-        </Box>
+        <Stack
+          width={"100%"}
+          direction={{ xs: "column", lg: "row" }}
+          gap={4}
+        >
+          <Box mt={2.5} display="flex" flexWrap="wrap" gap={4}>
+            {latestProperties.map((property) => (
+              <PropertyCard
+                key={property._id}
+                id={property._id}
+                title={property.title}
+                location={property.location}
+                price={property.price}
+                photo={property.photo}
+              />
+            ))}
+          </Box>
+        </Stack>
       </Box>
     </Box>
   );
