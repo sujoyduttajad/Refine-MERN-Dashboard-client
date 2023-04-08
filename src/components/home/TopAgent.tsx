@@ -16,27 +16,37 @@ const TopAgent = () => {
   return (
     <Box>
       {allAgents.map((agent) => (
-        <Box>
-          <Stack>
-            <CardMedia
-              component="img"
-              image={agent.avatar}
-              alt={agent.name}
-              width={90}
-              height={90}
-              sx={{
-                borderRadius: "50%",
-                objectFit: "cover",
-              }}
-            />
-            <Stack>
-              <Typography
-                textTransform="capitalize"
-                fontSize={14}
-                fontWeight={600}
-              >
-                {agent.name}
-              </Typography>
+        <Box key={agent._id}>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Stack
+              direction="row"
+              justifyContent="space-evenly"
+              alignItems="center"
+            >
+              <CardMedia
+                component="img"
+                image={agent.avatar}
+                alt={agent.name}
+                sx={{
+                  height: "5rem",
+                  width: "5rem",
+                  borderRadius: "20px",
+                  objectFit: "cover",
+                }}
+              />
+              <Stack direction="column">
+                <Typography
+                  textTransform="capitalize"
+                  fontSize={18}
+                  fontWeight={600}
+                >
+                  {agent.name}
+                </Typography>
+              </Stack>
             </Stack>
           </Stack>
         </Box>
