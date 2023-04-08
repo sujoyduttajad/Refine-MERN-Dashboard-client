@@ -1,9 +1,12 @@
 import { Box, Stack, Typography } from "@pankod/refine-mui";
 import { useList } from "@pankod/refine-core";
 import { Error, Loading } from "components/common/Loading&Error";
-import { AgentCard } from "components";
+import { AgentCard, CustomButton } from "components";
+import { Add } from "@mui/icons-material";
+import { useNavigate } from "@pankod/refine-react-router-v6";
 
 const Agent = () => {
+  const navigate = useNavigate();
   const { data, isLoading, isError } = useList({
     resource: "users",
   });
@@ -19,13 +22,13 @@ const Agent = () => {
         <Typography fontSize={25} fontWeight={700} color="#11142d">
           Agents List
         </Typography>
-        {/* <CustomButton
-          title="Add Property"
+        <CustomButton
+          title="Add Agent"
           handleClick={() => navigate("/properties/create")}
           backgroundColor="#475be8"
           color="#fcfcfc"
           icon={<Add />}
-        /> */}
+        />
       </Stack>
       <Box
         mt="20px"
