@@ -12,7 +12,9 @@ const ViewAll = () => {
         color: "#808191",
         borderColor: "#E4E4E4",
         "&:hover": {
-            borderColor: "#333",
+            borderColor: "#475BE8",
+            color: "#475BE8",
+            backgroundColor: "#F2F3FD"
         }
       }}
     >
