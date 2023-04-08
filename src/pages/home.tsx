@@ -40,7 +40,7 @@ const Home = () => {
     resource: "properties",
     config: {
       pagination: {
-        pageSize: 5,
+        pageSize: 4,
       },
     },
   });
@@ -65,6 +65,7 @@ const Home = () => {
           Properties the data changes dynamically)
         </Typography>
       </Typography>
+      {/* 1st Row  */}
       <Box mt="20px" display="flex" flexWrap="wrap" gap={4}>
         <PieChart
           title="Properties for Sale"
@@ -91,7 +92,7 @@ const Home = () => {
           series={[88, 22]}
         />
       </Box>
-
+      {/* 2nd Row  */}
       <Stack
         mt="25px"
         width={"100%"}
@@ -101,7 +102,28 @@ const Home = () => {
         <TotalRevenue totalPrice={totalPrice} />
         <PropertyReferrals />
       </Stack>
-
+      {/* 3rd Row  */}
+      <Box
+        flex={1}
+        borderRadius="15px"
+        padding="20px"
+        bgcolor="#FAFAFA"
+        display="flex"
+        minWidth="30%"
+        mt="25px"
+        gap={2}
+      >
+        <Stack width={"100%"} direction="column" gap={4}>
+          <Typography>Agen List</Typography>
+        </Stack>
+        <Stack width={"100%"} direction="column" gap={4}>
+          <Typography>Customer performance</Typography>
+        </Stack>
+        <Stack width={"100%"} direction="column" gap={4}>
+          <Typography>Latest Sales</Typography>
+        </Stack>
+      </Box>
+      {/* 4th Row  */}
       <Box
         flex={1}
         borderRadius="15px"
@@ -116,11 +138,7 @@ const Home = () => {
           Latest Properties
         </Typography>
 
-        <Stack
-          width={"100%"}
-          direction={{ xs: "column", lg: "row" }}
-          gap={4}
-        >
+        <Stack width={"100%"} direction={{ xs: "column", lg: "row" }} gap={4}>
           <Box mt={2.5} display="flex" flexWrap="wrap" gap={4}>
             {latestProperties.map((property) => (
               <PropertyCard
