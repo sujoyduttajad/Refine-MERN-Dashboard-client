@@ -1,4 +1,4 @@
-import { useList, useTable } from "@pankod/refine-core";
+import { useList } from "@pankod/refine-core";
 import {
   PieChart,
   PropertyCard,
