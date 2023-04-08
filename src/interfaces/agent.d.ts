@@ -19,3 +19,10 @@ export interface AgentInfoProps {
     email: string;
     // noOfProperties: number;
 }
+
+export interface TopAgentProps {
+    image: string;
+    name: string;
+    email: string;
+    // noOfProperties: number;
+}
