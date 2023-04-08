@@ -1,4 +1,4 @@
-import { Box, Typography } from "@pankod/refine-mui";
+import { Box, Stack, Typography } from "@pankod/refine-mui";
 import { useList } from "@pankod/refine-core";
 import { Error, Loading } from "components/common/Loading&Error";
 import { AgentCard } from "components";
@@ -15,10 +15,18 @@ const Agent = () => {
 
   return (
     <Box>
-      <Typography fontSize={25} fontWeight={700} color="#11142d">
-        Agents List
-      </Typography>
-
+      <Stack direction="row" justifyContent="space-between">
+        <Typography fontSize={25} fontWeight={700} color="#11142d">
+          Agents List
+        </Typography>
+        {/* <CustomButton
+          title="Add Property"
+          handleClick={() => navigate("/properties/create")}
+          backgroundColor="#475be8"
+          color="#fcfcfc"
+          icon={<Add />}
+        /> */}
+      </Stack>
       <Box
         mt="20px"
         maxWidth="fit-content"
