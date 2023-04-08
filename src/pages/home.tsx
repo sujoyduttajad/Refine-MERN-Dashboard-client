@@ -149,7 +149,7 @@ const Home = () => {
             </Typography>
             <ViewAll />
           </Stack>
-          <TopAgent />
+          <TopAgent image={user.image} name={user.name} email={user.email} />
         </Stack>
         <Stack
           width={"100%"}
