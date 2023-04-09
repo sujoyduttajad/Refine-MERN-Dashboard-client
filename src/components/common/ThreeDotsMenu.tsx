@@ -6,11 +6,13 @@ const ITEM_HEIGHT = 48;
 
 const ThreeDotsMenu = ({
   option,
+  value,
   open,
   menuId,
   anchorEl,
   handleClick,
   handleClose,
+  handleNavigate
 }: ThreeDotsProps) => {
   return (
     <Stack>
@@ -39,8 +41,11 @@ const ThreeDotsMenu = ({
           },
         }}
       >
-        <MenuItem selected={option === option} onClick={handleClose}>
-          More Details
+        <MenuItem
+          selected={option === value}
+          onClick={handleNavigate}
+        >
+          {value}
         </MenuItem>
       </Menu>
     </Stack>
