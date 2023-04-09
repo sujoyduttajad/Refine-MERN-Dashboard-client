@@ -12,11 +12,6 @@ const CustomerCard = () => {
         justifyContent="space-evenly"
         gap={1}
         pb={2}
-        sx={{
-          "&:first-of-type": {
-            borderBottom: "2px solid #DBDBE0",
-          },
-        }}
       >
         <Stack direction="column" gap={2}>
           <Typography fontSize={14} color="#808191">
@@ -25,6 +20,13 @@ const CustomerCard = () => {
           <Typography variant="h4">500K</Typography>
           <Typography fontSize={12} fontWeight={700} color="#18C346">
             21.77%
+          </Typography>
+          <Typography fontSize={14} color="#808191">
+            New Customers This Month
+          </Typography>
+          <Typography variant="h4">12K</Typography>
+          <Typography fontSize={12} fontWeight={700} color="#18C346">
+            41.04%
           </Typography>
         </Stack>
         <Stack>
@@ -35,18 +37,6 @@ const CustomerCard = () => {
             height={350}
           />
         </Stack>
-      </Box>
-      <Box display="flex" justifyContent="space-evenly" gap={1} mt={2}>
-        <Stack direction="column" gap={2}>
-          <Typography fontSize={14} color="#808191">
-            New Customers This Month
-          </Typography>
-          <Typography variant="h4">12K</Typography>
-          <Typography fontSize={12} fontWeight={700} color="#18C346">
-            41.04%
-          </Typography>
-        </Stack>
-        <Stack></Stack>
       </Box>
     </Box>
   );
