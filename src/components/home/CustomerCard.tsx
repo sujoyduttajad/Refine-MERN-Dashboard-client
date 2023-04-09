@@ -1,7 +1,8 @@
 import { Box, Stack, Typography } from "@pankod/refine-mui";
+import { CustomerCardProps } from "interfaces/home";
 import ReactApexChart from "react-apexcharts";
 
-const CustomerCard = ({ data }) => {
+const CustomerCard = ({ data, series }: CustomerCardProps) => {
   return (
     <Box>
       <Box
@@ -26,8 +27,8 @@ const CustomerCard = ({ data }) => {
         </Stack>
         <Stack>
           <ReactApexChart
-            options={data.options}
-            series={data.series}
+            options={data}
+            series={series}
             type="bar"
             height={350}
           />
