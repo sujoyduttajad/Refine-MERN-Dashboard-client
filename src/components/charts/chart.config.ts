@@ -98,7 +98,7 @@ export const ColumnBarData: ApexOptions = {
   tooltip: {
     y: {
       formatter: function (val: number) {
-        return "$ " + val + " thousands"
+        return val + " people"
       }
     }
   }
