@@ -177,7 +177,7 @@ const Home = () => {
           </Stack>
           {latestProperties.map((property) => (
             <SalesCard
-              key={property.id}
+              key={property._id}
               creator={property.creator}
               title={property.title}
               photo={property.photo}
