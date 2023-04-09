@@ -1,4 +1,13 @@
-import { ApexOptions } from 'apexcharts';
+import { ApexOptions, ApexSeries } from 'apexcharts';
+// import {
+//   ApexOptions,
+//   ApexSeries,
+//   ApexXAxis,
+//   ApexYAxis,
+//   ApexDataLabels,
+//   ApexStroke,
+//   ApexTooltip
+// } from "apexcharts";
 
 export const TotalRevenueSeries = [
   {
@@ -58,4 +67,61 @@ export const TotalRevenueOptions: ApexOptions = {
       },
     },
   },
+};
+
+type ChartData = {
+  series: ApexSeries;
+  options: ApexOptions;
+};
+
+export const ColumnBarData: ChartData = {
+  series: [
+    {
+      name: "Series 1",
+      data: [44, 55, 41, 67, 22, 43, 21]
+    },
+    {
+      name: "Series 2",
+      data: [13, 23, 20, 8, 13, 27, 33]
+    }
+  ],
+  options: {
+    chart: {
+      height: 350,
+      type: "bar"
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: "55%",
+        // endingShape: "rounded"
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ["transparent"]
+    },
+    xaxis: {
+      categories: ["January", "February", "March", "April", "May", "June", "July"]
+    },
+    yaxis: {
+      title: {
+        text: "Amount"
+      }
+    },
+    fill: {
+      opacity: 1
+    },
+    tooltip: {
+      y: {
+        formatter: function(val: number) {
+          return "$ " + val + " thousands";
+        }
+      }
+    }
+  }
 };
