@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
       color="default"
       position="sticky"
       elevation={0}
-      sx={{ background: "#fafafa"}}
+      sx={{ background: "#fafafa" }}
     >
       <Toolbar>
         <Stack
@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
           width="100%"
           justifyContent="flex-end"
           alignItems="center"
-          height={{ xs: "100%", lg: 'inherit'}}
+          height={{ xs: "100%", lg: "inherit" }}
           sx={{ fontSize: "12rem" }}
         >
           <Stack
@@ -44,17 +44,25 @@ export const Header: React.FC = () => {
             >
               <NotificationsOutlined />
             </IconButton>
-            {user?.name ? (
-              <Typography
-                sx={{ textTransform: "capitalize" }}
-                variant="subtitle2"
-                fontSize={16}
-                fontWeight={600}
-                display={{ xs: "none", sm: "flex" }}
-              >
-                {user?.name}
-              </Typography>
-            ) : null}
+            <Stack>
+              {user?.name ? (
+                <Typography
+                  sx={{ textTransform: "capitalize" }}
+                  variant="subtitle2"
+                  fontSize={16}
+                  fontWeight={600}
+                  display={{ xs: "none", sm: "flex" }}
+                  color="#475be8"
+                >
+                  {user?.name}
+                </Typography>
+              ) : null}
+              {user?.name === "sujoy dutta" ? (
+                <Typography fontSize={12} fontWeight={500} color="#808191">
+                  CEO & Admin
+                </Typography>
+              ) : null}
+            </Stack>
             {user?.avatar ? (
               <Avatar src={user?.avatar} alt={user?.name} />
             ) : null}
