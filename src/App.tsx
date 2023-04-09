@@ -196,9 +196,9 @@ function App() {
             DashboardPage={Home}
             options={{
               reactQuery: {
-                  devtoolConfig: false
+                devtoolConfig: false,
               },
-          }}
+            }}
           />
         </RefineSnackbarProvider>
       </ThemeProvider>
