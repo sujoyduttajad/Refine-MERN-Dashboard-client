@@ -11,6 +11,7 @@ import {
 import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { Error, Loading } from "components/common/Loading&Error";
 import ViewAll from "components/common/ViewAll";
+import { ColumnBarData, ColumnBarSeries } from "components/charts/chart.config";
 
 interface BaseRecord {
   _id: string;
@@ -159,7 +160,7 @@ const Home = () => {
           <Typography fontSize={18} fontWeight={600} color="#11142d">
             Customer
           </Typography>
-          <CustomerCard />
+          <CustomerCard data={ColumnBarData} series={ColumnBarSeries} />
         </Stack>
         <Stack
           width={"100%"}
