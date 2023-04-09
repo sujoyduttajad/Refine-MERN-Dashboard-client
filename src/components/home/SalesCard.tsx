@@ -29,6 +29,9 @@ const SalesCard = ({
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleNavigate = () => {
+    
+  }
 
   const priceDisplay = formatter.format(price).slice(0, -3);
   return (
@@ -63,12 +66,14 @@ const SalesCard = ({
         </Stack>
       </Stack>
       <ThreeDotsMenu 
-        option={"More Detail"}
+        option="More Detail"
         open={open}
+        value="More Detail"
         menuId="sale-button"
         anchorEl={anchorEl}
         handleClick={handleClick}
         handleClose={handleClose}
+        handleNavigate={handleNavigate}
       />
     </Box>
   );
