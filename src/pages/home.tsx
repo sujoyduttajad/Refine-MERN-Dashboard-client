@@ -1,4 +1,4 @@
-import { useList, useGetIdentity } from "@pankod/refine-core";
+import { useList, useGetIdentity, useMany } from "@pankod/refine-core";
 import {
   PieChart,
   PropertyCard,
@@ -11,7 +11,8 @@ import {
 import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { Error, Loading } from "components/common/Loading&Error";
 import ViewAll from "components/common/ViewAll";
-import { ColumnBarData, ColumnBarSeries } from "components/charts/chart.config";
+import { AllDataProps } from "interfaces/home";
+import { PropertyProps } from "interfaces/common";
 
 interface BaseRecord {
   _id: string;
@@ -39,7 +40,11 @@ const totalRevenue = (properties: BaseRecord[]): number => {
 
 // Dashboard page
 const Home = () => {
-  const { data, isLoading, isError } = useList({
+  const {
+    data: listData,
+    isLoading,
+    isError,
+  } = useList({
     resource: "properties",
     config: {
       pagination: {
@@ -49,16 +54,32 @@ const Home = () => {
   });
   const { data: user } = useGetIdentity();
 
-  const latestProperties = data?.data ?? [];
+  const latestProperties = listData?.data ?? [];
 
-  if (isLoading) return <Loading />;
-  if (isError) return <Error />;
+  // Fetch additional data to get all the data
+  const ids = listData?.data?.map((item) => item._id) || []; // Extract IDs from the fetched data
+  const {
+    data: additionalData,
+    isLoading: isAdditionalLoading,
+    isError: isAdditionalError,
+  } = useMany({ resource: "properties", ids });
 
-  let totalPrice: number = totalRevenue(
-    latestProperties as PropertyInterface[]
-  );
+  // `additionalData` is the additional data fetched from the API
+  // `isAdditionalLoading` is a boolean indicating whether the additional data is currently being fetched
+  // `isAdditionalError` is a boolean indicating whether an error occurred while fetching the additional data
+
+  // Combine the fetched data and additional data
+  const allProperties = listData ? [...(additionalData?.data || [])] : [];
+
+  if (isLoading || isAdditionalLoading) return <Loading />;
+  if (isError || isAdditionalError) return <Error />;
+
+  
   // Total Properties Calculate
-  const totalProperties: number = latestProperties.length;
+  let totalPrice: number = totalRevenue(
+    allProperties as PropertyInterface[]
+  );
+  const totalProperties: number = allProperties.length;
 
   return (
     <Box>
