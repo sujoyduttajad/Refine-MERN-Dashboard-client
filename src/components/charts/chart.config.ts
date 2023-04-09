@@ -76,7 +76,7 @@ export const ColumnBarSeries = [{
   data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
 }];
 
-export const ColumnBarData = {
+export const ColumnBarData: ApexOptions = {
   chart: {
     type: 'bar',
     height: 350
@@ -85,7 +85,7 @@ export const ColumnBarData = {
     bar: {
       horizontal: false,
       columnWidth: '55%',
-      endingShape: 'rounded'
+      // endingShape: 'rounded'
     },
   },
   dataLabels: {
