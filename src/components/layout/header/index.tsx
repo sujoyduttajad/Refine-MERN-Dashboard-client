@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
       color="default"
       position="sticky"
       elevation={0}
-      sx={{ background: "#fafafa" }}
+      sx={{ background: "#fafafa"}}
     >
       <Toolbar>
         <Stack
@@ -29,6 +29,8 @@ export const Header: React.FC = () => {
           width="100%"
           justifyContent="flex-end"
           alignItems="center"
+          height={{ xs: "100%", lg: 'inherit'}}
+          sx={{ fontSize: "12rem" }}
         >
           <Stack
             direction="row"
