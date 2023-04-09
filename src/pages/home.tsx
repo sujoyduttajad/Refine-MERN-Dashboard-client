@@ -8,10 +8,9 @@ import {
   CustomerCard,
   SalesCard,
 } from "components";
-import { Typography, Box, Stack, Button } from "@pankod/refine-mui";
+import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { Error, Loading } from "components/common/Loading&Error";
 import ViewAll from "components/common/ViewAll";
-// import { PropertyInterface } from "interfaces/property";
 
 interface BaseRecord {
   _id: string;
@@ -48,8 +47,6 @@ const Home = () => {
     },
   });
   const { data: user } = useGetIdentity();
-
-  console.log(user);
 
   const latestProperties = data?.data ?? [];
 
