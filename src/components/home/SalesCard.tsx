@@ -30,10 +30,11 @@ const SalesCard = ({
     setAnchorEl(null);
   };
   const handleNavigate = () => {
-    
+
   }
 
   const priceDisplay = formatter.format(price).slice(0, -3);
+  
   return (
     <Box display="flex" justifyContent="space-between">
       <Stack direction="row" justifyContent="flex-start" gap={2}>
@@ -42,9 +43,9 @@ const SalesCard = ({
           image={photo}
           alt={title}
           sx={{
-            height: "4.5rem",
-            width: "4.5rem",
-            borderRadius: "20px",
+            height: "4rem",
+            width: "4rem",
+            borderRadius: "10px",
             objectFit: "cover",
           }}
         />
