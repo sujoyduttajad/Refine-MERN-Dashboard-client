@@ -11,6 +11,7 @@ import {
 import { useList } from "@pankod/refine-core";
 import { Error, Loading } from "components/common/Loading&Error";
 import { MoreVert } from "@mui/icons-material";
+import ThreeDotsMenu from "components/common/ThreeDotsMenu";
 
 const ITEM_HEIGHT = 48;
 const option = "Agent Detail";
@@ -24,6 +25,9 @@ const TopAgent = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleNavigate = () => {
+
+  }
 
   const { data, isLoading, isError } = useList({
     resource: "users",
@@ -34,7 +38,7 @@ const TopAgent = () => {
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
-  console.log(allAgents);
+  
   return (
     <Box>
       {allAgents.map((agent) => (
@@ -79,38 +83,16 @@ const TopAgent = () => {
                 </Typography>
               </Stack>
             </Stack>
-            <IconButton
-              aria-label="more"
-              id="long-button"
-              aria-controls={open ? "long-menu" : undefined}
-              aria-expanded={open ? "true" : undefined}
-              aria-haspopup="true"
-              onClick={handleClick}
-            >
-              <MoreVert />
-            </IconButton>
-            <Menu
-              id="long-menu"
-              MenuListProps={{
-                "aria-labelledby": "long-button",
-              }}
-              anchorEl={anchorEl}
+            <ThreeDotsMenu 
+              option="Agent Detail"
               open={open}
-              onClose={handleClose}
-              PaperProps={{
-                style: {
-                  maxHeight: ITEM_HEIGHT * 4.5,
-                  width: "20ch",
-                },
-              }}
-            >
-              <MenuItem
-                selected={option === "Agent Detail"}
-                onClick={handleClose}
-              >
-                Agent Details
-              </MenuItem>
-            </Menu>
+              value="Agent Detail"
+              menuId="agent-button"
+              anchorEl={anchorEl}
+              handleClick={handleClick}
+              handleClose={handleClose}
+              handleNavigate={handleNavigate}
+            />
           </Stack>
         </Box>
       ))}
