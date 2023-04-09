@@ -45,7 +45,7 @@ const SalesCard = ({
           sx={{
             height: "4rem",
             width: "4rem",
-            borderRadius: "10px",
+            borderRadius: "5px",
             objectFit: "cover",
           }}
         />
