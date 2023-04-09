@@ -89,7 +89,7 @@ export const ColumnBarData: ApexOptions = {
   },
   yaxis: {
     title: {
-      text: '$ (thousands)'
+      text: 'Customers'
     }
   },
   fill: {
