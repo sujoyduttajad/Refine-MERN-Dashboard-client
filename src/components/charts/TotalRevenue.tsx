@@ -1,6 +1,5 @@
 import { Box, Typography, Stack } from "@pankod/refine-mui";
 import ReactApexChart from "react-apexcharts";
-import { ArrowCircleUpRounded } from "@mui/icons-material";
 import { TotalRevenueOptions, TotalRevenueSeries } from "./chart.config";
 import { arrowUp } from "assets";
 import { formatter } from "utils/functions";
