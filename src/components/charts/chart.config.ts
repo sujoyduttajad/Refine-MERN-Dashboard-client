@@ -1,13 +1,4 @@
-import { ApexOptions, ApexSeries } from 'apexcharts';
-// import {
-//   ApexOptions,
-//   ApexSeries,
-//   ApexXAxis,
-//   ApexYAxis,
-//   ApexDataLabels,
-//   ApexStroke,
-//   ApexTooltip
-// } from "apexcharts";
+import { ApexOptions } from 'apexcharts';
 
 export const TotalRevenueSeries = [
   {
@@ -69,58 +60,57 @@ export const TotalRevenueOptions: ApexOptions = {
   },
 };
 
-type ChartData = {
-  series: ApexSeries;
-  options: ApexOptions;
-};
+// type ChartData = {
+//   series: ApexSeries;
+//   options: ApexOptions;
+// };
 
-export const ColumnBarData: ChartData = {
-  series: [
-    {
-      name: "Series 1",
-      data: [44, 55, 41, 67, 22, 43, 21]
+export const ColumnBarSeries = [{
+  name: 'Net Profit',
+  data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+}, {
+  name: 'Revenue',
+  data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+}, {
+  name: 'Free Cash Flow',
+  data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+}];
+
+export const ColumnBarData = {
+  chart: {
+    type: 'bar',
+    height: 350
+  },
+  plotOptions: {
+    bar: {
+      horizontal: false,
+      columnWidth: '55%',
+      endingShape: 'rounded'
     },
-    {
-      name: "Series 2",
-      data: [13, 23, 20, 8, 13, 27, 33]
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    show: true,
+    width: 2,
+    colors: ['transparent']
+  },
+  xaxis: {
+    categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+  },
+  yaxis: {
+    title: {
+      text: '$ (thousands)'
     }
-  ],
-  options: {
-    chart: {
-      height: 350,
-      type: "bar"
-    },
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        columnWidth: "55%",
-        // endingShape: "rounded"
-      }
-    },
-    dataLabels: {
-      enabled: false
-    },
-    stroke: {
-      show: true,
-      width: 2,
-      colors: ["transparent"]
-    },
-    xaxis: {
-      categories: ["January", "February", "March", "April", "May", "June", "July"]
-    },
-    yaxis: {
-      title: {
-        text: "Amount"
-      }
-    },
-    fill: {
-      opacity: 1
-    },
-    tooltip: {
-      y: {
-        formatter: function(val: number) {
-          return "$ " + val + " thousands";
-        }
+  },
+  fill: {
+    opacity: 1
+  },
+  tooltip: {
+    y: {
+      formatter: function (val: number) {
+        return "$ " + val + " thousands"
       }
     }
   }
