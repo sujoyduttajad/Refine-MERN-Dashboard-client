@@ -15,7 +15,6 @@ export interface ApexNonAxisChartSeries {
     data: number;
 }
 
-export interface CustomerCardProps {
-    data: Object;
+export interface ApexChartProps {
     series: (ApexAxisChartSeries | ApexNonAxisChartSeries)[];
-}
+  }
