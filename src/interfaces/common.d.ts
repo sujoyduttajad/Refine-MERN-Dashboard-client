@@ -52,9 +52,11 @@ export interface FormProps {
 
 export interface ThreeDotsProps {
     option: string;
+    value: string;
     open: boolean;
     menuId: string;
     anchorEl?: null | HTMLElement;
-    handleClick?: React.MouseEvent<HTMLElement>;
-    handleClose?: React.MouseEvent<HTMLElement>;
+    handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void | undefined;
+    handleClose?: (event: {}, reason: "backdropClick" | "escapeKeyDown") => void | undefined;
+    handleNavigate: () => void;
 }
