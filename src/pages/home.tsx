@@ -160,7 +160,7 @@ const Home = () => {
           <Typography fontSize={18} fontWeight={600} color="#11142d">
             Customer
           </Typography>
-          <CustomerCard data={ColumnBarData} series={ColumnBarSeries} />
+          <CustomerCard />
         </Stack>
         <Stack
           width={"100%"}
