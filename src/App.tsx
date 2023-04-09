@@ -194,6 +194,11 @@ function App() {
             authProvider={authProvider}
             LoginPage={Login}
             DashboardPage={Home}
+            options={{
+              reactQuery: {
+                  devtoolConfig: false
+              },
+          }}
           />
         </RefineSnackbarProvider>
       </ThemeProvider>
