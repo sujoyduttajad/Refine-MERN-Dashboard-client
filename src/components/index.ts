@@ -9,6 +9,7 @@ import ThreeDotsMenu from './common/ThreeDotsMenu';
 import PieChart from './charts/PieChart';
 import PropertyReferrals from './charts/PropertyReferrals';
 import TotalRevenue from './charts/TotalRevenue';
+import ColumnBar from './charts/ColumnBar';
 
 // agent
 import AgentCard from './agent/AgentCard';
@@ -23,6 +24,7 @@ export {
   PropertyCard,
   CustomButton,
   PieChart,
+  ColumnBar,
   PropertyReferrals,
   TotalRevenue,
   AgentCard,
