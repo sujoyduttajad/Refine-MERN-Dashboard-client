@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from "@pankod/refine-mui";
+import ReactApexChart from "react-apexcharts";
 
-const CustomerCard = () => {
+const CustomerCard = ({ data }) => {
   return (
     <Box>
       <Box
@@ -23,7 +24,14 @@ const CustomerCard = () => {
             21.77%
           </Typography>
         </Stack>
-        <Stack></Stack>
+        <Stack>
+          <ReactApexChart
+            options={data.options}
+            series={data.series}
+            type="bar"
+            height={350}
+          />
+        </Stack>
       </Box>
       <Box display="flex" justifyContent="space-evenly" gap={1} mt={2}>
         <Stack direction="column" gap={2}>
