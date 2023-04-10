@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { useLogin } from "@pankod/refine-core";
-import { Container, Box, CardMedia } from "@pankod/refine-mui";
+import { Container, Box, CardMedia, Card } from "@pankod/refine-mui";
 import { CredentialResponse } from "../interfaces/google";
-import { evoiaLight, pointyBuilding, skyscrapper } from "assets";
+import { evoiaLight, BrandIcon, pointyBuilding, skyscrapper } from "assets";
 
 export const Login: React.FC = () => {
   const { mutate: login } = useLogin<CredentialResponse>();
@@ -64,31 +64,37 @@ export const Login: React.FC = () => {
       <Box
         maxWidth="50vw"
         width="100%"
+        padding="7rem"
         display="flex"
         flexDirection="column"
         justifyContent="center"
+        alignItems="center"
       >
-        <Box
-          width="100%"
-          padding="17rem"
+        <Card
+          // width="100%"
+          // padding="17rem"
           sx={{
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
             alignItems: "center",
+            padding: "5rem",
+            width: { xs: "70vw", lg: "25rem"}
           }}
         >
+          <Box padding="1rem">
           <CardMedia
             component="img"
-            image={evoiaLight}
+            image={BrandIcon}
             alt="Evoia Logo"
-            // width="10rem"
+            width="100%"
             // height="6rem"
           />
+          </Box>
           <Box mt={4}>
             <GoogleButton />
           </Box>
-        </Box>
+        </Card>
       </Box>
     </Box>
   );
