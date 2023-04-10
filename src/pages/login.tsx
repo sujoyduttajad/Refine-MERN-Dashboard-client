@@ -7,6 +7,7 @@ import {
   Card,
   CardContent,
   Typography,
+  Stack,
 } from "@pankod/refine-mui";
 import { CredentialResponse } from "../interfaces/google";
 import { evoiaLight, BrandIcon, pointyBuilding, skyscrapper } from "assets";
@@ -54,7 +55,7 @@ export const Login: React.FC = () => {
       maxWidth="100vw"
       width="100%"
       maxHeight="100vh"
-      height="100%"
+      height="80%"
       justifyContent="space-between"
       sx={{
         backgroundColor: "#FCFCFC",
@@ -67,7 +68,7 @@ export const Login: React.FC = () => {
           alt="vertical image of skyscrapper"
           width="100%"
           sx={{
-            maxHeight: "100vh",
+            height: "100vh",
             objectFit: "cover",
           }}
         />
@@ -76,45 +77,55 @@ export const Login: React.FC = () => {
         maxWidth="50%"
         width="100%"
         // height="100%"
-        padding="7rem"
+        py="7rem"
         display="flex"
         flexDirection="column"
-        justifyContent="space-between"
-        alignItems="center"
       >
-        <Box width="100%" padding="0 20%">
-          <CardMedia
-            component="img"
-            image={BrandIcon}
-            alt="Evoia Logo"
-            width="70%"
-          />
-        </Box>
-        <Card
-          variant="outlined"
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-            alignItems: "center",
-            padding: "0",
-            width: { xs: "70vw", lg: "100%" },
-            border: 0,
-          }}
+        <Stack
+          direction="column"
+          height="100%"
+          justifyContent="space-between"
+          alignItems="center"
+          gap={3}
         >
-          <CardContent>
-            <Typography variant="h3" fontWeight={700}>
+          <Box py="20%" gap={2} height="5rem">
+            <CardMedia
+              component="img"
+              image={BrandIcon}
+              alt="Evoia Logo"
+              width="70%"
+            />
+            <Typography fontSize={18} mt={2}>
+              Evoia - Your one stop Property manager
+            </Typography>
+          </Box>
+          <Card
+            variant="outlined"
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+              alignItems: "center",
+              padding: "0",
+              // width: { xs: "70vw", lg: "100%" },
+              width: "100%",
+              border: 0,
+            }}
+          >
+            {/* <CardContent> */}
+            <Typography fontSize={32} fontWeight={700}>
               Welcome Back
             </Typography>
-            <Typography variant="body1">
+            <Typography fontSize={14}>
               Please sign-in with your Google account.
             </Typography>
-          </CardContent>
+            {/* </CardContent> */}
 
-          <Box mt={4}>
-            <GoogleButton />
-          </Box>
-        </Card>
+            <Box mt={4}>
+              <GoogleButton />
+            </Box>
+          </Card>
+        </Stack>
       </Box>
     </Box>
   );
