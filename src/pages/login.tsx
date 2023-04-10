@@ -44,11 +44,12 @@ export const Login: React.FC = () => {
       component="div"
       display="flex"
       flexDirection="row"
+      maxWidth="100vw"
       sx={{
         backgroundColor: "#FCFCFC",
       }}
     >
-      <Box maxWidth="50%">
+      <Box maxWidth="50vw">
         <CardMedia
           component="img"
           image={skyscrapper}
@@ -61,7 +62,8 @@ export const Login: React.FC = () => {
         />
       </Box>
       <Box
-        maxWidth="50%"
+        maxWidth="50vw"
+        width="100%"
         display="flex"
         flexDirection="column"
         justifyContent="center"
@@ -79,6 +81,7 @@ export const Login: React.FC = () => {
         }}
       > */}
         <Box
+        width="100%"
           sx={{
             display: "flex",
             justifyContent: "center",
