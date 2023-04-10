@@ -108,7 +108,8 @@ export const Login: React.FC = () => {
               alignItems: "center",
               padding: "0",
               // width: { xs: "70vw", lg: "100%" },
-              width: "100%",
+              width: "fit-content",
+              backgroundColor: "#FCFCFC",
               border: 0,
             }}
           >
