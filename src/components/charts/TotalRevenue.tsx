@@ -21,7 +21,7 @@ const TotalRevenue = ({ totalPrice }: TotalPrice) => {
       borderRadius="15px"
     >
       <Typography fontSize={18} fontWeight={600} color="#11142d">
-        Total Revenue
+        Total Assets
       </Typography>
       <Stack my="20px" direction="row" gap={4} flexWrap="wrap">
         <Typography fontSize={28} fontWeight={700} color="#11142d">
