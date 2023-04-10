@@ -50,31 +50,34 @@ export const Login: React.FC = () => {
     >
       <Box maxWidth="50%">
         <CardMedia
-           component="img"
-           image={skyscrapper}
-           alt="vertical image of skyscrapper"
-           width="100%"
-           sx={{
-            //  height: "7rem",
-            //  width: "7rem",
+          component="img"
+          image={skyscrapper}
+          alt="vertical image of skyscrapper"
+          width="100%"
+          sx={{
             maxHeight: "100vh",
-             objectFit: "cover",
-           }}
+            objectFit: "cover",
+          }}
         />
       </Box>
-      <Box maxWidth="50%">
-
+      <Box
+        maxWidth="50%"
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+      >
+        {/* 
       
       <Container
         component="div"
-        maxWidth="xs"
         sx={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           height: "100vh",
+          width: "100%"
         }}
-      >
+      > */}
         <Box
           sx={{
             display: "flex",
@@ -83,14 +86,20 @@ export const Login: React.FC = () => {
             alignItems: "center",
           }}
         >
-          <div>
+          {/* <div>
             <img src={evoiaLight} alt="Evoia Logo" />
-          </div>
+          </div> */}
+          <CardMedia
+            component="img"
+            image={evoiaLight}
+            alt="vertical image of skyscrapper"
+            width="100%"
+          />
           <Box mt={4}>
             <GoogleButton />
           </Box>
         </Box>
-      </Container>
+        {/* </Container> */}
       </Box>
     </Box>
   );
