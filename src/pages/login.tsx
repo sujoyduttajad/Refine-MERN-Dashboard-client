@@ -68,18 +68,6 @@ export const Login: React.FC = () => {
         flexDirection="column"
         justifyContent="center"
       >
-        {/* 
-      
-      <Container
-        component="div"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          height: "100vh",
-          width: "100%"
-        }}
-      > */}
         <Box
         width="100%"
           sx={{
@@ -89,20 +77,16 @@ export const Login: React.FC = () => {
             alignItems: "center",
           }}
         >
-          {/* <div>
-            <img src={evoiaLight} alt="Evoia Logo" />
-          </div> */}
           <CardMedia
             component="img"
             image={evoiaLight}
-            alt="vertical image of skyscrapper"
+            alt="Evoia Logo"
             width="100%"
           />
           <Box mt={4}>
             <GoogleButton />
           </Box>
         </Box>
-        {/* </Container> */}
       </Box>
     </Box>
   );
