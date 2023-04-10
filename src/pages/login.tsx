@@ -1,10 +1,8 @@
 import { useEffect, useRef } from "react";
 import { useLogin } from "@pankod/refine-core";
-import { Container, Box } from "@pankod/refine-mui";
-
+import { Container, Box, CardMedia } from "@pankod/refine-mui";
 import { CredentialResponse } from "../interfaces/google";
-
-import { evoiaLight } from "assets";
+import { evoiaLight, pointyBuilding, skyscrapper } from "assets";
 
 export const Login: React.FC = () => {
   const { mutate: login } = useLogin<CredentialResponse>();
@@ -44,12 +42,31 @@ export const Login: React.FC = () => {
   return (
     <Box
       component="div"
+      display="flex"
+      flexDirection="row"
       sx={{
         backgroundColor: "#FCFCFC",
       }}
     >
+      <Box maxWidth="50%">
+        <CardMedia
+           component="img"
+           image={skyscrapper}
+           alt="vertical image of skyscrapper"
+           width="100%"
+           sx={{
+            //  height: "7rem",
+            //  width: "7rem",
+            maxHeight: "100vh",
+             objectFit: "cover",
+           }}
+        />
+      </Box>
+      <Box maxWidth="50%">
+
+      
       <Container
-        component="main"
+        component="div"
         maxWidth="xs"
         sx={{
           display: "flex",
@@ -74,6 +91,7 @@ export const Login: React.FC = () => {
           </Box>
         </Box>
       </Container>
+      </Box>
     </Box>
   );
 };
