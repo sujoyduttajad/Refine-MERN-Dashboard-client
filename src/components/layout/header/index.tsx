@@ -57,11 +57,9 @@ export const Header: React.FC = () => {
                   {user?.name}
                 </Typography>
               ) : null}
-              {user?.name === "sujoy dutta" ? (
-                <Typography fontSize={12} fontWeight={500} color="#808191">
-                  Admin
-                </Typography>
-              ) : null}
+              <Typography fontSize={12} fontWeight={500} color="#808191">
+                {user?.name === "sujoy dutta" ? "Admin" : "Real-Estate Agent"}
+              </Typography>
             </Stack>
             {user?.avatar ? (
               <Avatar src={user?.avatar} alt={user?.name} />
