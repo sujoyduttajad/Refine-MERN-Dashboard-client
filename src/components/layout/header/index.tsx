@@ -59,7 +59,7 @@ export const Header: React.FC = () => {
               ) : null}
               {user?.name === "sujoy dutta" ? (
                 <Typography fontSize={12} fontWeight={500} color="#808191">
-                  CEO & Admin
+                  Admin
                 </Typography>
               ) : null}
             </Stack>
