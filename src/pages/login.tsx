@@ -1,6 +1,13 @@
 import { useEffect, useRef } from "react";
 import { useLogin } from "@pankod/refine-core";
-import { Container, Box, CardMedia, Card } from "@pankod/refine-mui";
+import {
+  Container,
+  Box,
+  CardMedia,
+  Card,
+  CardContent,
+  Typography,
+} from "@pankod/refine-mui";
 import { CredentialResponse } from "../interfaces/google";
 import { evoiaLight, BrandIcon, pointyBuilding, skyscrapper } from "assets";
 
@@ -45,6 +52,8 @@ export const Login: React.FC = () => {
       display="flex"
       flexDirection="row"
       maxWidth="100vw"
+      width="100%"
+      justifyContent="space-between"
       sx={{
         backgroundColor: "#FCFCFC",
       }}
@@ -52,7 +61,7 @@ export const Login: React.FC = () => {
       <Box maxWidth="50vw">
         <CardMedia
           component="img"
-          image={skyscrapper}
+          image={pointyBuilding}
           alt="vertical image of skyscrapper"
           width="100%"
           sx={{
@@ -70,27 +79,33 @@ export const Login: React.FC = () => {
         justifyContent="center"
         alignItems="center"
       >
+        <Box width="100%" padding="7rem">
+          <CardMedia
+            component="img"
+            image={BrandIcon}
+            alt="Evoia Logo"
+            width="70%"
+          />
+        </Box>
         <Card
-          // width="100%"
-          // padding="17rem"
+        variant="outlined"
           sx={{
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
             alignItems: "center",
-            padding: "5rem",
-            width: { xs: "70vw", lg: "25rem"}
+            padding: "5rem 3rem",
+            width: { xs: "70vw", lg: "100%" },
+            border: 0
           }}
         >
-          <Box padding="1rem">
-          <CardMedia
-            component="img"
-            image={BrandIcon}
-            alt="Evoia Logo"
-            width="100%"
-            // height="6rem"
-          />
-          </Box>
+          <CardContent>
+            <Typography variant="h3" fontWeight={700}>Welcome Back</Typography>
+            <Typography variant="body1">
+              Please sign-in with your Google account.
+            </Typography>
+          </CardContent>
+
           <Box mt={4}>
             <GoogleButton />
           </Box>
