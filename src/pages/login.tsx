@@ -69,7 +69,8 @@ export const Login: React.FC = () => {
         justifyContent="center"
       >
         <Box
-        width="100%"
+          width="100%"
+          padding="17rem"
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -81,7 +82,8 @@ export const Login: React.FC = () => {
             component="img"
             image={evoiaLight}
             alt="Evoia Logo"
-            width="100%"
+            // width="10rem"
+            // height="6rem"
           />
           <Box mt={4}>
             <GoogleButton />
