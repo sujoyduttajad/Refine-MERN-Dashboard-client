@@ -53,12 +53,14 @@ export const Login: React.FC = () => {
       flexDirection="row"
       maxWidth="100vw"
       width="100%"
+      maxHeight="100vh"
+      height="100%"
       justifyContent="space-between"
       sx={{
         backgroundColor: "#FCFCFC",
       }}
     >
-      <Box maxWidth="50vw">
+      <Box maxWidth="50%">
         <CardMedia
           component="img"
           image={pointyBuilding}
@@ -71,15 +73,16 @@ export const Login: React.FC = () => {
         />
       </Box>
       <Box
-        maxWidth="50vw"
+        maxWidth="50%"
         width="100%"
+        // height="100%"
         padding="7rem"
         display="flex"
         flexDirection="column"
-        justifyContent="center"
+        justifyContent="space-between"
         alignItems="center"
       >
-        <Box width="100%" padding="7rem">
+        <Box width="100%" padding="0 20%">
           <CardMedia
             component="img"
             image={BrandIcon}
@@ -88,19 +91,21 @@ export const Login: React.FC = () => {
           />
         </Box>
         <Card
-        variant="outlined"
+          variant="outlined"
           sx={{
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
             alignItems: "center",
-            padding: "5rem 3rem",
+            padding: "0",
             width: { xs: "70vw", lg: "100%" },
-            border: 0
+            border: 0,
           }}
         >
           <CardContent>
-            <Typography variant="h3" fontWeight={700}>Welcome Back</Typography>
+            <Typography variant="h3" fontWeight={700}>
+              Welcome Back
+            </Typography>
             <Typography variant="body1">
               Please sign-in with your Google account.
             </Typography>
