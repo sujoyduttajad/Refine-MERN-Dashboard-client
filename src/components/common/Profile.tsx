@@ -85,7 +85,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                     {name}
                   </Typography>
                   <Typography fontSize={16} color="#808191">
-                    { name === 'sujoy dutta' ? 'Admin' : 'Real-Estate Agent'}
+                    {name === "sujoy dutta" ? "Admin" : "Real-Estate Agent"}
                   </Typography>
                 </Stack>
                 {/* <CustomButton
