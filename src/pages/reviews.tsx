@@ -2,7 +2,12 @@ import React from 'react'
 
 const Reviews = () => {
   return (
-    <div>Reviews</div>
+    <div>
+      <div>
+        <h2>Reviews component - </h2>
+      </div>
+      Coming soon, working on it
+    </div>
   )
 }
 
