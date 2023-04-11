@@ -13,6 +13,7 @@ import {
 import {
   AccountCircleOutlined,
   ChatBubbleOutline,
+  InfoOutlined,
   PeopleAltOutlined,
   StarOutlineRounded,
   VillaOutlined,
@@ -40,6 +41,7 @@ import { CredentialResponse } from "interfaces/google";
 import { parseJwt } from "utils/parse-jwt";
 import Reviews from "pages/reviews";
 import Messages from "pages/messages";
+import HelpAndInfo from "pages/help";
 
 const axiosInstance = axios.create();
 axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
@@ -184,6 +186,12 @@ function App() {
                 options: { label: "My Profile" },
                 list: MyProfile,
                 icon: <AccountCircleOutlined />,
+              },
+              {
+                name: "help",
+                options: { label: "Help & Info" },
+                list: HelpAndInfo,
+                icon: <InfoOutlined />,
               },
             ]}
             Title={Title}
