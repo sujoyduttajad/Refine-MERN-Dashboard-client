@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
 const Messages = () => {
   return (
-    <div>Messages</div>
-  )
-}
+    <div>
+      <div>
+        <h2>Message component - </h2>
+      </div>
+      Soon be introducing chat functionality
+    </div>
+  );
+};
 
-export default Messages
+export default Messages;
