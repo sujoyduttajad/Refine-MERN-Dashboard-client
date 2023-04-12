@@ -85,7 +85,9 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                     {name}
                   </Typography>
                   <Typography fontSize={16} color="#808191">
-                    {email === "sujoyduttajad@gmail.com" ? "Admin" : "Real-Estate Agent"}
+                    {email === "sujoyduttajad@gmail.com"
+                      ? "Admin"
+                      : "Real-Estate Agent"}
                   </Typography>
                 </Stack>
                 {/* <CustomButton
@@ -116,7 +118,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                   >
                     <Place sx={{ color: "#11142D" }} />
                     <Typography fontSize={14} color="#11142D">
-                      4517 Washington Ave, Manchaster, Kentucky 39495
+                      17 Stuyvesant Walk New York, New York(NY), 10009
                     </Typography>
                   </Box>
                 </Stack>
@@ -136,7 +138,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                     >
                       <Phone sx={{ color: "#11142D" }} />
                       <Typography fontSize={14} color="#11142D" noWrap>
-                        +0123 456 7890
+                        (212) 254-7323
                       </Typography>
                     </Box>
                   </Stack>
