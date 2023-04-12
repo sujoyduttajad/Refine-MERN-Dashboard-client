@@ -3,5 +3,5 @@ export interface InfoProps {
   content: string;
   photo: string;
   title: string;
-  direction?: string;
+  flexDir?: string;
 }
