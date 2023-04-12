@@ -16,7 +16,7 @@ const HelpAndInfo = () => {
       >
         <Typography variant="h5">What is Evoia?</Typography>
         <Stack direction={{xs: "column", sm: "row"}} mt={3}>           
-            <Typography>{companyInfo.content}</Typography>
+            <Typography variant="body1">{companyInfo.content}</Typography>
         </Stack>
       </Box>
     </Box>
