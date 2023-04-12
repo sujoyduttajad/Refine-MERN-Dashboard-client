@@ -15,29 +15,31 @@ const HelpAndInfo = () => {
         padding="20px"
         bgcolor="#fafafa"
       >
-        <Typography variant="h5">What is Evoia?</Typography>
+        <Typography variant="h5" fontWeight={500}>What is Evoia?</Typography>
         <Stack direction={{ xs: "column", sm: "row" }} mt={3}>
           <Typography
             variant="body1"
             flexWrap="wrap"
-            maxWidth="34rem"
+            maxWidth="40rem"
             width="100%"
+            pr={{xs: 0, sm: 2}}
+            pt={{xs: 2, sm: 0}}
           >
             {companyInfo.content}
           </Typography>
+          <Box>
           <CardMedia
             component="img"
             image={evoiaDark}
             alt={"Brand logo"}
-            width={70}
+            // width={70}
             height={120}
             sx={{
-              // height: "7rem",
-              // width: "7rem",
               borderRadius: "5px",
-              objectFit: "cover",
+              objectFit: "contain",
             }}
           />
+          </Box>
         </Stack>
       </Box>
     </Box>
