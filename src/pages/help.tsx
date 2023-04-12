@@ -1,6 +1,7 @@
 import { useOne } from "@pankod/refine-core";
 import { Box, CardMedia, Stack, Typography } from "@pankod/refine-mui";
 import { evoiaDark } from "assets";
+import InfoSection from "components/common/InfoSection";
 import { Error, Loading } from "components/common/Loading&Error";
 import { companyInfo } from "utils/infoContent";
 
@@ -56,6 +57,12 @@ const HelpAndInfo = () => {
           </Box>
         </Stack>
       </Box>
+      <InfoSection 
+        header="What is Evoia?"
+        content={companyInfo.content}
+        photo={evoiaDark}
+        title="Brand logo"
+      />
       {/* Creator */}
       <Box
         mt={2.5}
@@ -83,8 +90,6 @@ const HelpAndInfo = () => {
             {companyInfo.aboutMe}
           </Typography>
           <Box
-            display="flex"
-            justifyContent={{ xs: "flex-start", sm: "center" }}
             width="fit-content"
           >
             <CardMedia
