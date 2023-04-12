@@ -18,3 +18,9 @@ export const companyInfo = {
   creating a massive data store of all types of properties that will drive their revenue high. 
   `,
 };
+
+export const guideLabel = {
+    desc1: "Click on the Properties Tab in the sidebar as shown in the image",
+    desc2: "",
+    desc3: "",
+}
