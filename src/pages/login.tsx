@@ -96,7 +96,7 @@ export const Login: React.FC = () => {
               width="70%"
             />
             <Typography fontSize={18} mt={2}>
-              Evoia - Your one stop Property manager
+              Your one stop Property manager
             </Typography>
           </Box>
           <Card
@@ -115,7 +115,7 @@ export const Login: React.FC = () => {
           >
             {/* <CardContent> */}
             <Typography fontSize={32} fontWeight={700}>
-              Welcome Back
+              Welcome to Evoia
             </Typography>
             <Typography fontSize={14}>
               Please sign-in with your Google account.
