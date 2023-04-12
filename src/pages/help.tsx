@@ -2,6 +2,7 @@ import { useOne } from "@pankod/refine-core";
 import { Box, CardMedia, Stack, Typography } from "@pankod/refine-mui";
 import { Link } from "@pankod/refine-react-router-v6";
 import { evoiaDark } from "assets";
+import { Guide } from "components";
 import { Error, Loading } from "components/common/Loading&Error";
 import { companyInfo } from "utils/infoContent";
 
@@ -119,6 +120,8 @@ const HelpAndInfo = () => {
           </Box>
         </Stack>
       </Box>
+      {/* Step by Step Guide */}
+      <Guide />
     </Box>
   );
 };
