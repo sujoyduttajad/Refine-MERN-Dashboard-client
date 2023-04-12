@@ -31,7 +31,7 @@ const AgentCard = ({
         display: "flex",
         flexDirection: { xs: "column", sm: "column" },
         alignItems: "center",
-        justifyContent:"center",
+        justifyContent: "center",
         padding: "1rem",
         borderRadius: "10px",
         gap: "20px",
@@ -72,7 +72,9 @@ const AgentCard = ({
             {name}
           </Typography>
           <Typography fontSize={14} color="#808191">
-            Real-Estate Agent
+            {email === "sujoyduttajad@gmail.com"
+              ? "Admin"
+              : "Real-Estate Agent"}
           </Typography>
         </Stack>
         {/* Agent Information */}
@@ -95,10 +97,7 @@ const AgentCard = ({
             icon={<LocationCity sx={{ color: "#808191" }} />}
             content={`${noOfProperties} Properties`}
           />
-          <InfoBar
-            icon={<Email sx={{ color: "#808191" }} />}
-            content={email}
-          />
+          <InfoBar icon={<Email sx={{ color: "#808191" }} />} content={email} />
         </Stack>
       </Stack>
     </Box>
