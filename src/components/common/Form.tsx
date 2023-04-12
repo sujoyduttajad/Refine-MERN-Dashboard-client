@@ -65,6 +65,7 @@ const Form = ({
               <TextField
                 fullWidth
                 required
+                placeholder="Floyd's Villa"
                 id="outlined-basic"
                 color="info"
                 sx={{
@@ -120,6 +121,7 @@ const Form = ({
                 borderColor: "rgba(0, 0, 0, 0.23)",
                 borderRadius: 6,
                 padding: 10,
+                fontFamily: "'Manrope', sans-serif",
                 color: "#919191",
               }}
               {...register("description", { required: true })}
@@ -170,13 +172,14 @@ const Form = ({
                   color: "#11142d",
                 }}
               >
-                Enter property price
+                Enter property price(USD)
               </FormHelperText>
               <TextField
                 required
                 id="outlined-basic"
                 color="info"
                 type="number"
+                placeholder="234000"
                 sx={{
                   backgroundColor: "#fff",
                 }}
@@ -202,6 +205,7 @@ const Form = ({
               required
               id="outlined-basic"
               color="info"
+              placeholder="594 S Mapleton Dr, Los Angeles, CA 90024"
               sx={{
                 backgroundColor: "#fff",
               }}
