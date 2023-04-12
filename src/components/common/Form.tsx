@@ -122,7 +122,8 @@ const Form = ({
                 borderRadius: 6,
                 padding: 10,
                 fontFamily: "'Manrope', sans-serif",
-                color: "#919191",
+                color: "#11142d",
+                resize: "vertical"
               }}
               {...register("description", { required: true })}
             />
