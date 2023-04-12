@@ -22,5 +22,11 @@ export const companyInfo = {
 export const guideLabel = {
     desc1: "Click on the Properties Tab in the sidebar as shown in the image",
     desc2: "Now click on the 'Add Property' button on the top right corner to create a new property",
-    desc3: "",
+    desc3: `Filling the form is straight forward just at the appropriate values in the appropriate places. 
+    Make sure the Property name is valid if you don't have then made up a name but don't put the address in place of the name.
+    Add a specific property type from the dropdown. 
+    The price should be only numbers and no currency symbol since all properties are in USD.
+    The location should ideally be a real address of the associated property.
+    Please upload a front facing photo of the property for now only one photo can be uploaded. 
+    `,
 }
