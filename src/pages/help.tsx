@@ -1,10 +1,11 @@
 import { Box, Stack, Typography } from "@pankod/refine-mui";
+import { companyInfo } from "utils/infoContent";
 
 const HelpAndInfo = () => {
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142d">
-        Help & Information Booth
+        Help & Information
       </Typography>
       <Box
         mt={2.5}
@@ -13,9 +14,9 @@ const HelpAndInfo = () => {
         padding="20px"
         bgcolor="#fafafa"
       >
-        <Stack direction={{xs: "column", sm: "row"}} >
-            <Typography>What is Evoia</Typography>
-            <Typography></Typography>
+        <Typography variant="h5">What is Evoia?</Typography>
+        <Stack direction={{xs: "column", sm: "row"}} mt={3}>           
+            <Typography>{companyInfo.content}</Typography>
         </Stack>
       </Box>
     </Box>
