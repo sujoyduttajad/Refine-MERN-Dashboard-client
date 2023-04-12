@@ -21,6 +21,6 @@ export const companyInfo = {
 
 export const guideLabel = {
     desc1: "Click on the Properties Tab in the sidebar as shown in the image",
-    desc2: "",
+    desc2: "Now click on the 'Add Property' button on the top right corner to create a new property",
     desc3: "",
 }
