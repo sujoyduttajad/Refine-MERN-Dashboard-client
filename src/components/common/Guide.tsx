@@ -5,7 +5,7 @@ import {
   Stack,
   Typography,
 } from "@pankod/refine-mui";
-import { screenShot_1, screenShot_2 } from "assets";
+import { screenShot_1, screenShot_2, screenShot_3 } from "assets";
 import { ListCompProps } from "interfaces/guide";
 import { guideLabel } from "utils/infoContent";
 
@@ -53,7 +53,13 @@ const Guide = () => {
         header="Step-2"
         description={guideLabel.desc2}
         image={screenShot_2}
-        altTitle="screenshot of Property navigation"
+        altTitle="screenshot of add property button"
+      />
+      <ListComp
+        header="Step-3"
+        description={guideLabel.desc3}
+        image={screenShot_3}
+        altTitle="screenshot of create property form"
       />
     </Box>
   );
