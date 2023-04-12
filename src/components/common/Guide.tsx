@@ -10,17 +10,22 @@ import { ListCompProps } from "interfaces/guide";
 
 const ListComp = ({ header, description, image, altTitle }: ListCompProps) => {
   return (
-    <Stack>
-      <Typography variant="h4">{header}</Typography>
-      <Typography variant="body1">{description}</Typography>
-      <ImageList>
-        <ImageListItem>
-          <img src={image} alt={altTitle} />
-        </ImageListItem>
-      </ImageList>
+    <Stack mt={3}>
+      <Typography fontSize={20} fontWeight={700}>
+        {header}
+      </Typography>
+      <Stack direction={{ xs: "column", sm: "row" }}>
+        <Typography variant="body1">{description}</Typography>
+        <ImageList>
+          <ImageListItem>
+            <img src={image} alt={altTitle} />
+          </ImageListItem>
+        </ImageList>
+      </Stack>
     </Stack>
   );
 };
+
 const Guide = () => {
   return (
     <Box
@@ -33,7 +38,7 @@ const Guide = () => {
       <Typography variant="h5" fontWeight={500}>
         Step-by-step guide
       </Typography>
-      <ListComp 
+      <ListComp
         header="Step-1"
         description=""
         image={screenShot_1}
