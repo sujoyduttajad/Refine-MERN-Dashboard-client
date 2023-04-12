@@ -5,7 +5,7 @@ import {
   Stack,
   Typography,
 } from "@pankod/refine-mui";
-import { screenShot_1 } from "assets";
+import { screenShot_1, screenShot_2 } from "assets";
 import { ListCompProps } from "interfaces/guide";
 import { guideLabel } from "utils/infoContent";
 
@@ -15,12 +15,16 @@ const ListComp = ({ header, description, image, altTitle }: ListCompProps) => {
       <Typography fontSize={20} fontWeight={700} color="#11142D">
         {header}
       </Typography>
-      <Stack direction={{ xs: "column", sm: "row" }} justifyContent="flex-start">
-        <ImageList>
-          <ImageListItem>
-            <img src={image} alt={altTitle} />
-          </ImageListItem>
-        </ImageList>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        justifyContent="flex-start"
+        flexWrap="wrap"
+        gap={2}
+        mt={2}
+      >
+        <Box>
+          <img src={image} alt={altTitle} />
+        </Box>
         <Typography variant="body1">{description}</Typography>
       </Stack>
     </Stack>
@@ -43,6 +47,12 @@ const Guide = () => {
         header="Step-1"
         description={guideLabel.desc1}
         image={screenShot_1}
+        altTitle="screenshot of Property navigation"
+      />
+      <ListComp
+        header="Step-2"
+        description={guideLabel.desc2}
+        image={screenShot_2}
         altTitle="screenshot of Property navigation"
       />
     </Box>
