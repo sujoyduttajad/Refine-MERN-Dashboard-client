@@ -6,6 +6,9 @@ import arrowUp from './arrowUp.svg';
 import skyscrapper from './skyscrapper-violet.jpg'
 import pointyBuilding from './login-page-image.png'
 import BrandIcon from './Brand-Light.svg'
+import screenShot_1 from './screenshot-1.png'
+import screenShot_2 from './screenshot-2.png'
+import screenShot_3 from './screenshot-3.png'
 
 export {
   logo,
@@ -15,5 +18,8 @@ export {
   evoiaDark,
   arrowUp,
   skyscrapper,
-  pointyBuilding
+  pointyBuilding,
+  screenShot_1,
+  screenShot_2,
+  screenShot_3
 };
