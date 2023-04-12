@@ -1,6 +1,26 @@
-import { Box, Stack, Typography } from "@pankod/refine-mui";
+import {
+  Box,
+  ImageList,
+  ImageListItem,
+  Stack,
+  Typography,
+} from "@pankod/refine-mui";
+import { screenShot_1 } from "assets";
+import { ListCompProps } from "interfaces/guide";
 
-
+const ListComp = ({ header, description, image, altTitle }: ListCompProps) => {
+  return (
+    <Stack>
+      <Typography variant="h4">{header}</Typography>
+      <Typography variant="body1">{description}</Typography>
+      <ImageList>
+        <ImageListItem>
+          <img src={image} alt={altTitle} />
+        </ImageListItem>
+      </ImageList>
+    </Stack>
+  );
+};
 const Guide = () => {
   return (
     <Box
@@ -13,7 +33,12 @@ const Guide = () => {
       <Typography variant="h5" fontWeight={500}>
         Step-by-step guide
       </Typography>
-      <Stack></Stack>
+      <ListComp 
+        header="Step-1"
+        description=""
+        image={screenShot_1}
+        altTitle="screenshot of Property navigation"
+      />
     </Box>
   );
 };
