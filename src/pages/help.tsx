@@ -1,5 +1,6 @@
 import { useOne } from "@pankod/refine-core";
 import { Box, CardMedia, Stack, Typography } from "@pankod/refine-mui";
+import { Link } from "@pankod/refine-react-router-v6";
 import { evoiaDark } from "assets";
 import { Error, Loading } from "components/common/Loading&Error";
 import { companyInfo } from "utils/infoContent";
@@ -81,10 +82,30 @@ const HelpAndInfo = () => {
             pt={{ xs: 2, sm: 0 }}
           >
             {companyInfo.aboutMe}
+            <a
+              href="https://twitter.com/SujoyDutta4290"
+              type="_blank"
+              style={{
+                padding: "0 3px",
+                fontWeight: 600,
+                textDecoration: "underline",
+              }}
+            >
+              Twitter
+            </a>
+            <a
+              href="https://github.com/sujoyduttajad"
+              type="_blank"
+              style={{
+                padding: "0 3px",
+                fontWeight: 600,
+                textDecoration: "underline",
+              }}
+            >
+              GitHub
+            </a>
           </Typography>
-          <Box
-            width="fit-content"
-          >
+          <Box width="fit-content">
             <CardMedia
               component="img"
               image={owner?.avatar}
