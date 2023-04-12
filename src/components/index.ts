@@ -4,6 +4,7 @@ import PropertyCard from './common/PropertyCard';
 import CustomButton from './common/CustomButton';
 import Facilities from './common/Facilities';
 import ThreeDotsMenu from './common/ThreeDotsMenu';
+import Guide from './common/Guide';
 
 // charts
 import PieChart from './charts/PieChart';
@@ -30,5 +31,6 @@ export {
   SalesCard,
   CustomerCard,
   Facilities,
-  ThreeDotsMenu
+  ThreeDotsMenu,
+  Guide
 };
