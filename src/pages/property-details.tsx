@@ -71,7 +71,7 @@ const PropertyDetails = () => {
   return (
     <Box
       borderRadius="15px"
-      padding="0 20px 40px 20px"
+      padding="10px 20px 40px 20px"
       bgcolor="#fcfcfc"
       width="fit-content"
       aria-label="main-box-wrapper"
