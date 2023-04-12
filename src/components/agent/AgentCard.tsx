@@ -91,7 +91,7 @@ const AgentCard = ({
           />
           <InfoBar
             icon={<Phone sx={{ color: "#808191" }} />}
-            content="+1 234 56 78"
+            content="(212) 254-7323"
           />
           <InfoBar
             icon={<LocationCity sx={{ color: "#808191" }} />}
