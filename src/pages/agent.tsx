@@ -24,7 +24,7 @@ const Agent = () => {
         </Typography>
         <CustomButton
           title="Add Agent"
-          handleClick={() => navigate("/properties/create")}
+          // handleClick={() => navigate("/properties/create")}
           backgroundColor="#475be8"
           color="#fcfcfc"
           icon={<Add />}
