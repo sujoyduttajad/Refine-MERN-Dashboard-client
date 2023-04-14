@@ -52,7 +52,17 @@ const TopAgent = () => {
   return (
     <Box>
       {topAgents.map((agent) => (
-        <Box key={agent._id}>
+        <Box
+          key={agent._id}
+          mb={1.5}
+          sx={{
+            padding: "0.5rem",
+            borderRadius: "20px",
+            "&:hover": {
+              background: "#FAFAFA",
+            },
+          }}
+        >
           <Stack
             direction="row"
             justifyContent="space-between"
