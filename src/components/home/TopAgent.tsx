@@ -13,8 +13,20 @@ import { Error, Loading } from "components/common/Loading&Error";
 import { MoreVert } from "@mui/icons-material";
 import ThreeDotsMenu from "components/common/ThreeDotsMenu";
 
-const ITEM_HEIGHT = 48;
-const option = "Agent Detail";
+// interface Agent {
+//   id: string;
+//   allProperties: number;
+//   __v: number;
+//   name: string;
+//   email: string;
+//   avatar: string;
+// }
+
+// const extractTopAgents = (agents: Agent[]): Agent[] => {
+//   return agents
+//     .sort((a, b) => b.__v - a.__v)
+//     .slice(0, 4);
+// }
 
 const TopAgent = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -25,23 +37,21 @@ const TopAgent = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleNavigate = () => {
-
-  }
+  const handleNavigate = () => {};
 
   const { data, isLoading, isError } = useList({
     resource: "users",
   });
 
-  const allAgents = data?.data ?? [];
+  const topAgents = data?.data.sort((a, b) => b.__v - a.__v).slice(0, 4) ?? [];
+  console.log(topAgents);
 
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
-  
   return (
     <Box>
-      {allAgents.map((agent) => (
+      {topAgents.map((agent) => (
         <Box key={agent._id}>
           <Stack
             direction="row"
@@ -83,7 +93,7 @@ const TopAgent = () => {
                 </Typography>
               </Stack>
             </Stack>
-            <ThreeDotsMenu 
+            <ThreeDotsMenu
               option="Agent Detail"
               open={open}
               value="Agent Detail"
