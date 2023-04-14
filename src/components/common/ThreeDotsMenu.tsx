@@ -12,7 +12,7 @@ const ThreeDotsMenu = ({
   anchorEl,
   handleClick,
   handleClose,
-  handleNavigate
+  handleNavigate,
 }: ThreeDotsProps) => {
   return (
     <Stack>
@@ -44,6 +44,12 @@ const ThreeDotsMenu = ({
         <MenuItem
           selected={option === value}
           onClick={handleNavigate}
+          disableRipple
+          sx={{
+            backgroundColor: "#fff",
+            color: "#475be8",
+            margin: "0.1rem 0.5rem",
+          }}
         >
           {value}
         </MenuItem>
