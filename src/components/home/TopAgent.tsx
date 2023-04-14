@@ -2,31 +2,12 @@ import React from "react";
 import {
   Box,
   CardMedia,
-  IconButton,
-  Menu,
-  MenuItem,
   Stack,
   Typography,
 } from "@pankod/refine-mui";
 import { useList } from "@pankod/refine-core";
 import { Error, Loading } from "components/common/Loading&Error";
-import { MoreVert } from "@mui/icons-material";
 import ThreeDotsMenu from "components/common/ThreeDotsMenu";
-
-// interface Agent {
-//   id: string;
-//   allProperties: number;
-//   __v: number;
-//   name: string;
-//   email: string;
-//   avatar: string;
-// }
-
-// const extractTopAgents = (agents: Agent[]): Agent[] => {
-//   return agents
-//     .sort((a, b) => b.__v - a.__v)
-//     .slice(0, 4);
-// }
 
 const TopAgent = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
