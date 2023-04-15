@@ -48,7 +48,7 @@ const ThreeDotsMenu = ({
           sx={{
             backgroundColor: "#fff",
             color: "#475be8",
-            margin: "0.1rem 0.5rem",
+            margin: "0rem 0.4rem",
           }}
         >
           {value}
