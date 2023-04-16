@@ -7,15 +7,6 @@ import { Error, Loading } from "components/common/Loading&Error";
 import { companyInfo } from "utils/infoContent";
 
 const HelpAndInfo = () => {
-  const { data, isLoading, isError } = useOne({
-    resource: "users",
-    id: "64117ddfcf0c47761e01b1c4",
-  });
-
-  const owner = data?.data ?? [];
-
-  if (isLoading) return <Loading />;
-  if (isError) return <Error />;
 
   return (
     <Box>
@@ -109,8 +100,8 @@ const HelpAndInfo = () => {
           <Box width="fit-content">
             <CardMedia
               component="img"
-              image={owner?.avatar}
-              alt={owner?.name}
+              image={"https://lh3.googleusercontent.com/a/AGNmyxYiAYh3jH0SrrzDl1MFnxhB9bgdBzIr1NIZn1CTTA=s288"}
+              alt="Profile photo"
               height={120}
               sx={{
                 borderRadius: "5px",
