@@ -21,7 +21,7 @@ const HelpAndInfo = () => {
         padding="20px"
         bgcolor="#fafafa"
       >
-        <Typography variant="h5" fontWeight={500}>
+        <Typography variant="h5" fontWeight={600}>
           What is Evoia?
         </Typography>
         <Stack direction={{ xs: "column", sm: "row" }} mt={3}>
@@ -57,7 +57,7 @@ const HelpAndInfo = () => {
         padding="20px"
         bgcolor="#fafafa"
       >
-        <Typography variant="h5" fontWeight={500}>
+        <Typography variant="h5" fontWeight={600}>
           About the Creator
         </Typography>
         <Stack
