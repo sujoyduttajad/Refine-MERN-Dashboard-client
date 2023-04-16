@@ -43,7 +43,6 @@ const PropertyDetails = () => {
   if (isError) return <Error />;
 
   const isCurrentUser = user.email === propertyDetails.creator.email;
-  console.log(user);
 
   const handleDeleteProperty = () => {
     const response = window.confirm(
