@@ -34,8 +34,14 @@ const Guide = () => {
       padding="20px"
       bgcolor="#fafafa"
     >
-      <Typography variant="h5" fontWeight={600}>
+      <Typography variant="h5" fontWeight={600} mb={3}>
         How to upload properties?
+      </Typography>
+      <Typography fontSize={14}>
+        {" "}
+        This is a step by step guide on how to upload properties with proper
+        details in their proper place. Also folllow the links below this guide
+        to get property informations{" "}
       </Typography>
       <ListComp
         header="Step-1"
