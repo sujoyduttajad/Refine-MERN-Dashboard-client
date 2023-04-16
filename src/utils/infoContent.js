@@ -30,3 +30,22 @@ export const guideLabel = {
     Please upload a front facing photo of the property for now only one photo can be uploaded. 
     `,
 }
+
+export const linkInfo = [
+  {
+    address: "https://www.realtor.com/",
+    title: "Realtor.com "
+  },
+  {
+    address: "https://www.sothebysrealty.com/eng",
+    title: "Sotheby's International Realty"
+  },
+  {
+    address: "https://www.zillow.com/",
+    title: "Zillow"
+  },
+  {
+    address: "https://www.jamesedition.com/",
+    title: "JamesEdition Luxury Homes"
+  }
+]
