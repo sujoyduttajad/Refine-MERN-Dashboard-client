@@ -20,10 +20,34 @@ const Resources = () => {
       <ul>
         <li>
           <a
-            href="https://www.realtor.ca/ab/calgary/real-estate"
+            href="https://www.realtor.com/"
             target="_blank"
           >
-            Calgary Real Estate Listings
+            Realtor.com 
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.sothebysrealty.com/eng"
+            target="_blank"
+          >
+            Sotheby's International Realty
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.zillow.com/"
+            target="_blank"
+          >
+            Zillow
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.jamesedition.com/"
+            target="_blank"
+          >
+            JamesEdition Luxury Homes
           </a>
         </li>
       </ul>
