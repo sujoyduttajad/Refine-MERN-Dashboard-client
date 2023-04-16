@@ -1,6 +1,7 @@
 import { useOne, useGetIdentity } from "@pankod/refine-core";
 import { Profile } from "components";
 import { Error, Loading } from "components/common/Loading&Error";
+import Toasts from "components/common/Toasts";
 
 const MyProfile = () => {
   const { data: user } = useGetIdentity();
@@ -15,8 +16,7 @@ const MyProfile = () => {
   if (isError) return <Error />;
 
   if (!myProfile) {
-    // Handle case when agentProfile is null or undefined
-    return null; // or show an appropriate UI, e.g., return <div>Agent profile not found</div>;
+    return <Toasts message="User Not found" />;
   }
 
   return (
