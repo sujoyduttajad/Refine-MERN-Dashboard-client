@@ -76,6 +76,11 @@ export const Footer: React.FC = () => {
             </IconButton>
           </Paper>
         </Box>
+        {/* 2nd row */}
+        <Box>
+              
+        </Box>
+        {/* 3rd row */}
         <Box>
           <Typography sx={{ color: "#fafafa" }}>
             Made with ❤️ by Sujoy
@@ -85,7 +90,7 @@ export const Footer: React.FC = () => {
             <a
               href="https://github.com/sujoyduttajad"
               rel="noopener noreferrer"
-              style={{ color: "#fafafa" }}
+              className="active-links"
             >
               GitHub
             </a>{" "}
@@ -93,7 +98,7 @@ export const Footer: React.FC = () => {
             <a
               href="https://twitter.com/SujoyDutta4290"
               rel="noopener noreferrer"
-              style={{ color: "#fafafa" }}
+              className="active-links"
             >
               Twitter
             </a>
