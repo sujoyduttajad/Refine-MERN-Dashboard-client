@@ -2,6 +2,7 @@ import { useOne } from "@pankod/refine-core";
 import { Profile } from "components";
 import { useParams } from "@pankod/refine-react-router-v6";
 import { Error, Loading } from "components/common/Loading&Error";
+import Toasts from "components/common/Toasts";
 
 const AgentProfile = () => {
   const { id } = useParams();
@@ -16,8 +17,7 @@ const AgentProfile = () => {
   if (isError) return <Error />;
 
   if (!agentProfile) {
-    // Handle case when agentProfile is null or undefined
-    return null; // or show an appropriate UI, e.g., return <div>Agent profile not found</div>;
+    return <Toasts message="Agent Not found" />;
   }
 
   return (
