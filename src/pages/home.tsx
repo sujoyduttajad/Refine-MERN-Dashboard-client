@@ -11,8 +11,6 @@ import {
 import { Typography, Box, Stack } from "@pankod/refine-mui";
 import { Error, Loading } from "components/common/Loading&Error";
 import ViewAll from "components/common/ViewAll";
-import { AllDataProps } from "interfaces/home";
-import { PropertyProps } from "interfaces/common";
 
 interface BaseRecord {
   _id: string;
