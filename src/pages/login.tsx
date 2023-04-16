@@ -1,16 +1,8 @@
 import { useEffect, useRef } from "react";
 import { useLogin } from "@pankod/refine-core";
-import {
-  Container,
-  Box,
-  CardMedia,
-  Card,
-  CardContent,
-  Typography,
-  Stack,
-} from "@pankod/refine-mui";
+import { Box, CardMedia, Card, Typography, Stack } from "@pankod/refine-mui";
 import { CredentialResponse } from "../interfaces/google";
-import { evoiaLight, BrandIcon, pointyBuilding, skyscrapper } from "assets";
+import { BrandIcon, pointyBuilding } from "assets";
 
 export const Login: React.FC = () => {
   const { mutate: login } = useLogin<CredentialResponse>();
@@ -76,7 +68,6 @@ export const Login: React.FC = () => {
       <Box
         maxWidth="50%"
         width="100%"
-        // height="100%"
         py="7rem"
         display="flex"
         flexDirection="column"
@@ -107,21 +98,17 @@ export const Login: React.FC = () => {
               flexDirection: "column",
               alignItems: "center",
               padding: "0",
-              // width: { xs: "70vw", lg: "100%" },
               width: "fit-content",
               backgroundColor: "#FCFCFC",
               border: 0,
             }}
           >
-            {/* <CardContent> */}
             <Typography fontSize={32} fontWeight={700}>
               Welcome to Evoia
             </Typography>
             <Typography fontSize={14}>
               Please sign-in with your Google account.
             </Typography>
-            {/* </CardContent> */}
-
             <Box mt={4}>
               <GoogleButton />
             </Box>
