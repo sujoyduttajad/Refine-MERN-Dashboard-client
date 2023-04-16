@@ -14,8 +14,11 @@ import { ColorModeContext } from "contexts";
 import {
   ArrowCircleLeft,
   ArrowCircleLeftOutlined,
+  GitHub,
+  LinkedIn,
   NotificationsOutlined,
   Send,
+  Twitter,
 } from "@mui/icons-material";
 import { Paper } from "@pankod/refine-mui";
 import { Link } from "@pankod/refine-react-router-v6";
@@ -85,7 +88,12 @@ export const Footer: React.FC = () => {
           </Paper>
         </Box>
         {/* 2nd row */}
-        <Box display="flex" justifyContent="center" mb={4} sx={{ color: "#ECEEEF" }}>
+        <Box
+          display="flex"
+          justifyContent="center"
+          mb={4}
+          sx={{ color: "#ECEEEF", fontWeight: 600 }}
+        >
           <Stack direction="column" alignItems="flex-start">
             <ListItem sx={{ paddingTop: 1 }}>
               <ArrowCircleLeftOutlined />
@@ -131,6 +139,42 @@ export const Footer: React.FC = () => {
               <Link to={"/my-profile"} className="active-links">
                 My Profile
               </Link>
+            </ListItem>
+          </Stack>
+
+          <Stack direction="column" alignItems="flex-start">
+            <ListItem sx={{ paddingTop: 1 }}>
+              <GitHub />
+              <a
+                href="https://github.com/sujoyduttajad/Refine-MERN-Dashboard-client"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="active-links"
+              >
+                GitHub
+              </a>
+            </ListItem>
+            <ListItem>
+              <Twitter />
+              <a
+                href="https://twitter.com/SujoyDutta4290"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="active-links"
+              >
+                Twitter
+              </a>
+            </ListItem>
+            <ListItem>
+              <LinkedIn />
+              <a
+                href="https://www.linkedin.com/in/sujoy-dutta-b41746a9/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="active-links"
+              >
+                Linkedin
+              </a>
             </ListItem>
           </Stack>
         </Box>
