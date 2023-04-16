@@ -73,6 +73,7 @@ const HelpAndInfo = () => {
             <a
               href="https://twitter.com/SujoyDutta4290"
               type="_blank"
+              rel="noreferrer"
               style={{
                 padding: "0 3px",
                 fontWeight: 600,
@@ -84,6 +85,7 @@ const HelpAndInfo = () => {
             <a
               href="https://github.com/sujoyduttajad"
               type="_blank"
+              rel="noreferrer"
               style={{
                 padding: "0 3px",
                 fontWeight: 600,
