@@ -8,6 +8,8 @@ import {
   IconButton,
   Box,
   height,
+  TextField,
+  InputBase,
 } from "@pankod/refine-mui";
 
 import { ColorModeContext } from "contexts";
@@ -19,15 +21,36 @@ export const Footer: React.FC = () => {
   return shouldRenderFooter ? (
     <footer
       style={{
-        backgroundColor: "#232323",
-        color: "#ffffff",
+        backgroundColor: "#475be8",
+        color: "#fafafa",
         padding: 4,
         textAlign: "center",
         minHeight: "20vh",
         height: "fit-content",
       }}
     >
-      <Box>
+      <Box display="flex" flexDirection="column" gap={2} padding={3}>
+        <Box display="flex" gap={2} alignItems="center" justifyContent="space-between">
+          <Stack direction="column" justifyContent="flex-start">
+            <Typography variant="h3">Sign up to our Newsletter</Typography>
+            <Typography variant="body1">
+              Stay up to date with the latest news, announcements, and articles.
+            </Typography>
+          </Stack>
+          <InputBase
+            sx={{
+              ml: 1,
+              flex: 1,
+              maxWidth: "20rem",
+              border: "1px solid #fff",
+              borderRadius: 1,
+              padding: "4px 8px",
+              color: "#eaeaea",
+            }}
+            placeholder="Your Email address"
+            inputProps={{ "aria-label": "Email address" }}
+          />
+        </Box>
         <Box>
           <Typography sx={{ color: "#fafafa" }}>
             Made with ❤️ by Sujoy
@@ -40,10 +63,8 @@ export const Footer: React.FC = () => {
               style={{ color: "#fafafa" }}
             >
               GitHub
-            </a>
-          </Typography>
-          <Typography>
-            Find me in{" "}
+            </a>{" "}
+            and{" "}
             <a
               href="https://twitter.com/SujoyDutta4290"
               rel="noopener noreferrer"
