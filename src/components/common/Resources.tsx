@@ -1,4 +1,5 @@
 import { Box, Typography } from "@pankod/refine-mui";
+import { linkInfo } from "utils/infoContent";
 
 const Resources = () => {
   return (
@@ -18,38 +19,13 @@ const Resources = () => {
         around the world{" "}
       </Typography>
       <ul>
-        <li>
-          <a
-            href="https://www.realtor.com/"
-            target="_blank"
-          >
-            Realtor.com 
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.sothebysrealty.com/eng"
-            target="_blank"
-          >
-            Sotheby's International Realty
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.zillow.com/"
-            target="_blank"
-          >
-            Zillow
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.jamesedition.com/"
-            target="_blank"
-          >
-            JamesEdition Luxury Homes
-          </a>
-        </li>
+        {linkInfo.map((ele) => (
+          <li>
+            <a href={ele.address} target="_blank" rel="noreferrer">
+              {ele.title}
+            </a>
+          </li>
+        ))}
       </ul>
     </Box>
   );
