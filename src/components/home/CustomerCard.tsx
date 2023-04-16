@@ -6,10 +6,11 @@ import { ColumnBarSeries as series } from "components/charts/chart.config";
 
 const CustomerCard = () => {
   return (
-    <Box>
+    <Box width={{ xs: "100vw", sm: "fit-content"}}>
       <Box
         display="flex"
-        justifyContent="space-evenly"
+        justifyContent={{ xs: "flex-start", sm: "space-evenly" }}
+        flexWrap="wrap"
         gap={1}
         pb={2}
       >
