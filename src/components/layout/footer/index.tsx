@@ -39,6 +39,7 @@ export const Footer: React.FC = () => {
           display="flex"
           gap={2}
           mb={4}
+          flexWrap="wrap"
           alignItems="center"
           justifyContent="space-between"
         >
@@ -84,11 +85,8 @@ export const Footer: React.FC = () => {
           </Paper>
         </Box>
         {/* 2nd row */}
-        <Box>
+        <Box display="flex" justifyContent="center">
           <Stack direction="column" alignItems="flex-start">
-            <Typography variant="h5" fontWeight={600} mb={2}>
-              Pages
-            </Typography>
             <ListItem sx={{ paddingTop: 1 }}>
               <ArrowCircleLeftOutlined />
               <Link to={"/"} className="active-links">
@@ -99,6 +97,39 @@ export const Footer: React.FC = () => {
               <ArrowCircleLeftOutlined />
               <Link to={"/properties"} className="active-links">
                 Properties
+              </Link>
+            </ListItem>
+            <ListItem>
+              <ArrowCircleLeftOutlined />
+              <Link to={"/agents"} className="active-links">
+                Agents
+              </Link>
+            </ListItem>
+            <ListItem>
+              <ArrowCircleLeftOutlined />
+              <Link to={"/reviews"} className="active-links">
+                Reviews
+              </Link>
+            </ListItem>
+          </Stack>
+
+          <Stack direction="column" alignItems="flex-start">
+            <ListItem sx={{ paddingTop: 1 }}>
+              <ArrowCircleLeftOutlined />
+              <Link to={"/messages"} className="active-links">
+                Messages
+              </Link>
+            </ListItem>
+            <ListItem>
+              <ArrowCircleLeftOutlined />
+              <Link to={"/help"} className="active-links">
+                Help & Info
+              </Link>
+            </ListItem>
+            <ListItem>
+              <ArrowCircleLeftOutlined />
+              <Link to={"/my-profile"} className="active-links">
+                My Profile
               </Link>
             </ListItem>
           </Stack>
