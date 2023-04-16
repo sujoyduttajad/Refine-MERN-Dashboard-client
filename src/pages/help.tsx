@@ -1,10 +1,10 @@
 import { Box, CardMedia, Stack, Typography } from "@pankod/refine-mui";
 import { evoiaDark } from "assets";
 import { Guide } from "components";
+import Resources from "components/common/Resources";
 import { companyInfo } from "utils/infoContent";
 
 const HelpAndInfo = () => {
-
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142d">
@@ -96,7 +96,9 @@ const HelpAndInfo = () => {
           <Box width="fit-content">
             <CardMedia
               component="img"
-              image={"https://lh3.googleusercontent.com/a/AGNmyxYiAYh3jH0SrrzDl1MFnxhB9bgdBzIr1NIZn1CTTA=s288"}
+              image={
+                "https://lh3.googleusercontent.com/a/AGNmyxYiAYh3jH0SrrzDl1MFnxhB9bgdBzIr1NIZn1CTTA=s288"
+              }
               alt="Profile photo"
               height={120}
               sx={{
@@ -110,7 +112,7 @@ const HelpAndInfo = () => {
       {/* Step by Step Guide */}
       <Guide />
       {/* Resources */}
-      <Box></Box>
+      <Resources />
     </Box>
   );
 };
