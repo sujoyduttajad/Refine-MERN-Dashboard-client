@@ -10,9 +10,9 @@ export const Title: React.FC<TitleProps> = ({ collapsed }) => {
     <Button fullWidth variant="text" disableRipple>
       <Link to="/">
         {collapsed ? (
-          <img src={logo} alt="Yariga" width="28px" />
+          <img src={logo} alt="Evoia" width="28px" />
         ) : (
-          <img src={evoiaLight} alt="Yariga" width="140px" />
+          <img src={evoiaLight} alt="Evoia" width="140px" />
         )}
       </Link>
     </Button>
