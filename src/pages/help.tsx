@@ -1,9 +1,6 @@
-import { useOne } from "@pankod/refine-core";
 import { Box, CardMedia, Stack, Typography } from "@pankod/refine-mui";
-import { Link } from "@pankod/refine-react-router-v6";
 import { evoiaDark } from "assets";
 import { Guide } from "components";
-import { Error, Loading } from "components/common/Loading&Error";
 import { companyInfo } from "utils/infoContent";
 
 const HelpAndInfo = () => {
@@ -68,7 +65,6 @@ const HelpAndInfo = () => {
           <Typography
             variant="body1"
             flexWrap="wrap"
-            // maxWidth="40rem"
             width="100%"
             pl={{ xs: 0, sm: 2 }}
             pt={{ xs: 2, sm: 0 }}
@@ -113,6 +109,8 @@ const HelpAndInfo = () => {
       </Box>
       {/* Step by Step Guide */}
       <Guide />
+      {/* Resources */}
+      <Box></Box>
     </Box>
   );
 };
