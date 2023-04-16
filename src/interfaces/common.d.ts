@@ -15,11 +15,11 @@ export interface CustomButtonProps {
 }
 
 export interface ProfileProps {
-    type: string;
-    name: string;
-    avatar: string;
-    email: string;
-    properties: Array | undefined;
+    type?: string | undefined;
+    name?: string | undefined;
+    avatar?: string | undefined;
+    email?: string | undefined;
+    properties?: Array | undefined;
 }
 
 export interface PropertyProps {
