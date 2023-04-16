@@ -68,7 +68,10 @@ export const ColumnBarSeries = [{
 export const ColumnBarData: ApexOptions = {
   chart: {
     type: 'bar',
-    height: 350
+    height: 350,
+    toolbar: {
+      show: false // hide the download dropdown menu
+    }
   },
   plotOptions: {
     bar: {
