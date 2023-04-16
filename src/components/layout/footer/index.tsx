@@ -1,21 +1,24 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
-  AppBar,
   Stack,
-  Toolbar,
   Typography,
-  Avatar,
   IconButton,
   Box,
-  height,
-  TextField,
   InputBase,
   Divider,
+  List,
+  ListItem,
 } from "@pankod/refine-mui";
 
 import { ColorModeContext } from "contexts";
-import { NotificationsOutlined, Send } from "@mui/icons-material";
+import {
+  ArrowCircleLeft,
+  ArrowCircleLeftOutlined,
+  NotificationsOutlined,
+  Send,
+} from "@mui/icons-material";
 import { Paper } from "@pankod/refine-mui";
+import { Link } from "@pankod/refine-react-router-v6";
 
 export const Footer: React.FC = () => {
   const shouldRenderFooter = true; // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
@@ -31,16 +34,21 @@ export const Footer: React.FC = () => {
         height: "fit-content",
       }}
     >
-      <Box display="flex" flexDirection="column" gap={2} px={4} py={3}>
+      <Box display="flex" flexDirection="column" gap={2} px={4} py={3} mb={3}>
         <Box
           display="flex"
           gap={2}
+          mb={4}
           alignItems="center"
           justifyContent="space-between"
         >
           <Stack direction="column" alignItems="flex-start">
             <Typography variant="h3">Sign up to our Newsletter</Typography>
-            <Typography variant="body1" fontWeight={500} sx={{ color: "#eaeaea"}}>
+            <Typography
+              variant="body1"
+              fontWeight={500}
+              sx={{ color: "#eaeaea" }}
+            >
               Stay up to date with the latest news, announcements, and articles.
             </Typography>
           </Stack>
@@ -61,7 +69,6 @@ export const Footer: React.FC = () => {
                 border: "1px solid #fff",
                 borderRadius: 1,
                 padding: "4px 8px",
-                // color: "#eee",
               }}
               placeholder="Your Email address"
               inputProps={{ "aria-label": "Email address" }}
@@ -78,7 +85,23 @@ export const Footer: React.FC = () => {
         </Box>
         {/* 2nd row */}
         <Box>
-              
+          <Stack direction="column" alignItems="flex-start">
+            <Typography variant="h5" fontWeight={600} mb={2}>
+              Pages
+            </Typography>
+            <ListItem sx={{ paddingTop: 1 }}>
+              <ArrowCircleLeftOutlined />
+              <Link to={"/"} className="active-links">
+                Dashboard
+              </Link>
+            </ListItem>
+            <ListItem>
+              <ArrowCircleLeftOutlined />
+              <Link to={"/properties"} className="active-links">
+                Properties
+              </Link>
+            </ListItem>
+          </Stack>
         </Box>
         {/* 3rd row */}
         <Box>
