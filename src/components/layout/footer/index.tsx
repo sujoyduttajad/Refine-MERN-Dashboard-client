@@ -98,7 +98,12 @@ export const Footer: React.FC = () => {
           mb={4}
           sx={{ color: "#ECEEEF", fontWeight: 600 }}
         >
-          <Box display="flex" flexDirection="column" alignItems="flex-start">
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="flex-start"
+            mb={{ xs: 4, sm: 0 }}
+          >
             <Button fullWidth variant="text" disableRipple>
               <Link to="/">
                 <img src={evoiaWhite} alt="Evoia" width={200} />
