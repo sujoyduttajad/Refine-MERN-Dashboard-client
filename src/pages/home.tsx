@@ -77,7 +77,7 @@ const Home = () => {
   const totalProperties: number = allProperties.length;
 
   return (
-    <Box>
+    <Box display="flex" flexDirection="column" flexWrap="wrap" >
       <Stack direction="row" mb={3} color="#475be8">
         <Typography fontSize={42} fontWeight={700}>
           Hi,{"  "}
@@ -93,10 +93,6 @@ const Home = () => {
       </Stack>
       <Typography fontSize={25} fontWeight={700} color="#11142D">
         Dashboard
-      </Typography>
-      <Typography variant="subtitle2" gutterBottom sx={{ color: "#9F9F9F" }}>
-        (All the data are dummy at first but as soon as you start uploading
-        Properties the data changes dynamically)
       </Typography>
 
       {/* 1st Row  */}
@@ -143,6 +139,7 @@ const Home = () => {
         padding="20px"
         bgcolor="#FAFAFA"
         display="flex"
+        flexWrap="wrap"
         minWidth="30%"
         mt="25px"
         gap={2}
@@ -159,7 +156,6 @@ const Home = () => {
             <Typography fontSize={18} fontWeight={600} color="#11142d">
               Top Agent
             </Typography>
-            {/* <ViewAll /> */}
           </Stack>
           <TopAgent />
         </Stack>
