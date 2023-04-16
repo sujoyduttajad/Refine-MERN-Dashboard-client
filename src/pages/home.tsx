@@ -159,7 +159,7 @@ const Home = () => {
             <Typography fontSize={18} fontWeight={600} color="#11142d">
               Top Agent
             </Typography>
-            <ViewAll />
+            {/* <ViewAll /> */}
           </Stack>
           <TopAgent />
         </Stack>
