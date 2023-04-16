@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Box,
-  CardMedia,
-  Stack,
-  Typography,
-} from "@pankod/refine-mui";
+import { Box, CardMedia, Stack, Typography } from "@pankod/refine-mui";
 import { useList } from "@pankod/refine-core";
 import { Error, Loading } from "components/common/Loading&Error";
 import ThreeDotsMenu from "components/common/ThreeDotsMenu";
@@ -25,7 +20,6 @@ const TopAgent = () => {
   });
 
   const topAgents = data?.data.sort((a, b) => b.__v - a.__v).slice(0, 4) ?? [];
-  console.log(topAgents);
 
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
