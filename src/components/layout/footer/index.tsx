@@ -22,6 +22,7 @@ import {
 } from "@mui/icons-material";
 import { Paper } from "@pankod/refine-mui";
 import { Link } from "@pankod/refine-react-router-v6";
+import { mediaInfo } from "utils/infoContent";
 
 export const Footer: React.FC = () => {
   const shouldRenderFooter = true; // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
@@ -95,56 +96,30 @@ export const Footer: React.FC = () => {
           sx={{ color: "#ECEEEF", fontWeight: 600 }}
         >
           <Stack direction="column" alignItems="flex-start">
-            <ListItem sx={{ paddingTop: 1 }}>
-              <ArrowCircleLeftOutlined />
-              <Link to={"/"} className="active-links">
-                Dashboard
-              </Link>
-            </ListItem>
-            <ListItem>
-              <ArrowCircleLeftOutlined />
-              <Link to={"/properties"} className="active-links">
-                Properties
-              </Link>
-            </ListItem>
-            <ListItem>
-              <ArrowCircleLeftOutlined />
-              <Link to={"/agents"} className="active-links">
-                Agents
-              </Link>
-            </ListItem>
-            <ListItem>
-              <ArrowCircleLeftOutlined />
-              <Link to={"/reviews"} className="active-links">
-                Reviews
-              </Link>
-            </ListItem>
+            {mediaInfo.pages.map((item) => (
+              <ListItem sx={{ paddingTop: 1 }}>
+                <ArrowCircleLeftOutlined sx={{ paddingRight: 1 }} />
+                <Link to={item.address} className="active-links">
+                  {item.title}
+                </Link>
+              </ListItem>
+            ))}
+          </Stack>
+
+          <Stack direction="column" alignItems="flex-start">
+            {mediaInfo.resources.map((item) => (
+              <ListItem sx={{ paddingTop: 1 }}>
+                <ArrowCircleLeftOutlined sx={{ paddingRight: 1 }} />
+                <Link to={item.address} className="active-links">
+                  {item.title}
+                </Link>
+              </ListItem>
+            ))}
           </Stack>
 
           <Stack direction="column" alignItems="flex-start">
             <ListItem sx={{ paddingTop: 1 }}>
-              <ArrowCircleLeftOutlined />
-              <Link to={"/messages"} className="active-links">
-                Messages
-              </Link>
-            </ListItem>
-            <ListItem>
-              <ArrowCircleLeftOutlined />
-              <Link to={"/help"} className="active-links">
-                Help & Info
-              </Link>
-            </ListItem>
-            <ListItem>
-              <ArrowCircleLeftOutlined />
-              <Link to={"/my-profile"} className="active-links">
-                My Profile
-              </Link>
-            </ListItem>
-          </Stack>
-
-          <Stack direction="column" alignItems="flex-start">
-            <ListItem sx={{ paddingTop: 1 }}>
-              <GitHub />
+              <GitHub sx={{ paddingRight: 1 }} />
               <a
                 href="https://github.com/sujoyduttajad/Refine-MERN-Dashboard-client"
                 target="_blank"
@@ -155,7 +130,7 @@ export const Footer: React.FC = () => {
               </a>
             </ListItem>
             <ListItem>
-              <Twitter />
+              <Twitter sx={{ paddingRight: 1 }} />
               <a
                 href="https://twitter.com/SujoyDutta4290"
                 target="_blank"
@@ -166,7 +141,7 @@ export const Footer: React.FC = () => {
               </a>
             </ListItem>
             <ListItem>
-              <LinkedIn />
+              <LinkedIn sx={{ paddingRight: 1 }} />
               <a
                 href="https://www.linkedin.com/in/sujoy-dutta-b41746a9/"
                 target="_blank"
