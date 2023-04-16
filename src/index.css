@@ -30,7 +30,7 @@ html, body {
   }
   .active-links:hover {
     color: #11142d;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: underline !important;
   }
   
