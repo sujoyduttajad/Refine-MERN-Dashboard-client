@@ -7,10 +7,13 @@ import {
   Typography,
   Avatar,
   IconButton,
+  Button,
 } from "@pankod/refine-mui";
 
 import { ColorModeContext } from "contexts";
 import { NotificationsOutlined } from "@mui/icons-material";
+import { logo } from "assets";
+import { Link } from "@pankod/refine-react-router-v6";
 
 export const Header: React.FC = () => {
   const { data: user } = useGetIdentity();
@@ -24,6 +27,18 @@ export const Header: React.FC = () => {
       sx={{ background: "#fafafa" }}
     >
       <Toolbar>
+        <Stack display={{ xs: "flex", sm: "none" }} ml={4}>
+          <Button
+            fullWidth
+            variant="text"
+            disableRipple
+            sx={{ paddingBottom: 0 }}
+          >
+            <Link to="/">
+              <img src={logo} alt="Evoia" />
+            </Link>
+          </Button>
+        </Stack>
         <Stack
           direction="row"
           width="100%"
@@ -58,7 +73,9 @@ export const Header: React.FC = () => {
                 </Typography>
               ) : null}
               <Typography fontSize={12} fontWeight={500} color="#808191">
-                {user?.email === "sujoyduttajad@gmail.com" ? "Admin" : "Real-Estate Agent"}
+                {user?.email === "sujoyduttajad@gmail.com"
+                  ? "Admin"
+                  : "Real-Estate Agent"}
               </Typography>
             </Stack>
             {user?.avatar ? (
