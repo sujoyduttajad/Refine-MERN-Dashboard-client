@@ -77,7 +77,7 @@ const Home = () => {
   const totalProperties: number = allProperties.length;
 
   return (
-    <Box display="flex" flexDirection="column" flexWrap="wrap" >
+    <Box display="flex" flexDirection="column" flexWrap="wrap">
       <Stack direction="row" mb={3} color="#475be8">
         <Typography fontSize={42} fontWeight={700}>
           Hi,{"  "}
@@ -139,13 +139,14 @@ const Home = () => {
         padding="20px"
         bgcolor="#FAFAFA"
         display="flex"
+        flexDirection={{ xs: "column", lg: "row" }}
         flexWrap="wrap"
-        minWidth="30%"
         mt="25px"
         gap={2}
+        width={{ xs: "100vw", sm: "100%" }}
       >
         <Stack
-          width={"100%"}
+          width={"30%"}
           direction="column"
           gap={4}
           bgcolor="#fff"
@@ -160,7 +161,7 @@ const Home = () => {
           <TopAgent />
         </Stack>
         <Stack
-          width={"100%"}
+          width={"30%"}
           direction="column"
           gap={4}
           bgcolor="#fff"
@@ -173,7 +174,7 @@ const Home = () => {
           <CustomerCard />
         </Stack>
         <Stack
-          width={"100%"}
+          width={"30%"}
           direction="column"
           gap={4}
           bgcolor="#fff"
