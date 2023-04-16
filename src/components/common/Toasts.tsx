@@ -10,7 +10,6 @@ const Toasts = ({ message }: ToastsProps) => {
       <Alert severity="warning">
         <AlertTitle>{message}</AlertTitle>
       </Alert>
-      {/* <Alert severity="info">This is an info alert — check it out!</Alert> */}
     </Stack>
   );
 };
