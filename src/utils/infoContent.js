@@ -20,32 +20,68 @@ export const companyInfo = {
 };
 
 export const guideLabel = {
-    desc1: "Click on the Properties Tab in the sidebar as shown in the image",
-    desc2: "Now click on the 'Add Property' button on the top right corner to create a new property",
-    desc3: `Filling the form is straight forward just at the appropriate values in the appropriate places. 
+  desc1: "Click on the Properties Tab in the sidebar as shown in the image",
+  desc2:
+    "Now click on the 'Add Property' button on the top right corner to create a new property",
+  desc3: `Filling the form is straight forward just at the appropriate values in the appropriate places. 
     Make sure the Property name is valid if you don't have then made up a name but don't put the address in place of the name.
     Add a specific property type from the dropdown. 
     The price should be only numbers and no currency symbol since all properties are in USD.
     The location should ideally be a real address of the associated property.
     Please upload a front facing photo of the property for now only one photo can be uploaded. 
     `,
-}
+};
 
 export const linkInfo = [
   {
     address: "https://www.realtor.com/",
-    title: "Realtor.com "
+    title: "Realtor.com ",
   },
   {
     address: "https://www.sothebysrealty.com/eng",
-    title: "Sotheby's International Realty"
+    title: "Sotheby's International Realty",
   },
   {
     address: "https://www.zillow.com/",
-    title: "Zillow"
+    title: "Zillow",
   },
   {
     address: "https://www.jamesedition.com/",
-    title: "JamesEdition Luxury Homes"
-  }
-]
+    title: "JamesEdition Luxury Homes",
+  },
+];
+
+export const mediaInfo = {
+  pages: [
+    {
+      address: "/",
+      title: "Dashboard",
+    },
+    {
+      address: "/properties",
+      title: "Properties",
+    },
+    {
+      address: "/agents",
+      title: "Agents",
+    },
+    {
+      address: "/reviews",
+      title: "Reviews",
+    },
+  ],
+  resources: [
+    {
+      address: "/messages",
+      title: "Messages",
+    },
+    {
+      address: "/help",
+      title: "Help & Info",
+    },
+    {
+      address: "/my-profile",
+      title: "My Profile",
+    },
+  ],
+};
