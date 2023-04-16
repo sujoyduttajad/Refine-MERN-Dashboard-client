@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import yariga from './yariga.svg';
 import evoiaLight from './evoiaLight.svg';
 import evoiaDark from './evoiaDark.svg';
+import evoiaWhite from './evoia-white.svg';
 import arrowUp from './arrowUp.svg';
 import skyscrapper from './skyscrapper-violet.jpg'
 import pointyBuilding from './login-page-image.png'
@@ -16,6 +17,7 @@ export {
   yariga,
   evoiaLight,
   evoiaDark,
+  evoiaWhite,
   arrowUp,
   skyscrapper,
   pointyBuilding,
