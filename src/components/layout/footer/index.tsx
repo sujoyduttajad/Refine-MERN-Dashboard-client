@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
           </Paper>
         </Box>
         {/* 2nd row */}
-        <Box display="flex" justifyContent="center">
+        <Box display="flex" justifyContent="center" mb={4} sx={{ color: "#ECEEEF" }}>
           <Stack direction="column" alignItems="flex-start">
             <ListItem sx={{ paddingTop: 1 }}>
               <ArrowCircleLeftOutlined />
@@ -135,10 +135,18 @@ export const Footer: React.FC = () => {
           </Stack>
         </Box>
         {/* 3rd row */}
-        <Box>
-          <Typography sx={{ color: "#fafafa" }}>
-            Made with ❤️ by Sujoy
-          </Typography>
+        <Box
+          sx={{ color: "#ECEEEF" }}
+          display="flex"
+          flexWrap="wrap"
+          justifyContent="space-between"
+        >
+          <Box>
+            <Typography>
+              © {new Date().getFullYear()} All rights reserved
+            </Typography>
+          </Box>
+          <Typography>Made with ❤️ by Sujoy</Typography>
           <Typography>
             Find me in{" "}
             <a
@@ -156,11 +164,6 @@ export const Footer: React.FC = () => {
             >
               Twitter
             </a>
-          </Typography>
-        </Box>
-        <Box>
-          <Typography>
-            © {new Date().getFullYear()} All rights reserved
           </Typography>
         </Box>
       </Box>
