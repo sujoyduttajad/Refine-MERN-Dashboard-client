@@ -8,6 +8,7 @@ import {
   Divider,
   List,
   ListItem,
+  Button,
 } from "@pankod/refine-mui";
 
 import { ColorModeContext } from "contexts";
@@ -23,6 +24,7 @@ import {
 import { Paper } from "@pankod/refine-mui";
 import { Link } from "@pankod/refine-react-router-v6";
 import { mediaInfo } from "utils/infoContent";
+import { evoiaLight, evoiaWhite } from "assets";
 
 export const Footer: React.FC = () => {
   const shouldRenderFooter = true; // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
@@ -91,69 +93,86 @@ export const Footer: React.FC = () => {
         {/* 2nd row */}
         <Box
           display="flex"
-          justifyContent="center"
+          justifyContent="space-between"
+          flexWrap="wrap"
           mb={4}
           sx={{ color: "#ECEEEF", fontWeight: 600 }}
         >
-          <Stack direction="column" alignItems="flex-start">
-            {mediaInfo.pages.map((item) => (
-              <ListItem sx={{ paddingTop: 1 }}>
-                <ArrowCircleLeftOutlined sx={{ paddingRight: 1 }} />
-                <Link to={item.address} className="active-links">
-                  {item.title}
-                </Link>
-              </ListItem>
-            ))}
-          </Stack>
+          <Box display="flex" flexDirection="column" alignItems="flex-start">
+            <Button fullWidth variant="text" disableRipple>
+              <Link to="/">
+                <img src={evoiaWhite} alt="Evoia" width={200} />
+              </Link>
+            </Button>
+            <Typography fontSize={14}>
+              Your one stop Property manager
+            </Typography>
+          </Box>
+          <Box display="flex">
+            <Stack direction="column" alignItems="flex-start">
+              {mediaInfo.pages.map((item) => (
+                <ListItem sx={{ paddingTop: 1 }}>
+                  <ArrowCircleLeftOutlined sx={{ paddingRight: 1 }} />
+                  <Link to={item.address} className="active-links">
+                    {item.title}
+                  </Link>
+                </ListItem>
+              ))}
+            </Stack>
 
-          <Stack direction="column" alignItems="flex-start">
-            {mediaInfo.resources.map((item) => (
-              <ListItem sx={{ paddingTop: 1 }}>
-                <ArrowCircleLeftOutlined sx={{ paddingRight: 1 }} />
-                <Link to={item.address} className="active-links">
-                  {item.title}
-                </Link>
-              </ListItem>
-            ))}
-          </Stack>
+            <Stack direction="column" alignItems="flex-start">
+              {mediaInfo.resources.map((item) => (
+                <ListItem sx={{ paddingTop: 1 }}>
+                  <ArrowCircleLeftOutlined sx={{ paddingRight: 1 }} />
+                  <Link to={item.address} className="active-links">
+                    {item.title}
+                  </Link>
+                </ListItem>
+              ))}
+            </Stack>
 
-          <Stack direction="column" alignItems="flex-start">
-            <ListItem sx={{ paddingTop: 1 }}>
-              <GitHub sx={{ paddingRight: 1 }} />
-              <a
-                href="https://github.com/sujoyduttajad/Refine-MERN-Dashboard-client"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="active-links"
-              >
-                GitHub
-              </a>
-            </ListItem>
-            <ListItem>
-              <Twitter sx={{ paddingRight: 1 }} />
-              <a
-                href="https://twitter.com/SujoyDutta4290"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="active-links"
-              >
-                Twitter
-              </a>
-            </ListItem>
-            <ListItem>
-              <LinkedIn sx={{ paddingRight: 1 }} />
-              <a
-                href="https://www.linkedin.com/in/sujoy-dutta-b41746a9/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="active-links"
-              >
-                Linkedin
-              </a>
-            </ListItem>
-          </Stack>
+            <Stack direction="column" alignItems="flex-start">
+              <ListItem sx={{ paddingTop: 1 }}>
+                <GitHub sx={{ paddingRight: 1 }} />
+                <a
+                  href="https://github.com/sujoyduttajad/Refine-MERN-Dashboard-client"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="active-links"
+                >
+                  GitHub
+                </a>
+              </ListItem>
+              <ListItem>
+                <Twitter sx={{ paddingRight: 1 }} />
+                <a
+                  href="https://twitter.com/SujoyDutta4290"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="active-links"
+                >
+                  Twitter
+                </a>
+              </ListItem>
+              <ListItem>
+                <LinkedIn sx={{ paddingRight: 1 }} />
+                <a
+                  href="https://www.linkedin.com/in/sujoy-dutta-b41746a9/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="active-links"
+                >
+                  Linkedin
+                </a>
+              </ListItem>
+            </Stack>
+          </Box>
         </Box>
         {/* 3rd row */}
+        <Divider
+          sx={{ height: 28, m: 0.5, borderColor: "#7A88EF" }}
+          orientation="horizontal"
+        />
         <Box
           sx={{ color: "#ECEEEF" }}
           display="flex"
