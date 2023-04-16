@@ -74,11 +74,8 @@ const Home = () => {
   if (isLoading || isAdditionalLoading) return <Loading />;
   if (isError || isAdditionalError) return <Error />;
 
-  
   // Total Properties Calculate
-  let totalPrice: number = totalRevenue(
-    allProperties as PropertyInterface[]
-  );
+  let totalPrice: number = totalRevenue(allProperties as PropertyInterface[]);
   const totalProperties: number = allProperties.length;
 
   return (
@@ -89,23 +86,21 @@ const Home = () => {
         </Typography>
         <Typography
           sx={{ textTransform: "capitalize" }}
-          variant="subtitle2"
           fontSize={40}
           fontWeight={700}
           display="flex"
         >
           {user?.name ? user?.given_name : "Guest"}
         </Typography>
-
-        <Typography> </Typography>
       </Stack>
       <Typography fontSize={25} fontWeight={700} color="#11142D">
         Dashboard
-        <Typography variant="subtitle2" gutterBottom sx={{ color: "#9F9F9F" }}>
-          (All the data are dummy at first but as soon as you start uploading
-          Properties the data changes dynamically)
-        </Typography>
       </Typography>
+      <Typography variant="subtitle2" gutterBottom sx={{ color: "#9F9F9F" }}>
+        (All the data are dummy at first but as soon as you start uploading
+        Properties the data changes dynamically)
+      </Typography>
+
       {/* 1st Row  */}
       <Box mt="20px" display="flex" flexWrap="wrap" gap={4}>
         <PieChart
