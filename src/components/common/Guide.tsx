@@ -1,10 +1,4 @@
-import {
-  Box,
-  ImageList,
-  ImageListItem,
-  Stack,
-  Typography,
-} from "@pankod/refine-mui";
+import { Box, Stack, Typography } from "@pankod/refine-mui";
 import { screenShot_1, screenShot_2, screenShot_3 } from "assets";
 import { ListCompProps } from "interfaces/guide";
 import { guideLabel } from "utils/infoContent";
@@ -12,7 +6,7 @@ import { guideLabel } from "utils/infoContent";
 const ListComp = ({ header, description, image, altTitle }: ListCompProps) => {
   return (
     <Stack mt={3}>
-      <Typography fontSize={20} fontWeight={700} color="#11142D">
+      <Typography fontSize={18} fontWeight={500} color="#11142D">
         {header}
       </Typography>
       <Stack
@@ -40,8 +34,8 @@ const Guide = () => {
       padding="20px"
       bgcolor="#fafafa"
     >
-      <Typography variant="h5" fontWeight={500}>
-        Step-by-step guide
+      <Typography variant="h5" fontWeight={600}>
+        How to upload properties?
       </Typography>
       <ListComp
         header="Step-1"
