@@ -112,7 +112,7 @@ const Home = () => {
         <PieChart
           title="Properties for Rent"
           value={550}
-          colors={["#18C784", "#B6F6DE"]}
+          colors={["#02BD53", "#7AFEB3"]}
           series={[60, 40]}
         />
         <PieChart
