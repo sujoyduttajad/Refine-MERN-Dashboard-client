@@ -9,7 +9,24 @@ const Resources = () => {
       padding="20px"
       bgcolor="#fafafa"
     >
-      <Typography></Typography>
+      <Typography variant="h5" fontWeight={600} mb={3}>
+        Property Links
+      </Typography>
+      <Typography fontSize={14}>
+        {" "}
+        Here are the links that you can go through to copy property information
+        around the world{" "}
+      </Typography>
+      <ul>
+        <li>
+          <a
+            href="https://www.realtor.ca/ab/calgary/real-estate"
+            target="_blank"
+          >
+            Calgary Real Estate Listings
+          </a>
+        </li>
+      </ul>
     </Box>
   );
 };
