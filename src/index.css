@@ -24,6 +24,15 @@ html, body {
   .property_details-img {
     width: 100%;
   }
+
+  .active-links {
+    color: #eaeaea;
+  }
+  .active-links:hover {
+    color: #11142d;
+    font-weight: 700;
+    text-decoration: underline !important;
+  }
   
   @media screen and (max-width: 900px) {
     .my_profile-bg {
