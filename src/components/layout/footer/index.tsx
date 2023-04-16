@@ -10,10 +10,12 @@ import {
   height,
   TextField,
   InputBase,
+  Divider,
 } from "@pankod/refine-mui";
 
 import { ColorModeContext } from "contexts";
-import { NotificationsOutlined } from "@mui/icons-material";
+import { NotificationsOutlined, Send } from "@mui/icons-material";
+import { Paper } from "@pankod/refine-mui";
 
 export const Footer: React.FC = () => {
   const shouldRenderFooter = true; // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
@@ -29,27 +31,50 @@ export const Footer: React.FC = () => {
         height: "fit-content",
       }}
     >
-      <Box display="flex" flexDirection="column" gap={2} padding={3}>
-        <Box display="flex" gap={2} alignItems="center" justifyContent="space-between">
-          <Stack direction="column" justifyContent="flex-start">
+      <Box display="flex" flexDirection="column" gap={2} px={4} py={3}>
+        <Box
+          display="flex"
+          gap={2}
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          <Stack direction="column" alignItems="flex-start">
             <Typography variant="h3">Sign up to our Newsletter</Typography>
-            <Typography variant="body1">
+            <Typography variant="body1" fontWeight={500} sx={{ color: "#eaeaea"}}>
               Stay up to date with the latest news, announcements, and articles.
             </Typography>
           </Stack>
-          <InputBase
+          <Paper
+            component="form"
             sx={{
-              ml: 1,
-              flex: 1,
-              maxWidth: "20rem",
-              border: "1px solid #fff",
-              borderRadius: 1,
-              padding: "4px 8px",
-              color: "#eaeaea",
+              p: "2px 4px",
+              display: "flex",
+              alignItems: "center",
+              width: 400,
             }}
-            placeholder="Your Email address"
-            inputProps={{ "aria-label": "Email address" }}
-          />
+          >
+            <InputBase
+              sx={{
+                ml: 1,
+                flex: 1,
+                maxWidth: "20rem",
+                border: "1px solid #fff",
+                borderRadius: 1,
+                padding: "4px 8px",
+                // color: "#eee",
+              }}
+              placeholder="Your Email address"
+              inputProps={{ "aria-label": "Email address" }}
+            />
+            <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+            <IconButton
+              color="primary"
+              sx={{ p: "10px" }}
+              aria-label="directions"
+            >
+              <Send />
+            </IconButton>
+          </Paper>
         </Box>
         <Box>
           <Typography sx={{ color: "#fafafa" }}>
