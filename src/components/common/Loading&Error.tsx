@@ -1,25 +1,18 @@
-import { Box, Typography } from "@pankod/refine-mui";
-import React from "react";
+import {
+  Backdrop,
+  Box,
+  CircularProgress,
+  Typography,
+} from "@pankod/refine-mui";
 
 export function Loading() {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexWrap: "wrap",
-        gap: 3,
-        padding: "3rem",
-        width: "100%",
-        borderRadius: "10px",
-        backgroundColor: "#E7E9FC",
-      }}
-    >
-      <Typography variant="h3" fontSize={25} fontWeight={700} color="#11142d">
+    <Backdrop open={true} style={{ zIndex: 999 }}>
+      <CircularProgress sx={{ color: "#fff" }} size={60} thickness={3} />
+      <Typography variant="h6" mt={2} sx={{ color: "#fff" }}>
         Loading...
       </Typography>
-    </Box>
+    </Backdrop>
   );
 }
 
