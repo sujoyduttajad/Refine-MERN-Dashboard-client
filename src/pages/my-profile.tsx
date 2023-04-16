@@ -9,10 +9,15 @@ const MyProfile = () => {
     id: user?.userid,
   });
 
-  const myProfile = data?.data ?? [];
+  const myProfile = data?.data;
 
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
+
+  if (!myProfile) {
+    // Handle case when agentProfile is null or undefined
+    return null; // or show an appropriate UI, e.g., return <div>Agent profile not found</div>;
+  }
 
   return (
     <Profile
