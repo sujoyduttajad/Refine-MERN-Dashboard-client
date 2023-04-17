@@ -159,7 +159,6 @@ const Home = () => {
             <Grid item xs={12} sm={4}>
               <Stack
                 minWidth={100}
-                // width={{ xs: "95vw", sm: "100%" }}
                 direction="column"
                 height="100%"
                 bgcolor="#fff"
@@ -178,7 +177,6 @@ const Home = () => {
             <Grid item xs={12} sm={4}>
               <Stack
                 minWidth={100}
-                // width={{ xs: "95vw", sm: "100%" }}
                 direction="column"
                 spacing={2}
                 bgcolor="#fff"
@@ -195,7 +193,6 @@ const Home = () => {
             <Grid item xs={12} sm={4}>
               <Stack
                 minWidth={100}
-                // width={{ xs: "95vw", sm: "100%" }}
                 direction="column"
                 spacing={2}
                 bgcolor="#fff"
@@ -232,7 +229,6 @@ const Home = () => {
         bgcolor="#FAFAFA"
         display="flex"
         flexDirection="column"
-        // width={{ xs: "100vw", sm: "100%" }}
         mt="25px"
       >
         <Stack direction="row" justifyContent="space-between" flexWrap="wrap">
