@@ -129,8 +129,16 @@ const Home = () => {
         direction={{ xs: "column", lg: "row" }}
         gap={4}
       >
-        <TotalRevenue totalPrice={totalPrice} />
-        <PropertyReferrals />
+        <Grid sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2} columns={{ xs: 4, sm: 12, md: 12 }}>
+            <Grid item xs={12} sm={8}>
+              <TotalRevenue totalPrice={totalPrice} />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <PropertyReferrals />
+            </Grid>
+          </Grid>
+        </Grid>
       </Stack>
       {/* 3rd Row  */}
       <Box
@@ -151,9 +159,8 @@ const Home = () => {
             <Grid item xs={12} sm={4}>
               <Stack
                 minWidth={100}
-                width={{ xs: "95vw", sm: "100%" }}
+                // width={{ xs: "95vw", sm: "100%" }}
                 direction="column"
-                // gap={4}
                 height="100%"
                 bgcolor="#fff"
                 padding={2}
@@ -171,10 +178,9 @@ const Home = () => {
             <Grid item xs={12} sm={4}>
               <Stack
                 minWidth={100}
-                width={{ xs: "95vw", sm: "100%" }}
+                // width={{ xs: "95vw", sm: "100%" }}
                 direction="column"
                 spacing={2}
-                // gap={4}
                 bgcolor="#fff"
                 padding={2}
                 height="100%"
@@ -189,9 +195,8 @@ const Home = () => {
             <Grid item xs={12} sm={4}>
               <Stack
                 minWidth={100}
-                width={{ xs: "95vw", sm: "100%" }}
+                // width={{ xs: "95vw", sm: "100%" }}
                 direction="column"
-                // gap={4}
                 spacing={2}
                 bgcolor="#fff"
                 padding={2}
@@ -227,7 +232,7 @@ const Home = () => {
         bgcolor="#FAFAFA"
         display="flex"
         flexDirection="column"
-        width={{ xs: "100vw", sm: "100%" }}
+        // width={{ xs: "100vw", sm: "100%" }}
         mt="25px"
       >
         <Stack direction="row" justifyContent="space-between" flexWrap="wrap">
