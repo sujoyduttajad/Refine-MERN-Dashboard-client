@@ -77,7 +77,7 @@ const Home = () => {
   const totalProperties: number = allProperties.length;
 
   return (
-    <Box display="flex" flexDirection="column" flexWrap="wrap">
+    <Box display="flex" flexDirection="column" flexWrap="wrap" mb={8}>
       <Stack direction="row" mb={3} color="#475be8">
         <Typography fontSize={42} fontWeight={700}>
           Hi,{"  "}
@@ -152,7 +152,7 @@ const Home = () => {
         flexWrap="wrap"
         mt="25px"
         gap={2}
-        width={{ xs: "100vw", sm: "100%" }}
+        // width={{ xs: "100vw", sm: "100%" }}
       >
         <Grid sx={{ flexGrow: 1 }}>
           <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 8, lg: 12 }}>
