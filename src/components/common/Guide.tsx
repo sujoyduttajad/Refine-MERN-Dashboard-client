@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@pankod/refine-mui";
+import { Box, CardMedia, Stack, Typography } from "@pankod/refine-mui";
 import { screenShot_1, screenShot_2, screenShot_3 } from "assets";
 import { ListCompProps } from "interfaces/guide";
 import { guideLabel } from "utils/infoContent";
@@ -12,14 +12,26 @@ const ListComp = ({ header, description, image, altTitle }: ListCompProps) => {
       <Stack
         direction={{ xs: "column", sm: "row" }}
         justifyContent="flex-start"
+        alignItems="center"
         flexWrap="wrap"
         gap={2}
         mt={2}
       >
         <Box>
-          <img src={image} alt={altTitle} />
+          <CardMedia
+            component="img"
+            image={image}
+            alt={altTitle}
+            height="fit-content"
+            sx={{
+              borderRadius: "5px",
+              objectFit: "cover",
+            }}
+          />
         </Box>
+        <Box>
         <Typography variant="body1">{description}</Typography>
+        </Box>
       </Stack>
     </Stack>
   );
@@ -29,7 +41,6 @@ const Guide = () => {
   return (
     <Box
       mt={2.5}
-      maxWidth="65rem"
       borderRadius="15px"
       padding="20px"
       bgcolor="#fafafa"
