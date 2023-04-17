@@ -150,6 +150,7 @@ const Home = () => {
           <Grid container spacing={2} flexWrap="wrap">
             <Grid item xs={12} sm={3} md={4}>
               <Stack
+              minWidth={100}
                 width={{ xs: "95vw", sm: "100%" }}
                 direction="column"
                 // gap={4}
@@ -169,6 +170,7 @@ const Home = () => {
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <Stack
+              minWidth={100}
                 width={{ xs: "95vw", sm: "100%" }}
                 direction="column"
                 spacing={2}
@@ -186,6 +188,7 @@ const Home = () => {
             </Grid>
             <Grid item xs={12} sm={3} md={4}>
               <Stack
+              minWidth={100}
                 width={{ xs: "95vw", sm: "100%" }}
                 direction="column"
                 // gap={4}
