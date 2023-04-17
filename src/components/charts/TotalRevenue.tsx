@@ -19,7 +19,7 @@ const TotalRevenue = ({ totalPrice }: TotalPrice) => {
       display="flex"
       flexDirection="column"
       borderRadius="15px"
-      width={{ xs: "100vw", sm: "fit-content"}}
+      width={{ xs: "100vw", sm: "30vw"}}
     >
       <Typography fontSize={18} fontWeight={600} color="#11142d">
         Total Assets <span>(USD)</span>
