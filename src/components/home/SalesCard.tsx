@@ -36,7 +36,7 @@ const SalesCard = ({
   const priceDisplay = formatter.format(price).slice(0, -3);
   
   return (
-    <Box display="flex" justifyContent="space-between">
+    <Box display="flex" justifyContent="space-between" width="100%">
       <Stack direction="row" justifyContent="flex-start" gap={2}>
         <CardMedia
           component="img"
