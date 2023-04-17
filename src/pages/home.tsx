@@ -8,7 +8,7 @@ import {
   CustomerCard,
   SalesCard,
 } from "components";
-import { Typography, Box, Stack } from "@pankod/refine-mui";
+import { Typography, Box, Stack, Grid } from "@pankod/refine-mui";
 import { Error, Loading } from "components/common/Loading&Error";
 import ViewAll from "components/common/ViewAll";
 
@@ -135,8 +135,9 @@ const Home = () => {
       {/* 3rd Row  */}
       <Box
         flex={1}
+        flexGrow={1}
         borderRadius="15px"
-        padding="20px"
+        padding={{ xs: 1, sm: "20px"}}
         bgcolor="#FAFAFA"
         display="flex"
         flexDirection={{ xs: "column", lg: "row" }}
@@ -145,59 +146,73 @@ const Home = () => {
         gap={2}
         width={{ xs: "100vw", sm: "100%" }}
       >
-        <Stack
-          width={"30%"}
-          direction="column"
-          gap={4}
-          bgcolor="#fff"
-          padding={2}
-          borderRadius="15px"
-        >
-          <Stack direction="row" justifyContent="space-between">
-            <Typography fontSize={18} fontWeight={600} color="#11142d">
-              Top Agent
-            </Typography>
-          </Stack>
-          <TopAgent />
-        </Stack>
-        <Stack
-          width={"30%"}
-          direction="column"
-          gap={4}
-          bgcolor="#fff"
-          padding={2}
-          borderRadius="15px"
-        >
-          <Typography fontSize={18} fontWeight={600} color="#11142d">
-            Customer
-          </Typography>
-          <CustomerCard />
-        </Stack>
-        <Stack
-          width={"30%"}
-          direction="column"
-          gap={4}
-          bgcolor="#fff"
-          padding={2}
-          borderRadius="15px"
-        >
-          <Stack direction="row" justifyContent="space-between">
-            <Typography fontSize={18} fontWeight={600} color="#11142d">
-              Latest Sales
-            </Typography>
-            <ViewAll />
-          </Stack>
-          {latestProperties.map((property) => (
-            <SalesCard
-              key={property._id}
-              creator={property.creator}
-              title={property.title}
-              photo={property.photo}
-              price={property.price}
-              location={property.location}
-            />
-          ))}
-        </Stack>
+        <Grid sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={4}>
+              <Stack
+                width={{ xs: "100vw", sm: "100%" }}
+                direction="column"
+                // gap={4}
+                height="100%"
+                bgcolor="#fff"
+                padding={2}
+                spacing={2}
+                borderRadius="15px"
+              >
+                <Stack direction="row" justifyContent="space-between">
+                  <Typography fontSize={18} fontWeight={600} color="#11142d">
+                    Top Agent
+                  </Typography>
+                </Stack>
+                <TopAgent />
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <Stack
+                width={{ xs: "100vw", sm: "100%" }}
+                direction="column"
+                spacing={2}
+                // gap={4}
+                bgcolor="#fff"
+                padding={2}
+                borderRadius="15px"
+              >
+                <Typography fontSize={18} fontWeight={600} color="#11142d">
+                  Customer
+                </Typography>
+                <CustomerCard />
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <Stack
+                width={{ xs: "100vw", sm: "100%" }}
+                direction="column"
+                // gap={4}
+                spacing={2}
+                bgcolor="#fff"
+                padding={2}
+                borderRadius="15px"
+              >
+                <Stack direction="row" justifyContent="space-between">
+                  <Typography fontSize={18} fontWeight={600} color="#11142d">
+                    Latest Sales
+                  </Typography>
+                  <ViewAll />
+                </Stack>
+                {latestProperties.map((property) => (
+                  <SalesCard
+                    key={property._id}
+                    creator={property.creator}
+                    title={property.title}
+                    photo={property.photo}
+                    price={property.price}
+                    location={property.location}
+                  />
+                ))}
+              </Stack>
+            </Grid>
+          </Grid>
+        </Grid>
       </Box>
       {/* 4th Row  */}
       <Box
@@ -207,17 +222,17 @@ const Home = () => {
         bgcolor="#FAFAFA"
         display="flex"
         flexDirection="column"
-        minWidth="100%"
+        width={{ xs: "100vw", sm: "100%" }}
         mt="25px"
       >
-        <Stack direction="row" justifyContent="space-between">
+        <Stack direction="row" justifyContent="space-between" flexWrap="wrap">
           <Typography fontSize="18px" fontWeight={600} color="#11142d">
             Latest Properties
           </Typography>
           <ViewAll />
         </Stack>
 
-        <Stack width={"100%"} direction={{ xs: "column", lg: "row" }} gap={4}>
+        <Stack direction={{ xs: "column", lg: "row" }} gap={4}>
           <Box mt={2.5} display="flex" flexWrap="wrap" gap={4}>
             {latestProperties.map((property) => (
               <PropertyCard
