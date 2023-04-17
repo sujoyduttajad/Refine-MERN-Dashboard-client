@@ -7,7 +7,7 @@ import { companyInfo } from "utils/infoContent";
 const HelpAndInfo = () => {
   return (
     <Box>
-      <Typography fontSize={25} fontWeight={700} color="#11142d">
+      <Typography fontSize={25} fontWeight={700} color="#11142d" my={3}>
         Help & Information
       </Typography>
       {/* Company */}
