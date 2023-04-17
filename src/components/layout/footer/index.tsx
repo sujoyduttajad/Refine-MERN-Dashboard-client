@@ -34,13 +34,14 @@ export const Footer: React.FC = () => {
       style={{
         backgroundColor: "#475be8",
         color: "#fafafa",
-        padding: 4,
+        padding: "1rem",
         textAlign: "center",
         minHeight: "20vh",
         height: "fit-content",
+        width: "100%",
       }}
     >
-      <Box display="flex" flexDirection="column" gap={2} px={4} py={3} mb={3}>
+      <Box display="flex" flexDirection="column" gap={2} px={{ xs: 1, sm: 4 }} py={3} mb={3}>
         <Box
           display="flex"
           gap={2}
@@ -65,7 +66,7 @@ export const Footer: React.FC = () => {
               p: "2px 4px",
               display: "flex",
               alignItems: "center",
-              width: 400,
+              width: { xs: "90vw", sm: 360 },
             }}
           >
             <InputBase
@@ -96,6 +97,7 @@ export const Footer: React.FC = () => {
           justifyContent="space-between"
           flexWrap="wrap"
           mb={4}
+          width="100%"
           sx={{ color: "#ECEEEF", fontWeight: 600 }}
         >
           <Box
