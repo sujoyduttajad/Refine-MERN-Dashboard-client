@@ -137,7 +137,7 @@ const Home = () => {
         flex={1}
         flexGrow={1}
         borderRadius="15px"
-        padding={{ xs: 1, sm: "20px"}}
+        padding={{ xs: 1, sm: "20px" }}
         bgcolor="#FAFAFA"
         display="flex"
         flexDirection={{ xs: "column", lg: "row" }}
@@ -147,10 +147,10 @@ const Home = () => {
         width={{ xs: "100vw", sm: "100%" }}
       >
         <Grid sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2} flexWrap="wrap">
-            <Grid item xs={12} sm={3} md={4}>
+          <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 8, lg: 12 }}>
+            <Grid item xs={12} sm={4}>
               <Stack
-              minWidth={100}
+                minWidth={100}
                 width={{ xs: "95vw", sm: "100%" }}
                 direction="column"
                 // gap={4}
@@ -168,9 +168,9 @@ const Home = () => {
                 <TopAgent />
               </Stack>
             </Grid>
-            <Grid item xs={12} sm={6} md={4}>
+            <Grid item xs={12} sm={4}>
               <Stack
-              minWidth={100}
+                minWidth={100}
                 width={{ xs: "95vw", sm: "100%" }}
                 direction="column"
                 spacing={2}
@@ -186,9 +186,9 @@ const Home = () => {
                 <CustomerCard />
               </Stack>
             </Grid>
-            <Grid item xs={12} sm={3} md={4}>
+            <Grid item xs={12} sm={4}>
               <Stack
-              minWidth={100}
+                minWidth={100}
                 width={{ xs: "95vw", sm: "100%" }}
                 direction="column"
                 // gap={4}
