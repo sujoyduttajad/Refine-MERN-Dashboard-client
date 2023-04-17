@@ -30,6 +30,7 @@ export const Footer: React.FC = () => {
   const shouldRenderFooter = true; // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
 
   return shouldRenderFooter ? (
+    <Box>
     <footer
       style={{
         backgroundColor: "#475be8",
@@ -41,7 +42,7 @@ export const Footer: React.FC = () => {
         width: "100%",
       }}
     >
-      <Box display="flex" flexDirection="column" gap={2} px={{ xs: 1, sm: 4 }} py={3} mb={3}>
+      <Box display="flex" flexDirection="column" gap={2} px={{ xs: 0, sm: 4 }} py={3} mb={3}>
         <Box
           display="flex"
           gap={2}
@@ -183,8 +184,9 @@ export const Footer: React.FC = () => {
         <Box
           sx={{ color: "#ECEEEF" }}
           display="flex"
+          flexDirection={{ xs: "column", sm: "row"}}
           flexWrap="wrap"
-          justifyContent="space-between"
+          justifyContent={{ xs: "center", sm: "space-between"}}
         >
           <Box>
             <Typography>
@@ -213,5 +215,6 @@ export const Footer: React.FC = () => {
         </Box>
       </Box>
     </footer>
+    </Box>
   ) : null;
 };
