@@ -31,7 +31,7 @@ const TopAgent = () => {
   };
 
   return (
-    <Box>
+    <Box width="100%">
       {topAgents.map((agent) => (
         <Box
           key={agent._id}
