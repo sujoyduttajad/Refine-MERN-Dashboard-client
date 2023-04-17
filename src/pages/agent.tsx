@@ -17,8 +17,8 @@ const Agent = () => {
   if (isError) return <Error />;
 
   return (
-    <Box>
-      <Stack direction="row" justifyContent="space-between">
+    <Box mb={5} padding={2}>
+      <Stack direction="row" justifyContent="space-between" my={4}>
         <Typography fontSize={25} fontWeight={700} color="#11142d">
           Agents List
         </Typography>
@@ -32,12 +32,13 @@ const Agent = () => {
       </Stack>
       <Box
         mt="20px"
-        maxWidth="fit-content"
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "20px",
-        }}
+        // maxWidth="fit-content"
+        display="flex"
+        flexDirection={{ xs: "column", sm: "row" }}
+        justifyContent={{ xs: "center", sm: "flex-start" }}
+        alignItems="center"
+        flexWrap="wrap"
+        gap={3}
       >
         {allAgents.map((agent) => (
           <AgentCard
