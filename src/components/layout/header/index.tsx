@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useGetIdentity } from "@pankod/refine-core";
 import {
   AppBar,
@@ -10,9 +10,9 @@ import {
   Button,
 } from "@pankod/refine-mui";
 
-import { ColorModeContext } from "contexts";
+// import { ColorModeContext } from "contexts";
 import { NotificationsOutlined } from "@mui/icons-material";
-import { logo } from "assets";
+import { evoiaLight } from "assets";
 import { Link } from "@pankod/refine-react-router-v6";
 
 export const Header: React.FC = () => {
@@ -35,7 +35,7 @@ export const Header: React.FC = () => {
             sx={{ paddingBottom: 0 }}
           >
             <Link to="/">
-              <img src={logo} alt="Evoia" />
+              <img src={evoiaLight} alt="Evoia" />
             </Link>
           </Button>
         </Stack>
