@@ -6,15 +6,16 @@ import { ColumnBarSeries as series } from "components/charts/chart.config";
 
 const CustomerCard = () => {
   return (
-    <Box width={{ xs: "100vw", sm: "fit-content"}}>
+    <Box >
       <Box
         display="flex"
+        flexGrow={1}
         justifyContent={{ xs: "flex-start", sm: "space-evenly" }}
         flexWrap="wrap"
         gap={1}
         pb={2}
       >
-        <Stack direction="column" gap={2}>
+        <Stack direction="column" gap={2} flexWrap="wrap">
           <Typography fontSize={14} color="#808191">
             Total Customers
           </Typography>
@@ -35,7 +36,7 @@ const CustomerCard = () => {
             options={data}
             series={series}
             type="bar"
-            height={350}
+            height={250}
           />
         </Stack>
       </Box>
