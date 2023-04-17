@@ -19,7 +19,6 @@ const TotalRevenue = ({ totalPrice }: TotalPrice) => {
       display="flex"
       flexDirection="column"
       borderRadius="15px"
-      width={{ xs: "100vw", sm: "30vw"}}
     >
       <Typography fontSize={18} fontWeight={600} color="#11142d">
         Total Assets <span>(USD)</span>
@@ -29,7 +28,6 @@ const TotalRevenue = ({ totalPrice }: TotalPrice) => {
           {totalPrice ? assetsValue : "$236,535"}
         </Typography>
         <Stack direction="row" alignItems="center" gap={1}>
-          {/* <ArrowCircleUpRounded sx={{ fontSize: 25, color: "#475be8" }} /> */}
           <Box sx={{ fontSize: 20 }}>
             <img src={arrowUp} alt="up arrow icon" />
           </Box>
