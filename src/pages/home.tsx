@@ -152,7 +152,6 @@ const Home = () => {
         flexWrap="wrap"
         mt="25px"
         gap={2}
-        // width={{ xs: "100vw", sm: "100%" }}
       >
         <Grid sx={{ flexGrow: 1 }}>
           <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 8, lg: 12 }}>
