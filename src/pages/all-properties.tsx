@@ -67,9 +67,9 @@ const AllProperties = () => {
   if (isError) return <Error />;
 
   return (
-    <Box>
+    <Box mb={8}>
       <Box
-        mt="20px"
+        mt="20px" 
         sx={{ display: "flex", flexWrap: "wrap", gap: 3, width: "100%" }}
       >
         <Stack direction="column" width="100%">
@@ -82,7 +82,7 @@ const AllProperties = () => {
             mb={2}
             mt={3}
             display="flex"
-            flexWrap="wrap"
+            flexWrap={{ xs: "wrap", sm: "nowrap" }}
             width="100%"
             height="20%"
             alignItems="center"
@@ -93,7 +93,7 @@ const AllProperties = () => {
               gap={2}
               flexWrap="wrap"
               alignItems="center"
-              sx={{ width: "80%" }}
+              width="100%"
               mb={{ xs: "20", sm: 0 }}
             >
               <CustomButton
@@ -156,8 +156,10 @@ const AllProperties = () => {
             </Box>
             <Stack
               direction="row"
-              justifyContent="space-between"
+              justifyContent={{ xs: "flex-start", sm: "flex-end" }}
               alignItems="center"
+              width="100%"
+              mt={{ xs: 3, sm: 0 }}
             >
               <CustomButton
                 title="Add Property"
