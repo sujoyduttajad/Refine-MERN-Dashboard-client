@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
                 p: "2px 4px",
                 display: "flex",
                 alignItems: "center",
-                width: { xs: "90vw", sm: 360 },
+                width: { xs: "100vw", sm: 360 },
               }}
             >
               <InputBase
