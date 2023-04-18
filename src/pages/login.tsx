@@ -53,7 +53,7 @@ export const Login: React.FC = () => {
         backgroundColor: "#FCFCFC",
       }}
     >
-      <Box maxWidth="50%">
+      <Box maxWidth="50%" display={{ xs: "none", sm: "flex" }}>
         <CardMedia
           component="img"
           image={pointyBuilding}
@@ -66,15 +66,16 @@ export const Login: React.FC = () => {
         />
       </Box>
       <Box
-        maxWidth="50%"
+        maxWidth={{ xs: "100%", sm: "50%"}}
         width="100%"
         py="7rem"
         display="flex"
         flexDirection="column"
+
       >
         <Stack
           direction="column"
-          height="100%"
+          height="100vh"
           justifyContent="space-between"
           alignItems="center"
           gap={3}
