@@ -68,6 +68,7 @@ export const Login: React.FC = () => {
       <Box
         maxWidth={{ xs: "100%", sm: "50%"}}
         width="100%"
+        height="100vh"
         py="7rem"
         display="flex"
         flexDirection="column"
@@ -75,7 +76,7 @@ export const Login: React.FC = () => {
       >
         <Stack
           direction="column"
-          height="100vh"
+          height="60vh"
           justifyContent="space-between"
           alignItems="center"
           gap={3}
