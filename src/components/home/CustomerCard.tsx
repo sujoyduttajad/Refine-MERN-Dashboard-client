@@ -26,7 +26,7 @@ const CustomerCard = () => {
           <Typography fontSize={14} color="#808191">
             New Customers This Month
           </Typography>
-          <Typography variant="h4">12K</Typography>
+          <Typography variant="h4">22</Typography>
           <Typography fontSize={12} fontWeight={700} color="#18C346">
             41.04%
           </Typography>
