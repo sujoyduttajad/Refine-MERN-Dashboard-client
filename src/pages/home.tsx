@@ -147,6 +147,7 @@ const Home = () => {
         borderRadius="15px"
         padding={{ xs: 1, sm: "20px" }}
         bgcolor="#FAFAFA"
+        height="fit-content"
         display="flex"
         flexDirection={{ xs: "column", lg: "row" }}
         flexWrap="wrap"
