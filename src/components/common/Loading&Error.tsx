@@ -5,31 +5,28 @@ import {
   Typography,
 } from "@pankod/refine-mui";
 
-
 export function Loading() {
-
-
   return (
     <Backdrop
       component="main"
       open={true}
       sx={{
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
         zIndex: 1000,
-        position: 'fixed',
+        position: "fixed",
         top: 0,
         left: 0,
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        animation: '$fade 0.3s ease-in-out',
-        '@keyframes fade': {
-          '0%': {
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        animation: "$fade 0.3s ease-in-out",
+        "@keyframes fade": {
+          "0%": {
             opacity: 0,
           },
-          '100%': {
+          "100%": {
             opacity: 1,
           },
         },

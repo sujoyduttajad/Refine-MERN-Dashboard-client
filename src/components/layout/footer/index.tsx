@@ -6,25 +6,22 @@ import {
   Box,
   InputBase,
   Divider,
-  List,
   ListItem,
   Button,
 } from "@pankod/refine-mui";
 
-import { ColorModeContext } from "contexts";
+// import { ColorModeContext } from "contexts";
 import {
-  ArrowCircleLeft,
   ArrowCircleLeftOutlined,
   GitHub,
   LinkedIn,
-  NotificationsOutlined,
   Send,
   Twitter,
 } from "@mui/icons-material";
 import { Paper } from "@pankod/refine-mui";
 import { Link } from "@pankod/refine-react-router-v6";
 import { mediaInfo } from "utils/infoContent";
-import { evoiaLight, evoiaWhite } from "assets";
+import { evoiaWhite } from "assets";
 
 export const Footer: React.FC = () => {
   const shouldRenderFooter = true; // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
@@ -127,7 +124,7 @@ export const Footer: React.FC = () => {
             <Box display="flex">
               <Stack direction="column" alignItems="flex-start">
                 {mediaInfo.pages.map((item) => (
-                  <ListItem sx={{ paddingTop: 1 }}>
+                  <ListItem key={item.title} sx={{ paddingTop: 1 }}>
                     <ArrowCircleLeftOutlined sx={{ paddingRight: 1 }} />
                     <Link to={item.address} className="active-links">
                       {item.title}
@@ -138,7 +135,7 @@ export const Footer: React.FC = () => {
 
               <Stack direction="column" alignItems="flex-start">
                 {mediaInfo.resources.map((item) => (
-                  <ListItem sx={{ paddingTop: 1 }}>
+                  <ListItem key={item.title} sx={{ paddingTop: 1 }}>
                     <ArrowCircleLeftOutlined sx={{ paddingRight: 1 }} />
                     <Link to={item.address} className="active-links">
                       {item.title}

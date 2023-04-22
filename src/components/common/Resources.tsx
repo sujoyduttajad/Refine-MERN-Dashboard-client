@@ -20,7 +20,7 @@ const Resources = () => {
       </Typography>
       <ul>
         {linkInfo.map((ele) => (
-          <li>
+          <li key={ele.title}>
             <a href={ele.address} target="_blank" rel="noreferrer">
               {ele.title}
             </a>

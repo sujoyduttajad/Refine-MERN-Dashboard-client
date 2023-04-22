@@ -13,7 +13,6 @@ import { PropertyListValues } from "interfaces/property";
 import { formatter } from "utils/functions";
 import ThreeDotsMenu from "components/common/ThreeDotsMenu";
 
-
 const SalesCard = ({
   creator,
   title,
@@ -29,15 +28,18 @@ const SalesCard = ({
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleNavigate = () => {
-
-  }
+  const handleNavigate = () => {};
 
   const priceDisplay = formatter.format(price).slice(0, -3);
-  
+
   return (
     <Box display="flex" justifyContent="space-between" width="100%">
-      <Stack direction="row" justifyContent="flex-start" gap={2}>
+      <Stack
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="center"
+        gap={2}
+      >
         <CardMedia
           component="img"
           image={photo}
@@ -49,13 +51,14 @@ const SalesCard = ({
             objectFit: "cover",
           }}
         />
-        <Stack direction="column" gap={1}>
+        <Stack direction="column" gap={1} justifyContent="space-evenly">
           <Typography fontSize={18} fontWeight={600} color="#11142d">
             {title}
           </Typography>
           <Box
             px={1.5}
             py={0.5}
+            mb={1}
             width="fit-content"
             borderRadius={1}
             bgcolor="#dadefa"
@@ -66,7 +69,7 @@ const SalesCard = ({
           </Box>
         </Stack>
       </Stack>
-      <ThreeDotsMenu 
+      <ThreeDotsMenu
         option="More Detail"
         open={open}
         value="More Detail"
