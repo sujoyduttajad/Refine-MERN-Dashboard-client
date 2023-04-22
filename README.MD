@@ -1,4 +1,36 @@
-# client
+# Refine-MERN-Dashboard
+
+## Evoia
+
+<div align="center" style="margin: 30px;">
+    <a href="https://refine-mern-dashboard-client.vercel.app/">
+    <img src="./evoiaDark.svg" alt="Evoia brand icon" align="center" />
+    </a>
+</div>
+<br/>
+
+Basically, Evoia is a property-management app that allows agents to create, update, and delete properties, add agents, reviews to the properties and chat with other agents or potential customers. Apart from the CRUD operation this app is also a Dashboard to the agents which shows the Total assests, Top agents, latest sales, customers, and property influence in a graphical and interactive way.
+
+The app is live here and feel free to check it out - 
+[Evoia](https://refine-mern-dashboard-client.vercel.app/)
+
+If you like it please make sure to support me by hitting the star icon.
+
+The app has server and client side, the server is deployed separately and client on Vercel
+
+### Tech Stack
+- React(part of Refine package)
+- Node.js
+- Express
+- MongoDB
+- TypeScript
+- Material-UI(part of Refine package)
+- AppexCharts
+- react-router-v6
+- rect-hook-form
+- Axios
+- Google Auth Provider
+
 
 <div align="center" style="margin: 30px;">
     <a href="https://refine.dev">
@@ -49,6 +81,3 @@ To learn more about **refine**, please check out the [Documentation](https://ref
 - **Google Auth Provider** [Docs](https://refine.dev/docs/core/providers/auth-provider/)
 
 
-## License
-
-MIT
