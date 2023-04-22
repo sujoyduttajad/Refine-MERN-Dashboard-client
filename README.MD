@@ -20,12 +20,17 @@ The app has server and client side, the server is deployed separately and client
 
 ### Tech Stack
 - React(part of Refine package)
+- Node.js
+- Express
+- MongoDB
 - TypeScript
 - Material-UI(part of Refine package)
 - AppexCharts
 - react-router-v6
 - rect-hook-form
 - Axios
+- Google Auth Provider
+
 
 <div align="center" style="margin: 30px;">
     <a href="https://refine.dev">
