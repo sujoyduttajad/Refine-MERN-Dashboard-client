@@ -3,12 +3,14 @@ import { createRoot } from "react-dom/client";
 import 'index.css';
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
+import ScrollToTop from "utils/ScrollToTop";
 
 const container = document.getElementById("root") as HTMLElement;
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
+    <ScrollToTop />
     <App />
   </React.StrictMode>
 );
