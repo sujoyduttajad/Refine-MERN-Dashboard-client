@@ -1,4 +1,4 @@
-# client
+# Refine-MERN-Dashboard
 
 <div align="center" style="margin: 30px;">
     <a href="https://refine.dev">
@@ -49,6 +49,3 @@ To learn more about **refine**, please check out the [Documentation](https://ref
 - **Google Auth Provider** [Docs](https://refine.dev/docs/core/providers/auth-provider/)
 
 
-## License
-
-MIT
