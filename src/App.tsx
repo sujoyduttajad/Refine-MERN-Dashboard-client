@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Refine, AuthProvider } from "@pankod/refine-core";
 import {
   notificationProvider,
@@ -144,6 +145,10 @@ function App() {
       }
     },
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <ColorModeContextProvider>
