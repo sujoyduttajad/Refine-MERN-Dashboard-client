@@ -134,14 +134,13 @@ const PropertyDetails = () => {
           gap={4}
           aria-label="property-details"
         >
-          <Box flex={1} maxWidth={764}>
+          <Box flex={1} maxWidth="70rem">
             <img
               src={propertyDetails.photo}
               alt={propertyDetails.title}
               style={{ objectFit: "cover", borderRadius: "10px" }}
               className="property_details-img"
             />
-
             <Box mt="15px">
               {/* Property Type and Rating */}
               <Stack

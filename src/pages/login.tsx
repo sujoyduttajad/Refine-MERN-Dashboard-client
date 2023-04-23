@@ -47,7 +47,7 @@ export const Login: React.FC = () => {
       maxWidth="100vw"
       width="100%"
       maxHeight="100vh"
-      height="80%"
+      height="fit-content"
       justifyContent="space-between"
       sx={{
         backgroundColor: "#FCFCFC",
@@ -69,10 +69,10 @@ export const Login: React.FC = () => {
         maxWidth={{ xs: "100%", sm: "50%"}}
         width="100%"
         height="100vh"
-        py="7rem"
         display="flex"
         flexDirection="column"
-
+        alignItems="center"
+        justifyContent="center"
       >
         <Stack
           direction="column"

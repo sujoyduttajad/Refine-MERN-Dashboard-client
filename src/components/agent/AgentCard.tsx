@@ -27,6 +27,7 @@ const AgentCard = ({
       maxWidth={275}
       width="100%"
       borderRadius={2}
+      padding={1}
       sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "column" },
@@ -62,9 +63,15 @@ const AgentCard = ({
         gap={{ xs: 4, sm: 4 }}
       >
         {/* Name and Designation */}
-        <Stack direction="column" alignItems="center" gap={0.5}>
+        <Stack
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+          gap={0.5}
+          maxWidth="100%"
+        >
           <Typography
-            fontSize={22}
+            fontSize={20}
             fontWeight={700}
             textTransform="capitalize"
             color="#475be8"
