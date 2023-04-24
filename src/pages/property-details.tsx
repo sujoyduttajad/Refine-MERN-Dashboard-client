@@ -184,7 +184,7 @@ const PropertyDetails = () => {
                   </Typography>
                   <Stack direction="row" mt={0.5} alignItems="center" gap={0.5}>
                     <Place sx={{ color: "#808191" }} />
-                    <Typography fontSize={14} color="#808191">
+                    <Typography fontSize={16} color="#808191">
                       {propertyDetails.location}
                     </Typography>
                   </Stack>
