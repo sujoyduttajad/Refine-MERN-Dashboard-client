@@ -7,14 +7,16 @@ const InfoBar = ({ icon, content }: InfoBarProps) => {
       flex={1}
       direction="row"
       justifyContent="center"
-      alignItems="flex-start"
+      alignItems="center"
       gap={1}
       flexWrap="wrap"
     >
-      <Box>{icon}</Box>
-      <Typography fontSize={15} color="#808191">
-        {content}
-      </Typography>
+      <Box alignItems="center">{icon}</Box>
+      <Box>
+        <Typography fontSize={13} color="#808191">
+          {content}
+        </Typography>
+      </Box>
     </Stack>
   );
 };
