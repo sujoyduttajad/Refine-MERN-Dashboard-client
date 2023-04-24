@@ -54,6 +54,8 @@ const Home = () => {
 
   const latestProperties = listData?.data ?? [];
 
+  console.log(latestProperties)
+
   // Fetch additional data to get all the data
   const ids = listData?.data?.map((item) => item._id) || []; // Extract IDs from the fetched data
   const {
@@ -101,7 +103,7 @@ const Home = () => {
           title="Properties for Sale"
           value={totalProperties ? totalProperties : 684}
           colors={["#0068D0", "#A9D4FF"]}
-          series={[75, 25]}
+          series={[totalProperties, 100-totalProperties]}
         />
         <PieChart
           title="Properties for Rent"
