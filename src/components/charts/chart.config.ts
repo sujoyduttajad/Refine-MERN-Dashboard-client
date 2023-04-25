@@ -1,8 +1,6 @@
 import { ApexOptions } from 'apexcharts';
 import { getMonthNames } from 'utils/functions';
 
-
-// const TotalRevenueSeries = getMonthNames();
 export const TotalRevenueSeries = [
   {
     name: 'Last Month',
@@ -27,7 +25,7 @@ function updateRevenueSeries() {
     }
   });
 }
-updateRevenueSeries()
+updateRevenueSeries();
 
 export const TotalRevenueOptions: ApexOptions = {
   chart: {
