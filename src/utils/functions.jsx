@@ -10,3 +10,16 @@ export const formatter = new Intl.NumberFormat('en-US', {
 });
 
 // console.log(formatter.format(2500)); /* $2,500.00 */
+
+export function getMonthNames() {
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth();
+
+  const months = Array.from({ length: currentMonth + 1 }, (_, index) => {
+    const monthDate = new Date();
+    monthDate.setMonth(index);
+    return monthDate.toLocaleString('default', { month: 'long' });
+  });
+
+  return months;
+}

@@ -1,15 +1,33 @@
 import { ApexOptions } from 'apexcharts';
+import { getMonthNames } from 'utils/functions';
 
+
+// const TotalRevenueSeries = getMonthNames();
 export const TotalRevenueSeries = [
   {
     name: 'Last Month',
-    data: [183, 124, 115, 85, 143, 143, 96],
+    data: [183, 124, 115, 85],
   },
   {
     name: 'Running Month',
-    data: [95, 84, 72, 44, 108, 108, 47],
+    data: [95, 84, 72, 44],
   },
 ];
+
+function updateRevenueSeries() {
+  const currentMonth = new Date().getMonth();
+  const randomValue = Math.floor(Math.random() * 100);
+
+  TotalRevenueSeries.forEach((series) => {
+    const lastIndex = series.data.length - 1;
+    if (series.data[lastIndex] && lastIndex === currentMonth) {
+      series.data[lastIndex] += randomValue;
+    } else {
+      series.data.push();
+    }
+  });
+}
+updateRevenueSeries()
 
 export const TotalRevenueOptions: ApexOptions = {
   chart: {
@@ -37,7 +55,7 @@ export const TotalRevenueOptions: ApexOptions = {
     width: 4,
   },
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+    categories: getMonthNames(),
   },
   yaxis: {
     title: {
