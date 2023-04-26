@@ -58,5 +58,5 @@ export interface ThreeDotsProps {
     anchorEl?: null | HTMLElement;
     handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void | undefined;
     handleClose?: (event: {}, reason: "backdropClick" | "escapeKeyDown") => void | undefined;
-    handleNavigate: () => void;
+    handleNavigate?: () => void;
 }

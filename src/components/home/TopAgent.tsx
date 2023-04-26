@@ -3,7 +3,7 @@ import { Box, CardMedia, Stack, Typography } from "@pankod/refine-mui";
 import { useList } from "@pankod/refine-core";
 import { Error, Loading } from "components/common/Loading&Error";
 import ThreeDotsMenu from "components/common/ThreeDotsMenu";
-// import { useNavigate } from "@pankod/refine-react-router-v6";
+import { Link } from "@pankod/refine-react-router-v6";
 
 const TopAgent = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -23,11 +23,13 @@ const TopAgent = () => {
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
-  const topAgents = data?.data.sort((a, b) => b.__v - a.__v).slice(0, 4) ?? [];
+  const topAgents = data?.data.sort((a, b) => b.__v - a.__v).slice(0, 5) ?? [];
 
-  // const navigate = useNavigate();
-  const handleNavigate = () => {
-    // navigate("/properties/create");
+  const generateLink = (id: string, name: string) => {
+    if (name === "sujoy dutta") return "/my-profile";
+    else {
+      return `/agents/show/${id}`;
+    }
   };
 
   return (
@@ -35,19 +37,21 @@ const TopAgent = () => {
       {topAgents.map((agent) => (
         <Box
           key={agent._id}
-          mb={1.5}
-          sx={{
-            padding: "0.5rem",
-            borderRadius: "20px",
-            "&:hover": {
-              background: "#FAFAFA",
-            },
-          }}
+          component={Link}
+          to={generateLink(agent._id, agent.name)}
+          mb={0.2}
         >
           <Stack
             direction="row"
             justifyContent="space-between"
             alignItems="center"
+            sx={{
+              padding: "0.5rem",
+              borderRadius: "20px",
+              "&:hover": {
+                background: "#E8E8E8",
+              },
+            }}
           >
             <Stack
               direction="row"
@@ -71,6 +75,7 @@ const TopAgent = () => {
                   textTransform="capitalize"
                   fontSize={18}
                   fontWeight={600}
+                  color="#333"
                 >
                   {agent.name}
                 </Typography>
@@ -92,7 +97,7 @@ const TopAgent = () => {
               anchorEl={anchorEl}
               handleClick={handleClick}
               handleClose={handleClose}
-              handleNavigate={handleNavigate}
+              // handleNavigate={handleNavigate}
             />
           </Stack>
         </Box>

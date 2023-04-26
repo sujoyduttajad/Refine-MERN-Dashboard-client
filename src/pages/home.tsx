@@ -48,6 +48,12 @@ const Home = () => {
       pagination: {
         pageSize: 4,
       },
+      sort: [
+        {
+          field: "updatedAt",
+          order: "desc",
+        },
+      ],
     },
   });
   const { data: user } = useGetIdentity();
@@ -101,7 +107,7 @@ const Home = () => {
           title="Properties for Sale"
           value={totalProperties ? totalProperties : 684}
           colors={["#0068D0", "#A9D4FF"]}
-          series={[totalProperties, 100-totalProperties]}
+          series={[totalProperties, 100 - totalProperties]}
         />
         <PieChart
           title="Properties for Rent"
