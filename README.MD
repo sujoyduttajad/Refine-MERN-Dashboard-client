@@ -14,6 +14,8 @@ Basically, Evoia is a property-management app that allows agents to create, upda
 The app is live here and feel free to check it out - 
 [Evoia](https://refine-mern-dashboard-client.vercel.app/)
 
+<img src="./Evoia - Your one stop Property manager (2).png" alt="the screenshot of the app large screen"/>
+
 If you like it please make sure to support me by hitting the star icon.
 
 The app has server and client side, the server is deployed separately and client on Vercel
