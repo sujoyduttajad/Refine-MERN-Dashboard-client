@@ -84,7 +84,7 @@ export const mediaInfo = {
       title: "My Profile",
     },
     {
-      address: "/legal",
+      address: "/legal-terms",
       title: "Legal Terms"
     }
   ],
