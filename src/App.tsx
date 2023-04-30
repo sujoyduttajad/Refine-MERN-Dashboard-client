@@ -14,6 +14,7 @@ import {
 import {
   AccountCircleOutlined,
   ChatBubbleOutline,
+  GavelOutlined,
   InfoOutlined,
   PeopleAltOutlined,
   StarOutlineRounded,
@@ -43,6 +44,7 @@ import { parseJwt } from "utils/parse-jwt";
 import Reviews from "pages/reviews";
 import Messages from "pages/messages";
 import HelpAndInfo from "pages/help";
+import LegalTerms from 'pages/legal-terms';
 
 const axiosInstance = axios.create();
 axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
@@ -197,6 +199,12 @@ function App() {
                 options: { label: "Help & Info" },
                 list: HelpAndInfo,
                 icon: <InfoOutlined />,
+              },
+              {
+                name: "legal-terms",
+                options: { label: "Legal Terms" },
+                list: LegalTerms,
+                icon: <GavelOutlined />
               },
             ]}
             Title={Title}

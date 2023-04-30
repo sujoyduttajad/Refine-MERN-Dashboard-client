@@ -89,3 +89,26 @@ export const mediaInfo = {
     }
   ],
 };
+
+export const termsAndConditions = [
+  {
+    header: "What You Should Know",
+    para: "Welcome to Evoia. This web app is intended solely for demonstration and educational purposes. All the information and images displayed on this web app are for demonstration purposes only, and we make no claims or warranties about the authenticity, accuracy, completeness, or validity of the information or images displayed on this web app."
+  },
+  {
+    header: "",
+    para: "We would like to inform all users of this web app that the properties displayed on this web app may be real or fake, and we cannot guarantee the existence of any real estate. We do not represent, warrant, or guarantee that the information or images displayed on this web app are accurate, complete, or authentic. Therefore, we disclaim any responsibility or liability for any losses, damages, or expenses that may arise from the use of this web app."
+  },
+  {
+    header: "Trademarks, Copyrights and Restrictions",
+    para: "We further clarify that no transaction will occur at any point through this web app. All the information and images provided on this web app are solely for demonstration purposes and do not bear any legal responsibility. We do not intend to engage in any real estate transaction or business through this web app."
+  },
+  {
+    header: "Purpose of the app",
+    para: `We would like to emphasize that the purpose of this web app is solely to showcase the skills of **Sujoy Dutta**(Frontend Developer) and to serve as proof of their ability to build sophisticated applications. Therefore, any use of this web app is solely at your own risk. We do not represent or warrant that this web app will be available or error-free at all times, and we do not accept any responsibility or liability for any interruption, delay, or error in the operation or transmission of this web app.`
+  },
+  {
+    header: "Final say",
+    para: "By accessing this web app, you acknowledge that you have read and understood this legal notice, and you agree to comply with all its terms and conditions. If you do not agree with any part of this legal notice, please do not use this web app."
+  },
+]

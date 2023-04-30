@@ -120,7 +120,6 @@ export const Footer: React.FC = () => {
               <Typography fontSize={14}>
                 Your one stop Property manager
               </Typography>
-              
             </Box>
             <Box display="flex">
               <Stack direction="column" alignItems="flex-start">
@@ -183,16 +182,16 @@ export const Footer: React.FC = () => {
             </Box>
           </Box>
           {/* 3rd row */}
-          <Box>
-          <Typography fontSize={14}>
-                This website is solely designed to showcase the skills of the
-                (Sujoy Dutta)software developer and to serve as a proof of the
-                ability to build sophisticated applications. The use of this
-                website by any visitor is solely at their own risk. By using
-                this website, you acknowledge that you have read and understood
-                the terms and conditions in the legal notice, and you agree to
-                comply with all its terms and conditions.
-              </Typography>
+          <Box display="flex" flexDirection="row" justifyContent="flex-start">
+            <Typography fontSize={14}>
+              This website is solely designed to showcase the skills of the
+              (Sujoy Dutta)software developer and to serve as a proof of the
+              ability to build sophisticated applications. The use of this
+              website by any visitor is solely at their own risk. By using this
+              website, you acknowledge that you have read and understood the
+              terms and conditions in the legal notice, and you agree to comply
+              with all its terms and conditions.
+            </Typography>
           </Box>
           {/* 4th row */}
           <Divider
