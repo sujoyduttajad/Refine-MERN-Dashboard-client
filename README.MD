@@ -1,5 +1,6 @@
 # Evoia - A property management app
 
+
 <div align="center" style="margin: 30px;">
     <a href="https://refine-mern-dashboard-client.vercel.app/">
     <img src="./evoiaDark.svg" alt="Evoia brand icon" align="center" />
@@ -14,7 +15,7 @@ The app is live here and feel free to check it out -
 
 <img src="./Evoia - Your one stop Property manager (2).png" alt="the screenshot of the app large screen"/>
 
-If you like it please make sure to support me by hitting the star icon.
+If you like it please make sure to support me by hitting the star icon. Also it would be great if visitors create new properties this gives a hands on experience to users and also give me a lot of data to work on. **Please don't add any unnecessary/crucial information** Follow the guide in Help & Info page. 
 
 The app has server and client side, the server is deployed separately and client on Vercel
 
