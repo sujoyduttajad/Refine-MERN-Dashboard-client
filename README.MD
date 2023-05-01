@@ -1,6 +1,4 @@
-# Refine-MERN-Dashboard
-
-## Evoia
+# Evoia - A property management app
 
 <div align="center" style="margin: 30px;">
     <a href="https://refine-mern-dashboard-client.vercel.app/">
