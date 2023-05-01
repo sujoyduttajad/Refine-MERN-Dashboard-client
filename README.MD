@@ -73,14 +73,14 @@ Refine offers lots of out-of-the box functionality for rapid development, withou
 
 To learn more about **refine**, please check out the [Documentation](https://refine.dev/docs)
 
-- **REST Data Provider** [Docs](https://refine.dev/docs/core/providers/data-provider/#overview)
-- **Material UI** [Docs](https://refine.dev/docs/ui-frameworks/mui/tutorial/)
-- **Inferencer** [Docs](https://refine.dev/docs/packages/documentation/inferencer)
-- **Material UI Light/Dark Mode** [Docs](https://refine.dev/docs/ui-frameworks/mui/customization/mui-custom-theme/)
-- **Material UI Custom Theme** [Docs](https://refine.dev/docs/ui-frameworks/mui/customization/mui-custom-theme/)
-- **Custom Layout** [Docs](https://refine.dev/docs/ui-frameworks/mui/customization/mui-custom-layout/)
-- **React Router** [Docs](https://refine.dev/docs/core/providers/router-provider/)
-- **Google Auth Provider** [Docs](https://refine.dev/docs/core/providers/auth-provider/)
+## Upcoming features
+
+
+- Reviews(CRUD) for each property
+- Agent(CRUD) ability
+- Reduce the loading time, add animation
+- Add more Data Visualization
+- Message across agents
 
 ## credits
 Thankyou [@adrianhajdin](https://github.com/adrianhajdin)
