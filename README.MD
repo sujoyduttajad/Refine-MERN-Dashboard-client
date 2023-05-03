@@ -1,6 +1,5 @@
-# Refine-MERN-Dashboard
+# Evoia - A property management app
 
-## Evoia
 
 <div align="center" style="margin: 30px;">
     <a href="https://refine-mern-dashboard-client.vercel.app/">
@@ -16,7 +15,7 @@ The app is live here and feel free to check it out -
 
 <img src="./Evoia - Your one stop Property manager (2).png" alt="the screenshot of the app large screen"/>
 
-If you like it please make sure to support me by hitting the star icon.
+If you like it please make sure to support me by hitting the star icon. Also it would be great if visitors create new properties this gives a hands on experience to users and also give me a lot of data to work on. **Please don't add any unnecessary/crucial information** Follow the guide in Help & Info page. 
 
 The app has server and client side, the server is deployed separately and client on Vercel
 
@@ -73,14 +72,14 @@ Refine offers lots of out-of-the box functionality for rapid development, withou
 
 To learn more about **refine**, please check out the [Documentation](https://refine.dev/docs)
 
-- **REST Data Provider** [Docs](https://refine.dev/docs/core/providers/data-provider/#overview)
-- **Material UI** [Docs](https://refine.dev/docs/ui-frameworks/mui/tutorial/)
-- **Inferencer** [Docs](https://refine.dev/docs/packages/documentation/inferencer)
-- **Material UI Light/Dark Mode** [Docs](https://refine.dev/docs/ui-frameworks/mui/customization/mui-custom-theme/)
-- **Material UI Custom Theme** [Docs](https://refine.dev/docs/ui-frameworks/mui/customization/mui-custom-theme/)
-- **Custom Layout** [Docs](https://refine.dev/docs/ui-frameworks/mui/customization/mui-custom-layout/)
-- **React Router** [Docs](https://refine.dev/docs/core/providers/router-provider/)
-- **Google Auth Provider** [Docs](https://refine.dev/docs/core/providers/auth-provider/)
+## Upcoming features
+
+
+- Reviews(CRUD) for each property
+- Agent(CRUD) ability
+- Reduce the loading time, add animation
+- Add more Data Visualization
+- Message across agents
 
 ## credits
 Thankyou [@adrianhajdin](https://github.com/adrianhajdin)
