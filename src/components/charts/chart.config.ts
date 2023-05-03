@@ -14,18 +14,30 @@ export const TotalRevenueSeries = [
 
 function updateRevenueSeries() {
   const currentMonth = new Date().getMonth();
-  const randomValue = Math.floor(Math.random() * 100);
+  const randomValueLastMonth = Math.floor(Math.random() * 100);
+  const randomValueRunningMonth = Math.floor(Math.random() * 100);
 
   TotalRevenueSeries.forEach((series) => {
     const lastIndex = series.data.length - 1;
     if (series.data[lastIndex] && lastIndex === currentMonth) {
-      series.data[lastIndex] += randomValue;
+      if (series.name === "Last Month") {
+        series.data[lastIndex] += randomValueLastMonth;
+      } else if (series.name === "Running Month") {
+        series.data[lastIndex] += randomValueRunningMonth;
+      }
     } else {
-      series.data.push();
+      if (series.name === "Last Month") {
+        series.data.push(randomValueLastMonth);
+      } else if (series.name === "Running Month") {
+        series.data.push(randomValueRunningMonth);
+      }
     }
   });
 }
-updateRevenueSeries();
+
+// Update the revenue series data every hour
+setInterval(updateRevenueSeries, 60 * 60 * 1000);
+
 
 export const TotalRevenueOptions: ApexOptions = {
   chart: {
