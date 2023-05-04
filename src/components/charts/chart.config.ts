@@ -35,8 +35,10 @@ function updateRevenueSeries() {
   });
 }
 
+updateRevenueSeries();
 // Update the revenue series data every hour
 setInterval(updateRevenueSeries, 60 * 60 * 1000);
+
 
 
 export const TotalRevenueOptions: ApexOptions = {
