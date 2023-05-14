@@ -1,25 +1,10 @@
 import React from "react";
-import { MoreVert } from "@mui/icons-material";
-import {
-  Box,
-  CardMedia,
-  IconButton,
-  Menu,
-  MenuItem,
-  Stack,
-  Typography,
-} from "@pankod/refine-mui";
+import { Box, CardMedia, Stack, Typography } from "@pankod/refine-mui";
 import { PropertyListValues } from "interfaces/property";
 import { formatter } from "utils/functions";
 import ThreeDotsMenu from "components/common/ThreeDotsMenu";
 
-const SalesCard = ({
-  creator,
-  title,
-  photo,
-  price,
-  location,
-}: PropertyListValues) => {
+const SalesCard = ({ title, photo, price }: PropertyListValues) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
