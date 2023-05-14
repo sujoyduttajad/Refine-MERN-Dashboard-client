@@ -3,10 +3,9 @@ import ReactApexChart from "react-apexcharts";
 import { ColumnBarData as data } from "components/charts/chart.config";
 import { ColumnBarSeries as series } from "components/charts/chart.config";
 
-
 const CustomerCard = () => {
   return (
-    <Box >
+    <Box>
       <Box
         display="flex"
         flexGrow={1}
@@ -15,21 +14,25 @@ const CustomerCard = () => {
         gap={1}
         pb={2}
       >
-        <Stack direction="column" gap={2} flexWrap="wrap">
-          <Typography fontSize={14} color="#808191">
-            Total Customers
-          </Typography>
-          <Typography variant="h4">500K</Typography>
-          <Typography fontSize={12} fontWeight={700} color="#18C346">
-            21.77%
-          </Typography>
-          <Typography fontSize={14} color="#808191">
-            New Customers This Month
-          </Typography>
-          <Typography variant="h4">22</Typography>
-          <Typography fontSize={12} fontWeight={700} color="#18C346">
-            41.04%
-          </Typography>
+        <Stack direction="row" gap={2} flexWrap="wrap">
+          <Stack direction="column" gap={2}>
+            <Typography fontSize={14} color="#808191">
+              Total Customers
+            </Typography>
+            <Typography variant="h4">500K</Typography>
+            <Typography fontSize={12} fontWeight={700} color="#18C346">
+              21.77%
+            </Typography>
+          </Stack>
+          <Stack direction="column" gap={2}>
+            <Typography fontSize={14} color="#808191">
+              Customers per month
+            </Typography>
+            <Typography variant="h4">22</Typography>
+            <Typography fontSize={12} fontWeight={700} color="#18C346">
+              41.04%
+            </Typography>
+          </Stack>
         </Stack>
         <Stack>
           <ReactApexChart
