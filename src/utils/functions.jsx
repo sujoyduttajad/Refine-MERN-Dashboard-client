@@ -23,3 +23,16 @@ export function getMonthNames() {
 
   return months;
 }
+
+export function getMonthShortNames() {
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth();
+
+  const months = Array.from({ length: currentMonth + 1 }, (_, index) => {
+    const monthDate = new Date();
+    monthDate.setMonth(index);
+    return monthDate.toLocaleString('default', { month: 'short' });
+  });
+
+  return months;
+}
