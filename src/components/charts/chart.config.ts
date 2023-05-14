@@ -1,5 +1,5 @@
 import { ApexOptions } from 'apexcharts';
-import { getMonthNames } from 'utils/functions';
+import { getMonthNames, getMonthShortNames } from 'utils/functions';
 
 export const TotalRevenueSeries = [
   {
@@ -39,8 +39,6 @@ updateRevenueSeries();
 // Update the revenue series data every hour
 setInterval(updateRevenueSeries, 60 * 60 * 1000);
 
-
-
 export const TotalRevenueOptions: ApexOptions = {
   chart: {
     type: 'bar',
@@ -48,7 +46,7 @@ export const TotalRevenueOptions: ApexOptions = {
       show: false,
     },
   },
-  colors: ['#475BE8', '#CFC8FF'],
+  colors: ['#475BE8', '#9F45E8'],
   plotOptions: {
     bar: {
       borderRadius: 4,
@@ -90,10 +88,33 @@ export const TotalRevenueOptions: ApexOptions = {
   },
 };
 
+// --------------- CUSTOMER COLUMN CHART --------------
 export const ColumnBarSeries = [{
   name: 'Customers',
-  data: [44, 55, 57, 56, 61]
+  data: [44, 55, 57, 56]
 }];
+
+function updateColumnBar() {
+  const currentMonth = new Date().getMonth();
+  const randomValueLastMonth = Math.floor(Math.random() * (100 - 30 + 1)) + 30;
+
+  ColumnBarSeries.forEach((series) => {
+    const lastIndex = series.data.length - 1;
+    if (series.data[lastIndex] && lastIndex === currentMonth) {
+      if (series.name === "Customers") {
+        series.data[lastIndex] += randomValueLastMonth;
+      }
+    } else {
+      if (series.name === "Customers") {
+        series.data.push(randomValueLastMonth);
+      }
+    }
+  });
+}
+
+updateColumnBar();
+// Update the revenue series data every hour
+setInterval(updateColumnBar, 60 * 60 * 1000);
 
 export const ColumnBarData: ApexOptions = {
   chart: {
@@ -103,6 +124,7 @@ export const ColumnBarData: ApexOptions = {
       show: false // hide the download dropdown menu
     }
   },
+  colors: ['#475BE8'],
   plotOptions: {
     bar: {
       horizontal: false,
@@ -118,7 +140,7 @@ export const ColumnBarData: ApexOptions = {
     colors: ['transparent']
   },
   xaxis: {
-    categories: [ 'Nov','Dec', 'Jan', 'Feb', 'Mar' ],
+    categories: getMonthShortNames(),
   },
   yaxis: {
     title: {
