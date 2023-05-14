@@ -1,4 +1,3 @@
-import React from "react";
 import { Place } from "@mui/icons-material";
 import { Link } from "@pankod/refine-react-router-v6";
 import {
@@ -20,8 +19,7 @@ const PropertyCard = ({
   location,
   photo,
 }: PropertyCardProps) => {
-
-  const priceDisplay = formatter.format(price).slice(0,-3);
+  const priceDisplay = formatter.format(price).slice(0, -3);
 
   return (
     <Card
@@ -57,7 +55,7 @@ const PropertyCard = ({
           justifyContent: "space-between",
           gap: "15px",
           paddingX: "5px",
-          paddingBottom: 0
+          paddingBottom: 0,
         }}
       >
         <Stack direction="column" gap={1}>
