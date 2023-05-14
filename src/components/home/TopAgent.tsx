@@ -1,24 +1,14 @@
-import React from "react";
+import { useGetIdentity } from "@pankod/refine-core";
 import { Box, CardMedia, Stack, Typography } from "@pankod/refine-mui";
 import { useList } from "@pankod/refine-core";
 import { Error, Loading } from "components/common/Loading&Error";
-import ThreeDotsMenu from "components/common/ThreeDotsMenu";
 import { Link } from "@pankod/refine-react-router-v6";
 
 const TopAgent = () => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   const { data, isLoading, isError } = useList({
     resource: "users",
   });
+  const { data: currentUser } = useGetIdentity();
 
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
@@ -26,7 +16,8 @@ const TopAgent = () => {
   const topAgents = data?.data.sort((a, b) => b.__v - a.__v).slice(0, 5) ?? [];
 
   const generateLink = (id: string, name: string) => {
-    if (name === "sujoy dutta") return "/my-profile";
+    // if the name matches with the logged in user redirect to my-profile
+    if (currentUser.name === name) return "/my-profile";
     else {
       return `/agents/show/${id}`;
     }
@@ -89,16 +80,6 @@ const TopAgent = () => {
                 </Typography>
               </Stack>
             </Stack>
-            <ThreeDotsMenu
-              option="Agent Detail"
-              open={open}
-              value="Agent Detail"
-              menuId="agent-button"
-              anchorEl={anchorEl}
-              handleClick={handleClick}
-              handleClose={handleClose}
-              // handleNavigate={handleNavigate}
-            />
           </Stack>
         </Box>
       ))}
