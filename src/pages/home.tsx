@@ -176,6 +176,7 @@ const Home = () => {
                   <Typography fontSize={18} fontWeight={600} color="#11142d">
                     Top Agent
                   </Typography>
+                  <ViewAll pathName="/agents" />
                 </Stack>
                 <TopAgent />
               </Stack>
@@ -210,7 +211,6 @@ const Home = () => {
                   <Typography fontSize={18} fontWeight={600} color="#11142d">
                     Latest Sales
                   </Typography>
-                  <ViewAll />
                 </Stack>
                 {latestProperties.map((property) => (
                   <SalesCard
@@ -241,7 +241,7 @@ const Home = () => {
           <Typography fontSize="18px" fontWeight={600} color="#11142d">
             Latest Properties
           </Typography>
-          <ViewAll />
+          <ViewAll pathName="/properties" />
         </Stack>
 
         <Stack direction={{ xs: "column", lg: "row" }} gap={4}>
