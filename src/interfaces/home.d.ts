@@ -17,9 +17,14 @@ export interface ApexNonAxisChartSeries {
 
 export interface ApexChartProps {
     series: (ApexAxisChartSeries | ApexNonAxisChartSeries)[];
-  }
+}
 
 export interface AllDataProps {
     id: number;
     // Add other properties here
-  }
+}
+
+export interface ViewAllProps {
+    pathName: string;
+
+}
