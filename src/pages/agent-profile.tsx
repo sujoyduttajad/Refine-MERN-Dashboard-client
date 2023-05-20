@@ -1,10 +1,10 @@
 import { useOne } from "@pankod/refine-core";
-import { Profile } from "components";
+import { AgentProfile } from "components";
 import { useParams } from "@pankod/refine-react-router-v6";
 import { Error, Loading } from "components/common/Loading&Error";
 import Toasts from "components/common/Toasts";
 
-const AgentProfile = () => {
+const AgentProfilePage = () => {
   const { id } = useParams();
   const { data, isLoading, isError } = useOne({
     resource: "users",
@@ -21,8 +21,9 @@ const AgentProfile = () => {
   }
 
   return (
-    <Profile
+    <AgentProfile
       type="Agent"
+      
       name={agentProfile.name}
       email={agentProfile.email}
       avatar={agentProfile.avatar}
@@ -31,4 +32,4 @@ const AgentProfile = () => {
   );
 };
 
-export default AgentProfile;
+export default AgentProfilePage;
