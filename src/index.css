@@ -20,6 +20,7 @@ html, body {
     left: -1rem;
   }
   .agent_profile_user-img {
+    position: absolute;
     left: 5rem;
     top: -6rem;
   }
