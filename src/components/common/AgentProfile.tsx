@@ -1,10 +1,10 @@
 import { Email, Phone, Place } from "@mui/icons-material";
-import { Box, Edit, Stack, Typography } from "@pankod/refine-mui";
+import { Box, Edit, IconButton, Stack, Typography } from "@pankod/refine-mui";
 
 import { ProfileProps, PropertyProps } from "interfaces/common";
 import PropertyCard from "./PropertyCard";
 import CustomButton from "./CustomButton";
-import { AgentCover } from "assets";
+import { AgentCover, fbIcon, instaIcon, twitterIcon } from "assets";
 import AgentBio from "./AgentBio";
 
 const AgentProfile = ({
@@ -31,16 +31,19 @@ const AgentProfile = ({
         <Box
           bgcolor="#FCFCFC"
           margin={2}
+          borderRadius={2}
           sx={{
             display: "flex",
             flexDirection: "column",
             gap: 2.5,
             maxWidth: 350,
+            "&:hover": {
+              boxShadow: "0 22px 45px 2px rgba(176, 176, 176, 0.5)",
+            },
           }}
         >
           <img
             src={AgentCover}
-            width={340}
             height={140}
             alt="abstract"
             className="agent_profile-bg"
@@ -86,6 +89,18 @@ const AgentProfile = ({
 
               <Stack direction="column" gap="30px">
                 <AgentBio id={id} email={email} />
+              </Stack>
+
+              <Stack direction="row" justifyContent="center" gap="30px" mt={3}>
+                <IconButton>
+                  <img src={fbIcon} alt="" />
+                </IconButton>
+                <IconButton>
+                  <img src={twitterIcon} alt="" />
+                </IconButton>
+                <IconButton>
+                  <img src={instaIcon} alt="" />
+                </IconButton>
               </Stack>
             </Box>
           </Box>
