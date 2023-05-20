@@ -22,8 +22,8 @@ const AgentProfilePage = () => {
 
   return (
     <AgentProfile
+      id={id}
       type="Agent"
-      
       name={agentProfile.name}
       email={agentProfile.email}
       avatar={agentProfile.avatar}
