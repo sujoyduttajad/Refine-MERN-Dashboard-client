@@ -5,6 +5,7 @@ import CustomButton from './common/CustomButton';
 import Facilities from './common/Facilities';
 import ThreeDotsMenu from './common/ThreeDotsMenu';
 import Guide from './common/Guide';
+import AgentProfile from './common/AgentProfile';
 
 // charts
 import PieChart from './charts/PieChart';
@@ -21,6 +22,7 @@ import CustomerCard from './home/CustomerCard';
 
 export {
   Profile,
+  AgentProfile,
   PropertyCard,
   CustomButton,
   PieChart,
