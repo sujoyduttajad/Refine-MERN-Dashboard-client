@@ -3,10 +3,10 @@ import { useList } from "@pankod/refine-core";
 import { Error, Loading } from "components/common/Loading&Error";
 import { AgentCard, CustomButton } from "components";
 import { Add } from "@mui/icons-material";
-import { useNavigate } from "@pankod/refine-react-router-v6";
+// import { useNavigate } from "@pankod/refine-react-router-v6";
 
 const Agent = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { data, isLoading, isError } = useList({
     resource: "users",
   });
@@ -32,7 +32,6 @@ const Agent = () => {
       </Stack>
       <Box
         mt="20px"
-        // maxWidth="fit-content"
         display="flex"
         flexDirection={{ xs: "column", sm: "row" }}
         justifyContent={{ xs: "center", sm: "flex-start" }}
