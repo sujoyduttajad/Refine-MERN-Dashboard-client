@@ -111,4 +111,25 @@ export const termsAndConditions = [
     header: "Final say",
     para: "By accessing this web app, you acknowledge that you have read and understood this legal notice, and you agree to comply with all its terms and conditions. If you do not agree with any part of this legal notice, please do not use this web app."
   },
-]
+];
+
+export const agentDetails = {
+  agentInfo: [
+    {
+      header: "Agency",
+      para: "All American Real Estate"
+    },
+    {
+      header: "Agent License",
+      para: "3124 9764 9700 234"
+    },
+    {
+      header: "Tax Number",
+      para: "TX 87D0 678H PQ45"
+    },
+    {
+      header: "Service area",
+      para: "Chicago, Los Angeles, New York, Miami beach"
+    },
+  ]
+}
