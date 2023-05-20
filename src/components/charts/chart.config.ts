@@ -101,11 +101,11 @@ function updateColumnBar() {
   ColumnBarSeries.forEach((series) => {
     const lastIndex = series.data.length - 1;
     if (series.data[lastIndex] && lastIndex === currentMonth) {
-      if (series.name === "Customers") {
+      if (series.name === "Customers" && randomValueLastMonth < 100) {
         series.data[lastIndex] += randomValueLastMonth;
       }
     } else {
-      if (series.name === "Customers") {
+      if (series.name === "Customers" && randomValueLastMonth < 100) {
         series.data.push(randomValueLastMonth);
       }
     }
