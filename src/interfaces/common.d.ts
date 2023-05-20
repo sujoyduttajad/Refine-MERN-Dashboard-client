@@ -15,11 +15,17 @@ export interface CustomButtonProps {
 }
 
 export interface ProfileProps {
+    id?: string | undefined;
     type?: string | undefined;
     name?: string | undefined;
     avatar?: string | undefined;
     email?: string | undefined;
     properties?: Array | undefined;
+}
+
+export interface AgentBioProps {
+    id: string | undefined;
+    email?: string | undefined;
 }
 
 export interface PropertyProps {
