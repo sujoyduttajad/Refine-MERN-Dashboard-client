@@ -35,8 +35,8 @@ import {
   PropertyDetails,
   AllProperties,
   CreateProperty,
-  AgentProfile,
   EditProperty,
+  AgentProfilePage,
 } from "pages";
 
 import { CredentialResponse } from "interfaces/google";
@@ -175,7 +175,7 @@ function App() {
               {
                 name: "agents",
                 list: Agents,
-                show: AgentProfile,
+                show: AgentProfilePage,
                 icon: <PeopleAltOutlined />,
               },
               {
