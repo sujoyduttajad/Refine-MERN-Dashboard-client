@@ -10,6 +10,7 @@ import BrandIcon from './Brand-Light.svg'
 import screenShot_1 from './screenshot-1.png'
 import screenShot_2 from './screenshot-2.png'
 import screenShot_3 from './screenshot-3.png'
+import AgentCover from './agent-cover.png'
 
 export {
   logo,
@@ -23,5 +24,6 @@ export {
   pointyBuilding,
   screenShot_1,
   screenShot_2,
-  screenShot_3
+  screenShot_3,
+  AgentCover
 };
