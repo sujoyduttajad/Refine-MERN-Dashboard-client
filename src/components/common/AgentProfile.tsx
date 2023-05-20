@@ -5,8 +5,10 @@ import { ProfileProps, PropertyProps } from "interfaces/common";
 import PropertyCard from "./PropertyCard";
 import CustomButton from "./CustomButton";
 import { AgentCover } from "assets";
+import AgentBio from "./AgentBio";
 
 const AgentProfile = ({
+  id,
   type,
   name,
   avatar,
@@ -28,6 +30,7 @@ const AgentProfile = ({
       >
         <Box
           bgcolor="#FCFCFC"
+          margin={2}
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -42,80 +45,48 @@ const AgentProfile = ({
             alt="abstract"
             className="agent_profile-bg"
           />
-          <Box
-            flex={1}
-            alignItems="flex-start"
-            margin={2}
-            marginTop={0}
-          >
-            <Box
-              flex={1}
-              display="flex"
-              flexDirection="column"
-              alignItems="flex-start"
-              margin={0}
-              height="fit-content"
-            >
-              <img
-                src={
-                  // checkImage(avatar)
-                  avatar
-                    ? avatar
-                    : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png"
-                }
-                width={110}
-                height={110}
-                alt="agent_profile"
-                className="agent_profile_user-img"
-              />
-              <Box
-                flex={1}
-                display="flex"
-                flexDirection="column"
-                
-                justifyContent="space-between"
-                gap="30px"
-              >
-                <Box display="flex" justifyContent="flex-end">
-                  <Stack direction="column" px={2}>
-                    <Typography
-                      textTransform="capitalize"
-                      fontSize={20}
-                      fontWeight={700}
-                      color="#475be8"
-                    >
-                      {name}
-                    </Typography>
-                    <Typography fontSize={14} color="#808191">
-                      {email === "sujoyduttajad@gmail.com"
-                        ? "Admin"
-                        : "Real-Estate Agent"}
-                    </Typography>
-                  </Stack>
-                </Box>
 
-                <Stack direction="column" gap="30px">
-                  <Stack gap="15px">
-                    <Typography fontSize={14} fontWeight={500} color="#808191">
-                      Address
-                    </Typography>
-                    <Box
-                      display="flex"
-                      flexDirection="row"
-                      alignItems="center"
-                      gap="10px"
-                      padding={1.5}
-                      sx={{ border: "1px solid #E4E4E4", borderRadius: "6px" }}
-                    >
-                      <Place sx={{ color: "#11142D" }} />
-                      <Typography fontSize={14} color="#11142D">
-                        17 Stuyvesant Walk New York, New York(NY), 10009
-                      </Typography>
-                    </Box>
-                  </Stack>
-                  
+          <Box
+            display="flex"
+            flexDirection="column"
+            margin={2}
+            position="relative"
+          >
+            <img
+              src={
+                // checkImage(avatar)
+                avatar
+                  ? avatar
+                  : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png"
+              }
+              width={110}
+              height={110}
+              alt="agent_profile"
+              className="agent_profile_user-img"
+            />
+            <Box display="flex" flexDirection="column" gap="30px">
+              <Box display="flex" justifyContent="flex-end">
+                <Stack direction="column">
+                  <Typography
+                    textTransform="capitalize"
+                    fontSize={20}
+                    marginTop={2}
+                    fontWeight={700}
+                    color="#475be8"
+                  >
+                    {name}
+                  </Typography>
+                  <Typography fontSize={14} color="#808191">
+                    {email === "sujoyduttajad@gmail.com"
+                      ? "Admin"
+                      : "Real-Estate Agent"}
+                  </Typography>
                 </Stack>
               </Box>
+
+              <Stack direction="column" gap="30px">
+                <AgentBio id={id} email={email} />
+              </Stack>
             </Box>
           </Box>
         </Box>
