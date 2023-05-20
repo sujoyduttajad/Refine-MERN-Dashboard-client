@@ -6,6 +6,7 @@ import PropertyCard from "./PropertyCard";
 import CustomButton from "./CustomButton";
 import { AgentCover, fbIcon, instaIcon, twitterIcon } from "assets";
 import AgentBio from "./AgentBio";
+import AgentDetails from "components/agent/AgentDetails";
 
 const AgentProfile = ({
   id,
@@ -26,7 +27,8 @@ const AgentProfile = ({
         borderRadius="15px"
         padding="20px"
         bgcolor="transparent"
-        maxWidth="80rem"
+        // maxWidth="80rem"
+        display="flex" flexDirection={{ xs: "column", sm: "row" }}
       >
         <Box
           bgcolor="#FCFCFC"
@@ -91,7 +93,7 @@ const AgentProfile = ({
                 <AgentBio id={id} email={email} />
               </Stack>
 
-              <Stack direction="row" justifyContent="center" gap="30px" mt={3}>
+              <Stack direction="row" justifyContent="center" gap="30px" my={3}>
                 <IconButton>
                   <img src={fbIcon} alt="" />
                 </IconButton>
@@ -105,9 +107,13 @@ const AgentProfile = ({
             </Box>
           </Box>
         </Box>
+
+        <Box>
+            <AgentDetails />
+        </Box>
       </Box>
 
-      {properties.length > 0 && (
+      {properties.length > 0 ? (
         <Box mt={2.5} borderRadius="15px" padding="20px" bgcolor="#FCFCFC">
           <Typography fontSize={18} fontWeight={600} color="#11142D">
             {type} Properties
@@ -133,6 +139,12 @@ const AgentProfile = ({
             ))}
           </Box>
         </Box>
+      ) : (
+        <Stack direction="column" padding={5} justifyContent="center">
+          <Typography variant="h5" color="#d5d5d5">
+            There are no properties to show
+          </Typography>
+        </Stack>
       )}
     </Box>
   );
