@@ -7,18 +7,21 @@ html, body {
     text-decoration: none !important;
   }
   
-  .my_profile-bg {
+  .my_profile-bg, .agent_profile-bg {
     width: 340px;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
   }
   
-  .my_profile_user-img {
+  .my_profile_user-img, .agent_profile_user-img {
     border-radius: 100%;
     margin-left: -64px;
     position: relative;
     left: -1rem;
-    /* top: 60px; */
+  }
+  .agent_profile_user-img {
+    left: 5rem;
+    top: -6rem;
   }
   
   .property_details-img {
