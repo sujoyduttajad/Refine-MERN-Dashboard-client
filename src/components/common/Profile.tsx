@@ -5,7 +5,7 @@ import { ProfileProps, PropertyProps } from "interfaces/common";
 import PropertyCard from "./PropertyCard";
 import CustomButton from "./CustomButton";
 
-function checkImage(url: any) {
+export function checkImage(url: any) {
   let img = new Image();
   img.src = url;
   return img.width !== 0 && img.height !== 0;
