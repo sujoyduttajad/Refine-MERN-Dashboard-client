@@ -11,6 +11,9 @@ import screenShot_1 from './screenshot-1.png'
 import screenShot_2 from './screenshot-2.png'
 import screenShot_3 from './screenshot-3.png'
 import AgentCover from './agent-cover.png'
+import fbIcon from './logo-fb.svg'
+import twitterIcon from './logo-twitter.svg'
+import instaIcon from './logo-instagram.svg'
 
 export {
   logo,
@@ -25,5 +28,8 @@ export {
   screenShot_1,
   screenShot_2,
   screenShot_3,
-  AgentCover
+  AgentCover,
+  fbIcon,
+  twitterIcon,
+  instaIcon
 };
