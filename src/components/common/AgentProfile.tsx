@@ -16,6 +16,7 @@ const AgentProfile = ({
   email,
   properties,
 }: ProfileProps) => {
+    const noOfProperties = properties ? properties.length : 0;
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142D">
@@ -109,7 +110,7 @@ const AgentProfile = ({
         </Box>
 
         <Box>
-            <AgentDetails />
+            <AgentDetails agentProperties={noOfProperties} />
         </Box>
       </Box>
 
