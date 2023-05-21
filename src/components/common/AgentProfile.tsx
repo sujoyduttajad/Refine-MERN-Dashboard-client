@@ -16,20 +16,22 @@ const AgentProfile = ({
   email,
   properties,
 }: ProfileProps) => {
-    const noOfProperties = properties ? properties.length : 0;
+  const noOfProperties = properties ? properties.length : 0;
   return (
     <Box>
-      <Typography fontSize={25} fontWeight={700} color="#11142D">
-        {type} Profile
-      </Typography>
-
+      <Stack direction="row" justifyContent="space-between" my={4}>
+        <Typography fontSize={25} fontWeight={700} color="#11142D">
+          {type} Profile
+        </Typography>
+      </Stack>
       <Box
         mt="20px"
         borderRadius="15px"
         padding="20px"
         bgcolor="transparent"
-        // maxWidth="80rem"
-        display="flex" flexDirection={{ xs: "column", sm: "row" }}
+        display="flex"
+        flexDirection={{ xs: "column", sm: "row" }}
+        flexWrap={{ md: "wrap", lg: "nowrap" }}
       >
         <Box
           bgcolor="#FCFCFC"
@@ -110,9 +112,7 @@ const AgentProfile = ({
           </Box>
         </Box>
 
-        <Box>
-            <AgentDetails agentProperties={noOfProperties} />
-        </Box>
+        <AgentDetails agentProperties={noOfProperties} />
       </Box>
 
       {properties.length > 0 ? (
