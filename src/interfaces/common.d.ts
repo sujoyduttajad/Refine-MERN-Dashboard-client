@@ -27,6 +27,9 @@ export interface AgentBioProps {
     id: string | undefined;
     email?: string | undefined;
 }
+export interface AgentProperties {
+    agentProperties: number;
+}
 
 export interface PropertyProps {
     _id: string;
