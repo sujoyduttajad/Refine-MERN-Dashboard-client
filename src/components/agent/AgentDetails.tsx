@@ -1,15 +1,18 @@
 import { CheckCircleRounded } from "@mui/icons-material";
-import { Box, Stack, Typography } from "@pankod/refine-mui";
-import React from "react";
+import { Box, Divider, Stack, Typography } from "@pankod/refine-mui";
+import PieChart from "components/charts/PieChart";
+import { AgentProperties } from "interfaces/common";
 import { agentDetails } from "utils/infoContent";
 
-const AgentDetails = () => {
+const AgentDetails = ({ agentProperties }: AgentProperties) => {
   return (
     <Box
       bgcolor="#FCFCFC"
       margin={2}
       padding={4}
       borderRadius={2}
+      maxWidth="90rem"
+      height="100%"
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -37,18 +40,52 @@ const AgentDetails = () => {
         <Stack direction="row" justifyContent="flex-start" alignItems="center">
           <Stack direction="row" gap={3}>
             <CheckCircleRounded sx={{ color: "#475be8" }} />
-            <Typography>{ele.header} </Typography>
+            <Typography fontSize={16} fontWeight={600} color="#11142D">
+              {ele.header}{" "}
+            </Typography>
           </Stack>
-         
+
           <Stack direction="row" gap={3} justifyContent="flex-start">
-          <Stack direction="row" >
-            {" "}
-            :{" "}
-          </Stack>
+            <Stack direction="row"> : </Stack>
             <Typography>{ele.para}</Typography>
           </Stack>
         </Stack>
       ))}
+
+      <Divider variant="inset" />
+
+      <Stack>
+        <Typography fontSize={23} fontWeight={700} color="#11142D">
+          Agent Status
+        </Typography>
+        <Stack
+          direction="row"
+          gap={3}
+          padding={3}
+          justifyContent="space-evenly"
+        >
+          <PieChart
+            title="Total Listings"
+            value={agentProperties ? agentProperties : 0}
+            colors={["#0068D0", "#A9D4FF"]}
+            series={[agentProperties, 100 - agentProperties]}
+          />
+
+          <PieChart
+            title="Properties Sold"
+            value={550}
+            colors={["#02BD53", "#7AFEB3"]}
+            series={[60, 40]}
+          />
+
+          <PieChart
+            title="Properties Rent"
+            value={300}
+            colors={["#FF3A3A", "#FFC6C6"]}
+            series={[30, 70]}
+          />
+        </Stack>
+      </Stack>
     </Box>
   );
 };
