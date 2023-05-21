@@ -13,6 +13,7 @@ const AgentDetails = ({ agentProperties }: AgentProperties) => {
       marginBottom={0}
       paddingBottom={0}
       borderRadius={2}
+      minWidth="30rem"
       maxWidth="90rem"
       height="95%"
       sx={{
@@ -65,6 +66,7 @@ const AgentDetails = ({ agentProperties }: AgentProperties) => {
           gap={3}
           padding={3}
           justifyContent="space-evenly"
+          flexWrap="wrap"
         >
           <PieChart
             title="Total Listings"
