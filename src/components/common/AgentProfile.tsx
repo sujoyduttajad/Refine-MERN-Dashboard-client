@@ -34,6 +34,7 @@ const AgentProfile = ({
         <Box
           bgcolor="#FCFCFC"
           margin={2}
+          height="100%"
           borderRadius={2}
           sx={{
             display: "flex",
