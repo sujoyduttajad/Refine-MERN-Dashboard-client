@@ -10,9 +10,11 @@ const AgentDetails = ({ agentProperties }: AgentProperties) => {
       bgcolor="#FCFCFC"
       margin={2}
       padding={4}
+      marginBottom={0}
+      paddingBottom={0}
       borderRadius={2}
       maxWidth="90rem"
-      height="100%"
+      height="95%"
       sx={{
         display: "flex",
         flexDirection: "column",
