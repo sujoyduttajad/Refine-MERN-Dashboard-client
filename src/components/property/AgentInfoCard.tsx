@@ -35,17 +35,28 @@ const AgentInfoCard = ({ image, email, name }: AgentInfoProps) => {
           alt="Agent Profile picture"
           sx={{ height: "7rem", width: "7rem", borderRadius: "50%" }}
         />
-        <Typography
-          mt={2}
-          fontSize={16}
-          fontWeight={600}
-          textTransform="capitalize"
-        >
-          {name}
-        </Typography>
-        <Typography fontSize={14} fontWeight={400} color="#808191">
-          Agent
-        </Typography>
+        <Stack mt={2} direction="row">
+          <Typography fontSize={16} fontWeight={600} color="#808191">
+            Creator:{" "}
+          </Typography>
+          <Typography
+            pl={1}
+            fontSize={16}
+            fontWeight={600}
+            textTransform="capitalize"
+          >
+            {" "}
+            {name}
+          </Typography>
+        </Stack>
+        <Stack mb={2} direction="row">
+          <Typography fontSize={16} fontWeight={600} color="#808191">
+            Designation:{" "}
+          </Typography>
+          <Typography pl={1} fontSize={16} fontWeight={600}>
+            {email === "sujoyduttajad@gmail.com" ? "Admin" : "Agent"}
+          </Typography>
+        </Stack>
         <Stack direction="row" mt={0.5} alignItems="center" gap={0.5}>
           <Place sx={{ color: "#808191" }} />
           <Typography fontSize={14} color="#808191">
