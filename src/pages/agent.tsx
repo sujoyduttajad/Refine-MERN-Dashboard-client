@@ -35,7 +35,7 @@ const Agent = () => {
         display="flex"
         flexDirection={{ xs: "column", sm: "row" }}
         justifyContent={{ xs: "center", sm: "flex-start" }}
-        alignItems="flex-start"
+        alignItems={{ xs: "center", sm: "flex-start" }}
         flexWrap="wrap"
         gap={3}
       >
