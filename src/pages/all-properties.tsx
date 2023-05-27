@@ -40,7 +40,6 @@ const AllProperties = () => {
     setFilters,
   } = useTable();
 
-  console.log(current, pageCount);
   const allProperties = data?.data ?? [];
 
   const currentPrice = sorter.find((item) => item.field === "price")?.order;
@@ -158,7 +157,7 @@ const AllProperties = () => {
               direction="row"
               justifyContent={{ xs: "flex-start", sm: "flex-end" }}
               alignItems="center"
-              width="25%"
+              width={{ xs: "100%", sm: "25%"}}
               mt={{ xs: 3, sm: 0 }}
             >
               <CustomButton
