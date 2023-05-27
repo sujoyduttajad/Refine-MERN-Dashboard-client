@@ -30,14 +30,14 @@ const SalesCard = ({ title, photo, price }: PropertyListValues) => {
           image={photo}
           alt={title}
           sx={{
-            height: "4rem",
-            width: "4rem",
+            height: "5rem",
+            width: "5rem",
             borderRadius: "5px",
-            objectFit: "cover",
+            objectFit: "contain",
           }}
         />
         <Stack direction="column" gap={1} justifyContent="space-evenly">
-          <Typography fontSize={18} fontWeight={600} color="#11142d">
+          <Typography fontSize={16} fontWeight={600} color="#11142d">
             {title}
           </Typography>
           <Box
@@ -48,7 +48,7 @@ const SalesCard = ({ title, photo, price }: PropertyListValues) => {
             borderRadius={1}
             bgcolor="#dadefa"
           >
-            <Typography fontSize={16} fontWeight={700} color="#475be8">
+            <Typography fontSize={15} fontWeight={700} color="#475be8">
               {priceDisplay}
             </Typography>
           </Box>
