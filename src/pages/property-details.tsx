@@ -88,7 +88,7 @@ const PropertyDetails = () => {
         </Typography>
         {isCurrentUser ? (
           <Stack
-            direction="row"
+            direction={{ xs: "column", sm: "row" }}
             justifyContent="space-evenly"
             alignItems="center"
             gap={2}
@@ -235,7 +235,7 @@ const PropertyDetails = () => {
           display="flex"
           flexDirection="column"
           gap={4}
-          ml={2}
+          ml={{ xs: 0, sm: 2 }}
           aria-label="agent-details"
         >
           <AgentInfoCard
