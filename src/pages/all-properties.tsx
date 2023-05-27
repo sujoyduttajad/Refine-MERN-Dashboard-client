@@ -69,7 +69,7 @@ const AllProperties = () => {
   return (
     <Box mb={8}>
       <Box
-        mt="20px" 
+        mt="20px"
         sx={{ display: "flex", flexWrap: "wrap", gap: 3, width: "100%" }}
       >
         <Stack direction="column" width="100%">
@@ -187,6 +187,14 @@ const AllProperties = () => {
       ) : (
         ""
       )}
+
+      <Typography fontSize={21} fontWeight={500} color="#B7B8B8">
+        {!allProperties.length
+          ? "Sorry no properties to show :("
+          : `Showing ${allProperties.length} ${
+              allProperties.length > 1 ? "properties" : "property"
+            }`}
+      </Typography>
 
       <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
         {allProperties.map((property) => (
