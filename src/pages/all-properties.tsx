@@ -40,6 +40,7 @@ const AllProperties = () => {
     setFilters,
   } = useTable();
 
+  console.log(current, pageCount);
   const allProperties = data?.data ?? [];
 
   const currentPrice = sorter.find((item) => item.field === "price")?.order;
@@ -54,7 +55,6 @@ const AllProperties = () => {
     const logicalFilters = filters.flatMap((item) =>
       "field" in item ? item : []
     );
-
     return {
       title: logicalFilters.find((item) => item.field === "title")?.value || "",
       propertyType:
@@ -73,7 +73,7 @@ const AllProperties = () => {
         sx={{ display: "flex", flexWrap: "wrap", gap: 3, width: "100%" }}
       >
         <Stack direction="column" width="100%">
-          <Typography fontSize={25} fontWeight={700} color="#11142d">
+          <Typography fontSize={25} fontWeight={700} color="#11142d" mb={2}>
             {!allProperties.length
               ? "There are no properties"
               : "All Properties"}
@@ -158,7 +158,7 @@ const AllProperties = () => {
               direction="row"
               justifyContent={{ xs: "flex-start", sm: "flex-end" }}
               alignItems="center"
-              width="100%"
+              width="25%"
               mt={{ xs: 3, sm: 0 }}
             >
               <CustomButton
@@ -193,7 +193,7 @@ const AllProperties = () => {
           ? "Sorry no properties to show :("
           : `Showing ${allProperties.length} ${
               allProperties.length > 1 ? "properties" : "property"
-            }`}
+            } in this page`}
       </Typography>
 
       <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
@@ -235,7 +235,7 @@ const AllProperties = () => {
             handleClick={() => setCurrent((prev) => prev + 1)}
             backgroundColor="#475be8"
             color="#fcfcfc"
-            disabled={current === pageCount}
+            disabled={allProperties.length < 10}
           />
 
           <Select
