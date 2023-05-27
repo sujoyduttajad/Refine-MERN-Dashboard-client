@@ -84,7 +84,7 @@ const PropertyDetails = () => {
         flexWrap="nowrap"
       >
         <Typography fontSize={25} fontWeight={700} color="#11142d">
-          Details
+          Property Details
         </Typography>
         {isCurrentUser ? (
           <Stack
