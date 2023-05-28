@@ -158,12 +158,15 @@ const PropertyDetails = () => {
                   <strong>Property type: </strong>{" "}
                   {propertyDetails.propertyType}
                 </Typography>
-                <Box>
+                <Stack direction="row">
+                  <Typography fontWeight={700} color="#475be8" mr={1}>
+                    1.2k{" "}
+                  </Typography>
                   {/* Challenge is to make Rating dynamic */}
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star key={`star-${star}`} sx={{ color: "#f2c94c" }} />
                   ))}
-                </Box>
+                </Stack>
               </Stack>
               {/* Title and Location */}
               <Stack
@@ -176,8 +179,8 @@ const PropertyDetails = () => {
                 <Box>
                   <Typography
                     fontSize={22}
-                    fontWeight={600}
-                    color="#767676"
+                    fontWeight={700}
+                    color="#11142d"
                     textTransform="capitalize"
                   >
                     {propertyDetails.title}
