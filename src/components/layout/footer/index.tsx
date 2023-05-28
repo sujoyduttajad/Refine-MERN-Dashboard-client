@@ -184,8 +184,8 @@ export const Footer: React.FC = () => {
           {/* 3rd row */}
           <Box display="flex" flexDirection="row" justifyContent="flex-start">
             <Typography fontSize={14}>
-              This website is solely designed to showcase the skills of the
-              (Sujoy Dutta)software developer and to serve as a proof of the
+              This website is solely designed to showcase the skills of
+              (Sujoy Dutta)Software Developer and to serve as a proof of the
               ability to build sophisticated applications. The use of this
               website by any visitor is solely at their own risk. By using this
               website, you acknowledge that you have read and understood the
