@@ -21,7 +21,7 @@ const CreateProperty = () => {
       // };
 
   const {
-    refineCore: { onFinish, formLoading },
+    refineCore: { onFinish, formLoading, queryResult },
     register,
     handleSubmit,
   } = useForm();
@@ -51,6 +51,7 @@ const CreateProperty = () => {
   return (
     <Form
       type="Create"
+      queryResult={queryResult}
       register={register}
       onFinish={onFinish}
       // alignment={alignment}
