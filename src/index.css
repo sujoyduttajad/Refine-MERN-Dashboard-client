@@ -1,56 +1,69 @@
+html,
+body {
+  font-family: "Manrope", sans-serif !important;
+}
 
-html, body {
-    font-family: 'Manrope', sans-serif !important;
+a {
+  text-decoration: none !important;
+}
+
+.my_profile-bg,
+.agent_profile-bg {
+  width: 340px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.my_profile_user-img,
+.agent_profile_user-img {
+  border-radius: 100%;
+  margin-left: -64px;
+  position: relative;
+  left: -1rem;
+}
+.agent_profile_user-img {
+  position: absolute;
+  left: 5rem;
+  top: -6rem;
+}
+
+.property_details-img {
+  width: 100%;
+}
+
+.active-links {
+  color: #eaeaea;
+}
+.active-links:hover {
+  color: #11142d;
+  font-weight: 600;
+  text-decoration: underline !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+@media screen and (max-width: 900px) {
+  .my_profile-bg {
+    width: 100%;
+    border-radius: 15px;
   }
-  
-  a {
-    text-decoration: none !important;
+
+  .my_profile_user-img {
+    margin-left: 0px;
+    margin-top: -64px;
   }
-  
-  .my_profile-bg, .agent_profile-bg {
-    width: 340px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-  }
-  
-  .my_profile_user-img, .agent_profile_user-img {
-    border-radius: 100%;
-    margin-left: -64px;
-    position: relative;
-    left: -1rem;
-  }
-  .agent_profile_user-img {
-    position: absolute;
-    left: 5rem;
-    top: -6rem;
-  }
-  
+
   .property_details-img {
     width: 100%;
+    height: auto;
   }
-
-  .active-links {
-    color: #eaeaea;
-  }
-  .active-links:hover {
-    color: #11142d;
-    font-weight: 600;
-    text-decoration: underline !important;
-  }
-  
-  @media screen and (max-width: 900px) {
-    .my_profile-bg {
-        width: 100%;
-        border-radius: 15px;
-    }
-  
-    .my_profile_user-img {
-        margin-left: 0px;
-        margin-top: -64px;
-    }
-  
-    .property_details-img {
-        width: 100%;
-        height: auto;
-    }
-  }
+}
