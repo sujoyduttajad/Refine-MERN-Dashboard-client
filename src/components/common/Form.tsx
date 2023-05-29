@@ -262,7 +262,7 @@ const Form = ({
                   hidden
                   accept="image/*"
                   type="file"
-                  value={propertyImage?.url}
+                  // value={propertyImage?.url}
                   onChange={(e) => {
                     // @ts-ignore
                     handleImageChange(e.target.files[0]);
@@ -278,6 +278,8 @@ const Form = ({
               <strong>Image selected: </strong>{" "}
               {type === "Edit"
                 ? queryResult?.data?.data.photo
+                : propertyImage?.url
+                ? propertyImage?.url
                 : "NO IMAGE SELECTED"}
             </Typography>
           </Stack>
