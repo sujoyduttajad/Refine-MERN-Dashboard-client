@@ -15,6 +15,7 @@ import {
 
 import { FormProps } from "interfaces/common";
 import CustomButton from "./CustomButton";
+import { truncateText } from "utils/functions";
 
 const Form = ({
   type,
@@ -252,7 +253,6 @@ const Form = ({
                 sx={{
                   width: "fit-content",
                   backgroundColor: "#fff",
-                  // color: "#2ed480",
                   textTransform: "capitalize",
                   fontSize: 16,
                 }}
@@ -262,7 +262,6 @@ const Form = ({
                   hidden
                   accept="image/*"
                   type="file"
-                  // value={propertyImage?.url}
                   onChange={(e) => {
                     // @ts-ignore
                     handleImageChange(e.target.files[0]);
@@ -277,10 +276,8 @@ const Form = ({
             >
               <strong>Image selected: </strong>{" "}
               {type === "Edit"
-                ? queryResult?.data?.data.photo
-                : propertyImage?.url
-                ? propertyImage?.url
-                : "NO IMAGE SELECTED"}
+                ? truncateText(queryResult?.data?.data.photo, 20)
+                : truncateText(propertyImage?.url || "NO IMAGE SELECTED", 20)}
             </Typography>
           </Stack>
 
