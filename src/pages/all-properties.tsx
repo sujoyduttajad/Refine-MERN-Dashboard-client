@@ -1,5 +1,5 @@
 import { Add } from "@mui/icons-material";
-import { useTable } from "@pankod/refine-core";
+import { useTable, useMany } from "@pankod/refine-core";
 import {
   Box,
   Typography,
@@ -40,6 +40,15 @@ const AllProperties = () => {
     setFilters,
   } = useTable();
 
+  const {
+    data: additionalData,
+    isLoading: isAdditionalLoading,
+    isError: isAdditionalError,
+  } = useMany({ resource: "properties", ids: []});
+
+  // Total count of properties
+  const numberOfProperties = additionalData?.data.length;
+
   const allProperties = data?.data ?? [];
 
   const currentPrice = sorter.find((item) => item.field === "price")?.order;
@@ -62,8 +71,8 @@ const AllProperties = () => {
     };
   }, [filters]);
 
-  if (isLoading) return <Loading />;
-  if (isError) return <Error />;
+  if (isLoading || isAdditionalLoading) return <Loading />;
+  if (isError || isAdditionalError) return <Error />;
 
   return (
     <Box mb={8}>
@@ -75,7 +84,7 @@ const AllProperties = () => {
           <Typography fontSize={25} fontWeight={700} color="#11142d" mb={2}>
             {!allProperties.length
               ? "There are no properties"
-              : "All Properties"}
+              : `All Properties(${numberOfProperties})`}
           </Typography>
           <Box
             mb={2}
