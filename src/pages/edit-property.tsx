@@ -7,7 +7,7 @@ const EditProperty = () => {
   const { data: user } = useGetIdentity();
   const [propertyImage, setPropertyImage] = useState({ name: "", url: "" });
   const {
-    refineCore: { onFinish, formLoading },
+    refineCore: { onFinish, formLoading, queryResult },
     register,
     handleSubmit,
   } = useForm();
@@ -26,14 +26,18 @@ const EditProperty = () => {
   };
 
   const onFinishHandler = async (data: FieldValues) => {
-    if (!propertyImage.name) return alert("Please upload a property image");
+    if ( !queryResult?.data?.data.photo)
+      return alert("Please upload a property image");
 
     await onFinish({ ...data, photo: propertyImage.url, email: user.email });
   };
 
+  console.log(queryResult);
+
   return (
     <Form
       type="Edit"
+      queryResult={queryResult}
       register={register}
       onFinish={onFinish}
       formLoading={formLoading}
