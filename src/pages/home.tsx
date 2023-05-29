@@ -82,6 +82,7 @@ const Home = () => {
   let totalPrice: number = totalRevenue(allProperties as PropertyInterface[]);
   const totalProperties: number = allProperties.length;
 
+
   return (
     <Box display="flex" flexDirection="column" flexWrap="wrap" mb={8}>
       <Stack direction="row" mb={3} color="#475be8">
