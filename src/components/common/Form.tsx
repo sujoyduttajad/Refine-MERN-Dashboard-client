@@ -200,12 +200,17 @@ const Form = ({
                 required
                 id="outlined-basic"
                 color="info"
-                type="number"
+                variant="outlined"
                 placeholder="234000"
+                inputmode="numeric"
+                pattern="[0-9]+"
                 sx={{
                   backgroundColor: "#fff",
                 }}
-                variant="outlined"
+                InputProps={{
+                  inputProps: { type: "number" },
+                }}
+                
                 {...register("price", { required: true })}
               />
             </FormControl>
