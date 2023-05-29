@@ -20,6 +20,7 @@ const Form = ({
   type,
   register,
   onFinish,
+  queryResult,
   // alignment,
   // handleDetailsChange,
   formLoading,
@@ -31,7 +32,7 @@ const Form = ({
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142d">
-        {type} a Property
+        {type} Property
       </Typography>
       <Box
         mt={2.5}
@@ -40,6 +41,21 @@ const Form = ({
         padding="20px"
         bgcolor="#fafafa"
       >
+        {type === "Edit" ? (
+          <Stack direction="row" flexWrap="wrap">
+            <Typography fontSize={16} mx={2} ml={0} textTransform="capitalize">
+              <strong>Creator: </strong>
+              {queryResult?.data?.data.creator.name}
+            </Typography>
+            <Typography fontSize={16} mx={2}>
+              <strong>Property Name: </strong>
+              {queryResult?.data?.data.title}
+            </Typography>
+          </Stack>
+        ) : (
+          ""
+        )}
+
         <form
           style={{
             marginTop: "20px",
@@ -123,7 +139,7 @@ const Form = ({
                 padding: 10,
                 fontFamily: "'Manrope', sans-serif",
                 color: "#11142d",
-                resize: "vertical"
+                resize: "vertical",
               }}
               {...register("description", { required: true })}
             />
@@ -150,7 +166,11 @@ const Form = ({
                   backgroundColor: "#fff",
                 }}
                 inputProps={{ "aria-label": "Without label" }}
-                defaultValue="apartment"
+                defaultValue={
+                  type === "Edit"
+                    ? queryResult?.data?.data.propertyType
+                    : "apartment"
+                }
                 {...register("propertyType", { required: true })}
               >
                 <MenuItem value="apartment">Apartment</MenuItem>
@@ -227,9 +247,12 @@ const Form = ({
               </Typography>
               <Button
                 component="label"
+                variant="outlined"
+                color="success"
                 sx={{
                   width: "fit-content",
-                  color: "#2ed480",
+                  backgroundColor: "#fff",
+                  // color: "#2ed480",
                   textTransform: "capitalize",
                   fontSize: 16,
                 }}
@@ -239,6 +262,7 @@ const Form = ({
                   hidden
                   accept="image/*"
                   type="file"
+                  value={propertyImage?.url}
                   onChange={(e) => {
                     // @ts-ignore
                     handleImageChange(e.target.files[0]);
@@ -251,7 +275,10 @@ const Form = ({
               color="#808191"
               sx={{ wordBreak: "break-all" }}
             >
-              {propertyImage?.name}
+              <strong>Image selected: </strong>{" "}
+              {type === "Edit"
+                ? queryResult?.data?.data.photo
+                : "NO IMAGE SELECTED"}
             </Typography>
           </Stack>
 
