@@ -45,6 +45,7 @@ export interface PropertyProps {
 export interface FormProps {
     type: string;
     register: any;
+    queryResult?: any;
     onFinish: (
         values: FieldValues,
     ) => Promise<
