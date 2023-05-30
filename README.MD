@@ -80,6 +80,7 @@ To learn more about **refine**, please check out the [Documentation](https://ref
 - Reduce the loading time, add animation
 - Add more Data Visualization
 - Message across agents
+- Integrate Google Maps with Property Location
 
 ## credits
 Thankyou [@adrianhajdin](https://github.com/adrianhajdin)
