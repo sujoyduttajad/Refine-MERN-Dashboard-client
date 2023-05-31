@@ -14,14 +14,15 @@ export const formatter = new Intl.NumberFormat("en-US", {
   to get the localized month names.
 */
 export function getMonthNames() {
+  const months = [];
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth();
 
-  const months = Array.from({ length: currentMonth + 1 }, (_, index) => {
-    const monthDate = new Date();
-    monthDate.setMonth(index);
-    return monthDate.toLocaleString("default", { month: "long" });
-  });
+  for (let i = 0; i <= currentMonth; i++) {
+    const monthDate = new Date(currentDate.getFullYear(), i, 1);
+    const monthName = monthDate.toLocaleString("default", { month: "long" });
+    months.push(monthName);
+  }
 
   return months;
 }
@@ -32,14 +33,17 @@ export function getMonthNames() {
   method with the "short" option to get the abbreviated month names.
 */
 export function getMonthShortNames() {
+  const months = [];
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth();
 
-  const months = Array.from({ length: currentMonth + 1 }, (_, index) => {
-    const monthDate = new Date();
-    monthDate.setMonth(index);
-    return monthDate.toLocaleString("default", { month: "short" });
-  });
+  for (let i = 0; i <= currentMonth; i++) {
+    const monthDate = new Date(currentDate.getFullYear(), i, 1);
+    const monthShortName = monthDate.toLocaleString("default", {
+      month: "short",
+    });
+    months.push(monthShortName);
+  }
 
   return months;
 }
