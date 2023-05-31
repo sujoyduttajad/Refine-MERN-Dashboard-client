@@ -226,6 +226,9 @@ export const PropertiesPerMonth: ApexOptions = {
         return `${val}`;
       },
     },
+    x: {
+      show: false
+    }
   },
 };
 
