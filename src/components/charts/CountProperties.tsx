@@ -30,7 +30,7 @@ const CountProperties = ({ monthNames }: TotalProperties) => {
 
       <ReactApexChart
         series={PropertiesAreaSeries}
-        type="line"
+        type="area"
         height={310}
         options={PropertiesPerMonth}
       />
