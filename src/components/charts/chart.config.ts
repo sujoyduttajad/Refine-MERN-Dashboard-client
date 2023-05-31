@@ -147,6 +147,9 @@ export const ColumnBarData: ApexOptions = {
       text: 'Customers'
     }
   },
+  grid: {
+    show: false,
+  },
   fill: {
     opacity: 1
   },
@@ -158,3 +161,57 @@ export const ColumnBarData: ApexOptions = {
     }
   }
 };
+
+// --------------- AREA CHART --------------
+export const PropertiesAreaSeries = [{
+  name: 'Properties',
+  data: [44, 55, 57, 56]
+}];
+
+export const PropertiesPerMonth: ApexOptions = {
+  chart: {
+    type: 'area',
+    height: 350,
+    zoom: {
+      enabled: false
+    },
+    toolbar: {
+      show: false // hide the download dropdown menu
+    }
+  },
+  colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800'],
+  dataLabels: {
+    enabled: false,
+  },
+  stroke: {
+    curve: 'smooth',
+  },
+  markers: {
+    size: 6,
+  },
+  xaxis: {
+    categories: getMonthNames(),
+  },
+  yaxis: {
+    title: {
+      text: 'No of properties',
+    },
+  },
+  fill: {
+    opacity: 0.3,
+    type: 'solid'
+  },
+  legend: {
+    horizontalAlign: 'left'
+  },
+  tooltip: {
+    // y: {
+    //   formatter(val: number) {
+    //     return `${val}`;
+    //   },
+    // },
+    enabled: true
+  },
+};
+
+// --------------- RADAR CHART --------------
