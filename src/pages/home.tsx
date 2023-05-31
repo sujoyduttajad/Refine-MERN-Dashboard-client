@@ -12,6 +12,7 @@ import { Typography, Box, Stack, Grid } from "@pankod/refine-mui";
 import { Error, Loading } from "components/common/Loading&Error";
 import ViewAll from "components/common/ViewAll";
 import CountProperties from "components/charts/CountProperties";
+import { getMonthNames } from "utils/functions";
 
 interface BaseRecord {
   _id: string;
@@ -82,6 +83,28 @@ const Home = () => {
   // Total Properties Calculate
   let totalPrice: number = totalRevenue(allProperties as PropertyInterface[]);
   const totalProperties: number = allProperties.length;
+
+  // Properties per month
+  const updatedPropertyList = allProperties
+    .map((el) => el.updatedAt) // Extract updatedAt values
+    .filter((updatedAt) => updatedAt !== undefined); // Filter out undefined values
+
+    const monthNames = updatedPropertyList.map((dateString) => {
+      const date = new Date(dateString);
+      const monthName = date.toLocaleString("default", { month: "long" });
+      return monthName || "0";
+    });
+    
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth();
+    const monthNamesUpToCurrentMonth = monthNames.slice(0, currentMonth + 1);
+    
+    const monthCountArray: number[] = getMonthNames().map((monthName) => {
+      const count = monthNamesUpToCurrentMonth.filter((name) => name === monthName).length;
+      return count;
+    });
+
+  console.log(monthNames, monthCountArray);
 
   return (
     <Box display="flex" flexDirection="column" flexWrap="wrap" mb={8}>
@@ -160,7 +183,7 @@ const Home = () => {
               {/* <PropertyReferrals /> */}
             </Grid>
             <Grid item xs={12} sm={8}>
-              <CountProperties />
+              <CountProperties monthNames={monthCountArray} />
             </Grid>
           </Grid>
         </Grid>
