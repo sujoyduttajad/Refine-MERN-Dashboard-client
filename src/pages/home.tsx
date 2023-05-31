@@ -11,6 +11,7 @@ import {
 import { Typography, Box, Stack, Grid } from "@pankod/refine-mui";
 import { Error, Loading } from "components/common/Loading&Error";
 import ViewAll from "components/common/ViewAll";
+import CountProperties from "components/charts/CountProperties";
 
 interface BaseRecord {
   _id: string;
@@ -82,7 +83,6 @@ const Home = () => {
   let totalPrice: number = totalRevenue(allProperties as PropertyInterface[]);
   const totalProperties: number = allProperties.length;
 
-
   return (
     <Box display="flex" flexDirection="column" flexWrap="wrap" mb={8}>
       <Stack direction="row" mb={3} color="#475be8">
@@ -148,6 +148,24 @@ const Home = () => {
         </Grid>
       </Stack>
       {/* 3rd Row  */}
+      <Stack
+        mt="25px"
+        width={"100%"}
+        direction={{ xs: "column", lg: "row" }}
+        gap={4}
+      >
+        <Grid sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2} columns={{ xs: 4, sm: 12, md: 12 }}>
+            <Grid item xs={12} sm={4}>
+              {/* <PropertyReferrals /> */}
+            </Grid>
+            <Grid item xs={12} sm={8}>
+              <CountProperties />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Stack>
+      {/* 4th Row  */}
       <Box
         flex={1}
         flexGrow={1}
@@ -228,7 +246,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </Box>
-      {/* 4th Row  */}
+      {/* 5th Row  */}
       <Box
         flex={1}
         borderRadius="15px"
