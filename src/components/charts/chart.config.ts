@@ -163,10 +163,7 @@ export const ColumnBarData: ApexOptions = {
 };
 
 // --------------- AREA CHART --------------
-export const PropertiesAreaSeries = [{
-  name: 'Properties',
-  data: [44, 55, 57, 56]
-}];
+
 
 export const PropertiesPerMonth: ApexOptions = {
   chart: {
@@ -176,10 +173,11 @@ export const PropertiesPerMonth: ApexOptions = {
       enabled: false
     },
     toolbar: {
+      autoSelected: "pan",
       show: false // hide the download dropdown menu
     }
   },
-  colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800'],
+  // colors: ['#475BE8', '#9F45E8'],
   dataLabels: {
     enabled: false,
   },
@@ -198,19 +196,36 @@ export const PropertiesPerMonth: ApexOptions = {
     },
   },
   fill: {
-    opacity: 0.3,
-    type: 'solid'
+    type: "gradient",
+    // gradient: {
+    //   shadeIntensity: 1,
+    //   opacityFrom: 0.3,
+    //   opacityTo: 0.9,
+    //   stops: [0, 90, 100]
+    // }
+  },
+  grid: {
+    borderColor: "#555",
+    yaxis: {
+      lines: {
+        show: false
+      }
+    },
+    xaxis: {
+      lines: {
+        show: false
+      }
+    }
   },
   legend: {
     horizontalAlign: 'left'
   },
   tooltip: {
-    // y: {
-    //   formatter(val: number) {
-    //     return `${val}`;
-    //   },
-    // },
-    enabled: true
+    y: {
+      formatter(val: number) {
+        return `${val}`;
+      },
+    },
   },
 };
 
