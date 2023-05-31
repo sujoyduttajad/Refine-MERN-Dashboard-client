@@ -163,8 +163,6 @@ export const ColumnBarData: ApexOptions = {
 };
 
 // --------------- AREA CHART --------------
-
-
 export const PropertiesPerMonth: ApexOptions = {
   chart: {
     type: 'area',
@@ -177,7 +175,7 @@ export const PropertiesPerMonth: ApexOptions = {
       show: false // hide the download dropdown menu
     }
   },
-  // colors: ['#475BE8', '#9F45E8'],
+  colors: ['#475BE8', '#9F45E8'],
   dataLabels: {
     enabled: false,
   },
@@ -226,10 +224,5 @@ export const PropertiesPerMonth: ApexOptions = {
         return `${val}`;
       },
     },
-    x: {
-      show: false
-    }
   },
 };
-
-// --------------- RADAR CHART --------------
