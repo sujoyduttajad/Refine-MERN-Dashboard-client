@@ -89,18 +89,17 @@ const Home = () => {
     .map((el) => el.updatedAt) // Extract updatedAt values
     .filter((updatedAt) => updatedAt !== undefined); // Filter out undefined values
 
-    const monthNames = updatedPropertyList.map((dateString) => {
-      const date = new Date(dateString);
-      const monthName = date.toLocaleString("default", { month: "long" });
-      return monthName || "0";
-    });
-    
-    const currentDate = new Date();
-    const currentMonth = currentDate.getMonth();
-    const monthNamesUpToCurrentMonth = monthNames.slice(0, currentMonth + 1);
-    
-    const monthCountArray: number[] = getMonthNames().map((monthName) => {
-      const count = monthNamesUpToCurrentMonth.filter((name) => name === monthName).length;
+    const arrayLength = getMonthNames();
+
+    console.log(arrayLength)
+
+    const monthCountArray: number[] = Array.from({ length: arrayLength?.length }, (_, i) => {
+      const monthName = getMonthNames()[i];
+      const count = updatedPropertyList.filter((dateString) => {
+        const date = new Date(dateString);
+        const month = date.getMonth();
+        return month === i;
+      }).length;
       return count;
     });
 
