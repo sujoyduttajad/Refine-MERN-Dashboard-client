@@ -1,9 +1,6 @@
-import { Email, Phone, Place } from "@mui/icons-material";
-import { Box, Edit, IconButton, Stack, Typography } from "@pankod/refine-mui";
-
+import { Box, IconButton, Stack, Typography } from "@pankod/refine-mui";
 import { ProfileProps, PropertyProps } from "interfaces/common";
 import PropertyCard from "./PropertyCard";
-import CustomButton from "./CustomButton";
 import { AgentCover, fbIcon, instaIcon, twitterIcon } from "assets";
 import AgentBio from "./AgentBio";
 import AgentDetails from "components/agent/AgentDetails";
