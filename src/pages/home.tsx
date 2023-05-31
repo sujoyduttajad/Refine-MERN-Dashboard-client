@@ -104,7 +104,7 @@ const Home = () => {
       return count;
     });
 
-  console.log(monthNames, monthCountArray);
+  // console.log(monthNames, monthCountArray);
 
   return (
     <Box display="flex" flexDirection="column" flexWrap="wrap" mb={8}>
