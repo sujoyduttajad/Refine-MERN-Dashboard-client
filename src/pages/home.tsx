@@ -13,6 +13,7 @@ import { Error, Loading } from "components/common/Loading&Error";
 import ViewAll from "components/common/ViewAll";
 import CountProperties from "components/charts/CountProperties";
 import { getMonthNames } from "utils/functions";
+import AgentContribution from "components/charts/AgentContribution";
 
 interface BaseRecord {
   _id: string;
@@ -89,11 +90,11 @@ const Home = () => {
     .map((el) => el.updatedAt) // Extract updatedAt values
     .filter((updatedAt) => updatedAt !== undefined); // Filter out undefined values
 
-    const arrayLength = getMonthNames();
+  const arrayLength = getMonthNames();
 
-    console.log(arrayLength)
-
-    const monthCountArray: number[] = Array.from({ length: arrayLength?.length }, (_, i) => {
+  const monthCountArray: number[] = Array.from(
+    { length: arrayLength?.length },
+    (_, i) => {
       const monthName = getMonthNames()[i];
       const count = updatedPropertyList.filter((dateString) => {
         const date = new Date(dateString);
@@ -101,9 +102,8 @@ const Home = () => {
         return month === i;
       }).length;
       return count;
-    });
-
-  // console.log(monthNames, monthCountArray);
+    }
+  );
 
   return (
     <Box display="flex" flexDirection="column" flexWrap="wrap" mb={8}>
@@ -179,7 +179,7 @@ const Home = () => {
         <Grid sx={{ flexGrow: 1 }}>
           <Grid container spacing={2} columns={{ xs: 4, sm: 12, md: 12 }}>
             <Grid item xs={12} sm={4}>
-              {/* <PropertyReferrals /> */}
+              <AgentContribution />
             </Grid>
             <Grid item xs={12} sm={8}>
               <CountProperties monthNames={monthCountArray} />
