@@ -1,9 +1,41 @@
 import { Box, Stack, Typography } from "@pankod/refine-mui";
 import ReactApexChart from "react-apexcharts";
-import { ColumnBarData as data } from "components/charts/chart.config";
-import { ColumnBarSeries as series } from "components/charts/chart.config";
+import { ColumnBarData } from "components/charts/chart.config";
+import { generateRandomNumbers } from "utils/functions";
+
+export const ColumnBarSeries = [
+  {
+    name: "Customers",
+    data: generateRandomNumbers(),
+  },
+];
+
+function updateColumnBar() {
+  const currentMonth = new Date().getMonth();
+  const randomValueLastMonth = Math.floor(Math.random() * (100 - 30 + 1)) + 30;
+
+  ColumnBarSeries.forEach((series) => {
+    const lastIndex = series.data.length - 1;
+    if (
+      series.data[lastIndex] &&
+      lastIndex === currentMonth &&
+      randomValueLastMonth < 100
+    ) {
+      if (series.name === "Customers") {
+        series.data[lastIndex] += randomValueLastMonth;
+      }
+    } else {
+      if (series.name === "Customers") {
+        series.data.push(randomValueLastMonth);
+      }
+    }
+  });
+}
 
 const CustomerCard = () => {
+  // Update the revenue series data every hour
+  setInterval(updateColumnBar, 60 * 60 * 1000);
+
   return (
     <Box>
       <Box
@@ -36,8 +68,8 @@ const CustomerCard = () => {
         </Stack>
         <Stack>
           <ReactApexChart
-            options={data}
-            series={series}
+            options={ColumnBarData}
+            series={ColumnBarSeries}
             type="bar"
             height={250}
           />
