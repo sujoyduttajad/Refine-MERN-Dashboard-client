@@ -60,3 +60,25 @@ export function truncateText(text, limit) {
   const truncated = words.slice(0, limit).join(" ");
   return words.length > limit ? truncated + "..." : truncated;
 }
+
+/* 
+  The generateRandomNumbers function generates an array of random numbers 
+  between 10 and 300. It iterates over the number of months obtained from the 
+  getMonthNames function and generates a random number for each month, 
+  pushing it into the randomNumbers array. Finally, it returns the array of 
+  randomly generated numbers.
+*/
+export function generateRandomNumbers() {
+  const min = 60;
+  const max = 300;
+  const randomNumbers = [];
+
+  // Generate a single random number for each month
+  const monthCount = getMonthNames().length;
+  for (let i = 0; i < monthCount; i++) {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    randomNumbers.push(randomNumber);
+  }
+
+  return randomNumbers;
+}
