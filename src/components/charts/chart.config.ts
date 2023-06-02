@@ -1,44 +1,6 @@
 import { ApexOptions } from 'apexcharts';
 import { getMonthNames, getMonthShortNames } from 'utils/functions';
 
-export const TotalRevenueSeries = [
-  {
-    name: 'Last Month',
-    data: [183, 124, 115, 85],
-  },
-  {
-    name: 'Running Month',
-    data: [95, 84, 72, 44],
-  },
-];
-
-function updateRevenueSeries() {
-  const currentMonth = new Date().getMonth();
-  const randomValueLastMonth = Math.floor(Math.random() * 100);
-  const randomValueRunningMonth = Math.floor(Math.random() * 100);
-
-  TotalRevenueSeries.forEach((series) => {
-    const lastIndex = series.data.length - 1;
-    if (series.data[lastIndex] && lastIndex === currentMonth) {
-      if (series.name === "Last Month") {
-        series.data[lastIndex] += randomValueLastMonth;
-      } else if (series.name === "Running Month") {
-        series.data[lastIndex] += randomValueRunningMonth;
-      }
-    } else {
-      if (series.name === "Last Month") {
-        series.data.push(randomValueLastMonth);
-      } else if (series.name === "Running Month") {
-        series.data.push(randomValueRunningMonth);
-      }
-    }
-  });
-}
-
-updateRevenueSeries();
-// Update the revenue series data every hour
-setInterval(updateRevenueSeries, 60 * 60 * 1000);
-
 export const TotalRevenueOptions: ApexOptions = {
   chart: {
     type: 'bar',
@@ -89,33 +51,6 @@ export const TotalRevenueOptions: ApexOptions = {
 };
 
 // --------------- CUSTOMER COLUMN CHART --------------
-export const ColumnBarSeries = [{
-  name: 'Customers',
-  data: [44, 55, 57, 56]
-}];
-
-function updateColumnBar() {
-  const currentMonth = new Date().getMonth();
-  const randomValueLastMonth = Math.floor(Math.random() * (100 - 30 + 1)) + 30;
-
-  ColumnBarSeries.forEach((series) => {
-    const lastIndex = series.data.length - 1;
-    if (series.data[lastIndex] && lastIndex === currentMonth && randomValueLastMonth < 100) {
-      if (series.name === "Customers") {
-        series.data[lastIndex] += randomValueLastMonth;
-      }
-    } else {
-      if (series.name === "Customers") {
-        series.data.push(randomValueLastMonth);
-      }
-    }
-  });
-}
-
-updateColumnBar();
-// Update the revenue series data every hour
-setInterval(updateColumnBar, 60 * 60 * 1000);
-
 export const ColumnBarData: ApexOptions = {
   chart: {
     type: 'bar',
