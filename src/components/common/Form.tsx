@@ -30,6 +30,8 @@ const Form = ({
   onFinishHandler,
   propertyImage,
 }: FormProps) => {
+
+  
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142d">
@@ -210,7 +212,6 @@ const Form = ({
                 InputProps={{
                   inputProps: { type: "number" },
                 }}
-                
                 {...register("price", { required: true })}
               />
             </FormControl>
@@ -281,8 +282,8 @@ const Form = ({
             >
               <strong>Image selected: </strong>{" "}
               {type === "Edit"
-                ? truncateText(queryResult?.data?.data.photo, 20)
-                : truncateText(propertyImage?.url || "NO IMAGE SELECTED", 20)}
+                ? queryResult?.data?.data.photo
+                : propertyImage?.name || "NO IMAGE SELECTED"}
             </Typography>
           </Stack>
 
