@@ -1,15 +1,58 @@
 import { Box, Typography, Stack } from "@pankod/refine-mui";
 import ReactApexChart from "react-apexcharts";
-import { TotalRevenueOptions, TotalRevenueSeries } from "./chart.config";
+import { TotalRevenueOptions } from "./chart.config";
 import { arrowUp } from "assets";
-import { formatter } from "utils/functions";
+import { formatter, generateRandomNumbers } from "utils/functions";
 
 interface TotalPrice {
   totalPrice: number;
 }
+interface RevenueEntry {
+  name: string;
+  data: number[];
+}
+
+const TotalRevenueSeries: RevenueEntry[] = [
+  {
+    name: "Last Month",
+    data: generateRandomNumbers(),
+  },
+  {
+    name: "Running Month",
+    data: generateRandomNumbers(),
+  },
+];
+
+function updateRevenueSeries() {
+  const currentMonth = new Date().getMonth();
+  const randomValueLastMonth = Math.floor(Math.random() * 100);
+  const randomValueRunningMonth = Math.floor(Math.random() * 100);
+
+  TotalRevenueSeries?.forEach((series) => {
+    const lastIndex = series.data.length - 1;
+    if (series.data[lastIndex] && lastIndex === currentMonth) {
+      if (series.name === "Last Month") {
+        series.data[lastIndex] += randomValueLastMonth;
+      } else if (series.name === "Running Month") {
+        series.data[lastIndex] += randomValueRunningMonth;
+      }
+    } else {
+      if (series.name === "Last Month") {
+        series.data.push(randomValueLastMonth);
+      } else if (series.name === "Running Month") {
+        series.data.push(randomValueRunningMonth);
+      }
+    }
+  });
+}
+
 
 const TotalRevenue = ({ totalPrice }: TotalPrice) => {
   const assetsValue = formatter.format(totalPrice).slice(0, -3);
+
+  // Update the revenue series data every hour
+  setInterval(updateRevenueSeries, 60 * 60 * 1000);
+
   return (
     <Box
       p={4}
