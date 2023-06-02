@@ -3,6 +3,7 @@ import { useList } from "@pankod/refine-core";
 import { Error, Loading } from "components/common/Loading&Error";
 import { AgentCard, CustomButton } from "components";
 import { Add } from "@mui/icons-material";
+import Toasts from "components/common/Toasts";
 // import { useNavigate } from "@pankod/refine-react-router-v6";
 
 const Agent = () => {
@@ -20,7 +21,7 @@ const Agent = () => {
     <Box mb={5} padding={2}>
       <Stack direction="row" justifyContent="space-between" my={4}>
         <Typography fontSize={25} fontWeight={700} color="#11142d">
-          Agents List
+          Agents List ({allAgents.length})
         </Typography>
         <CustomButton
           title="Add Agent"
@@ -30,6 +31,7 @@ const Agent = () => {
           icon={<Add />}
         />
       </Stack>
+      <Toasts message="Add Agent not implemented" />
       <Box
         mt="20px"
         display="flex"
