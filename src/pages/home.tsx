@@ -182,7 +182,7 @@ const Home = () => {
               <AgentContribution />
             </Grid>
             <Grid item xs={12} sm={8}>
-              <CountProperties monthNames={monthCountArray} />
+              <CountProperties propertiesPerMonth={monthCountArray} />
             </Grid>
           </Grid>
         </Grid>
