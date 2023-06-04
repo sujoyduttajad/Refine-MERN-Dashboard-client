@@ -46,7 +46,6 @@ function updateRevenueSeries() {
   });
 }
 
-
 const TotalRevenue = ({ totalPrice }: TotalPrice) => {
   const assetsValue = formatter.format(totalPrice).slice(0, -3);
 
