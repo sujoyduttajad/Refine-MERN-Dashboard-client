@@ -95,7 +95,6 @@ const Home = () => {
   const monthCountArray: number[] = Array.from(
     { length: arrayLength?.length },
     (_, i) => {
-      const monthName = getMonthNames()[i];
       const count = updatedPropertyList.filter((dateString) => {
         const date = new Date(dateString);
         const month = date.getMonth();
