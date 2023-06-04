@@ -3,14 +3,14 @@ import ReactApexChart from "react-apexcharts";
 import { PropertiesPerMonth } from "./chart.config";
 
 interface TotalProperties {
-  monthNames: number[];
+  propertiesPerMonth: number[];
 }
 
-const CountProperties = ({ monthNames }: TotalProperties) => {
+const CountProperties = ({ propertiesPerMonth }: TotalProperties) => {
   const PropertiesAreaSeries = [
     {
       name: "Properties",
-      data: monthNames,
+      data: propertiesPerMonth,
     },
   ];
 
