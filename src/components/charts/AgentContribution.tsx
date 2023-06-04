@@ -13,22 +13,29 @@ const AgentContribution = () => {
   if (isError) return <Error />;
 
   const agentData = data?.data.sort((a, b) => b.__v - a.__v).slice(0, 5) ?? [];
-  const agentNames = agentData.map((el) => el.name.split(" ")[0]);
+
+  const agentNames = agentData.map((el) => {
+    const firstName = el.name.split(" ")[0];
+    return firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
+  });
+
   const noOfProperties = agentData.map((el) => el.allProperties.length);
+
   const AgentsRadialSeries = [
     {
       name: "Customers",
       data: noOfProperties,
     },
   ];
+
   const AgentsRadialChart: ApexOptions = {
     chart: {
-      type: 'radar',
+      type: "radar",
       height: 350,
       toolbar: {
         autoSelected: "pan",
-        show: false // hide the download dropdown menu
-      }
+        show: false, // hide the download dropdown menu
+      },
     },
     xaxis: {
       categories: agentNames,
