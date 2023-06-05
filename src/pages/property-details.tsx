@@ -39,7 +39,9 @@ const PropertyDetails = () => {
 
   const propertyDetails = data?.data ?? {};
 
-  const creatorDetails = propertyDetails.creator;
+  const creatorDetails = propertyDetails?.creator;
+
+  const creatorLink = propertyDetails?.creator?._id;
 
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
@@ -247,6 +249,9 @@ const PropertyDetails = () => {
             image={creatorDetails.avatar}
             email={creatorDetails.email}
             name={creatorDetails.name}
+            userEmail={user.email}
+            creatorId={creatorLink}
+            noOfProperties={creatorDetails?.allProperties.length}
           />
           <LocationCard />
           <CustomButton
