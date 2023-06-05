@@ -39,6 +39,8 @@ const PropertyDetails = () => {
 
   const propertyDetails = data?.data ?? {};
 
+  const creatorDetails = propertyDetails.creator;
+
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
@@ -242,9 +244,9 @@ const PropertyDetails = () => {
           aria-label="agent-details"
         >
           <AgentInfoCard
-            image={user.avatar}
-            email={user.email}
-            name={user.name}
+            image={creatorDetails.avatar}
+            email={creatorDetails.email}
+            name={creatorDetails.name}
           />
           <LocationCard />
           <CustomButton
