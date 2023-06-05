@@ -61,8 +61,8 @@ const AgentInfoCard = ({
               fontSize={16}
               fontWeight={600}
               textTransform="capitalize"
+              sx={{ color: "#475be8", textDecoration: "underline" }}
             >
-              {" "}
               {name}
             </Typography>
           </Link>
