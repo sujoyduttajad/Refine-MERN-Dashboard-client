@@ -17,5 +17,7 @@ export interface AgentInfoProps {
     image: string;
     name: string;
     email: string;
-    // noOfProperties: number;
+    creatorId: string;
+    userEmail: string;
+    noOfProperties?: number;
 }
