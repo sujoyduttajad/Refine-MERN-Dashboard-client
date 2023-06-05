@@ -8,7 +8,7 @@ const AgentDetails = ({ agentProperties }: AgentProperties) => {
   return (
     <Box
       bgcolor="#FCFCFC"
-      margin={{ xs: 0.5, sm: 2}}
+      margin={{ xs: 0.5, sm: 2 }}
       padding={4}
       marginBottom={0}
       paddingBottom={0}
@@ -38,8 +38,8 @@ const AgentDetails = ({ agentProperties }: AgentProperties) => {
         </Typography>
       </Stack>
 
-      {agentDetails.agentInfo?.map((ele) => (
-        <Stack direction="row" justifyContent="flex-start" alignItems="center">
+      {agentDetails.agentInfo?.map((ele, index) => (
+        <Stack key={index} direction="row" justifyContent="flex-start" alignItems="center">
           <Stack direction="row" gap={3}>
             <CheckCircleRounded sx={{ color: "#475be8" }} />
             <Typography fontSize={16} fontWeight={600} color="#11142D">
@@ -73,14 +73,12 @@ const AgentDetails = ({ agentProperties }: AgentProperties) => {
             colors={["#0068D0", "#A9D4FF"]}
             series={[agentProperties, 100 - agentProperties]}
           />
-
           <PieChart
             title="Properties Sold"
             value={550}
             colors={["#02BD53", "#7AFEB3"]}
             series={[60, 40]}
           />
-
           <PieChart
             title="Properties Rent"
             value={300}
