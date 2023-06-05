@@ -8,8 +8,23 @@ import {
 import { ChatOutlined, Phone, Place } from "@mui/icons-material";
 import { CustomButton } from "components";
 import { AgentInfoProps } from "interfaces/agent";
+import { Link, NavLink } from "@pankod/refine-react-router-v6";
 
-const AgentInfoCard = ({ image, email, name }: AgentInfoProps) => {
+const AgentInfoCard = ({
+  image,
+  email,
+  name,
+  userEmail,
+  creatorId,
+  noOfProperties,
+}: AgentInfoProps) => {
+  const handlePathName = () => {
+    if (userEmail === email) {
+      return "/my-profile";
+    } else {
+      return `/agents/show/${creatorId}`;
+    }
+  };
   return (
     <Card
       variant="outlined"
@@ -35,21 +50,24 @@ const AgentInfoCard = ({ image, email, name }: AgentInfoProps) => {
           alt="Agent Profile picture"
           sx={{ height: "7rem", width: "7rem", borderRadius: "50%" }}
         />
+        {/* Agent Bio */}
         <Stack mt={2} direction="row">
           <Typography fontSize={16} fontWeight={600} color="#808191">
             Creator:{" "}
           </Typography>
-          <Typography
-            pl={1}
-            fontSize={16}
-            fontWeight={600}
-            textTransform="capitalize"
-          >
-            {" "}
-            {name}
-          </Typography>
+          <Link to={handlePathName()}>
+            <Typography
+              pl={1}
+              fontSize={16}
+              fontWeight={600}
+              textTransform="capitalize"
+            >
+              {" "}
+              {name}
+            </Typography>
+          </Link>
         </Stack>
-        <Stack mb={2} direction="row">
+        <Stack direction="row">
           <Typography fontSize={16} fontWeight={600} color="#808191">
             Designation:{" "}
           </Typography>
@@ -57,6 +75,15 @@ const AgentInfoCard = ({ image, email, name }: AgentInfoProps) => {
             {email === "sujoyduttajad@gmail.com" ? "Admin" : "Agent"}
           </Typography>
         </Stack>
+        <Stack mb={2} direction="row">
+          <Typography fontSize={16} fontWeight={600} color="#808191">
+            Total Properties:{" "}
+          </Typography>
+          <Typography pl={1} fontSize={16} fontWeight={600}>
+            {noOfProperties}
+          </Typography>
+        </Stack>
+        {/* Location */}
         <Stack direction="row" mt={0.5} alignItems="center" gap={0.5}>
           <Place sx={{ color: "#808191" }} />
           <Typography fontSize={14} color="#808191">
