@@ -44,6 +44,7 @@ const Guide = () => {
       borderRadius="15px"
       padding="20px"
       bgcolor="#fafafa"
+      color="#333"
     >
       <Typography variant="h5" fontWeight={600} mb={3}>
         How to upload properties?
