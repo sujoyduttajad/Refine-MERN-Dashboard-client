@@ -8,7 +8,7 @@ import {
 import { ChatOutlined, Phone, Place } from "@mui/icons-material";
 import { CustomButton } from "components";
 import { AgentInfoProps } from "interfaces/agent";
-import { Link, NavLink } from "@pankod/refine-react-router-v6";
+import { Link } from "@pankod/refine-react-router-v6";
 
 const AgentInfoCard = ({
   image,
