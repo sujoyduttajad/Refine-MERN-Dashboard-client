@@ -14,6 +14,8 @@ const Agent = () => {
 
   const allAgents = data?.data ?? [];
 
+  console.log(allAgents)
+
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
@@ -43,12 +45,12 @@ const Agent = () => {
       >
         {allAgents.map((agent) => (
           <AgentCard
-            key={agent._id}
-            id={agent._id}
-            name={agent.name}
-            email={agent.email}
+            key={agent?._id}
+            id={agent?._id}
+            name={agent?.name}
+            email={agent?.email}
             avatar={agent?.avatar}
-            noOfProperties={agent.allProperties.length}
+            noOfProperties={agent?.allProperties.length}
           />
         ))}
       </Box>
