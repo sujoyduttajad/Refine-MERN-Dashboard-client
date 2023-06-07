@@ -7,7 +7,12 @@ const LegalTerms = () => {
       <Typography fontSize={25} fontWeight={700} color="#11142d" my={3}>
         Legal Terms & Conditions
       </Typography>
-      <Stack p={2} borderRadius={4} sx={{ border: "1px solid #eee" }}>
+      <Stack
+        p={2}
+        borderRadius={4}
+        color="#5B5C5D"
+        sx={{ border: "1px solid #eee" }}
+      >
         {termsAndConditions.map((content) => (
           <Box>
             <Typography variant="h5" fontWeight={700} mb={1}>
