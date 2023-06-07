@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useGetIdentity } from "@pankod/refine-core";
 import {
   AppBar,
@@ -9,15 +9,20 @@ import {
   IconButton,
   Button,
 } from "@pankod/refine-mui";
-
-// import { ColorModeContext } from "contexts";
-import { NotificationsOutlined } from "@mui/icons-material";
+import { ColorModeContext } from "contexts";
+import {
+  DarkModeOutlined,
+  LightModeOutlined,
+  NotificationsOutlined,
+} from "@mui/icons-material";
 import { evoiaLight } from "assets";
 import { Link } from "@pankod/refine-react-router-v6";
 
 export const Header: React.FC = () => {
   const { data: user } = useGetIdentity();
   const shouldRenderHeader = true; // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
+
+  const { mode, setMode } = useContext(ColorModeContext);
 
   return shouldRenderHeader ? (
     <AppBar
@@ -53,6 +58,13 @@ export const Header: React.FC = () => {
             alignItems="center"
             justifyContent="center"
           >
+            <IconButton
+              onClick={() => {
+                setMode(mode === "dark" ? "light" : "dark");
+              }}
+            >
+              {mode === "dark" ? <LightModeOutlined /> : <DarkModeOutlined />}
+            </IconButton>
             <IconButton
               aria-label="notification"
               sx={{ marginRight: "0.5rem" }}
