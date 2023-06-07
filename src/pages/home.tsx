@@ -214,7 +214,7 @@ const Home = () => {
               >
                 <Stack direction="row" justifyContent="space-between">
                   <Typography fontSize={18} fontWeight={600} color="#11142d">
-                    Top Agent
+                    Top Agents
                   </Typography>
                   <ViewAll pathName="/agents" />
                 </Stack>
@@ -232,7 +232,7 @@ const Home = () => {
                 borderRadius="15px"
               >
                 <Typography fontSize={18} fontWeight={600} color="#11142d">
-                  Customer
+                  Customer Analytics
                 </Typography>
                 <CustomerCard />
               </Stack>
