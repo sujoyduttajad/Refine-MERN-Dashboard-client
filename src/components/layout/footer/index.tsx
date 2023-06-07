@@ -9,7 +9,6 @@ import {
   ListItem,
   Button,
 } from "@pankod/refine-mui";
-
 // import { ColorModeContext } from "contexts";
 import {
   ArrowCircleLeftOutlined,
@@ -185,7 +184,7 @@ export const Footer: React.FC = () => {
           <Box display="flex" flexDirection="row" justifyContent="flex-start">
             <Typography fontSize={14}>
               This website is solely designed to showcase the skills of
-              (Sujoy Dutta)Software Developer and to serve as a proof of the
+              Sujoy Dutta(Software Developer) and to serve as a proof of the
               ability to build sophisticated applications. The use of this
               website by any visitor is solely at their own risk. By using this
               website, you acknowledge that you have read and understood the
