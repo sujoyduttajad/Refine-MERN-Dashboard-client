@@ -1,22 +1,23 @@
 import React, {
-  PropsWithChildren,
   createContext,
   useEffect,
   useState,
+  PropsWithChildren,
 } from "react";
+
 import { ThemeProvider } from "@pankod/refine-mui";
 import { DarkTheme, LightTheme } from "@pankod/refine-mui";
 
 type ColorModeContextType = {
   mode: string;
-  setMode: () => void;
+  setMode: (mode: string) => void;
 };
 
 export const ColorModeContext = createContext<ColorModeContextType>(
   {} as ColorModeContextType
 );
 
-export const ColorModeContextProvider: React.FC<PropsWithChildren> = ({
+export const ColorModeContextProvider: React.FC<PropsWithChildren<{}>> = ({
   children,
 }) => {
   const colorModeFromLocalStorage = localStorage.getItem("colorMode");
@@ -33,8 +34,8 @@ export const ColorModeContextProvider: React.FC<PropsWithChildren> = ({
     window.localStorage.setItem("colorMode", mode);
   }, [mode]);
 
-  const setColorMode = () => {
-    if (mode === "light") {
+  const setColorMode = (newMode: string) => {
+    if (newMode === "light") {
       setMode("dark");
     } else {
       setMode("light");
@@ -44,7 +45,7 @@ export const ColorModeContextProvider: React.FC<PropsWithChildren> = ({
   return (
     <ColorModeContext.Provider
       value={{
-        setMode: setColorMode,
+        setMode: () => setColorMode(mode === "light" ? "dark" : "light"),
         mode,
       }}
     >
