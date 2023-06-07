@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect } from "react";
 import { Refine, AuthProvider } from "@pankod/refine-core";
 import {
   notificationProvider,
@@ -23,7 +23,7 @@ import {
 import dataProvider from "@pankod/refine-simple-rest";
 import routerProvider from "@pankod/refine-react-router-v6";
 import axios, { AxiosRequestConfig } from "axios";
-import { ColorModeContextProvider } from "contexts";
+import { ColorModeContextProvider  } from "contexts";
 // If there is an issue with textfield showing then remove the above provider
 import { Title, Sider, Layout, Header } from "components/layout";
 
@@ -44,7 +44,7 @@ import { parseJwt } from "utils/parse-jwt";
 import Reviews from "pages/reviews";
 import Messages from "pages/messages";
 import HelpAndInfo from "pages/help";
-import LegalTerms from 'pages/legal-terms';
+import LegalTerms from "pages/legal-terms";
 
 const axiosInstance = axios.create();
 axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
@@ -85,15 +85,18 @@ function App() {
 
       // Save user to MongoDB
       if (profileObj) {
-        const response = await fetch("https://evoia-dashboard.onrender.com/api/v1/users", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: profileObj.name,
-            email: profileObj.email,
-            avatar: profileObj.picture,
-          }),
-        });
+        const response = await fetch(
+          "https://evoia-dashboard.onrender.com/api/v1/users",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: profileObj.name,
+              email: profileObj.email,
+              avatar: profileObj.picture,
+            }),
+          }
+        );
 
         const data = await response.json();
 
@@ -159,7 +162,9 @@ function App() {
       <ThemeProvider theme={customTheme}>
         <RefineSnackbarProvider>
           <Refine
-            dataProvider={dataProvider("https://evoia-dashboard.onrender.com/api/v1")}
+            dataProvider={dataProvider(
+              "https://evoia-dashboard.onrender.com/api/v1"
+            )}
             notificationProvider={notificationProvider}
             ReadyPage={ReadyPage}
             catchAll={<ErrorComponent />}
@@ -204,7 +209,7 @@ function App() {
                 name: "legal-terms",
                 options: { label: "Legal Terms" },
                 list: LegalTerms,
-                icon: <GavelOutlined />
+                icon: <GavelOutlined />,
               },
             ]}
             Title={Title}
