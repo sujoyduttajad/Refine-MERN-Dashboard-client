@@ -229,7 +229,9 @@ const PropertyDetails = () => {
                     mt={2}
                     flexWrap="wrap"
                   >
-                    <Typography>{propertyDetails.description}</Typography>
+                    <Typography color="#333">
+                      {propertyDetails.description}
+                    </Typography>
                   </Box>
                 </Box>
               </Stack>
