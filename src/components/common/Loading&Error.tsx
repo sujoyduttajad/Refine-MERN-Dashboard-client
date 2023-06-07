@@ -11,7 +11,6 @@ export function Loading() {
       component="main"
       open={true}
       sx={{
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
         zIndex: 1000,
         position: "fixed",
         top: 0,
@@ -30,7 +29,6 @@ export function Loading() {
             opacity: 1,
           },
         },
-
         backgroundImage:
           "linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))",
       }}
