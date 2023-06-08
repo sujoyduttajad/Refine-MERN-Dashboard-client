@@ -20,8 +20,8 @@ import { Link } from "@pankod/refine-react-router-v6";
 
 export const Header: React.FC = () => {
   const { data: user } = useGetIdentity();
-  const shouldRenderHeader = true; // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
-
+  // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
+  const shouldRenderHeader = true; 
   const { mode, setMode } = useContext(ColorModeContext);
 
   return shouldRenderHeader ? (
@@ -88,6 +88,7 @@ export const Header: React.FC = () => {
                 fontSize={12}
                 fontWeight={500}
                 color="#808191"
+                display={{ xs: "none", sm: "flex" }}
                 marginRight={{ xs: 1, sm: 0 }}
               >
                 {user?.email === "sujoyduttajad@gmail.com"
