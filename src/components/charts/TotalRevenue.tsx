@@ -54,7 +54,8 @@ const TotalRevenue = ({ totalPrice }: TotalPrice) => {
 
   return (
     <Box
-      p={4}
+      p={{ xs: 2, sm: 4 }}
+      pl={{ xs: 2, sm: 0 }}
       flex={1}
       bgcolor="#FAFAFA"
       id="chart"
@@ -65,7 +66,12 @@ const TotalRevenue = ({ totalPrice }: TotalPrice) => {
       <Typography fontSize={18} fontWeight={600} color="#11142d">
         Total Assets <span>(USD)</span>
       </Typography>
-      <Stack my="20px" direction="row" gap={4} flexWrap="wrap">
+      <Stack
+        my="20px"
+        direction={{ xs: "column", sm: "row" }}
+        gap={4}
+        flexWrap="wrap"
+      >
         <Typography fontSize={28} fontWeight={700} color="#11142d">
           {totalPrice ? assetsValue : "$236,535"}
         </Typography>
