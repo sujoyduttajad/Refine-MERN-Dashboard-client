@@ -54,7 +54,7 @@ export const Header: React.FC = () => {
         >
           <Stack
             direction="row"
-            gap="16px"
+            gap={{ xs: "2px", sm: "16px" }}
             alignItems="center"
             justifyContent="center"
           >
@@ -84,7 +84,12 @@ export const Header: React.FC = () => {
                   {user?.name}
                 </Typography>
               ) : null}
-              <Typography fontSize={12} fontWeight={500} color="#808191">
+              <Typography
+                fontSize={12}
+                fontWeight={500}
+                color="#808191"
+                marginRight={{ xs: 1, sm: 0 }}
+              >
                 {user?.email === "sujoyduttajad@gmail.com"
                   ? "Admin"
                   : "Real-Estate Agent"}
