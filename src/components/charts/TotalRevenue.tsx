@@ -55,7 +55,7 @@ const TotalRevenue = ({ totalPrice }: TotalPrice) => {
   return (
     <Box
       p={{ xs: 2, sm: 4 }}
-      pl={{ xs: 2, sm: 0 }}
+      pl={{ xs: 2, sm: 4 }}
       flex={1}
       bgcolor="#FAFAFA"
       id="chart"
