@@ -20,7 +20,7 @@ const CountProperties = ({ propertiesPerMonth }: TotalProperties) => {
       flex={1}
       bgcolor="#FAFAFA"
       id="chart"
-      display="flex"
+      display={{ xs: "none", sm: "flex" }}
       flexDirection="column"
       borderRadius="15px"
     >
