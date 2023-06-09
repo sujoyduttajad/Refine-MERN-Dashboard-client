@@ -8,6 +8,7 @@ import {
   GlobalStyles,
   ReadyPage,
   createTheme,
+  Theme,
   ErrorComponent,
   responsiveFontSizes,
 } from "@pankod/refine-mui";
@@ -60,12 +61,9 @@ axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
   return request;
 });
 
-// Custom Mui Theme
-let customTheme = createTheme({
+const customTheme = createTheme({
   typography: {
-    allVariants: {
-      fontFamily: "'Manrope', sans-serif",
-    },
+    fontFamily: "'Manrope', sans-serif",
   },
   palette: {
     primary: {
@@ -74,9 +72,11 @@ let customTheme = createTheme({
     secondary: {
       main: "#475be8",
     },
+    mode: "light",
   },
 });
-customTheme = responsiveFontSizes(customTheme);
+
+const theme = responsiveFontSizes(customTheme);
 
 function App() {
   const authProvider: AuthProvider = {
