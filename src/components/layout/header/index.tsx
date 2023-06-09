@@ -21,7 +21,7 @@ import { Link } from "@pankod/refine-react-router-v6";
 export const Header: React.FC = () => {
   const { data: user } = useGetIdentity();
   // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
-  const shouldRenderHeader = true; 
+  const shouldRenderHeader = true;
   const { mode, setMode } = useContext(ColorModeContext);
 
   return shouldRenderHeader ? (
@@ -65,6 +65,7 @@ export const Header: React.FC = () => {
             >
               {mode === "dark" ? <LightModeOutlined /> : <DarkModeOutlined />}
             </IconButton>
+
             <IconButton
               aria-label="notification"
               sx={{ marginRight: "0.5rem" }}
