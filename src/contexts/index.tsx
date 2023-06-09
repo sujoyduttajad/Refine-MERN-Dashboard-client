@@ -13,9 +13,10 @@ type ColorModeContextType = {
   setMode: (mode: string) => void;
 };
 
-export const ColorModeContext = createContext<ColorModeContextType>(
-  {} as ColorModeContextType
-);
+export const ColorModeContext = createContext<ColorModeContextType>({
+  mode: "light",
+  setMode: () => {},
+});
 
 export const ColorModeContextProvider: React.FC<PropsWithChildren<{}>> = ({
   children,
@@ -26,27 +27,24 @@ export const ColorModeContextProvider: React.FC<PropsWithChildren<{}>> = ({
   ).matches;
 
   const systemPreference = isSystemPreferenceDark ? "dark" : "light";
-  const [mode, setMode] = useState(
-    colorModeFromLocalStorage || systemPreference
-  );
+  // const [mode, setMode] = useState<string>(
+  //   colorModeFromLocalStorage || systemPreference
+  // );
+  const [mode, setMode] = useState<string>("light");
 
   useEffect(() => {
     window.localStorage.setItem("colorMode", mode);
   }, [mode]);
 
-  const setColorMode = (newMode: string) => {
-    if (newMode === "light") {
-      setMode("dark");
-    } else {
-      setMode("light");
-    }
+  const toggleMode = (newMode: string) => {
+    setMode(newMode);
   };
 
   return (
     <ColorModeContext.Provider
       value={{
-        setMode: () => setColorMode(mode === "light" ? "dark" : "light"),
         mode,
+        setMode: toggleMode,
       }}
     >
       <ThemeProvider theme={mode === "light" ? LightTheme : DarkTheme}>
