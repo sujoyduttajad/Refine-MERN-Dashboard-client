@@ -9,7 +9,7 @@ const AgentDetails = ({ agentProperties }: AgentProperties) => {
     <Box
       bgcolor="#FCFCFC"
       margin={{ xs: 0.5, sm: 2 }}
-      padding={4}
+      padding={{ xs: 1, sm: 4 }}
       marginBottom={0}
       paddingBottom={0}
       borderRadius={2}
