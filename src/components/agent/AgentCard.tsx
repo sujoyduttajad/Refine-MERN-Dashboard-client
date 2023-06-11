@@ -68,7 +68,7 @@ const AgentCard = ({
           alignItems="center"
           justifyContent="center"
           gap={0.5}
-          maxWidth="90%"
+          maxWidth="100%"
         >
           <Typography
             fontSize={{ xs: 17, sm: 20 }}
