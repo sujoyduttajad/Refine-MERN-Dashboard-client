@@ -24,7 +24,7 @@ const AgentCard = ({
     <Box
       component={Link}
       to={generateLink()}
-      maxWidth={275}
+      maxWidth={{ xs: 193, sm: 275 }}
       width="100%"
       borderRadius={2}
       padding={1}
@@ -68,13 +68,14 @@ const AgentCard = ({
           alignItems="center"
           justifyContent="center"
           gap={0.5}
-          maxWidth="100%"
+          maxWidth="90%"
         >
           <Typography
-            fontSize={20}
+            fontSize={{ xs: 17, sm: 20 }}
             fontWeight={700}
             textTransform="capitalize"
             color="#475be8"
+            textAlign="center"
           >
             {name}
           </Typography>
