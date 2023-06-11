@@ -35,11 +35,11 @@ const Agent = () => {
       <Box
         mt="20px"
         display="flex"
-        flexDirection={{ xs: "column", sm: "row" }}
+        flexDirection={{ xs: "row", sm: "row" }}
         justifyContent={{ xs: "center", sm: "flex-start" }}
         alignItems={{ xs: "center", sm: "flex-start" }}
         flexWrap="wrap"
-        gap={3}
+        gap={{ xs: 1, sm: 3 }}
       >
         {allAgents.map((agent) => (
           <AgentCard
