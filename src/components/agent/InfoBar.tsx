@@ -14,7 +14,7 @@ const InfoBar = ({ icon, content }: InfoBarProps) => {
       <Box alignItems="center">{icon}</Box>
       <Box>
         <Typography fontSize={13} color="#808191">
-          {content.length > 25 ? `${content.substring(0, 20)}...` : content }
+          {content.length > 25 ? `${content.substring(0, 22)}...` : content }
         </Typography>
       </Box>
     </Stack>
