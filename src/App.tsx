@@ -75,7 +75,6 @@ const customTheme = createTheme({
     mode: "light",
   },
 });
-
 const theme = responsiveFontSizes(customTheme);
 
 function App() {
@@ -159,7 +158,7 @@ function App() {
     <ColorModeContextProvider>
       <CssBaseline />
       <GlobalStyles styles={{ html: { WebkitFontSmoothing: "auto" } }} />
-      <ThemeProvider theme={customTheme}>
+      <ThemeProvider theme={theme}>
         <RefineSnackbarProvider>
           <Refine
             dataProvider={dataProvider(
