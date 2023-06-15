@@ -14,6 +14,8 @@ const TopAgent = () => {
 
   const topAgents = data?.data.sort((a, b) => b.__v - a.__v).slice(0, 5) ?? [];
 
+  console.log(topAgents)
+
   const generateLink = (id: string, name: string) => {
     // if the name matches with the logged in user redirect to my-profile
     if (currentUser.name === name) return "/my-profile";
