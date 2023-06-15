@@ -183,13 +183,18 @@ export const Footer: React.FC = () => {
           {/* 3rd row */}
           <Box display="flex" flexDirection="row" justifyContent="flex-start">
             <Typography fontSize={14}>
-              This website is solely designed to showcase the skills of
-              Sujoy Dutta(Software Developer) and to serve as a proof of the
-              ability to build sophisticated applications. The use of this
-              website by any visitor is solely at their own risk. By using this
-              website, you acknowledge that you have read and understood the
-              terms and conditions in the legal notice, and you agree to comply
-              with all its terms and conditions.
+              This website is solely designed to showcase the skills of Sujoy
+              Dutta(Software Developer) and to serve as a proof of the ability
+              to build sophisticated applications. The use of this website by
+              any visitor is solely at their own risk. By using this website,
+              you acknowledge that you have read and understood the terms and
+              conditions in the{" "}
+              <a className="active-links" href="/legal-terms">
+                <strong>
+                  <em>Legal Terms</em>
+                </strong>
+              </a>
+              , and you agree to comply with all its terms and conditions.
             </Typography>
           </Box>
           {/* 4th row */}
