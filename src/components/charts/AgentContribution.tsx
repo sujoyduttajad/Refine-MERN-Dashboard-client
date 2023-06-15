@@ -23,7 +23,7 @@ const AgentContribution = () => {
 
   const AgentsRadialSeries = [
     {
-      name: "Customers",
+      name: "Properties",
       data: noOfProperties,
     },
   ];
