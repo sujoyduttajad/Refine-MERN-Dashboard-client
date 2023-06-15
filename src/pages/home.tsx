@@ -78,8 +78,8 @@ const Home = () => {
   // Combine the fetched data and additional data
   const allProperties = listData ? [...(additionalData?.data || [])] : [];
 
-  if (isLoading || isAdditionalLoading) return <Loading />;
-  if (isError || isAdditionalError) return <Error />;
+  if (isLoading && isAdditionalLoading) return <Loading />;
+  if (isError && isAdditionalError) return <Error />;
 
   // Total Properties Calculate
   let totalPrice: number = totalRevenue(allProperties as PropertyInterface[]);
