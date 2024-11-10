@@ -31,7 +31,7 @@ export const TotalRevenueOptions: ApexOptions = {
   },
   yaxis: {
     title: {
-      text: '$ (thousands )',
+      text: 'Net Profit/Loss in $ (thousands)',
     },
   },
   fill: {

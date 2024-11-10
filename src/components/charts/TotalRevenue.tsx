@@ -14,11 +14,11 @@ interface RevenueEntry {
 
 const TotalRevenueSeries: RevenueEntry[] = [
   {
-    name: "Last Month",
+    name: "Net Loss",
     data: generateRandomNumbers(),
   },
   {
-    name: "Running Month",
+    name: "Net Profit",
     data: generateRandomNumbers(),
   },
 ];
@@ -31,15 +31,15 @@ function updateRevenueSeries() {
   TotalRevenueSeries?.forEach((series) => {
     const lastIndex = series.data.length - 1;
     if (series.data[lastIndex] && lastIndex === currentMonth) {
-      if (series.name === "Last Month") {
+      if (series.name === "Net Loss") {
         series.data[lastIndex] += randomValueLastMonth;
-      } else if (series.name === "Running Month") {
+      } else if (series.name === "Net Profit") {
         series.data[lastIndex] += randomValueRunningMonth;
       }
     } else {
-      if (series.name === "Last Month") {
+      if (series.name === "Net Loss") {
         series.data.push(randomValueLastMonth);
-      } else if (series.name === "Running Month") {
+      } else if (series.name === "Net Profit") {
         series.data.push(randomValueRunningMonth);
       }
     }
