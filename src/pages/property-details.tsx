@@ -1,4 +1,11 @@
-import { Typography, Box, Stack } from "@pankod/refine-mui";
+import {
+  Typography,
+  Box,
+  Stack,
+  Card,
+  CardContent,
+  CardMedia,
+} from "@pankod/refine-mui";
 import { useDelete, useGetIdentity, useShow } from "@pankod/refine-core";
 import { useParams, useNavigate } from "@pankod/refine-react-router-v6";
 import {
@@ -233,6 +240,82 @@ const PropertyDetails = () => {
                       {propertyDetails.description}
                     </Typography>
                   </Box>
+                </Box>
+                {/* Reviews */}
+                <Box width="100%" display="flex" flexDirection="column" mt={5}>
+                  <Card
+                    variant="outlined"
+                    sx={{
+                      minWidth: 275,
+                      width: "100%",
+                      padding: "1rem",
+                      display: "flex",
+                      flexDirection: "column",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    <CardContent
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "left",
+                      }}
+                    >
+                      <Typography
+                        fontSize={22}
+                        fontWeight={600}
+                        color="#11142d"
+                        textTransform="capitalize"
+                      >
+                        Reviews
+                      </Typography>
+                      <Box
+                        aria-label="description"
+                        display="flex"
+                        flexDirection="row"
+                        justifyContent="space-between"
+                        mt={2}
+                        // flexWrap="wrap"
+                      >
+                        <Stack>
+                          <CardMedia
+                            component="img"
+                            image={creatorDetails.avatar}
+                            alt="Reviewer Profile picture"
+                            sx={{
+                              height: "7rem",
+                              width: "7rem",
+                              borderRadius: "50%",
+                            }}
+                          />
+                        </Stack>
+                        <Stack
+                          margin={1.5}
+                          // direction="row"
+                          // justifyContent="space-between"
+                          // alignItems="center"
+                        >
+                          <Typography
+                            variant="h6"
+                            gutterBottom
+                            textTransform="capitalize"
+                          >
+                            {creatorDetails.name}
+                          </Typography>
+                          <Typography color="#333">
+                            This mansion is the epitome of luxury, with marble
+                            floors, crystal chandeliers, and breathtaking
+                            indoor-outdoor living spaces. The infinity pool
+                            overlooking a private lake, a spa-like master suite,
+                            and top-tier amenities like a home theater, wine
+                            cellar, and gym make it a dream home. Every detail
+                            is crafted for comfort and elegance—perfect for
+                            those who demand the very best.
+                          </Typography>
+                        </Stack>
+                      </Box>
+                    </CardContent>
+                  </Card>
                 </Box>
               </Stack>
             </Box>
