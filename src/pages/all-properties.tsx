@@ -84,7 +84,7 @@ const AllProperties = () => {
           <Typography fontSize={25} fontWeight={700} color="#11142d" mb={2}>
             {!allProperties.length
               ? "There are no properties"
-              : `All Properties(${numberOfProperties})`}
+              : `Properties(${numberOfProperties})`}
           </Typography>
           <Box
             mb={2}

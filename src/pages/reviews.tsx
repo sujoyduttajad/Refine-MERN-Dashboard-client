@@ -4,7 +4,7 @@ const Reviews = () => {
   return (
     <div>
       <div>
-        <h2>Reviews component - </h2>
+        <h2>Reviews</h2>
       </div>
       Coming soon, working on it
     </div>

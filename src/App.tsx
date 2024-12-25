@@ -8,7 +8,7 @@ import {
   GlobalStyles,
   ReadyPage,
   createTheme,
-  Theme,
+  // Theme,
   ErrorComponent,
   responsiveFontSizes,
 } from "@pankod/refine-mui";
@@ -46,6 +46,7 @@ import Reviews from "pages/reviews";
 import Messages from "pages/messages";
 import HelpAndInfo from "pages/help";
 import LegalTerms from "pages/legal-terms";
+// import AllReviews from "pages/all-reviews";
 
 const axiosInstance = axios.create();
 axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {

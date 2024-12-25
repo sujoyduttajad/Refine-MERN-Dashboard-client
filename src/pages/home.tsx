@@ -81,7 +81,7 @@ const Home = () => {
   if (isLoading && isAdditionalLoading) return <Loading />;
   if (isError && isAdditionalError) return <Error />;
 
-  // Total Properties Calculate
+  // Calculate Total Properties 
   let totalPrice: number = totalRevenue(allProperties as PropertyInterface[]);
   const totalProperties: number = allProperties.length;
 
