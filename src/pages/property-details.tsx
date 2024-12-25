@@ -11,6 +11,7 @@ import { useParams, useNavigate } from "@pankod/refine-react-router-v6";
 import {
   BalconyOutlined,
   BathtubOutlined,
+  ChatOutlined,
   Delete,
   Edit,
   KingBedOutlined,
@@ -18,6 +19,8 @@ import {
   Place,
   SquareFootOutlined,
   Star,
+  ThumbDown,
+  ThumbUp,
   WifiRounded,
 } from "@mui/icons-material";
 import { CustomButton, Facilities } from "components";
@@ -243,6 +246,15 @@ const PropertyDetails = () => {
                 </Box>
                 {/* Reviews */}
                 <Box width="100%" display="flex" flexDirection="column" mt={5}>
+                  <Typography
+                    fontSize={22}
+                    fontWeight={600}
+                    color="#11142d"
+                    textTransform="capitalize"
+                    mb={3}
+                  >
+                    Reviews
+                  </Typography>
                   <Card
                     variant="outlined"
                     sx={{
@@ -261,23 +273,14 @@ const PropertyDetails = () => {
                         alignItems: "left",
                       }}
                     >
-                      <Typography
-                        fontSize={22}
-                        fontWeight={600}
-                        color="#11142d"
-                        textTransform="capitalize"
-                      >
-                        Reviews
-                      </Typography>
                       <Box
                         aria-label="description"
                         display="flex"
                         flexDirection="row"
                         justifyContent="space-between"
                         mt={2}
-                        // flexWrap="wrap"
                       >
-                        <Stack>
+                        <Stack mt={5}>
                           <CardMedia
                             component="img"
                             image={creatorDetails.avatar}
@@ -289,20 +292,36 @@ const PropertyDetails = () => {
                             }}
                           />
                         </Stack>
-                        <Stack
-                          margin={1.5}
-                          // direction="row"
-                          // justifyContent="space-between"
-                          // alignItems="center"
-                        >
+                        <Stack margin={1.5} ml={2}>
                           <Typography
                             variant="h6"
-                            gutterBottom
                             textTransform="capitalize"
+                            fontWeight={800}
                           >
                             {creatorDetails.name}
                           </Typography>
-                          <Typography color="#333">
+                          <Typography
+                            variant="subtitle1"
+                            textTransform="capitalize"
+                            fontWeight={600}
+                            color="#475be8"
+                          >
+                            {propertyDetails.title}
+                          </Typography>
+                          <Stack direction="row">
+                            {/* For now a random number represents the rating but later on it would be fetched too */}
+                            <Typography fontWeight={700} color="#475be8" mr={1}>
+                              {Math.floor(Math.random() * 9) + 1}
+                              {"k "}
+                            </Typography>
+                            {[1, 2, 3, 4, 5].map((star) => (
+                              <Star
+                                key={`star-${star}`}
+                                sx={{ color: "#f2c94c" }}
+                              />
+                            ))}
+                          </Stack>
+                          <Typography color="#333" mt={2}>
                             This mansion is the epitome of luxury, with marble
                             floors, crystal chandeliers, and breathtaking
                             indoor-outdoor living spaces. The infinity pool
@@ -314,6 +333,38 @@ const PropertyDetails = () => {
                           </Typography>
                         </Stack>
                       </Box>
+                      <Stack direction="row" mt={3} alignItems="center" gap={2}>
+                        <CustomButton
+                          type="button"
+                          title="Like"
+                          backgroundColor="#475be8"
+                          color="#fcfcfc"
+                          heightValue="40px"
+                          paddingValue="1px 10px"
+                          fontSizeValue="16.5px"
+                          icon={<ThumbUp />}
+                        />
+                        <CustomButton
+                          type="button"
+                          title="Dislike"
+                          backgroundColor="#475be8"
+                          color="#fcfcfc"
+                          heightValue="40px"
+                          paddingValue="1px 10px"
+                          fontSizeValue="16.5px"
+                          icon={<ThumbDown />}
+                        />
+                        <CustomButton
+                          type="button"
+                          title="Direct Message"
+                          backgroundColor="#475be8"
+                          color="#fcfcfc"
+                          heightValue="40px"
+                          paddingValue="1px 10px"
+                          fontSizeValue="16.5px"
+                          icon={<ChatOutlined />}
+                        />
+                      </Stack>
                     </CardContent>
                   </Card>
                 </Box>
