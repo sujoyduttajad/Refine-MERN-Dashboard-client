@@ -20,6 +20,7 @@ export interface ProfileProps {
     name?: string | undefined;
     avatar?: string | undefined;
     email?: string | undefined;
+    updatedAt?: string | undefined;
     properties?: Array | undefined;
 }
 

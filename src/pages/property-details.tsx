@@ -25,7 +25,7 @@ import {
 } from "@mui/icons-material";
 import { CustomButton, Facilities } from "components";
 import { Error, Loading } from "components/common/Loading&Error";
-import { formatter } from "utils/functions";
+import { formatter, formatTimestamp } from "utils/functions";
 
 import LocationCard from "components/property/LocationCard";
 import AgentInfoCard from "components/property/AgentInfoCard";
@@ -57,6 +57,9 @@ const PropertyDetails = () => {
   if (isError) return <Error />;
 
   const isCurrentUser = user.email === propertyDetails.creator.email;
+
+  // Created timestamp variable to convert timestamp into formatted date & time
+  const timestamp = formatTimestamp(propertyDetails.updatedAt);
 
   const handleDeleteProperty = () => {
     const response = window.confirm(
@@ -241,6 +244,28 @@ const PropertyDetails = () => {
                   >
                     <Typography color="#333">
                       {propertyDetails.description}
+                    </Typography>
+                  </Box>
+                  <Box
+                    display="flex"
+                    flexDirection="row"
+                    justifyContent="flex-start"
+                    alignItems="center"
+                    mt={2.5}
+                  >
+                    <Typography
+                      variant="subtitle1"
+                      fontWeight={700}
+                      color="#343434"
+                    >
+                      {"Last Updated -  "}
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      fontWeight={500}
+                      color="#475be8"
+                    >
+                      {timestamp}
                     </Typography>
                   </Box>
                 </Box>
