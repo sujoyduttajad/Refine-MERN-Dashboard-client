@@ -11,19 +11,10 @@ import {
 import { useNavigate } from "@pankod/refine-react-router-v6";
 import { PropertyCard, CustomButton } from "components";
 import { Error, Loading } from "components/common/Loading&Error";
+import ReviewCard from "components/common/ReviewCard";
 import { useMemo } from "react";
 
-const propertyTypeList = [
-  "Apartment",
-  "Villa",
-  "House",
-  "Farmhouse",
-  "Condos",
-  "Townhouse",
-  "Duplex",
-  "Studio",
-  "Chalet",
-];
+
 
 const AllReviews = () => {
   const navigate = useNavigate();
@@ -34,46 +25,24 @@ const AllReviews = () => {
     setCurrent,
     pageCount,
     setPageSize,
-    sorter,
-    setSorter,
     filters,
     setFilters,
   } = useTable();
 
-  const {
-    data: additionalData,
-    isLoading: isAdditionalLoading,
-    isError: isAdditionalError,
-  } = useMany({ resource: "reviews", ids: []});
+  const allReviews = data?.data ?? [];
 
-  // Total count of properties
-  const numberOfProperties = additionalData?.data.length;
-
-  const allProperties = data?.data ?? [];
-  console.log(data)
-
-  const currentPrice = sorter.find((item) => item.field === "price")?.order;
-
-  // Sort price filter
-  const toggleSort = (field: string) => {
-    setSorter([{ field, order: currentPrice === "asc" ? "desc" : "asc" }]);
-  };
-
-  // Search filter and Dropdown
+  // Search filter
   const currentFilterValues = useMemo(() => {
     const logicalFilters = filters.flatMap((item) =>
       "field" in item ? item : []
     );
     return {
-      title: logicalFilters.find((item) => item.field === "title")?.value || "",
-      propertyType:
-        logicalFilters.find((item) => item.field === "propertyType")?.value ||
-        "",
+      reviewer: logicalFilters.find((item) => item.field === "reviewer")?.value || "",
     };
   }, [filters]);
 
-  if (isLoading || isAdditionalLoading) return <Loading />;
-  if (isError || isAdditionalError) return <Error />;
+  if (isLoading) return <Loading />;
+  if (isError) return <Error />;
 
   return (
     <Box mb={8}>
@@ -83,9 +52,9 @@ const AllReviews = () => {
       >
         <Stack direction="column" width="100%">
           <Typography fontSize={25} fontWeight={700} color="#11142d" mb={2}>
-            {!allProperties.length
-              ? "There are no properties"
-              : `Properties(${numberOfProperties})`}
+            {!allReviews.length
+              ? "There are no reviews"
+              : `Reviews (${allReviews.length})`}
           </Typography>
           <Box
             mb={2}
@@ -97,128 +66,49 @@ const AllReviews = () => {
             alignItems="center"
             justifyContent="space-between"
           >
-            <Box
-              display="flex"
-              gap={2}
-              flexWrap="wrap"
-              alignItems="center"
-              width="100%"
-              mb={{ xs: "20", sm: 0 }}
-            >
-              <CustomButton
-                title={`Sort price ${currentPrice === "asc" ? "↑" : "↓"}`}
-                handleClick={() => toggleSort("price")}
-                backgroundColor="#475be8"
-                color="#fcfcfc"
-                heightValue="40px"
-                paddingValue="1px 10px"
-                fontSizeValue="16.5px"
-              />
-              <TextField
-                variant="outlined"
-                color="info"
-                value={currentFilterValues.title}
-                onChange={(e) => {
-                  setFilters([
-                    {
-                      field: "title",
-                      operator: "contains",
-                      value: e.currentTarget.value
-                        ? e.currentTarget.value
-                        : undefined,
-                    },
-                  ]);
-                }}
-                placeholder="Search by Title"
-                size="small"
-                sx={{ width: "50%" }}
-              />
-              <Select
-                variant="outlined"
-                color="info"
-                displayEmpty
-                required
-                defaultValue=""
-                value={currentFilterValues.propertyType}
-                onChange={(e) => {
-                  setFilters(
-                    [
-                      {
-                        field: "propertyType",
-                        operator: "eq",
-                        value: e.target.value,
-                      },
-                    ],
-                    "replace"
-                  );
-                }}
-                sx={{ height: "40px" }}
-                inputProps={{ "aria-label": "Without label" }}
-              >
-                <MenuItem value="">All</MenuItem>
-                {propertyTypeList.map((type) => (
-                  <MenuItem key={type} value={type.toLowerCase()}>
-                    {type}
-                  </MenuItem>
-                ))}
-              </Select>
-            </Box>
-            <Stack
-              direction="row"
-              justifyContent={{ xs: "flex-start", sm: "flex-end" }}
-              alignItems="center"
-              width={{ xs: "100%", sm: "25%"}}
-              mt={{ xs: 3, sm: 0 }}
-            >
-              <CustomButton
-                title="Add Property"
-                handleClick={() => navigate("/properties/create")}
-                backgroundColor="#475be8"
-                color="#fcfcfc"
-                icon={<Add />}
-              />
-            </Stack>
+            <TextField
+              variant="outlined"
+              color="info"
+              value={currentFilterValues.reviewer}
+              onChange={(e) => {
+                setFilters([
+                  {
+                    field: "reviewer",
+                    operator: "contains",
+                    value: e.currentTarget.value || undefined,
+                  },
+                ]);
+              }}
+              placeholder="Search by Reviewer"
+              size="small"
+              sx={{ width: "50%" }}
+            />
           </Box>
         </Stack>
       </Box>
-      {currentPrice ? (
-        currentPrice === "asc" ? (
-          <Typography variant="body2">
-            Properties listed from <strong>cheapest</strong> to{" "}
-            <strong>most expensive</strong>
-          </Typography>
-        ) : (
-          <Typography variant="body2">
-            Properties listed from <strong>most expensive</strong> to{" "}
-            <strong>cheapest</strong>
-          </Typography>
-        )
-      ) : (
-        ""
-      )}
 
       <Typography fontSize={21} fontWeight={500} color="#B7B8B8">
-        {!allProperties.length
-          ? "Sorry no properties to show :("
-          : `Showing ${allProperties.length} ${
-              allProperties.length > 1 ? "properties" : "property"
-            } in this page`}
+        {!allReviews.length
+          ? "Sorry, no reviews to show :("
+          : `Showing ${allReviews.length} ${
+              allReviews.length > 1 ? "reviews" : "review"
+            } on this page`}
       </Typography>
 
       <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
-        {allProperties.map((property) => (
-          <PropertyCard
-            key={property._id}
-            id={property._id}
-            title={property.title}
-            price={property.price}
-            location={property.location}
-            photo={property.photo}
+        {allReviews.map((review) => (
+          <ReviewCard
+            id={review._id}
+            title={""}
+            reviewer={review.reviewer}
+            rating={review.rating}
+            comment={review.comment}
+            date={review.date}
           />
         ))}
       </Box>
 
-      {allProperties.length > 0 && (
+      {allReviews.length > 0 && (
         <Box display="flex" alignItems="center" gap={3} mt={8} flexWrap="wrap">
           <CustomButton
             title="Previous"
@@ -244,7 +134,7 @@ const AllReviews = () => {
             handleClick={() => setCurrent((prev) => prev + 1)}
             backgroundColor="#475be8"
             color="#fcfcfc"
-            disabled={allProperties.length < 10}
+            disabled={allReviews.length < 10}
           />
 
           <Select
