@@ -9,7 +9,7 @@ import {
   MenuItem,
 } from "@pankod/refine-mui";
 import { useNavigate } from "@pankod/refine-react-router-v6";
-import { PropertyCard, CustomButton } from "components";
+import { CustomButton } from "components";
 import { Error, Loading } from "components/common/Loading&Error";
 import ReviewCard from "components/common/ReviewCard";
 import { useMemo } from "react";
