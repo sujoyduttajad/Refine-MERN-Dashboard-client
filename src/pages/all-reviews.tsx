@@ -44,12 +44,13 @@ const AllReviews = () => {
     data: additionalData,
     isLoading: isAdditionalLoading,
     isError: isAdditionalError,
-  } = useMany({ resource: "properties", ids: []});
+  } = useMany({ resource: "reviews", ids: []});
 
   // Total count of properties
   const numberOfProperties = additionalData?.data.length;
 
   const allProperties = data?.data ?? [];
+  console.log(data)
 
   const currentPrice = sorter.find((item) => item.field === "price")?.order;
 

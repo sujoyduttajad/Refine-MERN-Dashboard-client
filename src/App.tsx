@@ -42,54 +42,63 @@ import {
 
 import { CredentialResponse } from "interfaces/google";
 import { parseJwt } from "utils/parse-jwt";
-import Reviews from "pages/reviews";
+// import Reviews from "pages/reviews";
 import Messages from "pages/messages";
 import HelpAndInfo from "pages/help";
 import LegalTerms from "pages/legal-terms";
-// import AllReviews from "pages/all-reviews";
+import AllReviews from "pages/all-reviews";
+import CreateReviews from "pages/create-review";
 
+// Axios instance setup with a request interceptor to automatically add an Authorization header
 const axiosInstance = axios.create();
 axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
+  // Retrieve the token from local storage
   const token = localStorage.getItem("token");
   if (request.headers) {
     request.headers["Authorization"] = `Bearer ${token}`;
   } else {
     request.headers = {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`, // Set headers if they don't exist
     };
   }
 
-  return request;
+  return request; // Return the modified request
 });
 
+// Custom Material-UI theme configuration
 const customTheme = createTheme({
   typography: {
-    fontFamily: "'Manrope', sans-serif",
+    fontFamily: "'Manrope', sans-serif", // Use the 'Manrope' font
   },
   palette: {
     primary: {
-      main: "#333",
+      main: "#333", // Define the primary color
     },
     secondary: {
-      main: "#475be8",
+      main: "#475be8", // Define the secondary color
     },
-    mode: "light",
+    mode: "light", // Set the theme to light mode
   },
 });
+
+// Make the theme responsive (e.g., adaptive font sizes)
 const theme = responsiveFontSizes(customTheme);
 
+
 function App() {
+
+  // AuthProvider object defines authentication and user management logic
   const authProvider: AuthProvider = {
     login: async ({ credential }: CredentialResponse) => {
-      const profileObj = credential ? parseJwt(credential) : null;
+      const profileObj = credential ? parseJwt(credential) : null; // Decode JWT token
 
-      // Save user to MongoDB
+      // Save user data to MongoDB if profile exists
       if (profileObj) {
         const response = await fetch(
           "https://evoia-dashboard.onrender.com/api/v1/users",
           {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json" }, // Set request headers
             body: JSON.stringify({
               name: profileObj.name,
               email: profileObj.email,
@@ -100,6 +109,7 @@ function App() {
 
         const data = await response.json();
 
+        // Save user data to local storage
         if (response.status === 200) {
           localStorage.setItem(
             "user",
@@ -119,23 +129,25 @@ function App() {
       return Promise.resolve();
     },
     logout: () => {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("token"); // Retrieve the token from local storage
 
       if (token && typeof window !== "undefined") {
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
+        localStorage.removeItem("token"); // Remove token from local storage
+        localStorage.removeItem("user"); // Remove user data from local storage
         axios.defaults.headers.common = {};
         window.google?.accounts.id.revoke(token, () => {
-          return Promise.resolve();
+          return Promise.resolve(); // Revoke Google account access
         });
       }
 
+      // Resolve the promise for successful logout
       return Promise.resolve();
     },
     checkError: () => Promise.resolve(),
     checkAuth: async () => {
       const token = localStorage.getItem("token");
 
+      // Resolve or reject based on the token
       if (token) {
         return Promise.resolve();
       }
@@ -144,13 +156,14 @@ function App() {
 
     getPermissions: () => Promise.resolve(),
     getUserIdentity: async () => {
-      const user = localStorage.getItem("user");
+      const user = localStorage.getItem("user"); // Retrieve user identity from local storage
       if (user) {
         return Promise.resolve(JSON.parse(user));
       }
     },
   };
 
+  // Scroll to the top of the page when the component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -185,7 +198,8 @@ function App() {
               },
               {
                 name: "reviews",
-                list: Reviews,
+                list: AllReviews,
+                create: CreateReviews,
                 icon: <StarOutlineRounded />,
               },
               {
