@@ -5,14 +5,13 @@ import { BaseKey } from "@pankod/refine-core";
 //     labelName: string;
 // }
 
-// export interface FormValues {
-//     title: string;
-//     // sale/rent toggle button
-//     description: string;
-//     propertyType: string;
-//     location: string;
-//     price: number | undefined;
-// }
+export interface FormValues {
+    title: string;
+    description: string;
+    propertyType: string;
+    location: string;
+    price: number | undefined;
+}
 
 export interface ReviewCardProps {
     id?: BaseKey | undefined;
@@ -22,6 +21,33 @@ export interface ReviewCardProps {
     rating: string;
     description: number;
     date: string;
+}
+
+export interface PropertyDropdownData {
+    id: string;
+    propName: string;
+    photo: string;
+}
+
+export interface AdditionalData {
+    data: PropertyDropdownData[];
+}
+
+
+export interface ReviewFormProps {
+    type: string;
+    register: any;
+    queryResult?: any;
+    // onFinish: (
+    //     values: FieldValues,
+    // ) => Promise<
+    //     void | CreateResponse<BaseRecord> | UpdateResponse<BaseRecord>
+    // >;
+    formLoading: boolean;
+    // handleSubmit: FormEventHandler<HTMLFormElement> | undefined;
+    // handleImageChange: (file) => void;
+    // onFinishHandler: (data: FieldValues) => Promise<void> | void;
+    propertyList: PropertyDropdownData[];
 }
 
 // export interface PropertyListValues {

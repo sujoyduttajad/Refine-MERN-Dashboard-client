@@ -14,19 +14,31 @@ import {
   CardMedia,
 } from "@pankod/refine-mui";
 
-import { ReviewFormProps } from "interfaces/common";
 import CustomButton from "./CustomButton";
+import { ReviewFormProps } from "interfaces/reviews";
+import { useState } from "react";
 
 const ReviewForm = ({
   type,
   register,
-  onFinish,
+  //   onFinish,
   queryResult,
   formLoading,
-  handleSubmit,
-  onFinishHandler,
-}: ReviewFormProps) => {
-  
+  //   handleSubmit,
+  propertyList,
+}: //   onFinishHandler,
+ReviewFormProps) => {
+  const [selectedProperty, setSelectedProperty] = useState<string | null>(null);
+
+  const handleSelectProperty = (propertyId: string) => {
+    setSelectedProperty(propertyId);
+  };
+
+  // Find the selected property based on the selectedProperty ID
+  const selectedPropertyData = propertyList?.find(
+    (prop) => prop.id === selectedProperty
+  );
+
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142d">
@@ -45,10 +57,6 @@ const ReviewForm = ({
               <strong>Creator: </strong>
               {queryResult?.name}
             </Typography>
-            <Typography fontSize={16} mx={2}>
-              <strong>Property Name: </strong>
-              {queryResult?.data?.data.title}
-            </Typography>
           </Stack>
         ) : (
           ""
@@ -62,11 +70,17 @@ const ReviewForm = ({
             flexDirection: "column",
             gap: "20px",
           }}
-          onSubmit={handleSubmit(onFinishHandler)}
+          //   onSubmit={handleSubmit(onFinishHandler)}
         >
-          <Stack direction="column" gap={4}>
-            <Stack>
-              
+          <Box
+            display="flex"
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="center"
+            width="100%"
+            gap={4}
+          >
+            <Stack direction="column" alignItems="center" gap={2}>
               <Stack mt={5}>
                 <CardMedia
                   component="img"
@@ -76,6 +90,8 @@ const ReviewForm = ({
                     height: "7rem",
                     width: "7rem",
                     borderRadius: "50%",
+                    objectFit: "cover",
+                    boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
                   }}
                 />
               </Stack>
@@ -84,36 +100,98 @@ const ReviewForm = ({
                   variant="h6"
                   textTransform="capitalize"
                   fontWeight={800}
+                  align="center"
                 >
                   {queryResult?.name}
                 </Typography>
               </Stack>
             </Stack>
-            <FormControl sx={{ width: "60%" }}>
-              <FormHelperText
-                sx={{
-                  fontWeight: 500,
-                  margin: "10px 0",
-                  fontSize: 16,
-                  color: "#11142d",
-                }}
-              >
-                Review Title
-              </FormHelperText>
-              <TextField
-                fullWidth
-                required
-                placeholder="Best Mansion Ever!!"
-                id="outlined-basic"
-                color="info"
-                sx={{
-                  backgroundColor: "#fff",
-                }}
-                variant="outlined"
-                {...register("title", { required: true })}
-              />
-            </FormControl>
-          </Stack>
+            <Stack direction="column" alignItems="center" gap={2}>
+              {selectedPropertyData && selectedPropertyData.photo && (
+                <Stack direction="column" alignItems="center">
+                  <Typography margin={2} align="center">
+                    <b>Selected Property:</b> {selectedPropertyData.propName}
+                  </Typography>
+                  <CardMedia
+                    component="img"
+                    image={selectedPropertyData.photo}
+                    alt={selectedPropertyData.propName}
+                    sx={{
+                      height: "15rem",
+                      width: "30rem",
+                      borderRadius: "8.5px",
+                      objectFit: "cover",
+                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                    }}
+                  />
+                </Stack>
+              )}
+            </Stack>
+          </Box>
+
+          {/* Select the Property to Review */}
+          <FormControl sx={{ flex: 1 }}>
+            <FormHelperText
+              sx={{
+                fontWeight: 500,
+                margin: "10px 0",
+                fontSize: 16,
+                color: "#11142d",
+              }}
+            >
+              Select Property Type
+            </FormHelperText>
+            <Select
+              variant="outlined"
+              color="info"
+              displayEmpty
+              required
+              sx={{
+                backgroundColor: "#fff",
+              }}
+              inputProps={{ "aria-label": "Without label" }}
+              value={selectedProperty || ""}
+              onChange={(e) => handleSelectProperty(e.target.value)}
+              //   defaultValue={
+              //     type === "Edit"
+              //       ? queryResult?.data?.data.propertyType
+              //       : "apartment"
+              //   }
+              //   {...register("propertyType", { required: true })}
+            >
+              {propertyList?.map((prop) => (
+                <MenuItem key={prop.id} value={prop.id}>
+                  {prop.propName}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          {/* Review Title */}
+          <FormControl sx={{ width: "60%" }}>
+            <FormHelperText
+              sx={{
+                fontWeight: 500,
+                margin: "10px 0",
+                fontSize: 16,
+                color: "#11142d",
+              }}
+            >
+              Review Title
+            </FormHelperText>
+            <TextField
+              fullWidth
+              required
+              placeholder="Best Mansion Ever!!"
+              id="outlined-basic"
+              color="info"
+              sx={{
+                backgroundColor: "#fff",
+              }}
+              variant="outlined"
+              {...register("title", { required: true })}
+            />
+          </FormControl>
+          {/* Review Description */}
           <FormControl>
             <FormHelperText
               sx={{
@@ -138,7 +216,7 @@ const ReviewForm = ({
                 borderRadius: 6,
                 padding: 10,
                 fontFamily: "'Manrope', sans-serif",
-                //   color: "#11142d",
+                color: "#11142d",
                 resize: "vertical",
               }}
               {...register("description", { required: true })}
