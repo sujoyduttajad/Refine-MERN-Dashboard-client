@@ -48,7 +48,6 @@ const PropertyDetails = () => {
   
 
   const { data, isLoading, isError } = queryResult;
-  console.log(data)
 
   const propertyDetails = data?.data ?? {};
 
@@ -85,6 +84,11 @@ const PropertyDetails = () => {
 
   const handleEditProperty = () => {
     isCurrentUser && navigate(`/properties/edit/${propertyDetails._id}`);
+  };
+
+  const handleAddReviewProperty = () => {
+    isCurrentUser && navigate(`/reviews/create/${propertyDetails._id}`);
+    // navigate(`/reviews/create`);
   };
 
   return (
@@ -362,6 +366,7 @@ const PropertyDetails = () => {
                         </Stack>
                       </Box>
                       <Stack direction="row" mt={3} alignItems="center" gap={2}>
+                        {/* Like */}
                         <CustomButton
                           type="button"
                           title="Like"
@@ -372,6 +377,7 @@ const PropertyDetails = () => {
                           fontSizeValue="16.5px"
                           icon={<ThumbUp />}
                         />
+                        {/* Dislike */}
                         <CustomButton
                           type="button"
                           title="Dislike"
@@ -382,6 +388,7 @@ const PropertyDetails = () => {
                           fontSizeValue="16.5px"
                           icon={<ThumbDown />}
                         />
+                        {/* DM button */}
                         <CustomButton
                           type="button"
                           title="Direct Message"
@@ -391,6 +398,7 @@ const PropertyDetails = () => {
                           paddingValue="1px 10px"
                           fontSizeValue="16.5px"
                           icon={<ChatOutlined />}
+                          
                         />
                       </Stack>
                     </CardContent>
@@ -418,6 +426,7 @@ const PropertyDetails = () => {
             noOfProperties={creatorDetails?.allProperties.length}
           />
           <LocationCard />
+          {/* Book now button */}
           <CustomButton
             type="button"
             title="Book Now"
@@ -427,6 +436,18 @@ const PropertyDetails = () => {
             widthValue="100%"
             paddingValue="1px 10px"
             fontSizeValue="16.5px"
+          />
+          {/* Review Button */}
+          <CustomButton
+            type="button"
+            title="Add Review"
+            backgroundColor="#475be8"
+            color="#fcfcfc"
+            heightValue="50px"
+            widthValue="100%"
+            paddingValue="1px 10px"
+            fontSizeValue="16.5px"
+            handleClick={handleAddReviewProperty}
           />
         </Stack>
       </Box>

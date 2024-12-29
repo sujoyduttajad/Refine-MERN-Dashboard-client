@@ -32,7 +32,6 @@ const EditProperty = () => {
     await onFinish({ ...data, photo: propertyImage.url, email: user.email });
   };
 
-  console.log(queryResult);
 
   return (
     <Form

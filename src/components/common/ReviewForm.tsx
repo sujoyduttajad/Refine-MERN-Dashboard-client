@@ -17,6 +17,8 @@ import {
 import CustomButton from "./CustomButton";
 import { ReviewFormProps } from "interfaces/reviews";
 import { useState } from "react";
+import { useNavigate, useParams } from "@pankod/refine-react-router-v6";
+import { useNavigation } from "@pankod/refine-core";
 
 const ReviewForm = ({
   type,
@@ -29,6 +31,9 @@ const ReviewForm = ({
 }: //   onFinishHandler,
 ReviewFormProps) => {
   const [selectedProperty, setSelectedProperty] = useState<string | null>(null);
+
+  const { id: property_Id}  = useParams();
+
 
   const handleSelectProperty = (propertyId: string) => {
     setSelectedProperty(propertyId);

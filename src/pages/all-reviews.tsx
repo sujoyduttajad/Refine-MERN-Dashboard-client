@@ -40,7 +40,7 @@ const AllReviews = () => {
   const numberOfProperties = additionalData?.data.length;
 
   const propertyData = additionalData?.data;
-  console.log(propertyData)
+  // console.log(propertyData)
 
   const allReviews = data?.data ?? [];
   console.log(allReviews)
