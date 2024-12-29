@@ -1,98 +1,95 @@
 import {
-    Box,
-    Typography,
-    FormControl,
-    FormHelperText,
-    TextField,
-    TextareaAutosize,
-    Stack,
-    Select,
-    MenuItem,
-    Button,
-    ToggleButtonGroup,
-    ToggleButton,
-  } from "@pankod/refine-mui";
+  Box,
+  Typography,
+  FormControl,
+  FormHelperText,
+  TextField,
+  TextareaAutosize,
+  Stack,
+  Select,
+  MenuItem,
+  Button,
+  ToggleButtonGroup,
+  ToggleButton,
+  CardMedia,
+} from "@pankod/refine-mui";
+
+import { ReviewFormProps } from "interfaces/common";
+import CustomButton from "./CustomButton";
+
+const ReviewForm = ({
+  type,
+  register,
+  onFinish,
+  queryResult,
+  formLoading,
+  handleSubmit,
+  onFinishHandler,
+}: ReviewFormProps) => {
   
-  import { ReviewFormProps } from "interfaces/common";
-  import CustomButton from "./CustomButton";
-  
-  const ReviewForm = ({
-    type,
-    register,
-    onFinish,
-    queryResult,
-    formLoading,
-    handleSubmit,
-    handleImageChange,
-    onFinishHandler,
-    reviewerImage,
-  }: ReviewFormProps) => {
-  
-    
-    return (
-      <Box>
-        <Typography fontSize={25} fontWeight={700} color="#11142d">
-          {type} Property
-        </Typography>
-        <Box
-          mt={2.5}
-          maxWidth="65rem"
-          borderRadius="15px"
-          padding="20px"
-          bgcolor="#fafafa"
+  return (
+    <Box>
+      <Typography fontSize={25} fontWeight={700} color="#11142d">
+        {type} Review
+      </Typography>
+      <Box
+        mt={2.5}
+        maxWidth="65rem"
+        borderRadius="15px"
+        padding="20px"
+        bgcolor="#fafafa"
+      >
+        {type === "Edit" ? (
+          <Stack direction="row" flexWrap="wrap">
+            <Typography fontSize={16} mx={2} ml={0} textTransform="capitalize">
+              <strong>Creator: </strong>
+              {queryResult?.name}
+            </Typography>
+            <Typography fontSize={16} mx={2}>
+              <strong>Property Name: </strong>
+              {queryResult?.data?.data.title}
+            </Typography>
+          </Stack>
+        ) : (
+          ""
+        )}
+
+        <form
+          style={{
+            marginTop: "20px",
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+          }}
+          onSubmit={handleSubmit(onFinishHandler)}
         >
-          {type === "Edit" ? (
-            <Stack direction="row" flexWrap="wrap">
-              <Typography fontSize={16} mx={2} ml={0} textTransform="capitalize">
-                <strong>Creator: </strong>
-                {queryResult?.data?.data.creator.name}
-              </Typography>
-              <Typography fontSize={16} mx={2}>
-                <strong>Property Name: </strong>
-                {queryResult?.data?.data.title}
-              </Typography>
-            </Stack>
-          ) : (
-            ""
-          )}
-  
-          <form
-            style={{
-              marginTop: "20px",
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              gap: "20px",
-            }}
-            onSubmit={handleSubmit(onFinishHandler)}
-          >
-            <Stack direction="row" gap={4}>
-              <FormControl sx={{ width: "60%" }}>
-                <FormHelperText
+          <Stack direction="column" gap={4}>
+            <Stack>
+              
+              <Stack mt={5}>
+                <CardMedia
+                  component="img"
+                  image={queryResult?.avatar}
+                  alt="Reviewer Profile picture"
                   sx={{
-                    fontWeight: 500,
-                    margin: "10px 0",
-                    fontSize: 16,
-                    color: "#11142d",
+                    height: "7rem",
+                    width: "7rem",
+                    borderRadius: "50%",
                   }}
-                >
-                  Enter property name
-                </FormHelperText>
-                <TextField
-                  fullWidth
-                  required
-                  placeholder="Floyd's Villa"
-                  id="outlined-basic"
-                  color="info"
-                  sx={{
-                    backgroundColor: "#fff",
-                  }}
-                  variant="outlined"
-                  {...register("title", { required: true })}
                 />
-              </FormControl>
+              </Stack>
+              <Stack margin={1.5} ml={2}>
+                <Typography
+                  variant="h6"
+                  textTransform="capitalize"
+                  fontWeight={800}
+                >
+                  {queryResult?.name}
+                </Typography>
+              </Stack>
             </Stack>
-            <FormControl>
+            <FormControl sx={{ width: "60%" }}>
               <FormHelperText
                 sx={{
                   fontWeight: 500,
@@ -101,178 +98,63 @@ import {
                   color: "#11142d",
                 }}
               >
-                Enter Description
-              </FormHelperText>
-              <TextareaAutosize
-                minRows={5}
-                required
-                placeholder="Write description"
-                color="info"
-                style={{
-                  width: "100%",
-                  backgroundColor: "#fff",
-                  fontSize: "16px",
-                  borderColor: "rgba(0, 0, 0, 0.23)",
-                  borderRadius: 6,
-                  padding: 10,
-                  fontFamily: "'Manrope', sans-serif",
-                  color: "#11142d",
-                  resize: "vertical",
-                }}
-                {...register("description", { required: true })}
-              />
-            </FormControl>
-  
-            <Stack direction="row" gap={4}>
-              <FormControl sx={{ flex: 1 }}>
-                <FormHelperText
-                  sx={{
-                    fontWeight: 500,
-                    margin: "10px 0",
-                    fontSize: 16,
-                    color: "#11142d",
-                  }}
-                >
-                  Select Property Type
-                </FormHelperText>
-                <Select
-                  variant="outlined"
-                  color="info"
-                  displayEmpty
-                  required
-                  sx={{
-                    backgroundColor: "#fff",
-                  }}
-                  inputProps={{ "aria-label": "Without label" }}
-                  defaultValue={
-                    type === "Edit"
-                      ? queryResult?.data?.data.propertyType
-                      : "apartment"
-                  }
-                  {...register("propertyType", { required: true })}
-                >
-                  <MenuItem value="apartment">Apartment</MenuItem>
-                  <MenuItem value="villa">Villa</MenuItem>
-                  <MenuItem value="house">House</MenuItem>
-                  <MenuItem value="farmhouse">Farmhouse</MenuItem>
-                  <MenuItem value="condos">Condos</MenuItem>
-                  <MenuItem value="townhouse">Townhouse</MenuItem>
-                  <MenuItem value="duplex">Duplex</MenuItem>
-                  <MenuItem value="studio">Studio</MenuItem>
-                  <MenuItem value="chalet">Chalet</MenuItem>
-                </Select>
-              </FormControl>
-              <FormControl sx={{ width: "40%" }}>
-                <FormHelperText
-                  sx={{
-                    fontWeight: 500,
-                    margin: "10px 0",
-                    fontSize: 16,
-                    color: "#11142d",
-                  }}
-                >
-                  Enter property price(USD)
-                </FormHelperText>
-                <TextField
-                  required
-                  id="outlined-basic"
-                  color="info"
-                  variant="outlined"
-                  placeholder="234000"
-                  inputmode="numeric"
-                  pattern="[0-9]+"
-                  sx={{
-                    backgroundColor: "#fff",
-                  }}
-                  InputProps={{
-                    inputProps: { type: "number" },
-                  }}
-                  {...register("price", { required: true })}
-                />
-              </FormControl>
-            </Stack>
-  
-            <FormControl>
-              <FormHelperText
-                sx={{
-                  fontWeight: 500,
-                  margin: "10px 0",
-                  fontSize: 16,
-                  color: "#11142d",
-                }}
-              >
-                Enter Location
+                Review Title
               </FormHelperText>
               <TextField
                 fullWidth
                 required
+                placeholder="Best Mansion Ever!!"
                 id="outlined-basic"
                 color="info"
-                placeholder="594 S Mapleton Dr, Los Angeles, CA 90024"
                 sx={{
                   backgroundColor: "#fff",
                 }}
                 variant="outlined"
-                {...register("location", { required: true })}
+                {...register("title", { required: true })}
               />
             </FormControl>
-  
-            <Stack direction="column" gap={1} justifyContent="center" mb={2}>
-              <Stack direction="row" gap={2}>
-                <Typography
-                  color="#11142d"
-                  fontSize={16}
-                  fontWeight={500}
-                  my="10px"
-                >
-                  Property Photo
-                </Typography>
-                <Button
-                  component="label"
-                  variant="outlined"
-                  color="success"
-                  sx={{
-                    width: "fit-content",
-                    backgroundColor: "#fff",
-                    textTransform: "capitalize",
-                    fontSize: 16,
-                  }}
-                >
-                  Upload *
-                  <input
-                    hidden
-                    accept="image/*"
-                    type="file"
-                    onChange={(e) => {
-                      // @ts-ignore
-                      handleImageChange(e.target.files[0]);
-                    }}
-                  />
-                </Button>
-              </Stack>
-              <Typography
-                fontSize={14}
-                color="#808191"
-                sx={{ wordBreak: "break-all" }}
-              >
-                <strong>Image selected: </strong>{" "}
-                {type === "Edit"
-                  ? queryResult?.data?.data.photo
-                  : reviewerImage?.name || "NO IMAGE SELECTED"}
-              </Typography>
-            </Stack>
-  
-            <CustomButton
-              type="submit"
-              title={formLoading ? "Submitting..." : "Submit"}
-              backgroundColor="#475be8"
-              color="#fcfcfc"
+          </Stack>
+          <FormControl>
+            <FormHelperText
+              sx={{
+                fontWeight: 500,
+                margin: "10px 0",
+                fontSize: 16,
+                color: "#11142d",
+              }}
+            >
+              Review
+            </FormHelperText>
+            <TextareaAutosize
+              minRows={5}
+              required
+              placeholder="Write description"
+              color="info"
+              style={{
+                width: "100%",
+                backgroundColor: "#fff",
+                fontSize: "16px",
+                borderColor: "rgba(0, 0, 0, 0.23)",
+                borderRadius: 6,
+                padding: 10,
+                fontFamily: "'Manrope', sans-serif",
+                //   color: "#11142d",
+                resize: "vertical",
+              }}
+              {...register("description", { required: true })}
             />
-          </form>
-        </Box>
+          </FormControl>
+
+          <CustomButton
+            type="submit"
+            title={formLoading ? "Submitting..." : "Submit"}
+            backgroundColor="#475be8"
+            color="#fcfcfc"
+          />
+        </form>
       </Box>
-    );
-  };
-  
-  export default ReviewForm;
-  
+    </Box>
+  );
+};
+
+export default ReviewForm;

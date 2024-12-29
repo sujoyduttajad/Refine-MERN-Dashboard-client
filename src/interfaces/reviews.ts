@@ -17,9 +17,10 @@ import { BaseKey } from "@pankod/refine-core";
 export interface ReviewCardProps {
     id?: BaseKey | undefined;
     title: string;
+    property: string;
     reviewer: string;
     rating: string;
-    comment: number;
+    description: number;
     date: string;
 }
 

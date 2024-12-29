@@ -17,7 +17,8 @@ const ReviewCard = ({
   title,
   reviewer,
   rating,
-  comment,
+  property,
+  description,
   date,
 }: ReviewCardProps) => {
 
@@ -79,7 +80,7 @@ const ReviewCard = ({
           height="100%"
         >
           <Typography fontSize={18} fontWeight={700} color="#475be8">
-            {comment}
+            {description}
           </Typography>
         </Box>
       </CardContent>

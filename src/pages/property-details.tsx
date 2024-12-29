@@ -45,7 +45,10 @@ const PropertyDetails = () => {
   const { mutate } = useDelete();
   const { queryResult } = useShow();
 
+  
+
   const { data, isLoading, isError } = queryResult;
+  console.log(data)
 
   const propertyDetails = data?.data ?? {};
 

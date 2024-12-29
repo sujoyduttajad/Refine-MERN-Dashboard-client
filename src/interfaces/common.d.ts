@@ -72,9 +72,9 @@ export interface ReviewFormProps {
     >;
     formLoading: boolean;
     handleSubmit: FormEventHandler<HTMLFormElement> | undefined;
-    handleImageChange: (file) => void;
+    // handleImageChange: (file) => void;
     onFinishHandler: (data: FieldValues) => Promise<void> | void;
-    reviewerImage: { name: string; url: string };
+    // reviewerImage: { name: string; url: string };
 }
 
 export interface ThreeDotsProps {
