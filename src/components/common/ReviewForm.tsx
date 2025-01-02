@@ -11,10 +11,10 @@ import {
   Button,
   CardMedia,
 } from "@pankod/refine-mui";
-import { SelectChangeEvent } from "@mui/material";
+import { Rating, SelectChangeEvent } from "@mui/material";
 import CustomButton from "./CustomButton";
 import { ReviewFormProps } from "interfaces/reviews";
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { useParams } from "@pankod/refine-react-router-v6";
 import { getSelectedPropertyData } from "utils/functions";
 
@@ -27,9 +27,9 @@ const ReviewForm = ({
   const { id: property_Id } = useParams<{ id: string }>();
 
   // State for selected property
-  const [selectedPropertyId, setSelectedPropertyId] = useState(
-    property_Id || ""
-  );
+  const [selectedPropertyId, setSelectedPropertyId] = useState(property_Id);
+  // State for rating
+  const [rating, setRating] = useState<number | null>(null);
 
   // Get selected property data
   const selectedPropertyData = getSelectedPropertyData(
@@ -41,6 +41,12 @@ const ReviewForm = ({
   const handlePropertySelect = (event: SelectChangeEvent<string>) => {
     setSelectedPropertyId(event.target.value as string);
   };
+
+  // Handle Rating
+  const handleRating = (event: SyntheticEvent<Element, Event>, value: number | null) => {
+    setRating(value); 
+  };
+
 
   return (
     <Box>
@@ -211,6 +217,28 @@ const ReviewForm = ({
               variant="outlined"
               {...register("title", { required: true })}
             />
+          </FormControl>
+
+          {/* Rating section */}
+          <FormControl sx={{ width: "60%" }}>
+            <FormHelperText
+              sx={{
+                fontWeight: 500,
+                margin: "10px 0",
+                fontSize: 16,
+                color: "#11142d",
+              }}
+            >
+              Rating
+            </FormHelperText>
+            <Stack spacing={1}>
+              <Rating
+                name="half-rating"
+                size="large"
+                precision={0.5}
+                onChange={handleRating}
+              />
+            </Stack>
           </FormControl>
 
           {/* Review Description */}
