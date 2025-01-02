@@ -46,8 +46,6 @@ const CreateReviews = () => {
     await onFinish({ ...data, email: user.email });
   };
 
-
-
   const propertyDropdownData: PropertyDropdownData[] = additionalData?.data?.map((prop) => ({
     id: prop._id,
     propName: prop.title,

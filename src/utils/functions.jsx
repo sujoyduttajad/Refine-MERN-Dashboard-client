@@ -106,3 +106,11 @@ export function formatTimestamp(timestamp) {
   return `${day}, ${month} ${dayOfMonth}, ${year} at ${formattedHours}:${minutes} ${ampm}`;
 }
 
+// Function to Get Property Data
+
+export const getSelectedPropertyData = (propertyId, propertyList) => {
+  if (!propertyId || !Array.isArray(propertyList)) return null;
+
+  // Find and return the property details if propertyId exists
+  return propertyList.find((prop) => prop.id === propertyId) || null;
+};

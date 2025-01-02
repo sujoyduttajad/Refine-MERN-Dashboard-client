@@ -9,40 +9,39 @@ import {
   Select,
   MenuItem,
   Button,
-  ToggleButtonGroup,
-  ToggleButton,
   CardMedia,
 } from "@pankod/refine-mui";
-
+import { SelectChangeEvent } from "@mui/material";
 import CustomButton from "./CustomButton";
 import { ReviewFormProps } from "interfaces/reviews";
 import { useState } from "react";
-import { useNavigate, useParams } from "@pankod/refine-react-router-v6";
-import { useNavigation } from "@pankod/refine-core";
+import { useParams } from "@pankod/refine-react-router-v6";
+import { getSelectedPropertyData } from "utils/functions";
 
 const ReviewForm = ({
   type,
   register,
-  //   onFinish,
   queryResult,
   formLoading,
-  //   handleSubmit,
   propertyList,
-}: //   onFinishHandler,
-ReviewFormProps) => {
-  const [selectedProperty, setSelectedProperty] = useState<string | null>(null);
+}: ReviewFormProps) => {
+  const { id: property_Id } = useParams<{ id: string }>();
 
-  const { id: property_Id}  = useParams();
-
-
-  const handleSelectProperty = (propertyId: string) => {
-    setSelectedProperty(propertyId);
-  };
-
-  // Find the selected property based on the selectedProperty ID
-  const selectedPropertyData = propertyList?.find(
-    (prop) => prop.id === selectedProperty
+  // State for selected property
+  const [selectedPropertyId, setSelectedPropertyId] = useState(
+    property_Id || ""
   );
+
+  // Get selected property data
+  const selectedPropertyData = getSelectedPropertyData(
+    selectedPropertyId,
+    propertyList
+  );
+
+ // Handle property selection
+const handlePropertySelect = (event: SelectChangeEvent<string>) => {
+  setSelectedPropertyId(event.target.value as string);
+};
 
   return (
     <Box>
@@ -56,15 +55,13 @@ ReviewFormProps) => {
         padding="20px"
         bgcolor="#fafafa"
       >
-        {type === "Edit" ? (
+        {type === "Edit" && (
           <Stack direction="row" flexWrap="wrap">
             <Typography fontSize={16} mx={2} ml={0} textTransform="capitalize">
               <strong>Creator: </strong>
               {queryResult?.name}
             </Typography>
           </Stack>
-        ) : (
-          ""
         )}
 
         <form
@@ -75,7 +72,6 @@ ReviewFormProps) => {
             flexDirection: "column",
             gap: "20px",
           }}
-          //   onSubmit={handleSubmit(onFinishHandler)}
         >
           <Box
             display="flex"
@@ -85,6 +81,7 @@ ReviewFormProps) => {
             width="100%"
             gap={4}
           >
+            {/* Reviewer Section */}
             <Stack direction="column" alignItems="center" gap={2}>
               <Stack mt={5}>
                 <CardMedia
@@ -96,7 +93,8 @@ ReviewFormProps) => {
                     width: "7rem",
                     borderRadius: "50%",
                     objectFit: "cover",
-                    boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
+                    boxShadow:
+                      "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
                   }}
                 />
               </Stack>
@@ -111,8 +109,10 @@ ReviewFormProps) => {
                 </Typography>
               </Stack>
             </Stack>
+
+            {/* Property Section */}
             <Stack direction="column" alignItems="center" gap={2}>
-              {selectedPropertyData && selectedPropertyData.photo && (
+              {selectedPropertyId && selectedPropertyData ? (
                 <Stack direction="column" alignItems="center">
                   <Typography margin={2} align="center">
                     <b>Selected Property:</b> {selectedPropertyData.propName}
@@ -130,48 +130,32 @@ ReviewFormProps) => {
                     }}
                   />
                 </Stack>
+              ) : (
+                <Stack direction="column" alignItems="center">
+                  <Typography margin={2} align="center">
+                    <b>Select a Property:</b>
+                  </Typography>
+                  <Select
+                    value={selectedPropertyId}
+                    onChange={handlePropertySelect}
+                    displayEmpty
+                    sx={{ width: "15rem", textAlign: "center" }}
+                  >
+                    <MenuItem value="" disabled>
+                      Choose a Property
+                    </MenuItem>
+                    {propertyList?.map((prop) => (
+                      <MenuItem key={prop.id} value={prop.id}>
+                        {prop.propName}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </Stack>
               )}
             </Stack>
           </Box>
 
-          {/* Select the Property to Review */}
-          <FormControl sx={{ flex: 1 }}>
-            <FormHelperText
-              sx={{
-                fontWeight: 500,
-                margin: "10px 0",
-                fontSize: 16,
-                color: "#11142d",
-              }}
-            >
-              Select Property Type
-            </FormHelperText>
-            <Select
-              variant="outlined"
-              color="info"
-              displayEmpty
-              required
-              sx={{
-                backgroundColor: "#fff",
-              }}
-              inputProps={{ "aria-label": "Without label" }}
-              value={selectedProperty || ""}
-              onChange={(e) => handleSelectProperty(e.target.value)}
-              //   defaultValue={
-              //     type === "Edit"
-              //       ? queryResult?.data?.data.propertyType
-              //       : "apartment"
-              //   }
-              //   {...register("propertyType", { required: true })}
-            >
-              {propertyList?.map((prop) => (
-                <MenuItem key={prop.id} value={prop.id}>
-                  {prop.propName}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          {/* Review Title */}
+          {/* Form Fields */}
           <FormControl sx={{ width: "60%" }}>
             <FormHelperText
               sx={{
@@ -196,7 +180,7 @@ ReviewFormProps) => {
               {...register("title", { required: true })}
             />
           </FormControl>
-          {/* Review Description */}
+
           <FormControl>
             <FormHelperText
               sx={{
@@ -206,13 +190,12 @@ ReviewFormProps) => {
                 color: "#11142d",
               }}
             >
-              Review
+              Review Description
             </FormHelperText>
             <TextareaAutosize
               minRows={5}
               required
               placeholder="Write description"
-              color="info"
               style={{
                 width: "100%",
                 backgroundColor: "#fff",
@@ -228,6 +211,7 @@ ReviewFormProps) => {
             />
           </FormControl>
 
+          {/* Submit Button */}
           <CustomButton
             type="submit"
             title={formLoading ? "Submitting..." : "Submit"}
