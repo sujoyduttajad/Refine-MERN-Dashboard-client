@@ -43,10 +43,12 @@ const ReviewForm = ({
   };
 
   // Handle Rating
-  const handleRating = (event: SyntheticEvent<Element, Event>, value: number | null) => {
-    setRating(value); 
+  const handleRating = (
+    event: SyntheticEvent<Element, Event>,
+    value: number | null
+  ) => {
+    setRating(value);
   };
-
 
   return (
     <Box>

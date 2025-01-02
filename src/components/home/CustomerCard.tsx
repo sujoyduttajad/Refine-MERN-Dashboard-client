@@ -51,19 +51,37 @@ const CustomerCard = () => {
             <Typography fontSize={14} color="#808191">
               Customers per year
             </Typography>
-            <Typography variant="h4">500K</Typography>
-            <Typography fontSize={12} fontWeight={700} color="#18C346">
-              21.77% 
-            </Typography>
+            <Box
+              px={1.5}
+              py={0.5}
+              mb={1}
+              width="fit-content"
+              borderRadius={1}
+              bgcolor="#dadefa"
+            >
+              <Typography variant="h4">500K</Typography>
+              <Typography fontSize={12} fontWeight={700} color="#18C346">
+                21.77%
+              </Typography>
+            </Box>
           </Stack>
           <Stack direction="column" gap={2}>
             <Typography fontSize={14} color="#808191">
               Customers per month
             </Typography>
-            <Typography variant="h4">22</Typography>
-            <Typography fontSize={12} fontWeight={700} color="#18C346">
-              41.04%
-            </Typography>
+            <Box
+              px={1.5}
+              py={0.5}
+              mb={1}
+              width="fit-content"
+              borderRadius={1}
+              bgcolor="#dadefa"
+            >
+              <Typography variant="h4">22</Typography>
+              <Typography fontSize={12} fontWeight={700} color="#18C346">
+                41.04%
+              </Typography>
+            </Box>
           </Stack>
         </Stack>
         <Stack>
