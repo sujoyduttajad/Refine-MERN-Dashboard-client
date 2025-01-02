@@ -55,7 +55,6 @@ const CreateReviews = () => {
   // Rendering a reusable form
   return (
     <ReviewForm
-      type="Create"
       queryResult={user}
       register={register}
     //   onFinish={onFinish}

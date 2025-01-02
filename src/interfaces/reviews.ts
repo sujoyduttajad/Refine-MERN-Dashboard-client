@@ -35,7 +35,6 @@ export interface AdditionalData {
 
 
 export interface ReviewFormProps {
-    type: string;
     register: any;
     queryResult?: any;
     // onFinish: (

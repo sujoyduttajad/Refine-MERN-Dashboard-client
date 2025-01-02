@@ -19,7 +19,6 @@ import { useParams } from "@pankod/refine-react-router-v6";
 import { getSelectedPropertyData } from "utils/functions";
 
 const ReviewForm = ({
-  type,
   register,
   queryResult,
   formLoading,
@@ -38,15 +37,15 @@ const ReviewForm = ({
     propertyList
   );
 
- // Handle property selection
-const handlePropertySelect = (event: SelectChangeEvent<string>) => {
-  setSelectedPropertyId(event.target.value as string);
-};
+  // Handle property selection
+  const handlePropertySelect = (event: SelectChangeEvent<string>) => {
+    setSelectedPropertyId(event.target.value as string);
+  };
 
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142d">
-        {type} Review
+        Review
       </Typography>
       <Box
         mt={2.5}
@@ -55,14 +54,12 @@ const handlePropertySelect = (event: SelectChangeEvent<string>) => {
         padding="20px"
         bgcolor="#fafafa"
       >
-        {type === "Edit" && (
-          <Stack direction="row" flexWrap="wrap">
-            <Typography fontSize={16} mx={2} ml={0} textTransform="capitalize">
-              <strong>Creator: </strong>
-              {queryResult?.name}
-            </Typography>
-          </Stack>
-        )}
+        <Stack direction="row" flexWrap="wrap">
+          <Typography fontSize={16} mx={2} ml={0} textTransform="capitalize">
+            <strong>Creator: </strong>
+            {queryResult.name}
+          </Typography>
+        </Stack>
 
         <form
           style={{
@@ -105,12 +102,12 @@ const handlePropertySelect = (event: SelectChangeEvent<string>) => {
                   fontWeight={800}
                   align="center"
                 >
-                  {queryResult?.name}
+                  {queryResult.name}
                 </Typography>
               </Stack>
             </Stack>
 
-            {/* Property Section */}
+            {/* Dynamic Property Section */}
             <Stack direction="column" alignItems="center" gap={2}>
               {selectedPropertyId && selectedPropertyData ? (
                 <Stack direction="column" alignItems="center">
@@ -136,7 +133,7 @@ const handlePropertySelect = (event: SelectChangeEvent<string>) => {
                     <b>Select a Property:</b>
                   </Typography>
                   <Select
-                    value={selectedPropertyId}
+                    value={selectedPropertyId ? selectedPropertyId : ""}
                     onChange={handlePropertySelect}
                     displayEmpty
                     sx={{ width: "15rem", textAlign: "center" }}
@@ -155,7 +152,42 @@ const handlePropertySelect = (event: SelectChangeEvent<string>) => {
             </Stack>
           </Box>
 
-          {/* Form Fields */}
+          {/* Property Dropdown */}
+          <FormControl sx={{ width: "60%" }}>
+            <FormHelperText
+              sx={{
+                fontWeight: 500,
+                margin: "10px 0",
+                fontSize: 16,
+                color: "#11142d",
+              }}
+            >
+              Select a Property:
+            </FormHelperText>
+            <Select
+              value={selectedPropertyId ? selectedPropertyId : ""}
+              onChange={handlePropertySelect}
+              displayEmpty
+              variant="outlined"
+              color="info"
+              required
+              sx={{
+                backgroundColor: "#fff",
+              }}
+              inputProps={{ "aria-label": "Without label" }}
+            >
+              <MenuItem value="" disabled>
+                Choose a Property
+              </MenuItem>
+              {propertyList?.map((prop) => (
+                <MenuItem key={prop.id} value={prop.id}>
+                  {prop.propName}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+
+          {/* Review Title */}
           <FormControl sx={{ width: "60%" }}>
             <FormHelperText
               sx={{
@@ -181,6 +213,7 @@ const handlePropertySelect = (event: SelectChangeEvent<string>) => {
             />
           </FormControl>
 
+          {/* Review Description */}
           <FormControl>
             <FormHelperText
               sx={{

@@ -87,7 +87,7 @@ const PropertyDetails = () => {
   };
 
   const handleAddReviewProperty = () => {
-    isCurrentUser && navigate(`/reviews/create/${propertyDetails._id}`);
+    user.email && navigate(`/reviews/create/${propertyDetails._id}`);
     // navigate(`/reviews/create`);
   };
 
@@ -396,7 +396,6 @@ const PropertyDetails = () => {
                           color="#fcfcfc"
                           heightValue="40px"
                           paddingValue="1px 10px"
-                          fontSizeValue="16.5px"
                           icon={<ChatOutlined />}
                           
                         />
