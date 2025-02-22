@@ -8,16 +8,22 @@
 </div>
 <br/>
 
-Basically, Evoia is a property-management app that allows agents to create, update, and delete properties, add agents, reviews to the properties and chat with other agents or potential customers. Apart from the CRUD operation this app is also a Dashboard to the agents which shows the Total assests, Top agents, latest sales, customers, and property influence in a graphical and interactive way.
+## Evoia: The Ultimate Property Management Solution
+
+**Evoia** is a powerful, all-in-one property management platform designed for real estate agents to streamline their workflow effortlessly. With Evoia, agents can create, update, and manage property listings, add and collaborate with fellow agents, and enhance property credibility with reviews.
+
+Beyond property management, Evoia serves as a comprehensive real estate dashboard, offering real-time insights into total assets, top-performing agents, recent sales, customer trends, and property influence—presented through intuitive, interactive visuals.
+
+Future enhancements will include in-app messaging, enabling seamless communication between agents and potential clients. With Evoia, managing properties isn’t just easier—it’s smarter. 🚀
 
 The app is live here and feel free to check it out - 
 [Evoia](https://refine-mern-dashboard-client.vercel.app/)
 
 <img src="./Evoia - Full page.png" alt="the screenshot of the app large screen"/>
 
-If you like it please make sure to support me by hitting the star icon. Also it would be great if visitors create new properties this gives a hands on experience to users and also give me a lot of data to work on. **Please don't add any unnecessary/crucial information** Follow the guide in Help & Info page. 
+If you like it please support me by hitting the star icon. Also, it would be great if visitors create new properties this gives a hands-on experience to users and also gives me a lot of data to work on. **Please don't add any unnecessary/crucial information** Follow the guide on the Help & Info page. 
 
-The app has server and client side, the server is deployed separately and client on Vercel
+The app has a server and client side, the server is deployed separately and the client is on Vercel
 
 ### Tech Stack
 - React(part of Refine package)
@@ -27,8 +33,8 @@ The app has server and client side, the server is deployed separately and client
 - TypeScript
 - Material-UI(part of Refine package)
 - AppexCharts
-- react-router-v6
-- rect-hook-form
+- React-router-v6
+- Rect-hook-form
 - Axios
 - Google Auth Provider
 
@@ -82,5 +88,4 @@ To learn more about **refine**, please check out the [Documentation](https://ref
 - Message across agents
 - Integrate Google Maps with Property Location
 
-## credits
-Thankyou [@adrianhajdin](https://github.com/adrianhajdin)
+
