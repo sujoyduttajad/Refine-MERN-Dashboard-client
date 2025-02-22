@@ -31,18 +31,8 @@ const AllReviews = () => {
     resource: "reviews",
   });
 
-  const {
-    data: additionalData,
-    isLoading: isAdditionalLoading,
-    isError: isAdditionalError,
-  } = useMany({ resource: "properties", ids: []});
-
-  const numberOfProperties = additionalData?.data.length;
-
-  const propertyData = additionalData?.data;
-  // console.log(propertyData)
-
   const allReviews = data?.data ?? [];
+
   console.log(allReviews)
 
   // Search filter
@@ -56,8 +46,8 @@ const AllReviews = () => {
   //   };
   // }, [filters]);
 
-  if (isLoading || isAdditionalLoading) return <Loading />;
-  if (isError || isAdditionalError) return <Error />;
+  if (isLoading) return <Loading />;
+  if (isError) return <Error />;
 
   return (
     <Box mb={8}>
@@ -66,11 +56,11 @@ const AllReviews = () => {
         sx={{ display: "flex", flexWrap: "wrap", gap: 3, width: "100%" }}
       >
         <Stack direction="column" width="100%">
-          {/* <Typography fontSize={25} fontWeight={700} color="#11142d" mb={2}>
+          <Typography fontSize={25} fontWeight={700} color="#11142d" mb={2}>
             {!allReviews.length
               ? "There are no reviews"
               : `Reviews (${allReviews.length})`}
-          </Typography> */}
+          </Typography>
           <Box
             mb={2}
             mt={3}
@@ -81,36 +71,19 @@ const AllReviews = () => {
             alignItems="center"
             justifyContent="space-between"
           >
-            {/* <TextField
-              variant="outlined"
-              color="info"
-              value={currentFilterValues.reviewer}
-              onChange={(e) => {
-                setFilters([
-                  {
-                    field: "reviewer",
-                    operator: "contains",
-                    value: e.currentTarget.value || undefined,
-                  },
-                ]);
-              }}
-              placeholder="Search by Reviewer"
-              size="small"
-              sx={{ width: "50%" }}
-            /> */}
           </Box>
         </Stack>
       </Box>
 
-      {/* <Typography fontSize={21} fontWeight={500} color="#B7B8B8">
+      <Typography fontSize={21} fontWeight={500} color="#B7B8B8">
         {!allReviews.length
           ? "Sorry, no reviews to show :("
           : `Showing ${allReviews.length} ${
               allReviews.length > 1 ? "reviews" : "review"
             } on this page`}
-      </Typography> */}
+      </Typography>
 
-      {/* <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
+      <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
         {allReviews.map((review) => (
           <ReviewCard
             id={review._id}
@@ -120,19 +93,6 @@ const AllReviews = () => {
             rating={review.rating}
             description={review.description}
             date={review.date}
-          />
-        ))}
-      </Box> */}
-
-      <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
-        {propertyData?.map((property) => (
-          <PropertyCard
-            key={property._id}
-            id={property._id}
-            title={property.title}
-            price={property.price}
-            location={property.location}
-            photo={property.photo}
           />
         ))}
       </Box>
@@ -145,7 +105,7 @@ const AllReviews = () => {
         mt={{ xs: 3, sm: 0 }}
       >
         <CustomButton
-          title="Add Property"
+          title="Add Review"
           handleClick={() => navigate("/reviews/create")}
           backgroundColor="#475be8"
           color="#fcfcfc"
