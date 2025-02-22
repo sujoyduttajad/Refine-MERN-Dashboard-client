@@ -23,7 +23,7 @@ If you like it please support me by hitting the star icon. Also, it would be gre
 
 The app has a server and client side, the server is deployed separately and the client is on Vercel
 
-Server repo - https://github.com/sujoyduttajad/Dashboard-server[server-repo]
+Server repo - https://github.com/sujoyduttajad/Dashboard-server
 
 ### Tech Stack
 - React(part of Refine package)
