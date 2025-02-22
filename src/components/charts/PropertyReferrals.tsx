@@ -51,7 +51,11 @@ const PropertyReferrals = () => {
       </Typography>
       <Stack my="20px" direction="column" gap={4}>
         {propertyReferralsInfo.map((bar) => (
-          <ProgressBar key={bar.title} {...bar} />
+          <ProgressBar
+            key={bar.title}
+            {...bar}
+            percentage={Math.floor(Math.random() * 80) + 20}
+          />
         ))}
       </Stack>
     </Box>
