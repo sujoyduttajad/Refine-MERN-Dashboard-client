@@ -17,23 +17,13 @@ import { useMemo } from "react";
 const AllReviews = () => {
   const navigate = useNavigate();
 
-  // const {
-  //   tableQueryResult: { data, isLoading, isError },
-  //   current,
-  //   setCurrent,
-  //   pageCount,
-  //   setPageSize,
-  //   filters,
-  //   setFilters,
-  // } = useTable();
-
   const { data, isLoading, isError } = useList({
     resource: "reviews",
   });
 
   const allReviews = data?.data ?? [];
 
-  console.log(allReviews)
+  // console.log(allReviews)
 
   // Search filter
   // const currentFilterValues = useMemo(() => {
@@ -70,8 +60,24 @@ const AllReviews = () => {
             height="20%"
             alignItems="center"
             justifyContent="space-between"
-          >
-          </Box>
+          ></Box>
+        </Stack>
+
+        {/* Add Review Button */}
+        <Stack
+          direction="row"
+          justifyContent={{ xs: "flex-start", sm: "flex-end" }}
+          alignItems="center"
+          width={{ xs: "100%", sm: "25%" }}
+          mt={{ xs: 3, sm: 0 }}
+        >
+          <CustomButton
+            title="Add Review"
+            handleClick={() => navigate("/reviews/create")}
+            backgroundColor="#475be8"
+            color="#fcfcfc"
+            icon={<Add />}
+          />
         </Stack>
       </Box>
 
@@ -83,11 +89,12 @@ const AllReviews = () => {
             } on this page`}
       </Typography>
 
-      <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
+      <Box mt="20px" sx={{ display: "flex", flexDirection: "column", flexWrap: "wrap", gap: 3 }}>
         {allReviews.map((review) => (
           <ReviewCard
+            key={review._id}
             id={review._id}
-            title={""}
+            title={review.title}
             property={review.property}
             reviewer={review.reviewer}
             rating={review.rating}
@@ -97,23 +104,7 @@ const AllReviews = () => {
         ))}
       </Box>
 
-      <Stack
-        direction="row"
-        justifyContent={{ xs: "flex-start", sm: "flex-end" }}
-        alignItems="center"
-        width={{ xs: "100%", sm: "25%" }}
-        mt={{ xs: 3, sm: 0 }}
-      >
-        <CustomButton
-          title="Add Review"
-          handleClick={() => navigate("/reviews/create")}
-          backgroundColor="#475be8"
-          color="#fcfcfc"
-          icon={<Add />}
-        />
-      </Stack>
-
-      { (
+      {
         <Box display="flex" alignItems="center" gap={3} mt={8} flexWrap="wrap">
           {/* <CustomButton
             title="Previous"
@@ -161,7 +152,7 @@ const AllReviews = () => {
             ))}
           </Select> */}
         </Box>
-      )}
+      }
     </Box>
   );
 };
