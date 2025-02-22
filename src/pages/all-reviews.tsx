@@ -17,6 +17,22 @@ import { useMemo } from "react";
 const AllReviews = () => {
   const navigate = useNavigate();
 
+  const {
+    tableQueryResult: {
+      data: additionalData,
+      isLoading: isAdditionalLoading,
+      isError: isAdditionalError,
+    },
+    current,
+    setCurrent,
+    pageCount,
+    setPageSize,
+    sorter,
+    setSorter,
+    filters,
+    setFilters,
+  } = useTable();
+
   const { data, isLoading, isError } = useList({
     resource: "reviews",
   });
@@ -26,18 +42,22 @@ const AllReviews = () => {
   // console.log(allReviews)
 
   // Search filter
-  // const currentFilterValues = useMemo(() => {
-  //   const logicalFilters = filters.flatMap((item) =>
-  //     "field" in item ? item : []
-  //   );
-  //   return {
-  //     reviewer:
-  //       logicalFilters.find((item) => item.field === "reviewer")?.value || "",
-  //   };
-  // }, [filters]);
+  const currentFilterValues = useMemo(() => {
+    const logicalFilters = filters.flatMap((item) =>
+      "field" in item ? item : []
+    );
 
-  if (isLoading) return <Loading />;
-  if (isError) return <Error />;
+    return {
+      reviewTitle:
+        logicalFilters.find((item) => item.field === "reviewTitle")?.value ||
+        "",
+      // propertyType:
+      //   logicalFilters.find((item) => item.field === "propertyType")?.value || "",
+    };
+  }, [filters]);
+
+  if (isLoading || isAdditionalLoading) return <Loading />;
+  if (isError || isAdditionalError) return <Error />;
 
   return (
     <Box mb={8}>
@@ -60,24 +80,35 @@ const AllReviews = () => {
             height="20%"
             alignItems="center"
             justifyContent="space-between"
-          ></Box>
-        </Stack>
-
-        {/* Add Review Button */}
-        <Stack
-          direction="row"
-          justifyContent={{ xs: "flex-start", sm: "flex-end" }}
-          alignItems="center"
-          width={{ xs: "100%", sm: "25%" }}
-          mt={{ xs: 3, sm: 0 }}
-        >
-          <CustomButton
-            title="Add Review"
-            handleClick={() => navigate("/reviews/create")}
-            backgroundColor="#475be8"
-            color="#fcfcfc"
-            icon={<Add />}
-          />
+          >
+            <TextField
+              variant="outlined"
+              color="info"
+              value={currentFilterValues.reviewTitle}
+              onChange={(e) => {
+                setFilters([
+                  {
+                    field: "title",
+                    operator: "contains",
+                    value: e.currentTarget.value
+                      ? e.currentTarget.value
+                      : undefined,
+                  },
+                ]);
+              }}
+              placeholder="Search by Title"
+              size="small"
+              sx={{ width: "50%" }}
+            />
+            {/* Add Review Button */}
+            <CustomButton
+              title="Add Review"
+              handleClick={() => navigate("/reviews/create")}
+              backgroundColor="#475be8"
+              color="#fcfcfc"
+              icon={<Add />}
+            />
+          </Box>
         </Stack>
       </Box>
 
@@ -89,7 +120,15 @@ const AllReviews = () => {
             } on this page`}
       </Typography>
 
-      <Box mt="20px" sx={{ display: "flex", flexDirection: "column", flexWrap: "wrap", gap: 3 }}>
+      <Box
+        mt="20px"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          flexWrap: "wrap",
+          gap: 3,
+        }}
+      >
         {allReviews.map((review) => (
           <ReviewCard
             key={review._id}
