@@ -1,10 +1,8 @@
-import { Place } from "@mui/icons-material";
 import { Link } from "@pankod/refine-react-router-v6";
 import {
   Typography,
   Box,
   Card,
-  CardMedia,
   CardContent,
   Stack,
   Avatar,
@@ -12,7 +10,7 @@ import {
 } from "@pankod/refine-mui";
 
 import { ReviewCardProps } from "interfaces/reviews";
-import { formatter } from "utils/functions";
+import { formatDate } from "utils/functions";
 
 const photo =
   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -29,10 +27,10 @@ const ReviewCard = ({
   return (
     <Card
       component={Link}
-      to={`/reviews/show/${id}`}
+      to={``}
       elevation={0}
       sx={{
-        maxWidth: "80vw", // make it responsive
+        maxWidth: "80vw", // ***make it responsive
         padding: "10px",
         cursor: "pointer",
         textDecoration: "none",
@@ -96,12 +94,17 @@ const ReviewCard = ({
             <Typography fontSize={30} fontWeight={700} color="#11142d">
               {title}
             </Typography>
-            <Rating
-              name="ratings"
-              value={Number(rating)}
-              precision={0.5}
-              readOnly
-            />
+            <Stack direction="row" gap={2}>
+              <Rating
+                name="ratings"
+                value={Number(rating)}
+                precision={0.5}
+                readOnly
+              />
+              <Typography fontSize={16} fontWeight={500} color="#A6A6A6">
+                {formatDate(new Date())}
+              </Typography>
+            </Stack>
           </Stack>
 
           <Box
