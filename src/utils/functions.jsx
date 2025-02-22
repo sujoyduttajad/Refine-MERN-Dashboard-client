@@ -106,6 +106,10 @@ export function formatTimestamp(timestamp) {
   return `${day}, ${month} ${dayOfMonth}, ${year} at ${formattedHours}:${minutes} ${ampm}`;
 }
 
+// Short format Date
+export const formatDate = (date) =>
+  new Date(date).toLocaleDateString("en-GB").replace(/\//g, "-");
+
 // Function to Get Property Data
 
 export const getSelectedPropertyData = (propertyId, propertyList) => {
