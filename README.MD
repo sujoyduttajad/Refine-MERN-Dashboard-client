@@ -1,5 +1,3 @@
-# Evoia - A property management app
-
 
 <div align="center" style="margin: 30px;">
     <a href="https://refine-mern-dashboard-client.vercel.app/">
@@ -12,7 +10,7 @@
 
 **Evoia** is a powerful, all-in-one property management platform designed for real estate agents to streamline their workflow effortlessly. With Evoia, agents can create, update, and manage property listings, add and collaborate with fellow agents, and enhance property credibility with reviews.
 
-Beyond property management, Evoia serves as a comprehensive real estate dashboard, offering real-time insights into total assets, top-performing agents, recent sales, customer trends, and property influence—presented through intuitive, interactive visuals.
+Beyond property management, Evoia is a comprehensive real estate dashboard, offering real-time insights into total assets, top-performing agents, recent sales, customer trends, and property influence—presented through intuitive, interactive visuals.
 
 Future enhancements will include in-app messaging, enabling seamless communication between agents and potential clients. With Evoia, managing properties isn’t just easier—it’s smarter. 🚀
 
@@ -24,6 +22,8 @@ The app is live here and feel free to check it out -
 If you like it please support me by hitting the star icon. Also, it would be great if visitors create new properties this gives a hands-on experience to users and also gives me a lot of data to work on. **Please don't add any unnecessary/crucial information** Follow the guide on the Help & Info page. 
 
 The app has a server and client side, the server is deployed separately and the client is on Vercel
+
+Server repo - https://github.com/sujoyduttajad/Dashboard-server[server-repo]
 
 ### Tech Stack
 - React(part of Refine package)
