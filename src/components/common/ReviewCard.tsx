@@ -28,7 +28,7 @@ const ReviewCard = ({
       to={`/reviews/show/${id}`}
       elevation={0}
       sx={{
-        maxWidth: "330px",
+        maxWidth: "33rem",
         padding: "10px",
         cursor: "pointer",
         textDecoration: "none",
